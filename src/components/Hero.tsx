@@ -111,7 +111,7 @@ export const Hero: React.FC<HeroProps> = ({
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex-1 flex flex-col justify-between">
-        {/* Main Banner Grid: Left Side Copy + Right Side Pure Looping Video (Positioned Higher Up) */}
+        {/* Main Banner Grid: Left Side Copy + Right Side Pure Looping Video */}
         <div className="pt-2 sm:pt-3 lg:pt-4 my-auto grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-8 xl:gap-10 items-start">
           {/* Left Side: Copy, Search & CTAs */}
           <div className="lg:col-span-6 xl:col-span-6">
@@ -123,21 +123,25 @@ export const Hero: React.FC<HeroProps> = ({
               <span className="text-slate-600 font-semibold">{language === 'ar' ? 'دبي، الإمارات' : 'Dubai, UAE'}</span>
             </div>
 
-            {/* Crisp, Bold Headline (Inspired by egsh.ae: authoritative and grand) */}
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-[#1E2528] leading-[1.14] text-balance font-sans">
-              <span>{t.heroTitlePart1}</span>{' '}
-              <span className="text-[#128B94] block mt-1.5">
-                {t.heroTitlePart2}
+            {/* Crisp, Bold Headline with Exact Line Breaks */}
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[2.75rem] xl:text-[3.35rem] font-extrabold tracking-tight text-[#1E2528] leading-[1.12] font-sans">
+              {/* Line 1: Government Services */}
+              <span className="block whitespace-nowrap">{t.heroTitlePart1}</span>
+              {/* Line 2: & Business Solutions, */}
+              <span className="block whitespace-nowrap">{t.heroTitlePart2}</span>
+              {/* Line 3: All in One Place. */}
+              <span className="text-[#128B94] block mt-1.5 whitespace-nowrap">
+                {t.heroTitlePart3}
               </span>
             </h1>
 
             {/* Concise, Elegant Value Proposition */}
-            <p className="mt-4 sm:mt-5 text-base sm:text-lg lg:text-xl text-slate-600 leading-relaxed max-w-xl font-normal text-pretty">
+            <p className="mt-4 sm:mt-5 text-base sm:text-lg text-slate-600 leading-relaxed max-w-xl font-normal text-pretty">
               {t.heroDescription}
             </p>
 
             {/* Sleek, Floating Government Service Search Bar */}
-            <form onSubmit={handleSearch} className="mt-7 sm:mt-8 max-w-xl">
+            <form onSubmit={handleSearch} className="mt-6 sm:mt-7 max-w-xl">
               <div className="relative flex items-stretch rounded-2xl bg-white/95 backdrop-blur-md p-1.5 shadow-sm border border-slate-200/90 focus-within:border-[#128B94] focus-within:ring-2 focus-within:ring-[#128B94]/20 transition-all">
                 <div className="relative flex-1 flex items-center pl-3.5 pr-2">
                   <Search className="w-5 h-5 text-slate-400 shrink-0" />
@@ -205,18 +209,18 @@ export const Hero: React.FC<HeroProps> = ({
             </div>
           </div>
 
-          {/* Right Side: Seamless Looping YouTube Video (Aligned with Main Heading "Government" text) */}
-          <div className="lg:col-span-6 xl:col-span-6 w-full flex justify-center lg:justify-end pt-4 sm:pt-6 lg:pt-11 xl:pt-12">
+          {/* Right Side: Seamless Looping YouTube Video (Proportionately Sized to 6 Columns) */}
+          <div className="lg:col-span-6 xl:col-span-6 w-full flex justify-center lg:justify-end pt-4 sm:pt-6 lg:pt-9 xl:pt-10">
             <div className="relative w-full max-w-2xl lg:max-w-none">
               {/* Luminous Ambient Brand Halo (Sharp corners) */}
-              <div className="absolute -inset-2.5 bg-gradient-to-tr from-[#128B94]/25 via-[#01403F]/15 to-[#128B94]/30 rounded-none blur-xl opacity-80 pointer-events-none" />
+              <div className="absolute -inset-2.5 bg-gradient-to-tr from-[#128B94]/30 via-[#01403F]/20 to-[#128B94]/35 rounded-none blur-2xl opacity-90 pointer-events-none" />
 
               {/* Architectural Video Container (Sharp corners, 16:9 uncropped aspect ratio) */}
               <div className="relative rounded-none overflow-hidden shadow-2xl bg-black border-2 border-white ring-1 ring-slate-900/10 aspect-video w-full">
-                {/* Full-size uncropped YouTube embed */}
+                {/* Full-size uncropped YouTube embed in 1080p high definition */}
                 <div className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none select-none">
                   <iframe
-                    src="https://www.youtube-nocookie.com/embed/HI-stCCfY6s?autoplay=1&mute=1&loop=1&playlist=HI-stCCfY6s&controls=0&modestbranding=1&rel=0&showinfo=0&iv_load_policy=3&disablekb=1&fs=0&playsinline=1"
+                    src="https://www.youtube-nocookie.com/embed/HI-stCCfY6s?autoplay=1&mute=1&loop=1&playlist=HI-stCCfY6s&controls=0&modestbranding=1&rel=0&showinfo=0&iv_load_policy=3&disablekb=1&fs=0&playsinline=1&vq=hd1080&hd=1"
                     title="Karama Business Center & Emirates Secretarial Services Walkthrough"
                     className="w-full h-full inset-0 absolute pointer-events-none border-0"
                     allow="autoplay; encrypted-media"
@@ -225,7 +229,7 @@ export const Hero: React.FC<HeroProps> = ({
                 </div>
 
                 {/* Protective Glass Overlay ensuring complete shielding of any links/text */}
-                <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-slate-950/20 via-transparent to-slate-950/10" />
+                <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-slate-950/15 via-transparent to-slate-950/10" />
               </div>
             </div>
           </div>

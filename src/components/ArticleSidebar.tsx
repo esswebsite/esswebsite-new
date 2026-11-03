@@ -271,9 +271,9 @@ export const ArticleSidebar: React.FC<ArticleSidebarProps> = ({
             {isAr ? 'أوقات العمل الرسمية للمراكز:' : 'Official Center Working Hours:'}
           </p>
           <p><strong className="text-slate-700">{isAr ? 'مركز الفحص الطبي (KMFC):' : 'Medical Fitness (KMFC):'}</strong> {isAr ? 'يومياً 7:00 ص – 9:30 م (طوال الأسبوع)' : 'Daily 7:00 AM – 9:30 PM (7 Days)'}</p>
-          <p><strong className="text-slate-700">{isAr ? 'آمر والإقامة الذهبية:' : 'Amer & Golden Visa:'}</strong> {isAr ? 'الإثنين–السبت 7:00 ص – 10:00 م (الأحد مغلق)' : 'Mon–Sat 7:00 AM – 10:00 PM (Sun Closed)'}</p>
-          <p><strong className="text-slate-700">{isAr ? 'تسهيل واقتصادية دبي:' : 'Tasheel & DED:'}</strong> {isAr ? '8:00 ص – 10:00 م (الأحد DED مفتوح 8 ص–8 م)' : '8:00 AM – 10:00 PM (DED Sun 8AM–8PM)'}</p>
-          <p><strong className="text-slate-700">{isAr ? 'أطلس للتصديقات:' : 'Atlas Attestation:'}</strong> {isAr ? 'الإثنين–الجمعة 9 ص – 10 م | السبت 9 ص – 4 م' : 'Mon–Fri 9 AM – 10 PM | Sat 9 AM – 4 PM'}</p>
+          <p><strong className="text-slate-700">{isAr ? 'تسهيل:' : 'Tasheel:'}</strong> {isAr ? '8:00 ص – 10:00 م (طوال الأسبوع)' : '8:00 AM – 10:00 PM (Daily)'}</p>
+          <p><strong className="text-slate-700">{isAr ? 'اقتصادية دبي (DED):' : 'DED Commercial:'}</strong> {isAr ? 'الإثنين–السبت 8:00 ص – 10:00 م (الأحد مغلق)' : 'Mon–Sat 8:00 AM – 10:00 PM (Closed on Sunday)'}</p>
+          <p><strong className="text-slate-700">{isAr ? 'أطلس للتصديقات:' : 'Atlas Attestation:'}</strong> {isAr ? 'من الإثنين إلى السبت (الأحد مغلق)' : 'Mon–Sat (Sun Closed)'}</p>
         </div>
       </div>
     </aside>

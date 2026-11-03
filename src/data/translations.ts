@@ -22,8 +22,9 @@ export const TRANSLATIONS = {
     
     // Hero
     heroBadge: 'ONE-STOP GOVERNMENT TRANSACTIONS',
-    heroTitlePart1: 'Government Services & Business Solutions,',
-    heroTitlePart2: 'All in One Place.',
+    heroTitlePart1: 'Government Services',
+    heroTitlePart2: '& Business Solutions,',
+    heroTitlePart3: 'All in One Place.',
     heroDescription: 'Business setup, licensing, immigration, medical fitness and documentation support — delivered through one convenient service destination in Dubai.',
     heroSearchPlaceholder: 'Search any government service (e.g. Golden Visa, Trade License, Tasheel, Amer, Medical...)',
     heroSearchBtn: 'Find Service',
@@ -152,11 +153,11 @@ export const TRANSLATIONS = {
     faqDesc: 'Everything you need to know about Dubai government transactions, Golden Visas, corporate setups, and mobile services.',
 
     // Footer
-    footerDisclaimer: 'Emirates Secretarial Services LLC & Karama Business Center (KBC / KMFC, founded in 2013) is an authorized private center for government document clearing and medical fitness test facilitation in Dubai, UAE. Operating authorized desks for Amer (GDRFA License #772), Tasheel (MoHRE #4108), DET (#902), DLD Ejari, and co-located DHA Salem express medical screening.',
+    footerDisclaimer: 'Emirates Secretarial Services LLC & Karama Business Center (KBC / KMFC, founded in 2013) is an authorized private center for government document clearing and medical fitness center in Dubai, UAE. Operating authorized desks for Amer (GDRFA License #772), Tasheel (MoHRE #4108), and DET (#902).',
     footerAddress: 'Al Karama, Next to Karama Post Office, Dubai, UAE',
     footerPhone: '+971 4 342 6666',
     footerEmail: 'info@ess.ae',
-    footerHours: 'KMFC Medical: Daily 7:00 AM – 9:30 PM | Amer & Golden Visa: Mon–Sat 7:00 AM – 10:00 PM | Tasheel & DED: 8:00 AM – 10:00 PM (DED Sun 8AM–8PM) | Atlas Attestation: Mon–Fri 9:00 AM – 10:00 PM, Sat 9:00 AM – 4:00 PM',
+    footerHours: 'KMFC Medical: Daily 7:00 AM – 9:30 PM | Amer & Golden Visa: Mon–Sat 7:00 AM – 10:00 PM | Tasheel: Mon–Sun 8:00 AM – 10:00 PM | DED: Mon–Sat 8:00 AM – 10:00 PM (Closed on Sunday) | Atlas Attestation: Mon–Sat',
     footerCopyright: '© 2026 Emirates Secretarial Services & Karama Business Center. All rights reserved. ess.ae · info@ess.ae'
   },
   ar: {
@@ -182,8 +183,9 @@ export const TRANSLATIONS = {
 
     // Hero
     heroBadge: 'مركز شامل للمعاملات والخدمات الحكومية',
-    heroTitlePart1: 'الخدمات الحكومية وحلول الأعمال،',
-    heroTitlePart2: 'كلها في وجهة واحدة.',
+    heroTitlePart1: 'الخدمات الحكومية',
+    heroTitlePart2: 'وحلول الأعمال،',
+    heroTitlePart3: 'كلها في وجهة واحدة.',
     heroDescription: 'تأسيس الشركات، التراخيص، شؤون الإقامة والجوازات، الفحص الطبي ودعم المستندات والتوثيق — عبر وجهة خدمات موحدة ومريحة في دبي.',
     heroSearchPlaceholder: 'ابحث عن أي خدمة حكومية (مثل: الإقامة الذهبية، رخصة دبي، تسهيل، آمر، الفحص الطبي...)',
     heroSearchBtn: 'بحث فوري',
@@ -312,11 +314,11 @@ export const TRANSLATIONS = {
     faqDesc: 'كل ما تحتاج لمعرفته حول معاملات حكومة دبي، الإقامة الذهبية، الفحص الطبي في الكرامة، وتأسيس الشركات.',
 
     // Footer
-    footerDisclaimer: 'الإمارات لخدمات رجال الأعمال ش.ذ.م.م ومركز الكرامة للأعمال (تأسس عام 2013) هو مركز خاص مرخص لتخليص المعاملات الحكومية وتسهيل الفحص الطبي للإقامة في دبي. يضم مكاتب معتمدة لآمر (ترخيص إقامة دبي #772)، وتسهيل (وزارة الموارد البشرية #4108)، واقتصادية دبي (#902)، وتوثيق إيجاري (أراضي دبي)، وفحص سالم الطبي المعتمد.',
+    footerDisclaimer: 'الإمارات لخدمات رجال الأعمال ش.ذ.م.م ومركز الكرامة للأعمال (تأسس عام 2013) هو مركز خاص مرخص لتخليص المعاملات الحكومية ومركز للياقة الطبية في دبي. يضم مكاتب معتمدة لآمر (ترخيص إقامة دبي #772)، وتسهيل (وزارة الموارد البشرية #4108)، واقتصادية دبي (#902).',
     footerAddress: 'منطقة الكرامة، بجوار مكتب بريد الكرامة، دبي، الإمارات العربية المتحدة',
     footerPhone: '+971 4 342 6666',
     footerEmail: 'info@ess.ae',
-    footerHours: 'فحص سالم الطبي (KMFC): يومياً 7:00 ص – 9:30 م | آمر والإقامة الذهبية: 7:00 ص – 10:00 م (السبت 8:00 م) | تسهيل واقتصادية دبي: 8:00 ص – 10:00 م (الأحد 8 ص–8 م) | أطلس: 9:00 ص – 10:00 م (السبت 4 م)',
+    footerHours: 'فحص سالم الطبي (KMFC): يومياً 7:00 ص – 9:30 م | آمر والإقامة الذهبية: الإثنين–السبت 7:00 ص – 10:00 م | تسهيل: 8:00 ص – 10:00 م | اقتصادية دبي (DED): الإثنين–السبت 8:00 ص – 10:00 م (مغلق يوم الأحد) | أطلس للتصديقات: من الإثنين إلى السبت',
     footerCopyright: '© 2026 الإمارات لخدمات رجال الأعمال ومركز الكرامة للأعمال (KBC). جميع الحقوق محفوظة. ess.ae · info@ess.ae'
   }
 };
