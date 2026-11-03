@@ -1,0 +1,27 @@
+
+name: Test GoDaddy SSH Connection
+
+on:
+  workflow_dispatch:
+
+jobs:
+  ssh-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Start SSH agent
+        uses: webfactory/ssh-agent@v0.9.0
+        with:
+          ssh-private-key: ${{ secrets.GODADDY_SSH_KEY }}
+
+      - name: Add GoDaddy host key
+        run: |
+          mkdir -p ~/.ssh
+          ssh-keyscan -p "${{ secrets.GODADDY_PORT }}" \
+            "${{ secrets.GODADDY_HOST }}" >> ~/.ssh/known_hosts
+
+      - name: Test SSH connection
+        run: |
+          ssh -p "${{ secrets.GODADDY_PORT }}" \
+            "${{ secrets.GODADDY_USERNAME }}@${{ secrets.GODADDY_HOST }}" \
+            'echo "SSH connection successful"; whoami; pwd'
