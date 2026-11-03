@@ -1,0 +1,36 @@
+name: Deploy ESS to GoDaddy
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+concurrency:
+  group: ess-production-deployment
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    name: Deploy to Production
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Start SSH agent
+        uses: webfactory/ssh-agent@v0.9.0
+        with:
+          ssh-private-key: ${{ secrets.GODADDY_SSH_KEY }}
+
+      - name: Add GoDaddy host key
+        run: |
+          mkdir -p ~/.ssh
+          ssh-keyscan -p "${{ secrets.GODADDY_PORT }}" \
+            "${{ secrets.GODADDY_HOST }}" >> ~/.ssh/known_hosts
+
+      - name: Deploy ESS
+        run: |
+          ssh -o BatchMode=yes \
+            -o ConnectTimeout=30 \
+            -p "${{ secrets.GODADDY_PORT }}" \
+            "${{ secrets.GODADDY_USERNAME }}@${{ secrets.GODADDY_HOST }}" \
+            'bash ~/bin/deploy-ess.sh'
