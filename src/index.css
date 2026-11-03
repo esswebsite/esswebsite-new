@@ -1,0 +1,105 @@
+@import "tailwindcss";
+
+:root {
+  --brand-teal: #128B94;
+  --brand-teal-dark: #01403F;
+  --brand-teal-light: #EBF5F6;
+  --brand-grey: #959E9C;
+  --brand-charcoal: #1E2528;
+}
+
+@layer base {
+  html {
+    font-family: 'Cairo', 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    scroll-behavior: smooth;
+    color: #1E2528;
+  }
+
+  html[dir="rtl"], [dir="rtl"] {
+    font-family: 'Cairo', system-ui, sans-serif;
+  }
+}
+
+.font-arabic {
+  font-family: 'Cairo', 'Plus Jakarta Sans', system-ui, sans-serif;
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Custom brand helpers */
+.bg-brand-teal {
+  background-color: #128B94;
+}
+
+.bg-brand-teal-dark {
+  background-color: #01403F;
+}
+
+.bg-brand-teal-light {
+  background-color: #EBF5F6;
+}
+
+.text-brand-teal {
+  color: #128B94;
+}
+
+.text-brand-teal-dark {
+  color: #01403F;
+}
+
+.border-brand-teal {
+  border-color: #128B94;
+}
+
+.ring-brand-teal {
+  --tw-ring-color: #128B94;
+}
+
+/* Continuous Logo Marquee Animations */
+@keyframes marquee-scroll {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes marquee-scroll-reverse {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+.animate-marquee-infinite {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll 45s linear infinite;
+  will-change: transform;
+}
+
+.animate-marquee-infinite-reverse {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll-reverse 45s linear infinite;
+  will-change: transform;
+}
+
+.animate-marquee-infinite:hover,
+.animate-marquee-infinite-reverse:hover {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee-infinite,
+  .animate-marquee-infinite-reverse {
+    animation: none;
+    overflow-x: auto;
+  }
+}
+

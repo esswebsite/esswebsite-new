@@ -1,0 +1,8 @@
+{
+  "name": " ESS - Emirates Smart Services",
+  "description": "Premier semi-government service center in Dubai (Amer, Tasheel, Tadbeer, DED, GDRFA, Golden Visa, Notary Public) on ess.ae.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

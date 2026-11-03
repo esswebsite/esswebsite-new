@@ -1,0 +1,77 @@
+# ==============================================================================
+# GoDaddy / Apache / LiteSpeed / cPanel SPA URL Rewrite Configuration
+# Emirates Secretarial Services (ESS) - https://ess.ae
+# ==============================================================================
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # 1. Allow existing physical files and directories to be served directly
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
+
+  # 2. Explicit direct pass-through for SEO files
+  RewriteRule ^sitemap\.xml$ /sitemap.xml [L]
+  RewriteRule ^robots\.txt$ /robots.txt [L]
+  RewriteRule ^sitemap\.xsl$ /sitemap.xsl [L]
+
+  # 3. SPA Fallback: Rewrite all deep links, pages, and routes to /index.html
+  # Handles direct browser reloads and URL pasting for:
+  # /about, /departments, /pricelist, /knowledge-hub/*, /faq, /contact,
+  # /team, /ceo, /awards, /clients, /events, /gallery,
+  # /department/*, /service/*, etc.
+  RewriteRule ^index\.html$ - [L]
+  RewriteRule . /index.html [L]
+</IfModule>
+
+# Safety Fallback: Use index.html as the 404 handler if mod_rewrite is inactive
+ErrorDocument 404 /index.html
+
+# ==============================================================================
+# MIME Type Definitions
+# ==============================================================================
+<IfModule mod_mime.c>
+  AddType application/javascript .js .mjs
+  AddType text/css .css
+  AddType application/json .json
+  AddType image/svg+xml .svg .svgz
+  AddType image/webp .webp
+  AddType image/png .png
+  AddType image/jpeg .jpg .jpeg
+  AddType application/xml .xml .xsl
+  AddType font/woff .woff
+  AddType font/woff2 .woff2
+</IfModule>
+
+# ==============================================================================
+# Cache Control
+# ==============================================================================
+<IfModule mod_headers.c>
+  # HTML pages should never be cached permanently so releases load immediately
+  <FilesMatch "\.(html|htm)$">
+    Header set Cache-Control "no-cache, no-store, must-revalidate"
+    Header set Pragma "no-cache"
+    Header set Expires 0
+  </FilesMatch>
+
+  # Fingerprinted / hashed static assets can be cached aggressively
+  <FilesMatch "\.(js|mjs|css|webp|png|jpg|jpeg|gif|svg|woff|woff2)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+
+  # XML / robots files
+  <FilesMatch "\.(xml|xsl|txt)$">
+    Header set Cache-Control "public, max-age=3600, must-revalidate"
+  </FilesMatch>
+</IfModule>
+
+# ==============================================================================
+# Gzip / Brotli Compression
+# ==============================================================================
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css
+  AddOutputFilterByType DEFLATE application/javascript application/x-javascript application/json
+  AddOutputFilterByType DEFLATE image/svg+xml
+</IfModule>

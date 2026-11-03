@@ -1,0 +1,10 @@
+# robots.txt for https://ess.ae
+User-agent: *
+Allow: /
+
+# Disallow build / internal artifacts
+Disallow: /api/
+Disallow: /private/
+
+# Sitemap Location
+Sitemap: https://ess.ae/sitemap.xml

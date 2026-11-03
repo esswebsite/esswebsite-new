@@ -1,0 +1,817 @@
+# MASTER SEO AUDIT & IMPLEMENTATION SPECIFICATION
+## ESS / Karama Business Center — Complete Technical SEO, On-Page SEO, Schema, Local SEO & Lead Generation
+
+### 1. Your role and primary objective
+
+Act as a senior technical SEO engineer, local SEO strategist, structured-data specialist, conversion-rate optimization expert, and experienced frontend developer.
+
+The website and service pages have already been built, and the content for all pages is available. **Do not rebuild the website or replace existing content unnecessarily.** Audit the current implementation first, preserve working features, and improve what is missing or incorrect.
+
+Primary objective: maximize the website’s ability to earn relevant organic Google traffic in Dubai, improve visibility for service-specific search queries, increase qualified phone and WhatsApp inquiries, and create a technically sound foundation for long-term SEO growth.
+
+Use current Google Search Central documentation, official UAE government/authority sources for regulated service claims, and Schema.org definitions. Do not rely on outdated SEO myths.
+
+### 2. Mandatory rules
+
+1. Inspect the actual project files, page components, routes, metadata, service data, translations, schema, and deployment configuration before changing code.
+2. Generate a complete inventory of all indexable URLs in English and Arabic, if both versions exist.
+3. Audit every page individually. Do not assume that fixing the homepage fixes the service pages.
+4. Preserve existing content, design, functionality, branding, and integrations unless a change is required and justified.
+5. Do not invent keywords, search volumes, rankings, customer reviews, official fees, legal references, authorizations, certifications, or service guarantees.
+6. Do not mark an item as fixed unless you have verified the actual implementation.
+7. Do not create artificial content or repeat keywords unnaturally to increase keyword density.
+8. Do not add every available schema type to every page. Implement only schema types that accurately describe visible, verified page content.
+9. Do not guarantee first-page rankings, instant indexing, rich results, or a specific ranking timeline.
+10. Separate findings into **Critical, High, Medium, and Low priority**.
+
+Before implementing changes, create a baseline report containing the current URL structure, page inventory, detected SEO problems, existing metadata, schema types, indexability, and the files that need modification.
+
+---
+
+# PART A — KEYWORD STRATEGY & SEARCH INTENT
+
+### 3. Create a keyword-to-URL mapping for every service page
+
+Build a complete SEO mapping spreadsheet or structured report with these fields:
+
+- Page name and page type
+- Current URL and intended canonical URL
+- Primary keyword
+- Secondary keywords
+- Long-tail keywords
+- Local-intent keywords
+- Transactional/commercial search intent
+- Informational search intent, where relevant
+- Searcher’s likely goal
+- Recommended title tag
+- Recommended meta description
+- H1
+- Supporting H2 topics
+- Relevant internal-link targets
+- Existing competing pages on our own website
+- Keyword cannibalization risk
+- Content or technical gaps
+- Current implementation status
+
+Use the actual services provided by ESS/KBC to build this map. Examples of possible keyword patterns include:
+
+- `[service name] Dubai`
+- `[service name] in Karama`
+- `[service name] near me`
+- `[service name] requirements`
+- `[service name] documents required`
+- `[service name] fees`
+- `[service name] application`
+- `[service name] typing center Dubai`
+- `[service name] processing assistance`
+
+These are examples of patterns, not confirmation that every phrase is relevant or has meaningful search demand. Validate the phrases against Google Search Console, Keyword Planner, actual customer inquiries, and SERP research wherever possible.
+
+### 4. Match every page to the correct intent
+
+For each service page:
+
+- Identify whether the searcher wants to apply, complete a transaction, understand eligibility, compare costs, or find a nearby service provider.
+- Give the page one clear primary topic.
+- Include secondary keywords only where they naturally fit the service.
+- Use location modifiers only where they are relevant to the real service area.
+- Distinguish services that sound similar but have different eligibility, legal processes, or authority requirements.
+- Keep informational articles separate from transactional service pages when the intent genuinely differs.
+- Avoid creating multiple pages that target essentially the same intent without a clear reason.
+
+Do not force the exact primary keyword into every heading. Use natural variations, terminology customers actually use, and the official service name where appropriate.
+
+Identify keyword cannibalization by comparing page purpose, titles, H1s, content, internal links, and available Search Console query data. Recommend consolidation or differentiation only when the evidence supports it.
+
+### 5. Validate keyword demand and competition
+
+Where data is available, assess:
+
+- Monthly search demand in Dubai/UAE
+- Search intent
+- Relevant SERP competitors
+- Competitor page type and content coverage
+- Search Console impressions, clicks, CTR and average position
+- Current rankings and ranking trends
+- Paid search terms and qualified-lead outcomes
+- Keyword-to-page relevance
+
+Never invent search volume, difficulty, competition, or ranking estimates. Label unavailable information as “not verified” and specify the data source needed.
+
+---
+
+# PART B — TITLE TAGS, META DESCRIPTIONS & HEADINGS
+
+### 6. Optimize the title tag of every indexable page
+
+Every indexable page must have a unique, accurate, descriptive HTML `<title>`.
+
+For each title:
+
+- Lead with the clearest service or search-intent phrase when appropriate.
+- Include Dubai or Karama where it helps communicate relevant local intent.
+- Include ESS, KBC, or the correct customer-facing business name when useful.
+- Communicate the actual service offered.
+- Convey convenience, assistance, or trust only when supported by the page and business facts.
+- Avoid keyword stuffing, repetitive location names, exaggerated claims, and unnecessary boilerplate.
+- Avoid duplicate titles across service pages.
+- Keep titles concise and meaningful, then review how they appear in real search results.
+
+Possible title pattern:
+
+`[Service Name] in Dubai | [Accurate Benefit] | [Business Name]`
+
+This is a template, not a requirement to force all three elements into every title. Select the wording that best matches the individual page and its search intent.
+
+Do not put “official government service” or imply that the business is a government authority unless that statement is legally accurate and substantiated.
+
+### 7. Optimize meta descriptions for relevance and clicks
+
+Every important indexable page should have a unique, useful meta description.
+
+The description should normally communicate:
+
+1. The exact service or problem being addressed.
+2. The relevant location, when appropriate.
+3. The genuine convenience or assistance offered.
+4. A meaningful trust signal supported by facts.
+5. A clear, natural next step.
+
+Example structure:
+
+“Need [service] in Dubai? [Business name] helps customers with [accurate scope of assistance]. Check requirements and fees, then contact our team to get started.”
+
+Rewrite this example for the actual service. Do not publish generic descriptions across all pages.
+
+Make the title, meta description, H1, visible page content, and target search intent **consistent in meaning**, not mechanically identical. The title should identify the page, while the description should persuade the right user to click.
+
+Google may generate a different title link or snippet based on the search query and page content. Do not promise that Google will always display the supplied description.
+
+Do not use the meta keywords tag as an SEO tactic.
+
+### 8. Audit H1, H2, H3 and semantic headings
+
+For every page:
+
+- Confirm that the main service topic is clearly represented in the visible H1.
+- Keep the H1 specific to the page rather than repeating the sitewide slogan.
+- Use H2s for major user questions and content sections.
+- Use H3s for subordinate topics where needed.
+- Ensure headings accurately describe the content that follows.
+- Remove empty, duplicated, irrelevant, or decorative headings that create confusion.
+- Do not use headings solely to insert more keyword variations.
+- Check that headings are actual semantic HTML elements, not merely styled `<div>` elements.
+- Ensure the mobile layout preserves readability and heading hierarchy.
+
+Create a page-by-page report of title, description, H1, H2 coverage, duplicates, missing fields, and recommended fixes.
+
+### 9. Improve visible page content
+
+Check that each service page clearly explains, where applicable:
+
+- What the service is
+- Who the service is for
+- What ESS/KBC actually does
+- Which authority or organization administers the underlying process
+- Eligibility and limitations
+- Documents required
+- Steps to apply or obtain assistance
+- Fees and potential additional charges
+- Processing times and factors affecting them
+- Whether an appointment is required
+- Where the service can be accessed
+- What happens after submitting an inquiry
+- Relevant FAQs
+- Contact methods and the next action
+
+Use original, accurate, useful content. Do not invent word-count targets or expand pages with filler.
+
+---
+
+# PART C — TECHNICAL SEO & CRAWLABILITY
+
+### 10. Audit URL architecture
+
+Inspect every route and ensure that each important service page has a stable, unique, shareable URL.
+
+Preferred principles:
+
+- Use descriptive, readable URLs.
+- Use lowercase slugs and consistent hyphenation.
+- Avoid unnecessary parameters and duplicate URL variants.
+- Ensure each page can load directly when its URL is entered into the browser.
+- Ensure refreshing a service page does not produce a 404.
+- Ensure important pages are reachable through normal crawlable HTML links.
+- Use HTTP 200 for valid pages.
+- Return correct 404 or 410 responses for genuinely unavailable content where appropriate.
+- Avoid creating multiple indexable URLs for the same page.
+- If the website is a JavaScript application, verify that Google can discover and render each unique page.
+- Evaluate server-side rendering or prerendering if it materially improves crawl reliability, page performance, or initial HTML availability.
+
+Do not rely on hash fragments such as `#service/example` as the only way to identify different indexable service pages. Use real URL paths for separate pages where feasible.
+
+Do not change existing URLs casually. If a route migration is required, prepare a redirect and internal-link migration plan first.
+
+### 11. Canonical URLs
+
+Audit canonical tags on every indexable page.
+
+Requirements:
+
+- Each unique, indexable service page should normally have a self-referencing canonical pointing to its preferred absolute URL.
+- Canonicals must use the correct protocol, hostname, path, and trailing-slash convention.
+- Canonicals must not point every service page to the homepage.
+- Canonicals must not point to redirected, broken, irrelevant, or non-indexable URLs.
+- Ensure the canonical agrees with internal links and the XML sitemap.
+- Resolve HTTP/HTTPS, www/non-www, trailing-slash, capitalization, and parameter-based duplicates consistently.
+- For genuinely duplicate or near-duplicate URLs, choose the preferred URL and use redirects where appropriate.
+- Inspect canonicals in the rendered HTML as well as the original response where applicable.
+- Do not use canonical tags as a substitute for correct redirects or appropriate `noindex` controls.
+
+For English and Arabic pages, make sure language alternatives are not incorrectly canonicalized to the opposite language. Establish the correct canonical and hreflang relationship for each language version.
+
+### 12. Robots.txt and indexing controls
+
+Check:
+
+- `robots.txt` exists at the correct root URL.
+- It does not accidentally block important pages, CSS, JavaScript, images, or required resources.
+- It does not unintentionally block the service directories or Arabic pages.
+- The sitemap declaration is correct if included.
+- No important page has an unintended `noindex` directive.
+- No important page is blocked from crawling while relying on Google to read its `noindex` tag.
+- Staging or development environments are not accidentally indexable.
+- Production pages do not retain development robots directives.
+- Internal search results, tracking parameters, private areas, and low-value utility URLs are handled appropriately.
+
+Do not block URLs indiscriminately. Inspect the current implementation and the actual purpose of each route before changing directives.
+
+### 13. XML sitemap
+
+Create or verify a valid, production-accessible XML sitemap.
+
+Requirements:
+
+- Include only canonical, indexable, successful URLs that should appear in search results.
+- Include all important English and Arabic pages.
+- Exclude redirected URLs, 404 pages, `noindex` pages, and non-canonical duplicates.
+- Use absolute URLs with the correct production hostname.
+- Use valid XML syntax and the correct namespace.
+- Use `lastmod` only when a meaningful content modification date is available; do not update it falsely every day.
+- Implement a sitemap index if multiple sitemaps are useful for the site size or architecture.
+- Keep the sitemap synchronized when pages are added, removed, or redirected.
+- Ensure the sitemap does not contain development URLs or staging domains.
+- Submit the sitemap in Google Search Console after deployment.
+
+If the site has language alternatives, implement hreflang annotations correctly in the pages or sitemap. Avoid redundant or contradictory implementations.
+
+Validate the final sitemap and report the number of submitted URLs, valid URLs, excluded URLs, and any mismatches. Sitemap submission does not guarantee indexing.
+
+### 14. HTTP status codes and redirect audit
+
+Test:
+
+- All primary navigation links
+- Every service page
+- All breadcrumb links
+- All CTA destinations
+- Language-switcher links
+- Internal links in the footer
+- XML sitemap URLs
+- Old URLs that may already have been published
+
+Identify 404 errors, 5xx errors, redirect chains, redirect loops, broken internal links, incorrect canonical targets, and links to staging environments.
+
+Use permanent redirects for permanent URL changes when appropriate. Preserve relevant traffic and link equity by redirecting old URLs to the closest equivalent replacement, not automatically to the homepage.
+
+Do not redirect unrelated old pages to irrelevant destinations.
+
+### 15. JavaScript SEO and rendering
+
+For every important page, verify that:
+
+- The main content exists in the rendered DOM.
+- The title, description, canonical, robots directives, headings, and structured data correspond to the correct URL.
+- Important text is not available only after a user clicks a button.
+- Navigation links use crawlable anchor elements with meaningful `href` values.
+- Critical content does not depend on inaccessible scripts or blocked resources.
+- Direct navigation and browser refresh work.
+- Client-side navigation does not leave stale metadata from the previous page.
+- Googlebot can access the same meaningful content as users.
+- No essential content is hidden from crawlers through implementation errors.
+
+Use URL Inspection and rendered-page testing after deployment.
+
+---
+
+# PART D — STRUCTURED DATA / SCHEMA.ORG
+
+### 16. Audit all existing schema before adding more
+
+Inspect every page for existing JSON-LD, microdata, or RDFa.
+
+Create a schema inventory with:
+
+- Page URL
+- Schema type
+- JSON-LD source/component
+- Entity name and `@id`
+- Required properties
+- Recommended properties
+- Whether the markup matches visible page content
+- Validation errors and warnings
+- Whether Google supports a corresponding search feature
+- Corrective action
+
+Prefer JSON-LD where appropriate. Avoid duplicate, contradictory, automatically generated, or misleading schema blocks.
+
+Do not assume that valid schema automatically improves rankings or guarantees a rich result.
+
+### 17. Select schema by actual page purpose
+
+Evaluate the following types, using only those appropriate to the site:
+
+**A. `Organization`**
+
+Use on the homepage or appropriate business identity page to describe the actual organization. Include accurate name, URL, logo, and official contact details where supported.
+
+**B. `LocalBusiness` or the most accurate applicable subtype**
+
+Use for the actual customer-facing business location when the type and eligibility fit. Include verified business name, address, telephone, URL, opening hours, and other supported details.
+
+Use a stable, consistent `@id` for the business entity across the website. Do not invent additional branches or separate businesses merely to add schema.
+
+**C. `WebSite`**
+
+Evaluate for the main website identity and site-name information. Keep its name and URL consistent with the real website.
+
+**D. `WebPage`**
+
+Evaluate for page identity and its relationship to the website and primary entity.
+
+**E. `Service`**
+
+Use on relevant service pages when it accurately describes the actual service offered. Distinguish the business’s assistance from the government authority that administers or approves the underlying process.
+
+**F. `BreadcrumbList`**
+
+Use on pages with visible breadcrumbs. Ensure the structured breadcrumb sequence matches the visible user journey and points to valid URLs.
+
+**G. `Article` or `BlogPosting`**
+
+Use on genuine articles and blog posts. Include accurate headline, author or publisher details, publication date, and modification date where applicable. Do not use article schema for ordinary service pages merely to add more markup.
+
+**H. `FAQPage`**
+
+Consider only for real, visible FAQs that meet the applicable schema rules. Do not promise FAQ rich results. Do not add hidden questions, fake answers, or repeated FAQ blocks solely for SEO.
+
+**I. `ImageObject`, `VideoObject`, `HowTo`, `Product`, `Review`, `AggregateRating`, `Event`, `JobPosting`, `ProfilePage`, and other types**
+
+Use only if the website genuinely contains the relevant content and satisfies the type’s requirements and current Google policies. Do not add these types to service pages by default. For example, do not use `Product` for an ordinary service merely to pursue product rich results.
+
+### 18. Government-related schema and trust accuracy
+
+ESS/KBC is a service provider, not automatically the government authority responsible for every service it assists with.
+
+- Do not use a government organization type or `GovernmentService` provider relationship to imply that ESS/KBC is a government department.
+- Name the relevant authority only when factually appropriate and clearly distinguish the authority from the business providing assistance.
+- Use “authorized,” “approved,” “official,” “government partner,” or similar claims only when current documentary evidence supports the precise claim.
+- Do not use government emblems or logos without the necessary permission.
+- Do not represent a private service fee as an official government fee.
+- Do not mark up reviews or ratings that were not genuinely collected and represented according to Google’s rules.
+- Do not add self-serving `Review` or `AggregateRating` markup about the business on its own website in an attempt to obtain review stars.
+- Do not fabricate review counts, ratings, service guarantees, or official relationships.
+
+### 19. Schema implementation and validation
+
+For each schema block:
+
+- Use valid JSON-LD syntax.
+- Use absolute, valid URLs.
+- Keep entity names, telephone numbers, addresses, logos, and hours consistent with visible content and the verified business profile.
+- Use stable `@id` values for the same entities across pages.
+- Avoid duplicate entities describing the same business.
+- Ensure page-specific data is genuinely page-specific.
+- Check required properties and Google-specific guidelines.
+- Validate with Schema.org Validator and Google Rich Results Test where applicable.
+- Record the validation date, tested URL, result, and unresolved warnings.
+- Re-test after major template or routing changes.
+
+Only report a schema feature as implemented when it is present in the actual deployed or tested output.
+
+---
+
+# PART E — BREADCRUMBS & INTERNAL LINKING
+
+### 20. Visible breadcrumbs
+
+Add or correct breadcrumbs on relevant service, department, and article pages.
+
+Example hierarchy:
+
+`Home > Department > Service`
+
+Requirements:
+
+- Reflect the actual page hierarchy and user journey.
+- Keep labels short, meaningful, and consistent with page titles.
+- Link parent levels to valid, relevant pages.
+- Make the current page clearly identifiable.
+- Ensure the layout works on mobile and in Arabic RTL.
+- Do not make the homepage or every breadcrumb level point to the same URL.
+- Match `BreadcrumbList` structured data to the visible breadcrumb sequence.
+- Test all breadcrumb links and avoid loops or broken destinations.
+
+### 21. Internal linking architecture
+
+Audit the entire website’s internal link structure.
+
+- Every important service page should be discoverable through at least one relevant internal link.
+- Link from department pages to their service pages.
+- Link between genuinely related services where the relationship helps the user.
+- Link from relevant articles to the service pages they support.
+- Link from service pages to relevant requirements, fees, FAQs, and contact or booking pages.
+- Use descriptive, natural anchor text.
+- Use consistent links to preferred canonical URLs.
+- Identify orphan pages, pages buried too deeply, broken links, and excessive repetitive sitewide anchors.
+- Do not insert irrelevant internal links just to increase link count.
+- Avoid forcing exact-match keyword anchors into every link.
+- Ensure key pages are reachable without relying exclusively on a site search, carousel, or JavaScript click handler.
+
+Create a crawlable page hierarchy and a report of orphan URLs and internal-link opportunities.
+
+### 22. External references
+
+Where the page makes important legal, eligibility, fee, or process claims, link to relevant official sources when useful.
+
+Prioritize the appropriate UAE government or responsible authority source. Check that the link is current and directly supports the claim.
+
+Use clear attribution to distinguish:
+
+- Official authority requirements
+- Government charges
+- Service-provider charges
+- Optional third-party charges
+- ESS/KBC assistance
+
+Do not link to irrelevant sources merely to create outbound links.
+
+---
+
+# PART F — ENGLISH, ARABIC & LOCAL SEO
+
+### 23. Multilingual SEO
+
+If the website offers English and Arabic versions:
+
+- Give each language version a stable, crawlable URL.
+- Use the correct `lang` attribute on the document.
+- Implement reciprocal `hreflang="en"` and `hreflang="ar"` annotations where appropriate.
+- Use `hreflang="x-default"` only where a suitable default page exists.
+- Ensure each language version references the correct canonical URL.
+- Make alternate-language annotations reciprocal and valid.
+- Translate titles, descriptions, headings, navigation, forms, FAQs, and structured data appropriately.
+- Do not translate English keywords word-for-word when actual Arabic search behavior differs.
+- Research Arabic queries independently.
+- Use proper RTL direction, alignment, punctuation, telephone display, and mobile layout.
+- Ensure the language switcher links to the corresponding page, not always to the other language’s homepage.
+- Avoid declaring an Arabic page as English or an English page as Arabic.
+- Do not create empty or machine-translated placeholder pages for indexing.
+
+### 24. Local SEO and business identity
+
+Audit the website’s business information against verified business records and the current Google Business Profile.
+
+Check consistency of:
+
+- Business name
+- Public address
+- Telephone
+- Opening hours
+- Website URL
+- Map/location details
+- Service descriptions
+- Business category and real-world identity
+
+Use the actual customer-facing business identity appropriately. Do not stuff city names, keywords, or extra service phrases into the business name in schema.
+
+Clearly communicate the location, directions, available services, and contact methods. Add useful location information only when accurate.
+
+Do not create fake location pages for areas where the business does not have a genuine presence. Do not use fake addresses, virtual locations represented as staffed offices, or fabricated local testimonials.
+
+### 25. Local trust and conversion signals
+
+Where relevant and verified, display:
+
+- Correct business contact information
+- Actual address and map
+- Accurate opening hours
+- Real photographs of the office
+- Clear explanation of the company’s role
+- Genuine customer testimonials with appropriate permissions
+- Accurate credentials or authorization details
+- Transparent fee explanations
+- Clear service requirements
+- Accessible phone, WhatsApp, and appointment options
+
+Never invent a trust badge or imply a government relationship that has not been established.
+
+---
+
+# PART G — IMAGES, MEDIA & PAGE EXPERIENCE
+
+### 26. Image SEO
+
+For important images:
+
+- Use descriptive filenames where practical.
+- Write useful, contextual alt text for informative images.
+- Use empty alt text for decorative images.
+- Avoid repeating keywords in every alt attribute.
+- Ensure image URLs load successfully.
+- Use appropriate dimensions and modern formats such as WebP or AVIF when supported.
+- Implement responsive images and avoid unnecessarily large downloads.
+- Define image dimensions or aspect ratios to reduce layout shifts.
+- Ensure the main image or other important content is discoverable.
+- Optimize hero and above-the-fold images carefully.
+- Do not lazy-load the main LCP image if doing so delays its loading; use appropriate loading priority when justified.
+- Lazy-load suitable below-the-fold images.
+
+Check whether important images are blocked, missing, oversized, duplicated, or inaccessible.
+
+### 27. User experience and accessibility
+
+Test the website on desktop, tablet, and mobile.
+
+Check:
+
+- Mobile navigation and menus
+- Font size and readability
+- Contrast and visible focus states
+- Semantic headings and landmarks
+- Keyboard navigation
+- Form labels and error messages
+- Descriptive button and link text
+- WhatsApp and telephone CTAs
+- Booking form usability
+- RTL and language switching
+- Sticky elements obscuring content
+- Popups blocking important information
+- Broken buttons or misleading CTAs
+- Footer links and contact details
+
+Do not hide essential content behind interactions that prevent users or crawlers from accessing it.
+
+---
+
+# PART H — PERFORMANCE & CORE WEB VITALS
+
+### 28. Performance audit
+
+Measure actual page performance; do not estimate it from source code alone.
+
+Review Core Web Vitals:
+
+- Largest Contentful Paint (LCP): target 2.5 seconds or less.
+- Interaction to Next Paint (INP): target 200 milliseconds or less.
+- Cumulative Layout Shift (CLS): target 0.1 or less.
+
+These are targets to evaluate at the 75th percentile when suitable real-user data is available. A local Lighthouse score alone does not establish that field targets have passed.
+
+Check:
+
+- Server response times
+- Render-blocking CSS and JavaScript
+- Unused or oversized JavaScript
+- Image optimization
+- Font loading
+- Third-party scripts and widgets
+- Caching and compression
+- Layout shifts
+- Mobile network performance
+- Long tasks and interaction responsiveness
+- Unnecessary API calls
+- Large DOM or expensive rendering
+- Consent banners and chat widgets affecting performance
+
+Optimize without breaking functionality or removing important analytics.
+
+Run Lighthouse or PageSpeed Insights against the homepage and a representative sample of high-priority service pages. Record the actual results and prioritize fixes by business impact.
+
+---
+
+# PART I — SECURITY, FORMS & LEAD TRACKING
+
+### 29. Forms and privacy
+
+Check every inquiry, appointment, and contact form.
+
+- Validate fields on both client and server where applicable.
+- Provide clear success and error states.
+- Prevent accidental duplicate submissions.
+- Ensure submissions reach the intended destination.
+- Protect personal information.
+- Avoid placing personal data in URLs, analytics events, or browser console logs.
+- Check spam protection and abuse controls.
+- Confirm that form submissions work in production, not just in a preview.
+- Verify HTTPS and avoid exposing API secrets in frontend code.
+- Ensure privacy notices and consent mechanisms are appropriate for the actual data collection.
+- Do not claim that a lead was submitted successfully unless the submission was confirmed.
+
+### 30. Google Analytics and Google Ads conversion tracking
+
+Audit GA4, Google Tag Manager, and Google Ads tracking if installed.
+
+Create or verify appropriate events for:
+
+- `service_page_view`
+- `phone_click`
+- `whatsapp_click`
+- `form_start`
+- `form_submit_success`
+- `appointment_request_success`
+- `qualified_lead`
+- `transaction_completed`, if applicable
+
+Use a consistent naming convention across the implementation.
+
+Requirements:
+
+- Fire success events only after a genuine successful action.
+- Do not count a button click as a completed lead if submission failed.
+- Prevent duplicate conversion events.
+- Keep event parameters useful but free of personal data.
+- Test events in the appropriate debugging tools.
+- Separate raw inquiries from qualified leads where the CRM or sales process allows.
+- Configure Google Ads conversions according to the actual lead journey.
+- Verify consent and tag behavior against the applicable privacy requirements.
+- Do not claim a conversion is working until it has been tested end to end.
+
+If CRM integration is not available, clearly report that qualification and revenue attribution require a separate integration or verified manual process.
+
+---
+
+# PART J — GOOGLE ADS LANDING-PAGE ALIGNMENT
+
+### 31. Service-specific landing page audit
+
+For each important Google Ads landing page:
+
+- Align the page with the ad group and search intent.
+- Match the main service wording without copying misleading promises.
+- Present the service, location, requirements, and next step clearly.
+- Ensure the primary CTA is visible on mobile.
+- Make phone and WhatsApp actions work correctly.
+- Explain the business’s role and the actual service process.
+- Show fees and exclusions clearly where available.
+- Ensure the page loads quickly and works without broken scripts.
+- Avoid distracting elements and unnecessary form fields.
+- Check trust signals and contact information.
+- Ensure the page does not promise guaranteed approval or processing times unless the exact claim is substantiated.
+- Avoid sending every keyword to the homepage when a more relevant service page exists.
+
+Do not create separate thin pages solely for each keyword variation. Build distinct landing pages only when the user intent, service, or offering genuinely differs.
+
+Measure qualified inquiries, cost per qualified lead, and completed transactions—not only clicks or raw form submissions.
+
+---
+
+# PART K — CONTENT QUALITY & TRUST
+
+### 32. Review all supplied content without replacing it blindly
+
+Audit every service page for:
+
+- Factual accuracy
+- Originality and usefulness
+- Correct service terminology
+- Correct eligibility and document requirements
+- Accurate legal and official references
+- Clear explanation of the provider’s role
+- Fee transparency
+- Outdated dates or figures
+- Unsupported guarantees
+- Duplicate paragraphs across pages
+- Misleading claims about official authority
+- Broken citations or outbound links
+- Missing author or reviewer details where genuinely useful
+- Relevant FAQs based on actual customer questions
+
+Use official sources for regulatory claims. Record the source URL and the date checked for volatile details such as fees, eligibility, and processing times.
+
+If a fact cannot be verified, flag it for human approval instead of inventing an answer.
+
+Do not remove useful content just because it is long. Do not add filler merely to reach a word count. Do not copy competitor pages.
+
+---
+
+# PART L — TECHNICAL QUALITY ASSURANCE
+
+### 33. Automated and manual tests
+
+Run the tests available in the project and report their real results.
+
+Check:
+
+- Production build
+- TypeScript or equivalent type checking
+- Linting where configured
+- Unit and integration tests where available
+- All primary routes
+- Direct URL access and refresh
+- All language routes
+- Metadata per URL
+- Canonical URL per URL
+- Robots directives per URL
+- Sitemap validity and membership
+- Structured-data syntax and page relevance
+- Breadcrumb functionality
+- Internal-link status
+- HTTP status codes
+- Image loading
+- Form submission
+- Phone and WhatsApp links
+- Analytics event behavior
+- Mobile responsiveness
+- Accessibility basics
+- Performance on representative pages
+
+If a test cannot be run because deployment, credentials, real integrations, or required data are unavailable, label it **Not tested** or **Blocked**. Do not claim that it passed.
+
+### 34. Required audit output
+
+Produce a master report with these columns:
+
+| Field | Required information |
+|---|---|
+| Priority | Critical / High / Medium / Low |
+| Page or URL | Exact affected URL |
+| Category | Technical / On-page / Schema / Content / Local / Analytics |
+| Issue | What is actually wrong |
+| Evidence | Code location, test output, or URL result |
+| Recommended fix | Exact action |
+| File or component | Actual project location |
+| Status | Not started / Fixed / Verified / Blocked |
+| Verification method | How the fix was tested |
+| Remaining risk | Anything still unresolved |
+
+Also produce:
+
+1. Complete URL inventory.
+2. Keyword-to-URL map.
+3. Title, meta description, and H1 audit.
+4. Canonical and indexability report.
+5. Sitemap and robots.txt report.
+6. Schema inventory and validation report.
+7. Breadcrumb and internal-link report.
+8. English/Arabic and hreflang report, if applicable.
+9. Performance and mobile report.
+10. Google Ads and conversion-tracking report.
+11. List of unverified business, fee, legal, and trust claims.
+12. Prioritized implementation backlog.
+
+### 35. Implementation sequence
+
+Follow this order:
+
+**Phase 1 — Critical technical blockers**
+- Broken routes, accidental `noindex`, robots blocks, incorrect canonicals, invalid redirects, missing pages, production build errors.
+
+**Phase 2 — Crawlability and indexation**
+- URL architecture, rendered content, sitemap, internal links, canonical consistency, correct HTTP status codes.
+
+**Phase 3 — On-page SEO**
+- Keyword mapping, unique titles and descriptions, H1/H2 review, service-specific content alignment, internal linking.
+
+**Phase 4 — Schema and local trust**
+- Accurate business identity, applicable LocalBusiness/Organization, Service, BreadcrumbList, and other relevant markup.
+
+**Phase 5 — Multilingual and content quality**
+- Arabic keyword research, hreflang, translation accuracy, official-source verification, duplicate-content differentiation.
+
+**Phase 6 — Performance and conversion**
+- Core Web Vitals, mobile experience, lead forms, WhatsApp/phone tracking, Ads landing-page alignment.
+
+**Phase 7 — Final verification**
+- Retest the affected URLs, validate structured data, submit the sitemap, inspect indexation, and document any remaining issues.
+
+### 36. Final instructions
+
+Work against the existing website and its real source files. Make changes in small, reviewable groups and preserve working functionality.
+
+Before modifying routes or shared templates, assess the impact on all pages and existing links.
+
+At the end, provide:
+
+- What was audited
+- What was changed
+- What passed verification
+- What failed verification
+- What remains untested
+- What requires human approval
+- What requires deployment or Search Console access
+- The five highest-priority next actions
+
+**Do not state that the website is “fully SEO optimized” simply because code was added.** Confirm what is implemented, what has been tested, and what can only be confirmed after deployment and Google recrawling.
+
+The goal is a technically sound, trustworthy, search-intent-aligned website that can compete for relevant Dubai service searches and convert the right visitors into real business inquiries.

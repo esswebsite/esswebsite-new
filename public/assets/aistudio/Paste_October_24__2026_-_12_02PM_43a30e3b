@@ -1,0 +1,588 @@
+# KBC / ESS — Knowledge Hub, Government Updates & SEO Implementation Brief
+
+**Website:** https://www.kbc.center/  
+**Business:** Karama Business Center (KBC) / Emirates Secretarial Services (ESS)  
+**Purpose:** Research, write and publish 20 authoritative UAE government-service articles and build a fully SEO-optimized Knowledge Hub with individual, indexable article pages.
+
+## 1. Your Role
+
+Act as a senior UAE government-services researcher, regulatory-content specialist, technical SEO architect, UX designer and React/TypeScript developer.
+
+Work directly with the existing KBC/ESS website codebase. First inspect the current application, service data, department data, routing, metadata, existing Knowledge Hub, styling system and reusable components.
+
+Do not rebuild the website unnecessarily. Extend the existing architecture, preserve its visual identity, and reuse the existing service and department records wherever possible.
+
+**Important:** Do not publish unverified legal, regulatory, government fee, eligibility or processing-time claims. Do not make changes to the live production website without explicit approval.
+
+## 2. Research Official Government Updates Before Writing
+
+Research recent official announcements and service changes relevant to KBC/ESS customers.
+
+Use the following official sources as starting points:
+
+- UAE Government: https://u.ae/
+- Dubai Government: https://www.dubai.ae/
+- UAE Cabinet: https://uaecabinet.ae/
+- ICP: https://icp.gov.ae/
+- ICP Smart Services: https://smartservices.icp.gov.ae/
+- GDRFA Dubai: https://gdrfad.gov.ae/
+- GDRFA Services: https://gdrfad.gov.ae/en/services
+- Dubai DET: https://www.dubaidet.gov.ae/
+- Invest in Dubai: https://www.investindubai.gov.ae/
+- MoHRE: https://www.mohre.gov.ae/
+- Tasheel: https://tasheel.mohre.gov.ae/
+- Dubai Land Department: https://dubailand.gov.ae/
+- Ejari: https://ejari.dubailand.gov.ae/PublicPages/ejari.htm
+- Dubai Municipality: https://www.dm.gov.ae/
+- Dubai Health Authority: https://www.dha.gov.ae/
+- DHA Sheryan: https://services.dha.gov.ae/sheryan/
+- MoFA: https://www.mofa.gov.ae/
+- MoFA Attestation: https://www.mofa.gov.ae/en/Services/Attestation
+- Dubai Courts: https://www.dc.gov.ae/
+- Ministry of Justice: https://www.moj.gov.ae/
+- RTA Dubai: https://www.rta.ae/
+- Dubai Police: https://www.dubaipolice.gov.ae/
+- Federal Tax Authority: https://tax.gov.ae/
+- Ministry of Finance: https://mof.gov.ae/
+
+Discover additional official sources when a topic requires them.
+
+### Research rules
+
+For every article:
+
+1. Identify the responsible government authority for the specific service.
+2. Find the exact official service page or dated announcement supporting the article.
+3. Prefer current official announcements, legislation, service guides and application portals over third-party summaries.
+4. Record the article's research date and each source's publication or last-updated date when available.
+5. Verify eligibility, required documents, application steps, fees and processing times only when the official source explicitly supports them.
+6. Separate government fees from private typing, courier, medical-provider and other service charges.
+7. Clearly distinguish a newly announced change from an existing rule or general guidance.
+8. If a source is inaccessible or conflicting, flag the claim for human verification instead of guessing.
+9. Never invent legislation, fee amounts, announcement dates, URLs or government requirements.
+10. Never imply KBC/ESS can guarantee a government approval, waive a statutory requirement or influence a sovereign decision.
+11. Do not describe an announcement as a new policy unless the source establishes that it is new.
+12. Where relevant, state that requirements may differ by visa type, applicant category, company classification, document origin or issuing authority.
+
+For time-sensitive information, display:
+
+- **Last researched:** actual date checked.
+- **Official source:** link to the exact supporting announcement or service page.
+- **Important:** a concise eligibility or applicability disclaimer when necessary.
+
+Do not fabricate research dates or automatically update a date without conducting a fresh check.
+
+## 3. Create These 20 Knowledge Hub Articles
+
+Use these as the initial editorial roadmap. Confirm each topic's current facts against official sources before drafting. Where an indicated recent development cannot be verified, retain the subject but write it as an evergreen guide rather than falsely presenting it as breaking news.
+
+### Article 1 — Emirates ID Renewal: What UAE Residents Need to Know
+
+**Suggested URL:** `/knowledge-hub/emirates-id-renewal-guide/`
+
+Explain renewal eligibility, expiry dates, required information, application channels, potential fines where applicable, biometrics where required, card delivery and how to check application status.
+
+Research the official ICP announcement concerning the expanded early-renewal window for UAE citizens. Do not assume the same renewal window applies to expatriate residents.
+
+**Related services:** Emirates ID application, renewal, replacement and status assistance.
+
+### Article 2 — UAE Residence Visa Renewal: Documents, Steps and Common Delays
+
+**Suggested URL:** `/knowledge-hub/uae-residence-visa-renewal/`
+
+Explain the general renewal process, sponsor responsibilities, medical fitness requirements where applicable, Emirates ID coordination and the importance of checking the correct authority's current requirements.
+
+Distinguish Dubai immigration procedures from federal ICP procedures where relevant.
+
+**Related services:** Residence visa renewal, medical fitness, Emirates ID and visa typing.
+
+### Article 3 — Inside-Country Visa Status Change Explained
+
+**Suggested URL:** `/knowledge-hub/uae-visa-status-change/`
+
+Explain what a status change does, when it may be required, which authority handles the case, typical document requirements and why a customer's circumstances affect the process.
+
+Do not publish a universal fee or guarantee same-day approval without current official evidence.
+
+**Related services:** Visa status change, entry permits and residence visa applications.
+
+### Article 4 — UAE Overstay Fines: How to Check and Resolve Your Case
+
+**Suggested URL:** `/knowledge-hub/uae-overstay-fines-guide/`
+
+Explain how to identify the responsible authority, check the applicable fine, verify the person's visa status and understand the official process for requesting a review or exemption if available.
+
+Clearly distinguish an application for relief from an approved exemption. Never promise that fines will be waived.
+
+**Related services:** Fine checking, immigration assistance and visa cancellation.
+
+### Article 5 — UAE Golden Visa: Eligibility, Documents and Application Process
+
+**Suggested URL:** `/knowledge-hub/uae-golden-visa-eligibility/`
+
+Explain the major eligibility categories, evidence requirements, nomination or recommendation steps where relevant, application routes and the difference between eligibility and final approval.
+
+Do not present a single checklist as suitable for every Golden Visa category.
+
+**Related services:** Golden Visa application assistance, document preparation and Emirates ID.
+
+### Article 6 — Dubai Trade Licence: How to Choose the Right Licence and Activity
+
+**Suggested URL:** `/knowledge-hub/dubai-trade-licence-guide/`
+
+Explain the differences between commercial, professional and industrial activities, choosing a business activity, trade name reservation, initial approvals, external approvals and licence issuance.
+
+Use the official Dubai DET and Invest in Dubai portals. Explain that costs and premises requirements vary by activity and legal structure.
+
+**Related services:** New trade licence, trade name reservation and initial approval.
+
+### Article 7 — Dubai Instant Licence: Eligibility, Costs and Office Requirements
+
+**Suggested URL:** `/knowledge-hub/dubai-instant-licence/`
+
+Explain who may qualify, which activities need additional approval, how the application works and when a physical office or Ejari may be required.
+
+Verify current eligibility and exemption conditions from official DET guidance. Do not promise that every new business can operate without premises or that every licence is issued within a fixed number of minutes.
+
+**Related services:** Instant licence, business setup, licence issuance and renewal.
+
+### Article 8 — Dubai Trade Licence Renewal: Documents, Deadlines and Ejari
+
+**Suggested URL:** `/knowledge-hub/dubai-trade-licence-renewal/`
+
+Explain how to check a licence's expiry date, identify outstanding approvals, prepare the applicable tenancy documents and complete the renewal through the appropriate channel.
+
+Separate government charges, premises-related costs and private service fees.
+
+**Related services:** Trade licence renewal, Ejari registration and company amendments.
+
+### Article 9 — UAE Work Permits: MoHRE Requirements for Employers
+
+**Suggested URL:** `/knowledge-hub/uae-work-permit-guide/`
+
+Explain the employer-led application process, job offer, work permit, employment contract, establishment records, quota and approval dependencies.
+
+Describe company-category fee differences only using the current MoHRE fee schedule.
+
+**Related services:** New work permits, renewals, cancellations and employment contract processing.
+
+### Article 10 — UAE Employment Contract Changes and Work Permit Cancellation
+
+**Suggested URL:** `/knowledge-hub/uae-employment-contract-changes/`
+
+Explain how contract amendments, cancellations and employment transitions work, what employers and employees should verify, and how work permit procedures differ from immigration residence cancellation.
+
+Avoid presenting general information as legal advice for an individual employment dispute.
+
+**Related services:** Work permit cancellation, contract amendments and visa cancellation.
+
+### Article 11 — WPS in the UAE: Employer Compliance and Common Issues
+
+**Suggested URL:** `/knowledge-hub/uae-wage-protection-system/`
+
+Explain the Wage Protection System, the employer's responsibilities, common payroll compliance issues, and where to check the current MoHRE requirements.
+
+Use official guidance for any stated deadlines, exemptions, penalties or reporting obligations.
+
+**Related services:** Corporate labour services, MoHRE processing and compliance assistance.
+
+### Article 12 — Ejari Registration in Dubai: A Practical Tenant and Landlord Guide
+
+**Suggested URL:** `/knowledge-hub/dubai-ejari-registration-guide/`
+
+Explain registration, renewal, cancellation, certificate retrieval, common documentation issues and how to find the correct official service channel.
+
+Use Dubai Land Department as the responsible authority for Ejari. Do not attribute Ejari administration to Dubai Municipality.
+
+**Related services:** Ejari registration, tenancy documentation and business licence renewal where relevant.
+
+### Article 13 — Digital Ejari and Rental Documentation: What to Check Before Applying
+
+**Suggested URL:** `/knowledge-hub/ejari-digital-services/`
+
+Research DLD's published Ejari awareness guidance and explain how customers can verify tenancy details, access certificates, understand relevant notifications and use official channels.
+
+Do not claim that a new digital feature exists unless the official source confirms it.
+
+**Related services:** Ejari registration, renewal and related document processing.
+
+### Article 14 — UAE Medical Fitness for Residency: Tests, Documents and Results
+
+**Suggested URL:** `/knowledge-hub/uae-residency-medical-fitness/`
+
+Explain the general residency medical fitness journey, required identification, appointment preparation, applicable screening, result handling and how the medical process relates to residence visa issuance.
+
+Identify the responsible authority and approved service provider for the specific Dubai service. Do not confuse residency medical fitness with occupational health cards.
+
+**Related services:** Residency medical fitness, express medical fitness and appointment assistance.
+
+### Article 15 — Occupational Health Cards in Dubai: Which Workers May Need One?
+
+**Suggested URL:** `/knowledge-hub/dubai-occupational-health-card/`
+
+Explain the distinction between occupational health requirements and residency medical fitness. Research the applicable rules for food handlers, salon personnel and other regulated occupations.
+
+Confirm the responsible authority and requirements for each occupation rather than treating all worker categories identically.
+
+**Related services:** Occupational health card applications, renewals and relevant medical screening.
+
+### Article 16 — UAE Document Attestation: The Correct Process for Personal Documents
+
+**Suggested URL:** `/knowledge-hub/uae-document-attestation-guide/`
+
+Explain document origin, authentication requirements, UAE MoFA attestation, possible embassy or consular steps and destination-country requirements.
+
+Cover the official digital attestation route where applicable. Clearly explain that eligibility depends on the document type and the official service's current supported list.
+
+**Related services:** Personal document attestation, marriage certificate attestation, birth certificate attestation and document logistics.
+
+### Article 17 — Digital Attestation vs Courier-Based Attestation: What Is the Difference?
+
+**Suggested URL:** `/knowledge-hub/mofa-digital-attestation/`
+
+Use current MoFA guidance to explain which documents may qualify for digital attestation, why an original digital document may be required, what verification information to prepare and when a courier route may apply.
+
+Distinguish the Ministry's service from any private courier or typing charges.
+
+**Related services:** MoFA attestation assistance, document preparation and courier coordination.
+
+### Article 18 — UAE Legal Translation: When Is a Sworn Translator Required?
+
+**Suggested URL:** `/knowledge-hub/uae-legal-translation-guide/`
+
+Explain the difference between ordinary translation and legally certified translation, the role of Ministry of Justice-sworn translators, document-language requirements and situations where further authentication may be needed.
+
+Verify the current rules for the destination authority receiving the translation.
+
+**Related services:** Certified legal translation, document typing and attestation support.
+
+### Article 19 — UAE Corporate Tax: Important Compliance Checks for Small Businesses
+
+**Suggested URL:** `/knowledge-hub/uae-corporate-tax-compliance/`
+
+Explain how businesses can identify applicable registration, filing and payment obligations, understand relevant deadlines, access EmaraTax and find official FTA guidance.
+
+Use the FTA's current guidance and clearly distinguish general educational information from individual tax advice. Do not invent filing deadlines or imply that all businesses have identical obligations.
+
+**Related services:** Business documentation and administrative support only where genuinely relevant. Do not imply KBC/ESS provides licensed tax advice unless this is confirmed.
+
+### Article 20 — Dubai SME Support and Business Setup: Government Resources Entrepreneurs Should Know
+
+**Suggested URL:** `/knowledge-hub/dubai-sme-business-support/`
+
+Research official Dubai DET and other relevant government initiatives, including the SME in a Box initiative where its current status and availability can be confirmed.
+
+Explain what the initiative offers, who may qualify, how to access official information and which business setup steps remain separate from support programmes.
+
+**Related services:** Trade licence issuance, trade name reservation, initial approval and business documentation.
+
+## 4. Knowledge Hub Page Redesign
+
+Create a dedicated Knowledge Hub landing page using the existing site's design system.
+
+**Recommended route:** `/knowledge-hub/`
+
+The page must display all published posts as a responsive article grid, not as popup-only content.
+
+Each article card should include:
+
+- Featured image with meaningful alt text.
+- Category or topic label.
+- Article title.
+- Short, useful excerpt.
+- Publication date and, where relevant, updated date.
+- Estimated reading time.
+- A clear “Read Article” link.
+- A real link to the individual article URL.
+
+Use pagination or a properly implemented “Load more” approach if needed. Do not hide all articles in a single oversized page.
+
+Add a search field and useful category filters. Search should work against article titles, excerpts and relevant tags, with a helpful empty state.
+
+Suggested categories:
+
+1. Visa & Immigration
+2. Emirates ID
+3. Business Setup & Licensing
+4. Labour & MoHRE
+5. Ejari & Tenancy
+6. Medical Fitness & Occupational Health
+7. Attestation & Legal Translation
+8. Tax & Business Compliance
+
+Create an SEO-friendly page title, H1, meta description, canonical URL, Open Graph metadata and appropriate structured data for the Knowledge Hub.
+
+## 5. Every Article Must Have Its Own Page and URL
+
+**Critical requirement: eliminate popup-only articles.**
+
+Every post must have its own stable, directly accessible URL. Users and search engines must be able to open, refresh, share and index each article independently.
+
+Use the existing routing framework. Prefer clean URLs such as:
+
+`/knowledge-hub/emirates-id-renewal-guide/`
+
+Requirements:
+
+- The Knowledge Hub card links to the article route.
+- Direct navigation to the URL renders the correct article.
+- Browser refresh works without returning a 404.
+- Back and forward navigation behave correctly.
+- The page title, H1, content, canonical URL and social metadata match the selected article.
+- Article content is rendered as crawlable HTML, not loaded only after opening a modal.
+- Each article has one clear canonical URL.
+- Avoid duplicate routes, duplicate content and multiple canonical URLs for the same article.
+- If the old popup behaviour must temporarily remain, the card's primary action should still navigate to the article page. A popup must not be the only way to access the content.
+
+If the application uses client-side routing, ensure server or hosting configuration supports direct requests to article URLs.
+
+## 6. Individual Article Page Layout
+
+Build a premium, readable article template consistent with KBC/ESS branding.
+
+### Main content column
+
+Display:
+
+1. Breadcrumb navigation: Home → Knowledge Hub → Category → Article.
+2. Category label.
+3. One H1 containing the article's main subject.
+4. Short introduction that directly answers the reader's question.
+5. Published date, last-updated date and estimated reading time.
+6. Author or editorial attribution that accurately reflects the real publishing process.
+7. A table of contents for longer articles, linking to section IDs.
+8. The complete article with descriptive H2 and H3 headings.
+9. Practical checklists and step-by-step explanations where useful.
+10. Official source links near the claims they support.
+11. Relevant internal links to KBC/ESS services within the article text.
+12. A short disclaimer where requirements depend on the applicant's circumstances.
+13. A helpful conclusion and relevant next step.
+14. Related articles.
+15. A contextual service CTA without aggressive sales language.
+
+Use short paragraphs, meaningful subheadings, lists and tables where they improve comprehension. Avoid filler, keyword stuffing and repetitive introductions.
+
+### Article sidebar
+
+On desktop, display a sticky or naturally positioned sidebar that does not obstruct reading. On mobile, stack the sidebar sections below the article or at another sensible point in the reading experience.
+
+The sidebar must contain these sections in this order:
+
+**A. Search Knowledge Hub**
+- Search input.
+- Functional search button or instant results.
+- Results link to the actual article URLs.
+
+**B. Top 8 Tags**
+- Display up to eight relevant tags, selected from actual published content.
+- Each tag links to a working filtered archive or search results page.
+- Do not create empty tag pages or irrelevant keyword tags.
+
+**C. Latest 3 Posts**
+- Show the three most recently published eligible articles.
+- Display title and date.
+- Each item links to its own article URL.
+- Exclude the current article where practical and substitute the next recent post.
+
+**D. Services & Departments**
+- Display the most relevant KBC/ESS services and department hubs.
+- Link directly to the correct existing service URLs.
+- Do not invent routes.
+- Use contextually relevant services rather than showing an unrelated list on every article.
+
+**E. Contact KBC/ESS**
+- Show verified business contact information from the existing website.
+- Provide a working telephone link and WhatsApp link if the correct business WhatsApp number is already configured.
+- Link to the contact page or contact section.
+- Do not invent phone numbers, email addresses or WhatsApp destinations.
+
+Make the sidebar reusable across article pages and keep its content data-driven.
+
+## 7. Internal Linking Strategy — Essential SEO Requirement
+
+Build internal links into the actual article paragraphs, not only into a related-services box at the bottom.
+
+For every article:
+
+1. Identify the main service intent and two to five relevant secondary intents.
+2. Link the most useful, relevant service page the first time a suitable keyword or phrase naturally appears.
+3. Use descriptive anchor text such as “Dubai trade licence renewal”, “residency medical fitness” or “Ejari registration”.
+4. Link to the correct existing service URL.
+5. Link to the relevant department hub when it adds useful context.
+6. Add links to two or three genuinely related Knowledge Hub articles where appropriate.
+7. Add a prominent but restrained CTA to the most relevant service near the end.
+8. Where a government application portal is relevant, provide a separate official link and label it clearly as the official authority portal.
+9. Do not use the same generic anchor text for unrelated destinations.
+10. Avoid linking every occurrence of a keyword, over-optimising anchors or adding links that interrupt reading.
+
+### Example of contextual linking
+
+If an article explains residency medical requirements, link the first relevant mention of “residency medical fitness” to the actual KBC/ESS medical fitness service page.
+
+If the article later explains how residency processing continues after a medical result, link to the relevant residence visa service if useful.
+
+A separate “Official Government Source” link should lead to the verified DHA, Dubai Health, GDRFA or other responsible authority page for the specific claim.
+
+### Link integrity
+
+Create or update a central service-link mapping based on the actual service records. Check that every internal link resolves to a valid route and that the destination matches the anchor text.
+
+Never guess a service URL. If a service page does not exist, flag it for review rather than linking to an unrelated page.
+
+## 8. On-Page SEO Requirements
+
+Implement and validate the following for the Knowledge Hub and every article.
+
+### Titles and descriptions
+- Unique, descriptive SEO title for each URL.
+- Unique meta description summarising the article accurately.
+- One clear H1.
+- Logical H2/H3 hierarchy.
+- Avoid duplicate titles, generic metadata and keyword stuffing.
+- Use natural English, with Arabic versions only if the site supports and can maintain them accurately.
+
+### URL and indexing
+- Lowercase, readable, stable slugs.
+- One canonical URL per article.
+- Include indexable article URLs in the XML sitemap.
+- Exclude drafts, duplicate routes, internal search results and inappropriate filtered pages from indexing.
+- Ensure robots directives do not accidentally block articles.
+- Use valid internal links that crawlers can follow.
+- Do not canonicalise every article to the Knowledge Hub landing page.
+
+### Images and performance
+- Compress featured images and use appropriate modern formats where supported.
+- Provide descriptive alt text.
+- Reserve image dimensions to reduce layout shifts.
+- Lazy-load below-the-fold images.
+- Avoid loading the entire article library's images on every page.
+- Check mobile responsiveness, keyboard accessibility, contrast and Core Web Vitals.
+
+### Structured data
+Use structured data only when it accurately represents the rendered page.
+
+Evaluate:
+
+- `Organization` or the most appropriate existing business entity schema.
+- `BreadcrumbList` for visible breadcrumbs.
+- `Article` or `BlogPosting` for individual editorial posts.
+- `WebSite` for site-level identity and search functionality where appropriate.
+
+Use a consistent organization `@id` if the website already has one. Do not duplicate organization entities unnecessarily.
+
+Ensure article structured data matches visible content, including title, author, image and publication or modification dates. Do not invent ratings, author credentials or review data.
+
+Do not add `FAQPage` markup merely to obtain enhanced search results. Use FAQ content only when it genuinely helps readers, and follow current Google guidance.
+
+Validate the rendered JSON-LD and check for errors and warnings in appropriate testing tools before release.
+
+### Sitemap and crawlability
+- Add each published article's canonical URL to the sitemap.
+- Update sitemap generation rather than manually maintaining a stale list where possible.
+- Confirm that all articles are reachable through internal links.
+- Verify the sitemap is accessible and referenced from `robots.txt`.
+- Ensure pagination and category archives do not create uncontrolled duplicate pages.
+
+## 9. Editorial Quality Standards
+
+Each article should be genuinely useful, not a short keyword landing page.
+
+Target approximately 900–1,500 words when the subject warrants it. Shorter articles are acceptable when the official information is simple and a longer article would introduce filler.
+
+Every article should include, where relevant:
+
+- A direct answer in the introduction.
+- Who the guidance applies to.
+- Eligibility or applicability.
+- A clear process.
+- Required documents.
+- Official application channels.
+- Fees only when verified and necessary.
+- Processing time only when officially supported.
+- Common mistakes or reasons applications may be delayed.
+- Official sources.
+- Relevant KBC/ESS services.
+- A date checked and a concise disclaimer.
+
+Do not copy official pages verbatim. Summarise them in original language, cite the exact source, and explain the practical implications for the reader.
+
+Never imply that KBC/ESS is a government department or that an authorised private centre controls government decisions.
+
+## 10. Content Maintenance and Future Updates
+
+Build the content model to support:
+
+- Draft, review and published states.
+- Original publication date.
+- Last substantive update date.
+- Research verification date.
+- Official source URLs.
+- Article category and tags.
+- Related service IDs.
+- Related article IDs.
+- Author or editorial attribution.
+- Featured image and alt text.
+
+For policy or fee changes, update the article only after checking the current official source. Preserve the original publication date and update the modification date only when a substantive change has been made.
+
+Flag articles with outdated or inaccessible sources for review. Do not automatically rewrite or republish content simply to make its date appear fresh.
+
+## 11. Implementation Workflow
+
+**Phase 1 — Audit**
+- Inspect the current Knowledge Hub and all existing article components.
+- Identify the existing routes, data model, service URLs, metadata implementation and CSS conventions.
+- Check whether articles are currently rendered in modals.
+- Inventory all existing blog content and avoid duplicate articles.
+
+**Phase 2 — Research and editorial preparation**
+- Research all 20 topics through the official source directory.
+- Create a source register for each article.
+- Draft original content and identify relevant internal service links.
+- Flag unsupported facts for human verification.
+
+**Phase 3 — Content model and routing**
+- Implement individual article routes.
+- Create a reusable article template and data-driven sidebar.
+- Connect the Knowledge Hub cards to individual pages.
+- Ensure all published articles are accessible by direct URL.
+
+**Phase 4 — SEO and internal linking**
+- Add unique metadata and canonical URLs.
+- Implement breadcrumbs and appropriate structured data.
+- Connect relevant service pages and department hubs.
+- Update sitemap generation and verify indexing directives.
+- Validate every official and internal link.
+
+**Phase 5 — Quality assurance**
+- Test desktop, tablet and mobile.
+- Test search, tags, latest posts, related articles and sidebar links.
+- Open article URLs directly and refresh them.
+- Test browser navigation and error states.
+- Check for broken links, duplicate titles, missing descriptions, incorrect canonicals and schema errors.
+- Review the source register and every factual claim before publication.
+
+**Phase 6 — Final review and approval**
+Provide a summary of all files changed, routes created, articles drafted, official sources used, internal links added, SEO changes made, unresolved research questions and QA results.
+
+Keep all changes on a development branch or staging environment until approval is granted. Do not deploy to production or publish articles automatically.
+
+## 12. Acceptance Criteria
+
+The task is complete only when:
+
+- All 20 planned topics have research records and draft articles.
+- No unverified government claims are presented as facts.
+- The Knowledge Hub displays the published article cards.
+- Every published article has its own stable, shareable URL.
+- Articles no longer depend on popup-only rendering.
+- Each article has a functional search, tag, recent-post, services and contact sidebar.
+- Internal links appear naturally within article paragraphs and lead to the correct service pages.
+- Official authority links are clearly labelled and verified.
+- Each article has unique metadata and a correct canonical.
+- Structured data matches the visible content.
+- Published article URLs are included in the sitemap.
+- The website remains responsive and existing functionality is preserved.
+- The implementation report clearly distinguishes completed work from anything awaiting approval.
+
+**Final instruction:** Prioritise accuracy, usefulness, technical SEO and a smooth user experience over article volume or keyword density. Research first, implement second, validate third, and publish only after explicit approval.

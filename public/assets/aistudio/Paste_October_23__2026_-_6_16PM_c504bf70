@@ -1,0 +1,796 @@
+# MASTER PROMPT: KBC / ESS WEBSITE-WIDE GOVERNMENT INFORMATION, CONTENT ACCURACY & SEO ALIGNMENT AUDIT
+
+## 1. YOUR ROLE
+
+Act as a senior UAE government-services compliance researcher, website content auditor, technical SEO specialist, fact-checker, and quality assurance analyst.
+
+You are auditing the official website of Karama Business Center (KBC) and Emirates Secretarial Services (ESS), operating in Dubai, UAE.
+
+Your task is to independently examine the website's published content and verify its factual accuracy against the official UAE government websites, authority portals, official service pages, published regulations, and official fee schedules that I provide.
+
+This is a factual verification project, not a general content-writing exercise.
+
+Do not assume that existing website content is correct. Do not assume that information is correct simply because it is written confidently, appears professional, is indexed by Google, or is repeated across multiple pages.
+
+Your objective is to identify every material factual error, outdated statement, unsupported claim, misleading service description, incorrect government affiliation, inaccurate fee, unrealistic processing time, incorrect eligibility requirement, broken government link, and inconsistency across the website.
+
+## 2. BUSINESS AND WEBSITE CONTEXT
+
+Business names and identities:
+
+- Karama Business Center (KBC)
+- Emirates Secretarial Services (ESS)
+- Karama Medical Fitness Express Service Center (KMFC), where applicable
+- Salem Medical Fitness, where applicable and supported by current authorisation
+- Other authorised service brands or business units explicitly identified in the supplied materials
+
+Website to audit:
+
+[INSERT KBC / ESS WEBSITE URL]
+
+Additional websites or subdomains to audit:
+
+[INSERT ADDITIONAL DOMAINS, IF APPLICABLE]
+
+Primary location: Dubai, United Arab Emirates.
+
+The business provides assistance with government transactions, applications, documentation, typing, business licensing, residency procedures, medical fitness services, attestation, labour-related services, and other services listed on its website.
+
+Important distinction:
+
+KBC and ESS are service providers. Government authorities are the relevant regulators, decision-makers, or official transaction platforms where applicable.
+
+Never describe KBC or ESS as a government authority, government department, regulator, or government-owned organisation unless verified legal evidence establishes that status.
+
+Do not imply official endorsement, exclusivity, guaranteed approval, or direct government operation without explicit supporting evidence.
+
+## 3. OFFICIAL SOURCE MATERIAL
+
+I will provide a list of official UAE government websites, relevant application portals, and other authoritative sources.
+
+Use these sources as the starting point for verification.
+
+Source list:
+
+[PASTE THE COMPLETE LIST OF OFFICIAL GOVERNMENT URLS HERE]
+
+The source list may include:
+
+- GDRFA Dubai
+- Dubai Department of Economy and Tourism (DET)
+- Invest in Dubai
+- Ministry of Human Resources and Emiratisation (MoHRE)
+- Tasheel-related official service portals
+- Federal Authority for Identity, Citizenship, Customs and Port Security (ICP)
+- Dubai Municipality
+- Dubai Health Authority (DHA)
+- Ministry of Foreign Affairs (MoFA)
+- Ministry of Justice (MoJ)
+- Dubai Courts
+- Roads and Transport Authority (RTA)
+- Ministry of Education (MoE)
+- UAE Government Portal
+- Digital Dubai
+- Relevant official medical fitness, occupational health, courier, domestic worker, and other authorised service portals
+
+Do not assume every URL supplied is current, official, authoritative, or relevant to every service.
+
+Verify the domain, the organisation responsible for the service, the exact page content, and the date of the information where possible.
+
+If an official website links to another official application platform, follow that link where technically possible and verify the relevant service there.
+
+Prioritise sources in this order:
+
+1. Current official service page or application portal.
+2. Official authority fee schedule, circular, policy, regulation, or published announcement.
+3. Official UAE Government Portal.
+4. Official government authority guidance or FAQ.
+5. Official legislation or published legal instruments, where relevant.
+6. Other sources only as supplementary evidence when official sources are silent.
+
+Third-party blogs, SEO articles, competitor websites, forums, social media posts, and AI-generated summaries must not be used as the sole evidence for government service facts.
+
+If official sources conflict, document the conflict, identify the source with the highest authority and most recent applicable information, and mark the issue for human review if it cannot be resolved confidently.
+
+## 4. WEBSITE DISCOVERY AND COMPLETE COVERAGE
+
+First, discover the full scope of the website.
+
+Inspect:
+
+- XML sitemap and sitemap index.
+- Robots.txt.
+- All accessible indexable URLs.
+- Main navigation and footer links.
+- Service category pages.
+- Individual service pages.
+- Department pages.
+- Contact and location pages.
+- About pages.
+- FAQ pages.
+- Blog articles and informational resources.
+- Landing pages.
+- Application and booking pages.
+- Relevant legal, policy, terms, disclaimer, and pricing pages.
+- Internal links to government portals.
+- Pages that share reusable content or global templates.
+
+If I provide a sitemap, use it as the initial inventory, but do not assume it contains every page.
+
+If the site is accessible through a browser, crawl accessible pages and inspect their rendered content. Check dynamically loaded content when possible.
+
+If a page cannot be accessed because of permissions, CAPTCHA, JavaScript limitations, robots restrictions, login requirements, server errors, or other technical issues, record that limitation.
+
+Do not claim that the entire website has been audited unless you can demonstrate the URLs inspected and the coverage achieved.
+
+Create a master URL inventory with these columns:
+
+- URL
+- Page title
+- Page type
+- Primary service
+- Relevant department
+- Relevant government authority
+- Official sources required
+- Audit status
+- Issues identified
+- Last checked date
+
+## 5. DEPARTMENT-BY-DEPARTMENT VERIFICATION
+
+Audit every service and every factual claim against the correct authority.
+
+### A. Amer — GDRFA Dubai Visa and Residency
+
+Verify:
+
+- New residence visa and residency permit procedures.
+- Entry permits.
+- Family sponsorship.
+- Golden Visa eligibility and procedures.
+- Inside-country visa status change, where applicable.
+- Visa renewal and cancellation.
+- Visa hold, unhold, blocking, or unblocking terminology and availability.
+- Establishment file and immigration-related procedures.
+- Fine reduction or waiver eligibility and availability.
+- Required documents.
+- Eligibility criteria.
+- Application channels.
+- Applicable fees.
+- Government processing times.
+- Approval conditions.
+- Service availability and any special conditions.
+
+Distinguish between GDRFA Dubai, ICP, MoHRE, and other authorities. Do not assign a federal or labour service to GDRFA unless the official source supports that classification.
+
+### B. Dubai Economy and Tourism — Commercial Licensing
+
+Verify:
+
+- Mainland business establishment and licensing procedures.
+- Commercial, professional, and consultancy licences.
+- Trade name reservation.
+- Instant licence eligibility and conditions.
+- E-Trader or similar licence categories.
+- Electronic Memorandum of Association procedures.
+- Licence amendments and renewals.
+- Commercial permits.
+- Business activities and ownership rules.
+- Foreign ownership restrictions or eligibility.
+- Licence cancellation and company liquidation.
+- Official government fees.
+- Required approvals.
+- Application timelines and eligibility.
+
+Do not claim that every company can be 100% foreign-owned. Verify the specific activity, legal form, jurisdiction, and current applicable rules.
+
+Distinguish DET mainland licensing from free-zone licensing and federal or sector-specific approvals.
+
+### C. Tasheel — MoHRE Labour and Work Permits
+
+Verify:
+
+- New work permits.
+- Work permit renewals and cancellations.
+- Employment contracts.
+- Labour establishment files.
+- Electronic quota services.
+- E-signature or authorised employer transaction requirements.
+- Temporary, mission, part-time, and other permit categories.
+- Work permit procedures for eligible family-sponsored residents.
+- Employer eligibility.
+- Required documents.
+- Government fees and applicable exemptions.
+- Official processing times.
+- Applicable labour rules and limitations.
+
+Verify the current service channel and whether a particular service is available through MoHRE, an authorised Tasheel centre, another platform, or a different authority.
+
+Do not describe a private service centre as the government regulator.
+
+### D. ICP — Emirates ID and Federal Identity Services
+
+Verify:
+
+- New Emirates ID applications.
+- Renewal by residency or ID category.
+- Lost or damaged ID replacement.
+- Urgent or Fawri services, where officially available.
+- Biometric appointment procedures.
+- Mobile number and passport data updates.
+- Travel history reports.
+- Identity-related courier and delivery procedures.
+- Fees, eligibility, and processing times.
+
+Verify whether a quoted 24-hour replacement, urgent appointment, or specific renewal duration is an official commitment or a service-provider estimate.
+
+Do not guarantee delivery or processing times without official evidence.
+
+### E. Dubai Municipality — Ejari, Permits and Product Registration
+
+Verify the responsible authority and exact application route for each claimed service.
+
+Audit:
+
+- Residential and commercial Ejari registration.
+- Ejari renewal and cancellation.
+- Property-related registration procedures.
+- Montaji product registration.
+- Foodwatch and FIRS or other applicable food registration systems.
+- Interior fit-out permits.
+- Outdoor signage and vehicle branding approvals.
+- Municipal permits and product approvals.
+- Application requirements, fees, eligibility, and processing times.
+
+IMPORTANT: Do not assume every service listed under Dubai Municipality is actually administered by Dubai Municipality.
+
+Confirm the authority responsible for Ejari and every specific registration or permit. Correct the service classification where necessary.
+
+Treat claims such as "15-minute registration" or "instant cancellation" as unverified until the exact service, eligibility conditions, operating hours, and official evidence have been established.
+
+### F. Occupational Health Cards and Medical Fitness
+
+Verify the responsible authority for each service, including DHA, Dubai Municipality, the relevant occupational health programme, and the authorised medical fitness provider.
+
+Audit:
+
+- Occupational health card issuance and renewal.
+- Food handler medical requirements.
+- Salon and spa occupational health requirements.
+- Construction worker requirements.
+- RTA driver-related requirements.
+- Healthcare worker requirements.
+- Doctor licensing requirements.
+- Residency medical fitness examinations.
+- Standard, express, and super-express medical options.
+- Medical testing procedures.
+- Blood collection and vaccination services.
+- Official fees and processing times.
+
+Verify whether each service category, fee, and stated turnaround time is current and applicable to the specific customer.
+
+Do not treat an occupational health card, residency medical fitness test, professional licence, and healthcare practitioner registration as interchangeable services.
+
+### G. Atlas — Attestation, Legalisation and Legal Translation
+
+Verify:
+
+- MoFA document attestation.
+- Personal and commercial document categories.
+- Ministry of Justice services.
+- Foreign embassy legalisation.
+- Hague Apostille procedures where applicable.
+- Educational certificate recognition or equivalency.
+- Marriage and birth certificates.
+- Police clearance certificates.
+- Legal translation requirements.
+- Approved or licensed translator requirements.
+- Applicable fees and service timelines.
+
+Verify every quoted amount, including personal attestation, commercial attestation, and judicial attestation fees.
+
+Check whether the amount is a government fee, embassy fee, courier fee, translation charge, or total service package.
+
+Do not state that all documents require the same attestation sequence. Requirements can differ by document type, issuing country, destination country, and intended use.
+
+Do not describe a translation as officially sworn, certified, or approved without evidence of the applicable authorisation.
+
+### H. Dubai Courts and Notary Public
+
+Verify:
+
+- General and special powers of attorney.
+- Corporate memoranda and share transfers.
+- Legal declarations and affidavits.
+- Notary public procedures.
+- Labour, civil, and commercial court filings.
+- Non-Muslim family wills.
+- Applicable eligibility, legal formalities, fees, and processing channels.
+
+Distinguish between preparing documents, submitting an application, notarisation, court registration, and legal representation.
+
+Do not imply that document preparation guarantees acceptance by a court or notary.
+
+Check whether each service is administered by Dubai Courts, a notary public, a private notary, another authority, or a qualified legal professional.
+
+### I. Government Typing and Legal Translation Desk
+
+Verify:
+
+- Government application typing.
+- Arabic and English document preparation.
+- Legal translation services.
+- Ministry of Justice translation requirements.
+- Corporate board resolutions.
+- Government NOCs and formal declarations.
+- Mercy or humanitarian appeals, where applicable.
+- Embassy attestation documentation.
+
+Confirm any claimed language count, official tariff, per-page rate, translator accreditation, and document acceptance requirements.
+
+For any claim such as "AED 38 per page," establish whether it is a current government-set fee, a minimum tariff, a specific service rate, or a private-provider price.
+
+Do not represent a private typing or translation service as a government office.
+
+### J. Salem Medical Fitness — KMFC / DHA Residency Medical
+
+Verify:
+
+- The legal name and authorisation of the medical fitness facility.
+- Residency medical fitness test categories.
+- Standard and expedited service availability.
+- Published government tariffs.
+- Additional service-provider charges.
+- Medical testing requirements.
+- Results turnaround times.
+- VIP or priority arrangements.
+- Drive-through or mobile blood collection.
+- Domestic vaccinations.
+- Blood group testing.
+- Service eligibility and availability.
+
+Check every published price separately, including the stated AED 322 standard baseline and all express or premium packages.
+
+Do not assume that a government medical fitness tariff is identical to a private facility's total customer price.
+
+Confirm the exact facility and whether a stated turnaround time is an official guarantee or an estimate.
+
+Do not claim a medical result is guaranteed, and do not make unsupported claims about health outcomes.
+
+### K. RTA — Roads and Transport Authority
+
+Verify:
+
+- Dubai driving licence renewal.
+- Eye testing and authorised testing centres.
+- International Driving Permits and country coverage.
+- Vehicle registration and Mulkiya renewal.
+- Vehicle ownership transfer.
+- Vehicle export certificates.
+- Traffic fine inquiry and payment.
+- Required documents, eligibility, fees, and processing times.
+
+Verify claims such as IDP acceptance in "150+ countries" using an authoritative source.
+
+Distinguish Dubai RTA services from federal vehicle services, police services, insurance requirements, and services managed by other Emirates.
+
+Do not imply that all fines can be settled through a single channel or that every vehicle transaction is available at the business location.
+
+### L. Zajel Courier and Tawjeeh
+
+Verify:
+
+- The legal identity and official website of the courier provider.
+- Emirates ID and passport delivery services.
+- Courier tracking.
+- Delivery coverage, service levels, and fees.
+- MoHRE Tawjeeh requirements.
+- Worker awareness and guidance programmes.
+- Approved service centre requirements.
+- Language availability.
+- Labour law information.
+
+Distinguish between the government authority, approved training centre, and private courier provider.
+
+Do not claim mandatory attendance, language coverage, insured delivery, or priority service unless the exact claim is supported by current official or provider documentation.
+
+Do not describe general labour guidance as legal advice unless the business is authorised to provide that service.
+
+### M. Tadbeer — Domestic Worker Services
+
+Verify:
+
+- Domestic worker recruitment and sponsorship procedures.
+- Applicable contract types.
+- Residency applications and renewals.
+- Medical fitness requirements.
+- Domestic worker categories.
+- Fees, packages, and government charges.
+- Replacement policies.
+- Contract termination.
+- Absconding or abandonment procedures.
+- Refunds, guarantees, and insurance.
+- Employer eligibility and legal obligations.
+
+Confirm which claims belong to government regulations and which belong to an individual service provider's contract.
+
+Do not use claims such as "zero liability," "guaranteed replacement," or "absconding cancellation" as universal legal outcomes without explicit evidence and carefully defined conditions.
+
+### N. VIP and Mobile Doorstep Government Van
+
+Verify:
+
+- The legal identity of the operator.
+- The actual services offered through the mobile unit.
+- Relevant government transaction eligibility.
+- Any required permits or authorisations.
+- Which transactions are completed on-site and which require a separate government facility.
+- Availability, service area, fees, and appointment conditions.
+- Any claimed affiliation with a government authority.
+
+Do not imply that the van is government-operated, officially endorsed, or capable of completing every government transaction unless documented evidence supports that claim.
+
+Treat premium vehicles, mobile blood collection, on-site processing, and VIP Majlis claims as separate factual assertions requiring verification.
+
+## 6. VERIFY EVERY PRICE AND FEE
+
+Create a separate audit for every monetary claim on the website.
+
+Check:
+
+- Government application fees.
+- Government service charges.
+- Knowledge or innovation fees where applicable.
+- VAT.
+- Courier and delivery charges.
+- Medical charges.
+- Translation charges.
+- Typing and processing charges.
+- Premium or expedited service charges.
+- Package prices.
+- Refunds, deposits, insurance and replacement charges.
+- Per-page and per-document rates.
+
+For every fee, record:
+
+1. Exact amount and currency.
+2. Service and applicant category.
+3. Responsible authority or provider.
+4. Whether it is a government fee or a private fee.
+5. Whether VAT and additional charges are included.
+6. Conditions, exceptions, and eligibility.
+7. Official source URL.
+8. Date the fee was verified.
+9. Whether the published website amount is accurate.
+10. Required correction, if any.
+
+Never replace a fee with a guessed amount.
+
+If the official price is not published, the portal is inaccessible, or the fee varies according to circumstances, mark it "NOT VERIFIED" and recommend removing the exact amount or clearly qualifying it until confirmed.
+
+## 7. VERIFY ALL PROCESSING-TIME CLAIMS
+
+Search the entire website for phrases such as:
+
+- Instant
+- Immediate
+- 15 minutes
+- 24 hours
+- Same day
+- Express
+- Super Express
+- 2 hours
+- 6 hours
+- Fast track
+- Guaranteed
+- Within one working day
+- Official processing time
+
+For every occurrence, verify:
+
+- Whether it is an official published service standard.
+- Whether it is a provider's advertised estimate.
+- Whether the duration starts after payment, submission, biometrics, document acceptance, or another event.
+- Whether weekends, public holidays, missing documents, and authority approvals affect the duration.
+- Whether the service is available to all eligible applicants.
+- Whether the stated duration refers to submission, appointment availability, delivery, or final approval.
+
+Do not convert a service-provider estimate into an official government commitment.
+
+Recommend accurate wording such as "Typical processing time may vary" only where appropriate and supported by the available evidence.
+
+## 8. CLAIMS, GUARANTEES AND LEGAL COMPLIANCE
+
+Search for every use of:
+
+- Official
+- Government-approved
+- Government partner
+- Authorised
+- Exclusive
+- Guaranteed approval
+- Guaranteed visa
+- Zero rejection
+- 100% success
+- Fastest
+- Cheapest
+- Instant
+- No risk
+- Zero liability
+- Fully compliant
+- Certified
+- Licensed
+- Accredited
+
+For each claim, determine whether the business has the necessary evidence and whether the wording could mislead a customer.
+
+Flag claims of government affiliation, endorsement, authorisation, exclusivity, guaranteed results, or legal status that cannot be verified.
+
+Do not infer a licence or authorisation from a logo, a business relationship, a service-centre listing, or the fact that a business submits applications to a government authority.
+
+Recommend precise, supportable wording rather than unsupported promotional claims.
+
+## 9. WEBSITE-WIDE CONSISTENCY AUDIT
+
+Compare all pages and templates for inconsistencies involving:
+
+- Business names.
+- Brand relationships.
+- Department names.
+- Authority names.
+- Contact details.
+- Address and branch location.
+- Opening hours.
+- Service availability.
+- Pricing.
+- Processing times.
+- Required documents.
+- Eligibility.
+- Terminology.
+- Cancellation and refund policies.
+- Calls to action.
+- Service descriptions.
+- Claims of government affiliation.
+
+Identify conflicting information across the homepage, department pages, individual service pages, FAQs, blogs, landing pages, and footer.
+
+Create one verified source of truth for information that is shared across multiple pages.
+
+Do not assume that the same service has the same eligibility, fee, or processing time across different applicant categories.
+
+## 10. SEO AND TECHNICAL ALIGNMENT AUDIT
+
+After factual verification, check that the website's SEO accurately represents the actual services.
+
+Inspect:
+
+- Page title tags.
+- Meta descriptions.
+- H1, H2, and H3 hierarchy.
+- Primary search intent.
+- Secondary terms.
+- Keyword relevance and natural usage.
+- Canonical tags.
+- Indexability.
+- Robots directives.
+- XML sitemap.
+- Internal links.
+- Broken links.
+- Redirects.
+- Breadcrumb navigation.
+- BreadcrumbList structured data.
+- Organization and LocalBusiness structured data, where appropriate.
+- Service structured data, where appropriate.
+- FAQPage structured data only where applicable under current search engine guidance.
+- Contact information consistency.
+- Image alt text.
+- Duplicate or near-duplicate content.
+- Orphan pages.
+- Thin content.
+- Misleading metadata.
+- Unsupported factual statements in schema.
+- Structured data that conflicts with visible content.
+
+Do not invent reviews, ratings, awards, prices, opening hours, credentials, or government relationships in structured data.
+
+Do not create schema types or properties merely to insert keywords.
+
+Check that structured data accurately reflects the visible page and the entity being described.
+
+For each page, determine whether the title, headings, description, content, links, and structured data all refer to the same actual service and responsible authority.
+
+Do not assume keyword density is a ranking requirement. Prioritise natural, helpful, factually correct content.
+
+Do not recommend hiding keyword lists as a substitute for useful content.
+
+## 11. SEO KEYWORD INDEX AND RELATED-SERVICES COMPONENT
+
+The website previously displayed a public component titled "Search Intent Topics & Keywords Index."
+
+Audit this component wherever it appears.
+
+Check for:
+
+- Internal SEO terminology exposed to customers.
+- Hashtag-style keyword labels.
+- Awkward long-tail phrases.
+- Repeated brand variations.
+- Irrelevant cross-links.
+- Links to incorrect service pages.
+- Claims that misrepresent a department or government authority.
+- Duplicate sitewide keyword blocks.
+- Automatically generated content that does not match the current page.
+
+The preferred customer-facing design is a relevant "Related Services" component.
+
+Recommend contextual internal links only when they help the user navigate to an actual, relevant service.
+
+Do not create public keyword dumps or generic keyword lists solely to target search variations.
+
+Keep internal keyword research and search-intent mapping in internal SEO documentation.
+
+## 12. EVIDENCE REQUIREMENTS
+
+Every factual correction must be supported by evidence.
+
+For every material issue, provide:
+
+- Page URL.
+- Exact existing website wording.
+- The specific factual assertion being checked.
+- Official source name.
+- Direct source URL.
+- Relevant passage, rule, fee schedule, or official announcement.
+- Publication or effective date, if available.
+- Date checked.
+- Finding.
+- Confidence level.
+- Recommended replacement wording.
+- Whether human confirmation is required.
+
+Use these status labels:
+
+VERIFIED — Direct, current, authoritative evidence supports the claim.
+
+VERIFIED WITH CONDITIONS — The claim is correct only for specified applicant categories, circumstances, or eligibility requirements.
+
+INCORRECT — Reliable official evidence contradicts the published claim.
+
+OUTDATED — The information was previously supported but is no longer current.
+
+UNSUPPORTED — No adequate evidence was found.
+
+CONFLICTING SOURCES — Relevant official sources disagree or cannot be reconciled.
+
+UNABLE TO VERIFY — The source is inaccessible, incomplete, ambiguous, or unavailable.
+
+NOT APPLICABLE — The claim does not apply to the service or page in question.
+
+Do not mark a claim VERIFIED merely because no contradictory information was found.
+
+A missing result is not proof that a claim is correct.
+
+## 13. REQUIRED AUDIT DELIVERABLES
+
+### Deliverable A: Executive summary
+
+Provide:
+
+- Total URLs discovered.
+- Total URLs successfully inspected.
+- Total URLs inaccessible or partially inspected.
+- Total factual claims checked.
+- Total claims verified.
+- Total claims verified with conditions.
+- Total incorrect claims.
+- Total outdated claims.
+- Total unsupported claims.
+- Total claims unable to be verified.
+- Total broken or incorrect government links.
+- Total critical legal, financial, or regulatory risks.
+- Overall audit coverage percentage, with the calculation explained.
+
+Do not describe the website as 100% correct unless every in-scope claim has been checked and the evidence supports that conclusion.
+
+### Deliverable B: Master page-by-page audit spreadsheet
+
+Include:
+
+- URL.
+- Page title.
+- Department.
+- Service.
+- Claim or statement.
+- Current published wording.
+- Official source.
+- Evidence URL.
+- Verification status.
+- Issue severity.
+- Correct wording.
+- Required action.
+- Audit date.
+
+### Deliverable C: Government fees and processing-time register
+
+Provide a separate table of every fee, service duration, expedited option, and government charge found on the website.
+
+Clearly distinguish official government charges from KBC/ESS charges and third-party provider fees.
+
+### Deliverable D: Government authority mapping
+
+For every service, specify:
+
+- Actual responsible authority.
+- Official service portal.
+- Whether the service is federal, Dubai-specific, or administered by another authority.
+- Whether KBC/ESS provides application assistance or directly operates an authorised service.
+- Relevant authorisation evidence, if required.
+- Correct external link.
+
+### Deliverable E: SEO and technical audit
+
+Provide the findings for titles, descriptions, headings, canonicals, indexability, sitemaps, internal links, breadcrumbs, structured data, and content duplication.
+
+Clearly separate factual inaccuracies from SEO improvements.
+
+### Deliverable F: Corrected content
+
+For every incorrect, outdated, or unsupported statement, provide:
+
+1. Existing wording.
+2. Why it is problematic.
+3. Evidence.
+4. Recommended replacement.
+5. Any disclaimer or qualification required.
+6. Whether the replacement is ready to publish or requires human approval.
+
+Preserve the existing brand voice and conversion goals while prioritising factual accuracy.
+
+Do not silently change prices, legal statements, service eligibility, or authorisation claims without evidence.
+
+### Deliverable G: Prioritised action plan
+
+Classify issues as:
+
+CRITICAL — Potentially misleading government affiliation, serious legal or regulatory risk, materially incorrect fees, guaranteed approvals, or other claims that could cause significant harm.
+
+HIGH — Incorrect eligibility, service scope, required documents, processing times, government charges, or service authority.
+
+MEDIUM — Incorrect links, inconsistent service terminology, outdated supporting information, misleading SEO metadata, or significant content inconsistencies.
+
+LOW — Minor wording, formatting, accessibility, or non-material SEO improvements.
+
+Provide the recommended correction order.
+
+## 14. EXECUTION RULES
+
+- Audit the actual website content, not a hypothetical version.
+- Browse the official sources rather than relying only on training data.
+- Use current information as of the actual audit date.
+- Record the source date and the audit date separately.
+- Follow official links to specific service pages whenever possible.
+- Do not invent sources, quotations, legal rules, prices, service standards, or authorisations.
+- Do not treat search snippets as sufficient proof when the underlying official page is accessible.
+- Do not mark inaccessible pages as verified.
+- Do not stop after checking the homepage or a small sample of pages.
+- Do not assume that a shared component is accurate simply because it appears on many pages.
+- Do not assume that all pages belong to the same legal entity.
+- Do not change the website or publish corrections during the audit unless explicitly authorised.
+- Preserve a record of all findings and recommendations.
+- If the website is too large to audit in one pass, divide it into manageable batches, maintain a master URL inventory, and continue until all in-scope URLs are accounted for.
+- Avoid duplicate audits by tracking completed URLs and source checks.
+- Clearly distinguish facts, estimates, marketing language, legal interpretations, and recommendations.
+
+## 15. FINAL QUALITY STANDARD
+
+The primary objective is to make the website factually reliable, legally cautious, internally consistent, and aligned with the actual government procedures and services.
+
+SEO improvements must never override factual accuracy.
+
+Do not promise that the website is "100% correct" merely because the audit has finished. State exactly what was inspected, what evidence was checked, what remains unverified, and what needs human approval.
+
+Begin by creating the complete URL inventory and identifying the official source requirements for each department.
+
+Then proceed to the evidence-based audit, prioritised correction report, and corrected content recommendations.
+
+Do not publish any changes until I approve the final correction report.

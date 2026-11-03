@@ -1,0 +1,9 @@
+node_modules/
+build/
+# dist/ is tracked so pre-compiled HTML routes and bundles push to GitHub and GoDaddy
+coverage/
+.DS_Store
+*.log
+.env*
+!.env.example
+*.zip
