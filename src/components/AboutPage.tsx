@@ -44,7 +44,7 @@ import {
   businessHubImg,
   ALL_ORIGINAL_CENTER_PHOTOS,
 } from '../data/centerOriginalPhotos';
-import sheikhMohammedImg from '../assets/images/H.H. Sheikh Mohammed bin Rashid Al Maktoum.png';
+import sheikhMohammedImg from '../assets/images/H.H. Sheikh Mohammed bin Rashid Al Maktoum.webp';
 import haniEbrahimImg from '../assets/images/hani ebrahim.jpg';
 import { GoogleReviewsSection } from './GoogleReviewsSection';
 import { TrustBadges } from './TrustBadges';

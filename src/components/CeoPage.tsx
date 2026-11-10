@@ -17,7 +17,7 @@ import {
   Users
 } from 'lucide-react';
 
-import sheikhMohammedImg from '../assets/images/H.H. Sheikh Mohammed bin Rashid Al Maktoum.png';
+import sheikhMohammedImg from '../assets/images/H.H. Sheikh Mohammed bin Rashid Al Maktoum.webp';
 
 interface CeoPageProps {
   language: Language;

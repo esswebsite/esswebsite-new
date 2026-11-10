@@ -1,18 +1,18 @@
 // Authentic, original photographs of Karama Business Center & Emirates Secretarial Services (ESS)
 // All 11 original center photos uploaded by the client
 
-import mainBannerBgImg from '../assets/images/Main Banner, bg.png';
-import fastTrackConcourseImg from '../assets/images/Fast Track.png';
-import mainEntranceReceptionImg from '../assets/images/Random entrace photo.png';
-import vipMajlisLoungeImg from '../assets/images/VIP Lounge.png';
-import goldenVisaOfficeImg from '../assets/images/Goledn Visa office.png';
+import mainBannerBgImg from '../assets/images/Main Banner, bg.webp';
+import fastTrackConcourseImg from '../assets/images/Fast Track.webp';
+import mainEntranceReceptionImg from '../assets/images/Random entrace photo.webp';
+import vipMajlisLoungeImg from '../assets/images/VIP Lounge.webp';
+import goldenVisaOfficeImg from '../assets/images/Goledn Visa office.webp';
 import mobileDoorstepUnitImg from '../assets/images/ESS Mobile Doorstep Unit.jpg';
-import amerDepartmentImg from '../assets/images/Amer Center dep.png';
-import detDepartmentImg from '../assets/images/DET Dep.png';
-import salemMedicalImg from '../assets/images/Salem - Medical.png';
-import icpBiometricKioskImg from '../assets/images/ICP Certified Biometric Verification.png';
-import corporateDesksImg from '../assets/images/Def dep desks.png';
-import businessHubImg from '../assets/images/KBC Business Hub.png';
+import amerDepartmentImg from '../assets/images/Amer Center dep.webp';
+import detDepartmentImg from '../assets/images/DET Dep.webp';
+import salemMedicalImg from '../assets/images/Salem - Medical.webp';
+import icpBiometricKioskImg from '../assets/images/ICP Certified Biometric Verification.webp';
+import corporateDesksImg from '../assets/images/Def dep desks.webp';
+import businessHubImg from '../assets/images/KBC Business Hub.webp';
 
 export {
   mainBannerBgImg,
