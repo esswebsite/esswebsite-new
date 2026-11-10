@@ -83,619 +83,637 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://ess.ae/department/amer</loc>
+    <loc>https://ess.ae/amer-center-karama</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://ess.ae/golden-visa-center-karama</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://ess.ae/det-center-karama</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://ess.ae/tasheel-center-karama</loc>
     <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://ess.ae/department/ded</loc>
+    <loc>https://ess.ae/icp-center-karama</loc>
     <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://ess.ae/department/tasheel</loc>
+    <loc>https://ess.ae/dubai-municipality-center-karama</loc>
     <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://ess.ae/department/icp</loc>
+    <loc>https://ess.ae/ohc-center-karama</loc>
     <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://ess.ae/department/municipality</loc>
+    <loc>https://ess.ae/atlas-attestation-center-karama</loc>
     <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://ess.ae/department/ohc</loc>
+    <loc>https://ess.ae/notary-courts-center-karama</loc>
     <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://ess.ae/department/attestation</loc>
+    <loc>https://ess.ae/salem-medical-fitness-karama</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://ess.ae/rta-center-karama</loc>
     <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://ess.ae/department/notary</loc>
+    <loc>https://ess.ae/tawjeeh-center-karama</loc>
     <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://ess.ae/department/typing</loc>
+    <loc>https://ess.ae/tadbeer-center-karama</loc>
     <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://ess.ae/department/salem</loc>
+    <loc>https://ess.ae/vip-mobile-center-karama</loc>
     <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://ess.ae/department/rta</loc>
+    <loc>https://ess.ae/amer-center-karama/residency-visa-new</loc>
     <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://ess.ae/department/tawjeeh</loc>
+    <loc>https://ess.ae/amer-center-karama/residency-visa-renewal</loc>
     <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://ess.ae/department/tadbeer</loc>
+    <loc>https://ess.ae/amer-center-karama/family-sponsorship-visa</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ess.ae/amer-center-karama/parents-sponsorship-visa</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ess.ae/amer-center-karama/tourist-visit-visa</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ess.ae/amer-center-karama/job-seeker-visa</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ess.ae/amer-center-karama/work-entry-permit</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ess.ae/amer-center-karama/visa-status-change</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ess.ae/amer-center-karama/visa-hold-unhold</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ess.ae/amer-center-karama/establishment-card</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ess.ae/amer-center-karama/establishment-block-removal</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ess.ae/amer-center-karama/portal-mobile-update</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ess.ae/amer-center-karama/fine-reduction</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ess.ae/amer-center-karama/absconding-removal</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ess.ae/amer-center-karama/unified-file-federal-visa</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ess.ae/golden-visa-center-karama/10yr</loc>
     <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://ess.ae/department/vip-mobile</loc>
+    <loc>https://ess.ae/golden-visa-center-karama/executive-talent</loc>
     <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://ess.ae/service/amer-residency-visa-new</loc>
+    <loc>https://ess.ae/golden-visa-center-karama/entrepreneur</loc>
     <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://ess.ae/service/amer-residency-visa-renewal</loc>
-    <lastmod>2026-10-27</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://ess.ae/service/golden-visa-10yr</loc>
-    <lastmod>2026-10-27</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://ess.ae/service/amer-family-sponsorship-visa</loc>
-    <lastmod>2026-10-27</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://ess.ae/service/amer-parents-sponsorship-visa</loc>
-    <lastmod>2026-10-27</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://ess.ae/service/amer-tourist-visit-visa</loc>
-    <lastmod>2026-10-27</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://ess.ae/service/amer-job-seeker-visa</loc>
-    <lastmod>2026-10-27</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://ess.ae/service/amer-work-entry-permit</loc>
-    <lastmod>2026-10-27</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://ess.ae/service/amer-visa-status-change</loc>
-    <lastmod>2026-10-27</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://ess.ae/service/amer-visa-hold-unhold</loc>
-    <lastmod>2026-10-27</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://ess.ae/service/amer-establishment-card</loc>
-    <lastmod>2026-10-27</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://ess.ae/service/amer-establishment-block-removal</loc>
-    <lastmod>2026-10-27</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://ess.ae/service/amer-portal-mobile-update</loc>
-    <lastmod>2026-10-27</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://ess.ae/service/amer-fine-reduction</loc>
-    <lastmod>2026-10-27</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://ess.ae/service/amer-absconding-removal</loc>
-    <lastmod>2026-10-27</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://ess.ae/service/amer-unified-file-federal-visa</loc>
+    <loc>https://ess.ae/golden-visa-center-karama/family</loc>
     <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://ess.ae/service/det-commercial-license-new</loc>
+    <loc>https://ess.ae/det-center-karama/commercial-license-new</loc>
     <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://ess.ae/service/det-instant-license</loc>
+    <loc>https://ess.ae/det-center-karama/instant-license</loc>
     <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ess.ae/service/det-etrader-license</loc>
+    <loc>https://ess.ae/det-center-karama/etrader-license</loc>
     <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ess.ae/service/det-professional-license</loc>
+    <loc>https://ess.ae/det-center-karama/professional-license</loc>
     <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ess.ae/service/det-trade-name-reservation</loc>
+    <loc>https://ess.ae/det-center-karama/trade-name-reservation</loc>
     <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ess.ae/service/det-moa-lsa-signing</loc>
+    <loc>https://ess.ae/det-center-karama/moa-lsa-signing</loc>
     <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ess.ae/service/det-license-amendment-partner-activity</loc>
+    <loc>https://ess.ae/det-center-karama/license-amendment-partner-activity</loc>
     <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ess.ae/service/det-license-renewal-ejari</loc>
+    <loc>https://ess.ae/det-center-karama/license-renewal-ejari</loc>
     <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ess.ae/service/det-commercial-permits-mulin</loc>
+    <loc>https://ess.ae/det-center-karama/commercial-permits-mulin</loc>
     <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ess.ae/service/det-license-cancellation-liquidation</loc>
+    <loc>https://ess.ae/det-center-karama/license-cancellation-liquidation</loc>
     <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ess.ae/service/tasheel-electronic-work-permit-new</loc>
+    <loc>https://ess.ae/tasheel-center-karama/electronic-work-permit-new</loc>
     <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ess.ae/service/tasheel-work-permit-renewal</loc>
+    <loc>https://ess.ae/tasheel-center-karama/work-permit-renewal</loc>
     <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ess.ae/service/tasheel-job-offer-unified-contract</loc>
+    <loc>https://ess.ae/tasheel-center-karama/job-offer-unified-contract</loc>
     <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ess.ae/service/tasheel-quota-application-amendment</loc>
+    <loc>https://ess.ae/tasheel-center-karama/quota-application-amendment</loc>
     <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ess.ae/service/tasheel-company-establishment-card</loc>
+    <loc>https://ess.ae/tasheel-center-karama/company-establishment-card</loc>
     <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ess.ae/service/tasheel-esignature-card-issuance</loc>
+    <loc>https://ess.ae/tasheel-center-karama/esignature-card-issuance</loc>
     <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ess.ae/service/tasheel-mission-work-permit</loc>
+    <loc>https://ess.ae/tasheel-center-karama/mission-work-permit</loc>
     <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ess.ae/service/tasheel-part-time-work-permit</loc>
+    <loc>https://ess.ae/tasheel-center-karama/part-time-work-permit</loc>
     <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ess.ae/service/tasheel-family-sponsorship-work-permit</loc>
+    <loc>https://ess.ae/tasheel-center-karama/family-sponsorship-work-permit</loc>
     <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ess.ae/service/tasheel-labour-cancellation-absconding</loc>
+    <loc>https://ess.ae/tasheel-center-karama/labour-cancellation-absconding</loc>
     <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ess.ae/service/icp-emirates-id-new</loc>
+    <loc>https://ess.ae/icp-center-karama/emirates-id-new</loc>
     <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ess.ae/service/icp-emirates-id-renewal</loc>
+    <loc>https://ess.ae/icp-center-karama/emirates-id-renewal</loc>
     <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ess.ae/service/icp-emirates-id-replacement</loc>
+    <loc>https://ess.ae/icp-center-karama/emirates-id-replacement</loc>
     <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ess.ae/service/icp-urgent-biometric-appointment</loc>
+    <loc>https://ess.ae/icp-center-karama/urgent-biometric-appointment</loc>
     <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ess.ae/service/icp-smart-services-data-update</loc>
+    <loc>https://ess.ae/icp-center-karama/smart-services-data-update</loc>
     <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ess.ae/service/icp-zajel-courier-delivery</loc>
+    <loc>https://ess.ae/icp-center-karama/zajel-courier-delivery</loc>
     <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ess.ae/service/dm-ejari-registration</loc>
+    <loc>https://ess.ae/dubai-municipality-center-karama/ejari-registration</loc>
     <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ess.ae/service/dm-ejari-cancellation</loc>
+    <loc>https://ess.ae/dubai-municipality-center-karama/ejari-cancellation</loc>
     <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ess.ae/service/dm-product-registration-montaji</loc>
+    <loc>https://ess.ae/dubai-municipality-center-karama/product-registration-montaji</loc>
     <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ess.ae/service/dm-foodwatch-label-pest-control</loc>
+    <loc>https://ess.ae/dubai-municipality-center-karama/foodwatch-label-pest-control</loc>
     <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ess.ae/service/dm-fitout-permits-site-plans</loc>
+    <loc>https://ess.ae/dubai-municipality-center-karama/fitout-permits-site-plans</loc>
     <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ess.ae/service/dm-signage-advertising-permits</loc>
+    <loc>https://ess.ae/dubai-municipality-center-karama/signage-advertising-permits</loc>
     <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ess.ae/service/ohc-food-handlers-card</loc>
+    <loc>https://ess.ae/ohc-center-karama/food-handlers-card</loc>
     <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ess.ae/service/ohc-salon-beauty-spa-card</loc>
+    <loc>https://ess.ae/ohc-center-karama/salon-beauty-spa-card</loc>
     <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ess.ae/service/ohc-construction-rta-drivers-card</loc>
+    <loc>https://ess.ae/ohc-center-karama/construction-rta-drivers-card</loc>
     <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ess.ae/service/ohc-healthcare-dha-doctor-license-card</loc>
+    <loc>https://ess.ae/ohc-center-karama/healthcare-dha-doctor-license-card</loc>
     <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ess.ae/service/atlas-mofa-attestation</loc>
+    <loc>https://ess.ae/atlas-attestation-center-karama/mofa-attestation</loc>
     <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ess.ae/service/atlas-embassy-consulate-legalization</loc>
+    <loc>https://ess.ae/atlas-attestation-center-karama/embassy-consulate-legalization</loc>
     <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ess.ae/service/atlas-apostille-global-certification</loc>
+    <loc>https://ess.ae/atlas-attestation-center-karama/apostille-global-certification</loc>
     <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ess.ae/service/atlas-degree-education-equivalency</loc>
+    <loc>https://ess.ae/atlas-attestation-center-karama/degree-education-equivalency</loc>
     <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ess.ae/service/atlas-marriage-birth-personal-attestation</loc>
+    <loc>https://ess.ae/atlas-attestation-center-karama/marriage-birth-personal-attestation</loc>
     <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ess.ae/service/atlas-police-clearance-good-conduct</loc>
+    <loc>https://ess.ae/atlas-attestation-center-karama/police-clearance-good-conduct</loc>
     <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ess.ae/service/notary-power-of-attorney-poa</loc>
+    <loc>https://ess.ae/notary-courts-center-karama/power-of-attorney-poa</loc>
     <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ess.ae/service/notary-corporate-moa-addendum</loc>
+    <loc>https://ess.ae/notary-courts-center-karama/corporate-moa-addendum</loc>
     <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ess.ae/service/notary-legal-declarations-affidavits</loc>
+    <loc>https://ess.ae/notary-courts-center-karama/legal-declarations-affidavits</loc>
     <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ess.ae/service/courts-labour-civil-commercial-suits</loc>
+    <loc>https://ess.ae/notary-courts-center-karama/labour-civil-commercial-suits</loc>
     <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ess.ae/service/notary-non-muslim-wills-probate</loc>
+    <loc>https://ess.ae/notary-courts-center-karama/non-muslim-wills-probate</loc>
     <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ess.ae/service/typing-moj-certified-legal-translation</loc>
+    <loc>https://ess.ae/atlas-attestation-center-karama/moj-certified-legal-translation</loc>
     <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ess.ae/service/typing-government-noc-letters-petitions</loc>
+    <loc>https://ess.ae/atlas-attestation-center-karama/government-noc-letters-petitions</loc>
     <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ess.ae/service/typing-corporate-pro-resolutions-contracts</loc>
+    <loc>https://ess.ae/atlas-attestation-center-karama/corporate-pro-resolutions-contracts</loc>
     <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ess.ae/service/typing-embassy-consulate-visa-dockets</loc>
+    <loc>https://ess.ae/atlas-attestation-center-karama/embassy-consulate-visa-dockets</loc>
     <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ess.ae/service/salem-standard-medical-fitness-24hr</loc>
+    <loc>https://ess.ae/salem-medical-fitness-karama/standard-medical-fitness-24hr</loc>
     <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ess.ae/service/salem-urgent-medical-fitness-6hr</loc>
+    <loc>https://ess.ae/salem-medical-fitness-karama/urgent-medical-fitness-6hr</loc>
     <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ess.ae/service/salem-vip-medical-fitness-2hr</loc>
+    <loc>https://ess.ae/salem-medical-fitness-karama/vip-medical-fitness-2hr</loc>
     <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://ess.ae/service/salem-car-blood-collection-service</loc>
+    <loc>https://ess.ae/salem-medical-fitness-karama/car-blood-collection-service</loc>
     <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ess.ae/service/salem-domestic-vaccination-services</loc>
+    <loc>https://ess.ae/salem-medical-fitness-karama/domestic-vaccination-services</loc>
     <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ess.ae/service/salem-home-office-screening</loc>
+    <loc>https://ess.ae/salem-medical-fitness-karama/home-office-screening</loc>
     <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ess.ae/service/salem-blood-type-pregnancy-tests</loc>
+    <loc>https://ess.ae/salem-medical-fitness-karama/blood-type-pregnancy-tests</loc>
     <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ess.ae/service/rta-driving-license-renewal</loc>
+    <loc>https://ess.ae/rta-center-karama/driving-license-renewal</loc>
     <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ess.ae/service/rta-international-driving-permit-idp</loc>
+    <loc>https://ess.ae/rta-center-karama/international-driving-permit-idp</loc>
     <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ess.ae/service/rta-vehicle-mulkiya-renewal</loc>
+    <loc>https://ess.ae/rta-center-karama/vehicle-mulkiya-renewal</loc>
     <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ess.ae/service/rta-vehicle-ownership-transfer</loc>
+    <loc>https://ess.ae/rta-center-karama/vehicle-ownership-transfer</loc>
     <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ess.ae/service/rta-traffic-fine-inquiry-payment</loc>
+    <loc>https://ess.ae/rta-center-karama/traffic-fine-inquiry-payment</loc>
     <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ess.ae/service/tawjeeh-worker-awareness-classes</loc>
+    <loc>https://ess.ae/tawjeeh-center-karama/worker-awareness-classes</loc>
     <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ess.ae/service/tawjeeh-eid-passport-delivery</loc>
+    <loc>https://ess.ae/tawjeeh-center-karama/eid-passport-delivery</loc>
     <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ess.ae/service/tawjeeh-labour-law-legal-advice</loc>
+    <loc>https://ess.ae/tawjeeh-center-karama/labour-law-legal-advice</loc>
     <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ess.ae/service/tadbeer-domestic-worker-sponsorship</loc>
+    <loc>https://ess.ae/tadbeer-center-karama/domestic-worker-sponsorship</loc>
     <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ess.ae/service/tadbeer-center-sponsorship-package</loc>
+    <loc>https://ess.ae/tadbeer-center-karama/center-sponsorship-package</loc>
     <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ess.ae/service/tadbeer-maid-visa-renewal-medical</loc>
+    <loc>https://ess.ae/tadbeer-center-karama/maid-visa-renewal-medical</loc>
     <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ess.ae/service/tadbeer-maid-replacement-insurance</loc>
+    <loc>https://ess.ae/tadbeer-center-karama/maid-replacement-insurance</loc>
     <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ess.ae/service/vip-mobile-government-van</loc>
+    <loc>https://ess.ae/vip-mobile-center-karama/government-van</loc>
     <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ess.ae/service/vip-majlis-executive-lounge</loc>
+    <loc>https://ess.ae/vip-mobile-center-karama/majlis-executive-lounge</loc>
     <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ess.ae/service/vip-corporate-boardroom-concierge</loc>
+    <loc>https://ess.ae/vip-mobile-center-karama/corporate-boardroom-concierge</loc>
     <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -704,120 +722,120 @@
     <loc>https://ess.ae/knowledge-hub/emirates-id-renewal-guide</loc>
     <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.75</priority>
   </url>
   <url>
     <loc>https://ess.ae/knowledge-hub/uae-residence-visa-renewal</loc>
     <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.75</priority>
   </url>
   <url>
     <loc>https://ess.ae/knowledge-hub/uae-visa-status-change</loc>
     <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.75</priority>
   </url>
   <url>
     <loc>https://ess.ae/knowledge-hub/uae-overstay-fines-guide</loc>
     <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.75</priority>
   </url>
   <url>
     <loc>https://ess.ae/knowledge-hub/uae-golden-visa-eligibility</loc>
     <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.75</priority>
   </url>
   <url>
     <loc>https://ess.ae/knowledge-hub/dubai-trade-licence-guide</loc>
     <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.75</priority>
   </url>
   <url>
     <loc>https://ess.ae/knowledge-hub/dubai-instant-licence</loc>
     <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.75</priority>
   </url>
   <url>
     <loc>https://ess.ae/knowledge-hub/dubai-trade-licence-renewal</loc>
     <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.75</priority>
   </url>
   <url>
     <loc>https://ess.ae/knowledge-hub/uae-work-permit-guide</loc>
     <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.75</priority>
   </url>
   <url>
     <loc>https://ess.ae/knowledge-hub/uae-employment-contract-changes</loc>
     <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.75</priority>
   </url>
   <url>
     <loc>https://ess.ae/knowledge-hub/uae-wage-protection-system</loc>
     <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.75</priority>
   </url>
   <url>
     <loc>https://ess.ae/knowledge-hub/dubai-ejari-registration-guide</loc>
     <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.75</priority>
   </url>
   <url>
     <loc>https://ess.ae/knowledge-hub/ejari-digital-services</loc>
     <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.75</priority>
   </url>
   <url>
     <loc>https://ess.ae/knowledge-hub/uae-residency-medical-fitness</loc>
     <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.75</priority>
   </url>
   <url>
     <loc>https://ess.ae/knowledge-hub/dubai-occupational-health-card</loc>
     <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.75</priority>
   </url>
   <url>
     <loc>https://ess.ae/knowledge-hub/uae-document-attestation-guide</loc>
     <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.75</priority>
   </url>
   <url>
     <loc>https://ess.ae/knowledge-hub/mofa-digital-attestation</loc>
     <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.75</priority>
   </url>
   <url>
     <loc>https://ess.ae/knowledge-hub/uae-legal-translation-guide</loc>
     <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.75</priority>
   </url>
   <url>
     <loc>https://ess.ae/knowledge-hub/uae-corporate-tax-compliance</loc>
     <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.75</priority>
   </url>
   <url>
     <loc>https://ess.ae/knowledge-hub/dubai-sme-business-support</loc>
     <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.75</priority>
   </url>
 </urlset>

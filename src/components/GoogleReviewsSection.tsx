@@ -84,7 +84,7 @@ export const ALL_GOOGLE_REVIEWS: GoogleReview[] = [
     rating: 5,
     timeAgoEn: '3 weeks ago',
     timeAgoAr: 'منذ 3 أسابيع',
-    departmentIds: ['ded', 'typing'],
+    departmentIds: ['ded', 'attestation'],
     serviceCategoryEn: 'Mainland LLC License & DET Instant Permit',
     serviceCategoryAr: 'تأسيس شركة ورخصة اقتصادية دبي الفورية',
     reviewTextEn:
@@ -144,7 +144,7 @@ export const ALL_GOOGLE_REVIEWS: GoogleReview[] = [
     rating: 5,
     timeAgoEn: '1 month ago',
     timeAgoAr: 'منذ شهر',
-    departmentIds: ['tasheel', 'typing'],
+    departmentIds: ['tasheel', 'attestation'],
     serviceCategoryEn: 'Tasheel MoHRE Work Permits & Quota Allocation',
     serviceCategoryAr: 'تصاريح العمل وتسهيل (الموارد البشرية)',
     reviewTextEn:
@@ -184,7 +184,7 @@ export const ALL_GOOGLE_REVIEWS: GoogleReview[] = [
     rating: 5,
     timeAgoEn: '2 months ago',
     timeAgoAr: 'منذ شهرين',
-    departmentIds: ['notary', 'typing'],
+    departmentIds: ['notary', 'attestation'],
     serviceCategoryEn: 'Dubai Courts Notary & MOJ Certified Translation',
     serviceCategoryAr: 'توثيق محاكم دبي والترجمة القانونية',
     reviewTextEn:

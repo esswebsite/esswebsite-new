@@ -30,6 +30,7 @@ import { TRANSLATIONS } from '../data/translations';
 import { BrandLogo } from './BrandLogo';
 import { DEPARTMENTS, SERVICES } from '../data/departmentsData';
 import { SocialLinks } from './SocialLinks';
+import { getDepartmentPath, getServicePath } from '../utils/router';
 
 interface HeaderProps {
   language: Language;
@@ -122,7 +123,7 @@ export const Header: React.FC<HeaderProps> = ({
     if (onNavigateToDepartment) {
       onNavigateToDepartment(deptId);
     } else {
-      onNavigate(`department/${deptId}`);
+      onNavigate(getDepartmentPath(deptId, language).replace(/^\//, ''));
     }
   };
 
@@ -132,7 +133,7 @@ export const Header: React.FC<HeaderProps> = ({
     if (onNavigateToService) {
       onNavigateToService(serviceId);
     } else {
-      onNavigate(`service/${serviceId}`);
+      onNavigate(getServicePath(serviceId, undefined, language).replace(/^\//, ''));
     }
   };
 
@@ -547,7 +548,9 @@ export const Header: React.FC<HeaderProps> = ({
 
                               <div className="flex items-center gap-1.5">
                                 <span className="font-bold text-slate-800">
-                                  {isAr ? 'الرسوم:' : 'Gov:'} {service.govFee.toLocaleString()} {isAr ? 'درهم' : 'AED'}
+                                  {service.departmentId === 'ded' || service.departmentId === 'det' || service.isPriceUponConsultation
+                                    ? (isAr ? 'حسب النشاط' : 'Upon Consultation')
+                                    : `${isAr ? 'الرسم الحكومي:' : 'Gov:'} ${service.govFee.toLocaleString()} ${isAr ? 'درهم' : 'AED'}`}
                                 </span>
                                 {service.isPopular && (
                                   <span className="text-[9px] font-bold text-[#128B94] bg-teal-50 px-1.5 py-0.2 rounded border border-teal-200/60 uppercase">
@@ -792,7 +795,9 @@ export const Header: React.FC<HeaderProps> = ({
                                     {isAr ? service.titleAr : service.titleEn}
                                   </span>
                                   <span className="text-[10px] text-slate-400 shrink-0 font-mono">
-                                    {service.govFee} AED
+                                    {service.departmentId === 'ded' || service.departmentId === 'det' || service.isPriceUponConsultation
+                                      ? (isAr ? 'حسب النشاط' : 'Consultation')
+                                      : `${service.govFee} AED`}
                                   </span>
                                 </button>
                               ))}

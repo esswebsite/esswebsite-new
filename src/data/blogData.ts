@@ -1485,7 +1485,7 @@ At Karama Business Center, our typists inspect your document format immediately 
     featuredImageAltEn: 'Ministry of Justice certified Arabic sworn legal translation with authorized notary seal',
     featuredImageAltAr: 'الترجمة القانونية المعتمدة لوزارة العدل ومحاكم دبي بالخاتم الرسمي المعتمد للمترجم المحلف',
     tags: ['Legal Translation', 'Ministry of Justice', 'Sworn Translator', 'Dubai Courts', 'Notary Public'],
-    departmentId: 'typing',
+    departmentId: 'attestation',
     relatedServiceId: 'typing-moj-certified-legal-translation',
     relatedServiceIds: ['notary-power-of-attorney-poa', 'courts-labour-civil-commercial-suits', 'atlas-mofa-attestation'],
     relatedArticleSlugs: ['uae-document-attestation-guide', 'mofa-digital-attestation'],

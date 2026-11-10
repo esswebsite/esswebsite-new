@@ -24,7 +24,10 @@ export const ServiceDetailModal: React.FC<ServiceDetailModalProps> = ({
   if (!service) return null;
   const t = TRANSLATIONS[language];
 
-  const totalStandard = service.govFee + service.serviceFee;
+  const isDetService =
+    service.departmentId === 'ded' ||
+    service.departmentId === 'det' ||
+    Boolean(service.isPriceUponConsultation);
 
   return (
     <div className="fixed inset-0 z-50 overflow-y-auto bg-slate-900/60 backdrop-blur-xs flex items-center justify-center p-4 sm:p-6">
@@ -61,7 +64,7 @@ export const ServiceDetailModal: React.FC<ServiceDetailModalProps> = ({
           </p>
 
           {/* Quick Metrics Bar inside Modal Header */}
-          <div className="mt-6 pt-5 border-t border-white/20 grid grid-cols-2 sm:grid-cols-3 gap-4 text-xs">
+          <div className="mt-6 pt-5 border-t border-white/20 grid grid-cols-2 gap-4 text-xs">
             <div>
               <span className="text-teal-200 block">{t.processingTimeLabel}</span>
               <span className="font-bold text-white text-sm flex items-center gap-1.5 mt-0.5">
@@ -72,17 +75,10 @@ export const ServiceDetailModal: React.FC<ServiceDetailModalProps> = ({
 
             <div>
               <span className="text-teal-200 block">{t.govFeeLabel}</span>
-              <span className="font-bold text-white text-sm tabular-nums mt-0.5">
-                {service.govFee === 0 ? (language === 'ar' ? 'مجاني / حسب النشاط' : 'Included / Variable') : `${service.govFee.toLocaleString()} AED`}
-              </span>
-            </div>
-
-            <div>
-              <span className="text-teal-200 block">
-                {language === 'ar' ? 'إجمالي الرسوم التقديرية' : 'Estimated Standard Total'}
-              </span>
-              <span className="font-bold text-white text-sm tabular-nums mt-0.5">
-                {totalStandard.toLocaleString()} AED
+              <span className="font-bold text-white text-sm mt-0.5">
+                {isDetService
+                  ? (language === 'ar' ? 'حسب النشاط / استشارة فورية' : 'Upon Consultation / Activity Based')
+                  : `${service.govFee.toLocaleString()} AED`}
               </span>
             </div>
           </div>
@@ -133,11 +129,11 @@ export const ServiceDetailModal: React.FC<ServiceDetailModalProps> = ({
           {/* Pricing Transparency Note */}
           <div className="p-4 rounded-lg bg-teal-50 border border-teal-200/80 text-xs text-teal-950 leading-relaxed">
             <span className="font-bold block mb-0.5">
-              {language === 'ar' ? 'معايير تسعير حكومة دبي الرسمية 2026' : 'Official Dubai Government Fee Transparency'}
+              {language === 'ar' ? 'معايير تسعير حكومة دبي الرسمية' : 'Official Dubai Government Fee Transparency'}
             </span>
             {language === 'ar'
-              ? 'الرسوم الحكومية تُسدد مباشرة للأنظمة الرسمية (إقامة دبي، وزارة العمل، دائرة الاقتصاد). رسوم الطباعة وخدمة ESS خاضعة لضريبة القيمة المضافة بنسبة 5% فقط.'
-              : 'Government tariffs are settled directly to official authorities (GDRFA, MoHRE, DET). ESS & KBC typing and liaison fee is subject to standard 5% UAE VAT.'}
+              ? 'الرسوم المعروضة هي الرسوم الحكومية الرسمية المعتمدة وتُسدد مباشرة للأنظمة الرسمية للجهات المختصة، مع تسليم إيصالات الدفع الحكومية فوراً.'
+              : 'All fees displayed are official Dubai government authority tariffs settled directly to official ministerial treasury systems, with official receipts issued immediately.'}
           </div>
         </div>
 

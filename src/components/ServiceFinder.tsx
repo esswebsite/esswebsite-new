@@ -253,11 +253,17 @@ export const ServiceFinder: React.FC<ServiceFinderProps> = ({
                       <div className="flex items-baseline justify-between mb-3">
                         <div>
                           <span className="text-[10px] text-slate-400 block font-medium">
-                            {language === 'ar' ? 'الرسوم التقديرية' : 'Estimated Tariff'}
+                            {language === 'ar' ? 'الرسوم الحكومية الرسمية' : 'Official Government Fee'}
                           </span>
-                          <span className="text-base font-extrabold text-[#1E2528] tabular-nums">
-                            {totalEst.toLocaleString()} <span className="text-[10px] font-bold text-slate-500">AED</span>
-                          </span>
+                          {service.departmentId === 'ded' || service.departmentId === 'det' || service.isPriceUponConsultation ? (
+                            <span className="text-[11px] font-bold text-[#128B94]">
+                              {language === 'ar' ? 'حسب النشاط / استشارة فورية' : 'Upon Consultation / Activity Based'}
+                            </span>
+                          ) : (
+                            <span className="text-base font-extrabold text-[#1E2528] tabular-nums">
+                              {service.govFee.toLocaleString()} <span className="text-[10px] font-bold text-slate-500">AED</span>
+                            </span>
+                          )}
                         </div>
 
                         <button

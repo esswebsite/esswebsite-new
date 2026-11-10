@@ -58,6 +58,7 @@ export interface ServiceItem {
   keyBenefitsAr: string[];
   isPopular?: boolean;
   isVipEligible?: boolean;
+  isPriceUponConsultation?: boolean;
   officialGovUrl?: string;
   officialGovPortalNameEn?: string;
   officialGovPortalNameAr?: string;

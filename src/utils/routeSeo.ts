@@ -4,6 +4,8 @@
  * OpenGraph, Twitter Card, and Canonical URLs for all routes.
  */
 
+import { matchDepartmentBySlug, matchServiceBySlug } from './urlRoutes';
+
 export interface RouteSeoData {
   title: string;
   description: string;
@@ -87,7 +89,12 @@ const DEPARTMENTS_META: Record<string, { title: string; desc: string; keywords: 
   amer: {
     title: 'Amer Center Karama Dubai (Lic. #772) | Residency Visas & Entry Permits | ESS',
     desc: 'Authorized Amer Center (Lic. #772) in Al Karama, Dubai. Fast-track UAE residency visa issuance, renewals, Golden Visas, family sponsorship, visit visas, and status change.',
-    keywords: 'Amer Center Karama, Amer Dubai, Amer License 772, GDRFA Dubai, residence visa renewal, Dubai entry permit, family visa Dubai, visit visa extension Karama, Golden Visa Amer',
+    keywords: 'Amer Center Karama, Amer Dubai, Amer License 772, GDRFA Dubai, residence visa renewal, Dubai entry permit, family visa Dubai, visit visa extension Karama',
+  },
+  'golden-visa': {
+    title: '10-Year UAE Golden Visa Services Dubai | Real Estate & Executives | ESS',
+    desc: 'Official 10-Year UAE Golden Visa processing at Karama Business Center. Real estate investors, high-salary executives, entrepreneurs, doctors, scientists, and outstanding talents with VIP Majlis handling.',
+    keywords: 'Golden Visa Dubai, 10 year visa UAE, Golden Visa Karama, property investor Golden Visa, executive Golden Visa Dubai, UAE Golden residency requirements, Golden Visa family sponsorship',
   },
   ded: {
     title: 'DET Dubai Economy & Tourism Services | Trade Licenses & Business Setup | ESS',
@@ -115,9 +122,9 @@ const DEPARTMENTS_META: Record<string, { title: string; desc: string; keywords: 
     keywords: 'OHC card Dubai, occupational health card Karama, food handlers card Dubai, salon health card, DHA occupational health screening, driver health card Dubai',
   },
   attestation: {
-    title: 'MOFA & Embassy Document Attestation Services Dubai | Atlas Center | ESS',
-    desc: 'Official UAE Ministry of Foreign Affairs (MOFA) attestation, global embassy & consulate legalization, apostille, educational degree equivalency, and vital certificates.',
-    keywords: 'MOFA attestation Dubai, certificate attestation Karama, embassy legalization Dubai, apostille UAE, degree equivalency MOE, marriage certificate attestation, birth certificate attestation',
+    title: 'Atlas Attestation Services Dubai | MOFA & Embassy Legalization | ESS',
+    desc: 'Official Atlas Attestation at Karama Business Center. UAE Ministry of Foreign Affairs (MOFA) attestation, global embassy & consulate legalization, apostille, and vital certificates.',
+    keywords: 'Atlas Attestation Dubai, MOFA attestation Dubai, certificate attestation Karama, embassy legalization Dubai, apostille UAE, degree equivalency MOE, marriage certificate attestation, birth certificate attestation',
   },
   notary: {
     title: 'Dubai Courts & Notary Public Legal Services | Power of Attorney & MOA | ESS',
@@ -375,8 +382,37 @@ export function getSeoForRoute(route: string): RouteSeoData {
     };
   }
 
-  // Fallback
+  // 5. Direct Department and Service routes (/amer-center-karama or /amer-center-karama/residency-visa-new)
   const parts = cleanRoute.split('/').filter(Boolean);
+  if (parts.length > 0) {
+    const dept = matchDepartmentBySlug(parts[0]);
+    if (dept) {
+      if (parts.length === 1) {
+        if (DEPARTMENTS_META[dept.id]) {
+          const meta = DEPARTMENTS_META[dept.id];
+          return {
+            title: meta.title,
+            description: meta.desc,
+            keywords: meta.keywords,
+            canonicalUrl,
+          };
+        }
+      } else if (parts.length >= 2) {
+        const service = matchServiceBySlug(dept.id, parts[1]);
+        if (service) {
+          const meta = getServiceSeo(service.id);
+          return {
+            title: meta.title,
+            description: meta.desc,
+            keywords: meta.keywords,
+            canonicalUrl,
+          };
+        }
+      }
+    }
+  }
+
+  // Fallback
   const fallbackTitle = parts.length > 0
     ? `${parts[parts.length - 1].replace(/-/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase())} | ESS Dubai`
     : 'Emirates Secretarial Services (ESS) | Government Services & Medical Fitness Dubai';

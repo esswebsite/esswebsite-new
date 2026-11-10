@@ -454,7 +454,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({
                         onChange={(e) => setFormData({ ...formData, serviceType: e.target.value })}
                         className="w-full bg-slate-50 border border-slate-200 rounded-lg px-3.5 py-2.5 text-xs font-bold text-slate-700 focus:outline-none focus:ring-1 focus:ring-[#128B94] focus:bg-white"
                       >
-                        <option value="golden-visa">{isAr ? 'الإقامة الذهبية 10 سنوات (Amer)' : '10-Year Golden Visa (Amer)'}</option>
+                        <option value="golden-visa">{isAr ? 'الإقامة الذهبية 10 سنوات' : '10-Year Golden Visa'}</option>
                         <option value="trade-license">{isAr ? 'تأسيس شركة ورخصة فورية (DED)' : 'DED Instant License / Setup'}</option>
                         <option value="tasheel-labor">{isAr ? 'معاملات العمل وتسهيل (MoHRE)' : 'MoHRE Tasheel Labor Services'}</option>
                         <option value="dha-medical">{isAr ? 'فحص طبي سريع 4 ساعات (DHA)' : '4-Hour Express Medical (DHA)'}</option>

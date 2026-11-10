@@ -13,6 +13,7 @@ import rtaLogo from '../assets/images/RTA.png';
 import tadbeerLogo from '../assets/images/Tadbeer services.png';
 import zajelTawjeehLogo from '../assets/images/zajel & tawjeeh.png';
 import atlasAttestationLogo from '../assets/images/atlas attestation.png';
+import goldenVisaLogo from '../assets/images/Golden-Visa_Logo_-ICon.webp';
 import essLogo from '../assets/images/ess-logo-transparent.png';
 
 export interface DepartmentLogoMeta {
@@ -119,23 +120,33 @@ export const DEPARTMENT_LOGOS: Record<string, DepartmentLogoMeta> = {
   },
   attestation: {
     src: atlasAttestationLogo,
-    nameEn: 'Atlas Attestation & Legal Translation (MOFA & Embassies)',
-    nameAr: 'أطلس لتصديق المستندات والترجمة القانونية (وزارة الخارجية)'
+    nameEn: 'Atlas Attestation (MOFA & Embassies)',
+    nameAr: 'أطلس للتصديقات (وزارة الخارجية والسفارات)'
   },
   mofa: {
     src: atlasAttestationLogo,
-    nameEn: 'Atlas Attestation & Legal Translation (MOFA & Embassies)',
-    nameAr: 'أطلس لتصديق المستندات والترجمة القانونية (وزارة الخارجية)'
+    nameEn: 'Atlas Attestation (MOFA & Embassies)',
+    nameAr: 'أطلس للتصديقات (وزارة الخارجية والسفارات)'
   },
   atlas: {
     src: atlasAttestationLogo,
-    nameEn: 'Atlas Attestation & Legal Translation',
-    nameAr: 'أطلس لتصديق المستندات والترجمة القانونية'
+    nameEn: 'Atlas Attestation',
+    nameAr: 'أطلس للتصديقات'
+  },
+  'golden-visa': {
+    src: goldenVisaLogo,
+    nameEn: 'Golden Visa UAE (10-Year Residency)',
+    nameAr: 'الإقامة الذهبية بدولة الإمارات (10 سنوات)'
+  },
+  goldenvisa: {
+    src: goldenVisaLogo,
+    nameEn: 'Golden Visa UAE (10-Year Residency)',
+    nameAr: 'الإقامة الذهبية بدولة الإمارات (10 سنوات)'
   },
   typing: {
     src: atlasAttestationLogo,
-    nameEn: 'Government Typing & Legal Translation Desk',
-    nameAr: 'مكتب الطباعة الحكومية والترجمة القانونية'
+    nameEn: 'Atlas Attestation',
+    nameAr: 'أطلس للتصديقات'
   },
   'vip-mobile': {
     src: essLogo,

@@ -37,6 +37,145 @@ export {
 };
 
 export const DEPARTMENT_RICH_MAP: Record<string, DepartmentRichDetails> = {
+  'golden-visa': {
+    heroImage: goldenVisaOfficeImg,
+    aboutStoryEn:
+      'The Golden Visa Executive Suite at Karama Business Center (KBC) is Dubai’s dedicated department for 10-Year Self-Sponsored UAE Residency. In direct coordination with the General Directorate of Residency and Foreigners Affairs (GDRFA Dubai) and the Federal Authority (ICP), our specialized consultants evaluate eligibility, secure preliminary approvals, and process 10-Year Golden Visas for real estate investors, high-earning executives, entrepreneurs, doctors, scientists, and outstanding talents within our private VIP Majlis.',
+    aboutStoryAr:
+      'يمثل قسم الإقامة الذهبية في مركز الكرامة للأعمال (KBC) الوجهة المتخصصة الأولى في دبي لإنجاز الإقامة الذهبية الذاتية لمدة 10 سنوات لدولة الإمارات. بالتنسيق المباشر مع إقامة دبي (GDRFA) والهيئة الاتحادية (ICP)، يتولى مستشارونا تدقيق معايير الأهلية واستخراج الموافقات المبدئية وتثبيت الإقامة الذهبية لمستثمري العقار، والمديرين التنفيذيين، ورواد الأعمال، والأطباء، والمبدعين في مجلس كبار الشخصيات الفاخر.',
+    mandateEn: 'Authorized processing of 10-Year UAE Golden Residency for real estate investors, executives, entrepreneurs, scientists, outstanding students, and family members under official GDRFA Dubai authority.',
+    mandateAr: 'المعالجة والاعتماد الرسمي لإقامات الـ 10 سنوات الذهبية للمستثمرين العقاريين والتنفيذيين ورواد الأعمال والعلماء والطلاب المتفوقين وأفراد أسرهم بإشراف إقامة دبي.',
+    galleryImages: [
+      {
+        url: goldenVisaOfficeImg,
+        titleEn: 'Golden Visa Executive Suite',
+        titleAr: 'مجلس الإقامة الذهبية التنفيذي',
+        captionEn: 'Private consultation lounge featuring Chesterfield leather armchairs and personalized Golden Visa case management.',
+        captionAr: 'مجلس استشارات خاص بأرائك جلدية فاخرة وإدارة مخصصة لملفات الإقامة الذهبية.',
+      },
+      {
+        url: vipMajlisLoungeImg,
+        titleEn: 'VIP Majlis Hospitality Suite',
+        titleAr: 'مجلس كبار الشخصيات والضيافة العربية',
+        captionEn: 'Dignified Arabic coffee service and executive hospitality for Golden Visa applicants and their families.',
+        captionAr: 'خدمة القهوة العربية الأصيلة والضيافة الفاخرة لحاملي الإقامة الذهبية وعائلاتهم.',
+      },
+      {
+        url: icpBiometricKioskImg,
+        titleEn: 'ICP 10-Year Emirates ID Biometrics',
+        titleAr: 'محطة البصمة البيومترية لهوية الـ 10 سنوات',
+        captionEn: 'Dedicated biometric enrollment counter for 10-year Golden Visa Emirates ID cards.',
+        captionAr: 'محطة مخصصة لتسجيل البصمة البيومترية وإصدار بطاقة الهوية الإماراتية لمدة 10 سنوات.',
+      },
+      {
+        url: fastTrackConcourseImg,
+        titleEn: 'Fast-Track Processing Concourse',
+        titleAr: 'ردهة المعاملات الحكومية السريعة',
+        captionEn: 'Seamless end-to-end liaison between GDRFA Dubai, Dubai Land Department, and DHA Salem Medical.',
+        captionAr: 'ربط مباشر بين إقامة دبي ودائرة الأراضي والأملاك وفحص سالم الطبي.',
+      },
+    ],
+    processSteps: [
+      {
+        stepNumber: 1,
+        titleEn: 'Eligibility Evaluation & Document Audit',
+        titleAr: 'تقييم الأهلية وتدقيق المستندات',
+        descEn: 'Audit of title deeds, salary certificates, degree attestations, or project endorsements.',
+        descAr: 'تدقيق صكوك الملكية، شهادات الراتب، المؤهلات المصدقة، أو اعتمادات المشاريع.',
+        durationEn: '2 - 4 Hours',
+        durationAr: '2 - 4 ساعات',
+      },
+      {
+        stepNumber: 2,
+        titleEn: 'GDRFA Golden Visa Nomination & Initial Approval',
+        titleAr: 'الترشيح والاعتماد المبدئي من إقامة دبي',
+        descEn: 'Submission through GDRFA smart services for federal eligibility approval.',
+        descAr: 'التقديم عبر منصة إقامة دبي الذكية للحصول على الموافقة المبدئية.',
+        durationEn: '24 Hours',
+        durationAr: '24 ساعة',
+      },
+      {
+        stepNumber: 3,
+        titleEn: 'Express Salem Medical & 10-Year Emirates ID',
+        titleAr: 'فحص سالم الطبي وبصمة الهوية 10 سنوات',
+        descEn: 'On-site 2-hour medical fitness testing at KMFC and ICP biometric capture.',
+        descAr: 'فحص طبي فائق السرعة خلال ساعتين بمركز الكرامة وبصمة الهوية الاتحادية.',
+        durationEn: 'Same Day',
+        durationAr: 'نفس اليوم',
+      },
+      {
+        stepNumber: 4,
+        titleEn: '10-Year Golden Residency Stamping & Card Issuance',
+        titleAr: 'تثبيت الإقامة الذهبية لـ 10 سنوات وتسليم الهوية',
+        descEn: 'Final electronic residency visa issuance and 10-year Emirates ID card delivery.',
+        descAr: 'إصدار تصريح الإقامة الذهبية الإلكتروني وتسليم بطاقة الهوية لمدة 10 سنوات.',
+        durationEn: '24 - 48 Hours',
+        durationAr: '24 - 48 ساعة',
+      },
+    ],
+    whyChooseBulletPointsEn: [
+      'Dedicated private Golden Visa suite with zero queue wait times and luxury executive hospitality',
+      'End-to-end processing: Nomination, title deed verification, attested degree evaluation, and family sponsorship',
+      'Co-located on-site DHA Salem express medical screening and ICP biometric enrollment',
+      '10-Year self-sponsored residency without need for a local employer or national sponsor',
+      'Full family inclusion: Spouse, children of any age, parents, and unlimited domestic helpers',
+      '100% official GDRFA Dubai tariffs with complete fee transparency',
+    ],
+    whyChooseBulletPointsAr: [
+      'مجلس تنفيذي خاص للإقامة الذهبية دون أي فترات انتظار مع ضيافة عربية راقية',
+      'إنجاز شامل: الترشيح، التحقق من صكوك الملكية، معادلة الشهادات وكفالة أفراد الأسرة',
+      'فحص طبي سريع معتمد من صحة دبي ومحطة تسجيل البصمة البيومترية في نفس المبنى',
+      'إقامة ذاتية لمدة 10 سنوات دون اشتراط كفيل أو صاحب عمل محلي',
+      'كفالة شاملة للأسرة: الزوجة، الأبناء بدون حد أقصى للسن، الوالدين والعمالة المساعدة',
+      'رسوم حكومية رسمية معتمدة من إقامة دبي بشفافية كاملة بنسبة 100%',
+    ],
+    reviews: [
+      {
+        name: 'Dr. Tariq Al-Mansoor',
+        roleEn: 'Senior Consultant Surgeon',
+        roleAr: 'استشاري أول جراحة',
+        companyEn: 'Dubai Healthcare City',
+        companyAr: 'مدينة دبي الطبية',
+        rating: 5,
+        date: 'October 2026',
+        commentEn: 'Obtained my 10-Year Golden Visa for doctors at Karama Business Center in less than 48 hours. The private executive suite and dedicated officer made the entire experience seamless.',
+        commentAr: 'حصلت على الإقامة الذهبية للأطباء لمدة 10 سنوات في مركز الكرامة للأعمال خلال أقل من 48 ساعة. المجلس الخاص والتعامل الاحترافي كانا استثنائيين.',
+      },
+      {
+        name: 'Alexander Lindqvist',
+        roleEn: 'Real Estate Investor',
+        roleAr: 'مستثمر عقاري',
+        companyEn: 'Nordic Capital Real Estate',
+        companyAr: 'نورديك كابيتال العقارية',
+        rating: 5,
+        date: 'September 2026',
+        commentEn: 'Processed property-based Golden Visas for myself and my family based on our Downtown Dubai apartments. Title deed verification, medicals, and biometrics completed under one roof.',
+        commentAr: 'أنجزت الإقامة الذهبية العقارية لي ولعائلتي بناءً على عقاراتنا في وسط مدينة دبي. تدقيق الملكية، الفحص الطبي وبصمة الهوية تمت جميعها تحت سقف واحد.',
+      },
+    ],
+    contactDeskEn: 'Golden Visa Executive Desk: 04-342-6666 · Karama Business Center (Next to Karama Post Office, Dubai)',
+    contactDeskAr: 'مكتب الإقامة الذهبية التنفيذي: 04-342-6666 · مركز الكرامة للأعمال (بجوار بريد الكرامة، دبي)',
+    faqs: [
+      {
+        questionEn: 'What are the main categories eligible for the 10-Year UAE Golden Visa?',
+        questionAr: 'ما هي الفئات الرئيسية المؤهلة للحصول على الإقامة الذهبية لـ 10 سنوات في الإمارات؟',
+        answerEn: 'Eligibility includes Real Estate Investors with property valued at AED 2,000,000 or above, Senior Executives with attested university degrees and monthly salary of AED 30,000+, Entrepreneurs & Business Owners, Doctors & Medical Specialists, Scientists & Researchers, and Outstanding University Graduates.',
+        answerAr: 'تشمل الفئات: المستثمرين العقاريين (عقارات بقيمة 2 مليون درهم فما فوق)، المديرين التنفيذيين والمهنيين براتب شهري 30 ألف درهم فما فوق ومؤهل جامعي مصدق، رواد الأعمال وأصحاب المشاريع، الأطباء والمختصين، العلماء والباحثين، وخريجي الجامعات المتفوقين.',
+      },
+      {
+        questionEn: 'Can I sponsor my family and domestic workers under the Golden Visa?',
+        questionAr: 'هل يمكنني كفالة أفراد عائلتي والمساعدين المنزليين بموجب الإقامة الذهبية؟',
+        answerEn: 'Yes, Golden Visa holders can sponsor their spouse and children regardless of their age, as well as unlimited domestic helpers and parents with 10-year residency permits.',
+        answerAr: 'نعم، يمكن لحامل الإقامة الذهبية كفالة الزوجة والأبناء أياً كانت أعمارهم، بالإضافة إلى كفالة العمالة المساعدة دون حد أقصى والوالدين بإقامة مدتها 10 سنوات.',
+      },
+      {
+        questionEn: 'How long does the entire Golden Visa process take at Karama Business Center?',
+        questionAr: 'كم تستغرق إجراءات الإقامة الذهبية كاملة في مركز الكرامة للأعمال؟',
+        answerEn: 'Initial GDRFA pre-approval takes approximately 24 to 48 hours. Medical fitness testing and biometric enrollment are completed on-site with express VIP turnaround, allowing final 10-year visa stamping within 2 to 4 business days.',
+        answerAr: 'تستغرق الموافقة المبدئية من إقامة دبي نحو 24 إلى 48 ساعة. ويتم إنجاز فحص سالم الطبي وبصمة الهوية داخل المركز بمسار VIP سريع لتثبيت الإقامة النهائية خلال 2 إلى 4 أيام عمل.',
+      },
+    ],
+  },
   amer: {
     heroImage: amerDepartmentImg,
     aboutStoryEn:
@@ -855,10 +994,14 @@ export function getServiceDetails(
     ],
     faqs: [
       {
-        questionEn: `What is the total official fee for ${service.titleEn}?`,
-        questionAr: `ما هو إجمالي الرسوم الرسمية لـ ${service.titleAr}؟`,
-        answerEn: `The government authority fee is AED ${service.govFee.toLocaleString()} and the ESS certified typing and liaison fee is AED ${service.serviceFee.toLocaleString()}. Official receipts from ${service.authorityEn} are issued immediately.`,
-        answerAr: `الرسوم الحكومية الرسمية هي ${service.govFee.toLocaleString()} درهم، ورسوم الطباعة والتنسيق المعتمدة هي ${service.serviceFee.toLocaleString()} درهم، مع تسليم إيصال حكومي رسمي فوري من ${service.authorityAr}.`,
+        questionEn: `What is the official government fee for ${service.titleEn}?`,
+        questionAr: `ما هي الرسوم الحكومية الرسمية لـ ${service.titleAr}؟`,
+        answerEn: service.govFee > 0
+          ? `The official government authority fee is AED ${service.govFee.toLocaleString()}. Official receipts from ${service.authorityEn} are issued immediately.`
+          : `Official government fees for ${dept.nameEn} licensing services vary according to your specific business activities and legal structure. Contact our senior consultants for an instant tailored voucher estimate.`,
+        answerAr: service.govFee > 0
+          ? `الرسوم الحكومية الرسمية هي ${service.govFee.toLocaleString()} درهم، مع تسليم إيصال حكومي رسمي فوري من ${service.authorityAr}.`
+          : `تعتمد الرسوم الحكومية الرسمية لتراخيص ${dept.nameAr} على نوع الأنشطة التجارية المختارة والشكل القانوني للشركة، ويتم تقديم عرض مخصص وفوري عند الاستشارة.`,
       },
       {
         questionEn: `What is the estimated turnaround time for this service?`,

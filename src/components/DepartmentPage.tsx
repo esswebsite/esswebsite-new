@@ -23,6 +23,7 @@ import { getDepartmentDetails } from '../data/departmentExtendedData';
 import { DepartmentLogo } from './DepartmentLogo';
 import { OFFICIAL_MAPS, OFFICIAL_SAME_AS } from '../data/socialAndMapLinks';
 import { GoogleReviewsSection } from './GoogleReviewsSection';
+import { getDepartmentPath, CANONICAL_BASE } from '../utils/router';
 
 interface DepartmentPageProps {
   deptId: string;
@@ -97,7 +98,8 @@ export const DepartmentPage: React.FC<DepartmentPageProps> = ({
       canonicalTag.setAttribute('rel', 'canonical');
       document.head.appendChild(canonicalTag);
     }
-    canonicalTag.setAttribute('href', `${window.location.origin}/#department/${currentDept.id}`);
+    const canonicalDepartmentUrl = `${CANONICAL_BASE}${getDepartmentPath(currentDept.id, language)}`;
+    canonicalTag.setAttribute('href', canonicalDepartmentUrl);
 
     // Structured Data JSON-LD
     const jsonLdData = {
@@ -105,7 +107,7 @@ export const DepartmentPage: React.FC<DepartmentPageProps> = ({
       '@graph': [
         {
           '@type': 'GovernmentService',
-          '@id': `${window.location.origin}/#department/${currentDept.id}`,
+          '@id': canonicalDepartmentUrl,
           name: language === 'ar' ? currentDept.nameAr : currentDept.nameEn,
           serviceType: 'Public Administration & Businessmen Services',
           provider: {
@@ -140,19 +142,19 @@ export const DepartmentPage: React.FC<DepartmentPageProps> = ({
               '@type': 'ListItem',
               position: 1,
               name: language === 'ar' ? 'الرئيسية' : 'Home',
-              item: `${window.location.origin}/#home`,
+              item: `${CANONICAL_BASE}${language === 'ar' ? '/ar' : ''}/`,
             },
             {
               '@type': 'ListItem',
               position: 2,
               name: language === 'ar' ? 'الدوائر الحكومية' : 'Departments',
-              item: `${window.location.origin}/#departments`,
+              item: `${CANONICAL_BASE}${language === 'ar' ? '/ar' : ''}/departments`,
             },
             {
               '@type': 'ListItem',
               position: 3,
               name: language === 'ar' ? currentDept.nameAr : currentDept.nameEn,
-              item: `${window.location.origin}/#department/${currentDept.id}`,
+              item: canonicalDepartmentUrl,
             },
           ],
         },
@@ -597,21 +599,24 @@ export const DepartmentPage: React.FC<DepartmentPageProps> = ({
                     </ul>
                   </div>
 
-                  {/* Pricing Strip & Action Buttons */}
-                  <div className="pt-4 border-t border-slate-100">
-                    <div className="flex items-baseline justify-between mb-4">
-                      <div>
-                        <span className="text-[10px] text-slate-400 block font-medium">
-                          {language === 'ar' ? 'الرسوم التقديرية' : 'Estimated Tariff'}
-                        </span>
-                        <span className="text-lg font-extrabold text-[#1E2528] tabular-nums">
-                          {totalEst.toLocaleString()} <span className="text-xs font-bold text-slate-500">AED</span>
-                        </span>
+                    {/* Pricing Strip & Action Buttons */}
+                    <div className="pt-4 border-t border-slate-100">
+                      <div className="flex items-baseline justify-between mb-4">
+                        <div>
+                          <span className="text-[10px] text-slate-400 block font-medium">
+                            {language === 'ar' ? 'الرسوم الحكومية الرسمية' : 'Official Government Fee'}
+                          </span>
+                          {service.departmentId === 'ded' || service.departmentId === 'det' || service.isPriceUponConsultation ? (
+                            <span className="text-xs font-bold text-[#128B94]">
+                              {language === 'ar' ? 'حسب النشاط / استشارة فورية' : 'Upon Consultation / Activity Based'}
+                            </span>
+                          ) : (
+                            <span className="text-lg font-extrabold text-[#1E2528] tabular-nums">
+                              {service.govFee.toLocaleString()} <span className="text-xs font-bold text-slate-500">AED</span>
+                            </span>
+                          )}
+                        </div>
                       </div>
-                      <span className="text-[10px] text-slate-500">
-                        {language === 'ar' ? 'شامل الرسوم والطباعة' : 'Gov + Typing fee'}
-                      </span>
-                    </div>
 
                     <div className="grid grid-cols-2 gap-2">
                       {/* Direct Link to Single Service Page */}

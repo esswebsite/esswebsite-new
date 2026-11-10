@@ -385,19 +385,25 @@ export const DepartmentsServicesPage: React.FC<DepartmentsServicesPageProps> = (
                         {/* Fee Strip */}
                         <div className="p-2.5 rounded-lg bg-slate-50 border border-slate-100 flex items-center justify-between text-xs">
                           <div>
-                            <span className="text-slate-400 text-[10px] block uppercase">
-                              {isAr ? 'رسوم الحكومة' : 'Gov Fee'}
+                            <span className="text-slate-400 text-[10px] block uppercase font-medium">
+                              {isAr ? 'الرسوم الحكومية الرسمية' : 'Official Government Fee'}
                             </span>
                             <span className="font-bold text-slate-800">
-                              {service.govFee.toLocaleString()} {isAr ? 'درهم' : 'AED'}
+                              {service.departmentId === 'ded' || service.departmentId === 'det' || service.isPriceUponConsultation ? (
+                                <span className="text-[#128B94] text-[11px]">
+                                  {isAr ? 'حسب النشاط / استشارة فورية' : 'Upon Consultation / Activity Based'}
+                                </span>
+                              ) : (
+                                `${service.govFee.toLocaleString()} ${isAr ? 'درهم' : 'AED'}`
+                              )}
                             </span>
                           </div>
                           <div className="text-right rtl:text-left">
                             <span className="text-slate-400 text-[10px] block uppercase">
-                              {isAr ? 'أتعاب الطباعة' : 'ESS Typing'}
+                              {isAr ? 'مدة الإنجاز' : 'Turnaround'}
                             </span>
-                            <span className="font-bold text-[#128B94]">
-                              {service.serviceFee.toLocaleString()} {isAr ? 'درهم' : 'AED'}
+                            <span className="font-bold text-[#128B94] text-[11px]">
+                              {isAr ? service.processingTimeAr : service.processingTimeEn}
                             </span>
                           </div>
                         </div>

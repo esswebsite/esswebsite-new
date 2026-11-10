@@ -108,8 +108,13 @@ const CORE_PAGES_META = {
 const DEPARTMENTS_META = {
   amer: {
     title: 'Amer Center Karama Dubai (Lic. #772) | Residency Visas & Entry Permits | ESS',
-    desc: 'Authorized Amer Center (Lic. #772) in Al Karama, Dubai. Fast-track UAE residency visa issuance, renewals, Golden Visas, family sponsorship, visit visas, and status change.',
-    keywords: 'Amer Center Karama, Amer Dubai, Amer License 772, GDRFA Dubai, residence visa renewal, Dubai entry permit, family visa Dubai, visit visa extension Karama, Golden Visa Amer',
+    desc: 'Authorized Amer Center (Lic. #772) in Al Karama, Dubai. Fast-track UAE residency visa issuance, renewals, family sponsorship, visit visas, and status change.',
+    keywords: 'Amer Center Karama, Amer Dubai, Amer License 772, GDRFA Dubai, residence visa renewal, Dubai entry permit, family visa Dubai, visit visa extension Karama',
+  },
+  'golden-visa': {
+    title: '10-Year UAE Golden Visa Services Dubai | Real Estate & Executives | ESS',
+    desc: 'Official 10-Year UAE Golden Visa processing at Karama Business Center. Real estate investors, high-salary executives, entrepreneurs, doctors, scientists, and outstanding talents with VIP Majlis handling.',
+    keywords: 'Golden Visa Dubai, 10 year visa UAE, Golden Visa Karama, property investor Golden Visa, executive Golden Visa Dubai, UAE Golden residency requirements, Golden Visa family sponsorship',
   },
   ded: {
     title: 'DET Dubai Economy & Tourism Services | Trade Licenses & Business Setup | ESS',
@@ -137,9 +142,9 @@ const DEPARTMENTS_META = {
     keywords: 'OHC card Dubai, occupational health card Karama, food handlers card Dubai, salon health card, DHA occupational health screening, driver health card Dubai',
   },
   attestation: {
-    title: 'MOFA & Embassy Document Attestation Services Dubai | Atlas Center | ESS',
-    desc: 'Official UAE Ministry of Foreign Affairs (MOFA) attestation, global embassy & consulate legalization, apostille, educational degree equivalency, and vital certificates.',
-    keywords: 'MOFA attestation Dubai, certificate attestation Karama, embassy legalization Dubai, apostille UAE, degree equivalency MOE, marriage certificate attestation, birth certificate attestation',
+    title: 'Atlas Attestation Services Dubai | MOFA & Embassy Legalization | ESS',
+    desc: 'Official Atlas Attestation at Karama Business Center. UAE Ministry of Foreign Affairs (MOFA) attestation, global embassy & consulate legalization, apostille, and vital certificates.',
+    keywords: 'Atlas Attestation Dubai, MOFA attestation Dubai, certificate attestation Karama, embassy legalization Dubai, apostille UAE, degree equivalency MOE, marriage certificate attestation, birth certificate attestation',
   },
   notary: {
     title: 'Dubai Courts & Notary Public Legal Services | Power of Attorney & MOA | ESS',
@@ -179,7 +184,7 @@ const DEPARTMENTS_META = {
 };
 
 function getServiceSeo(serviceSlug) {
-  const cleanName = serviceSlug.replace(/^(amer|det|tasheel|icp|dm|ohc|atlas|notary|typing|salem|rta|tawjeeh|tadbeer|vip|courts)-/, '');
+  const cleanName = serviceSlug.replace(/^(amer|det|tasheel|icp|dm|ohc|atlas|notary|typing|salem|rta|tawjeeh|tadbeer|vip|courts|ded|golden-visa)-/, '');
   const titleWords = cleanName.split('-').map((w) => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
 
   if (serviceSlug.includes('golden-visa')) {
@@ -332,6 +337,44 @@ function getArticleSeo(slug) {
   };
 }
 
+const DEPARTMENT_SLUGS_TO_ID = {
+  'amer-center-karama': 'amer',
+  amer: 'amer',
+  'golden-visa-center-karama': 'golden-visa',
+  'golden-visa': 'golden-visa',
+  'det-center-karama': 'ded',
+  det: 'ded',
+  ded: 'ded',
+  'tasheel-center-karama': 'tasheel',
+  tasheel: 'tasheel',
+  'icp-center-karama': 'icp',
+  icp: 'icp',
+  'dubai-municipality-center-karama': 'municipality',
+  municipality: 'municipality',
+  dm: 'municipality',
+  'ohc-center-karama': 'ohc',
+  ohc: 'ohc',
+  'atlas-attestation-center-karama': 'attestation',
+  attestation: 'attestation',
+  atlas: 'attestation',
+  typing: 'attestation',
+  'notary-courts-center-karama': 'notary',
+  notary: 'notary',
+  courts: 'notary',
+  'salem-medical-fitness-karama': 'salem',
+  salem: 'salem',
+  kmfc: 'salem',
+  'rta-center-karama': 'rta',
+  rta: 'rta',
+  'tawjeeh-center-karama': 'tawjeeh',
+  tawjeeh: 'tawjeeh',
+  'tadbeer-center-karama': 'tadbeer',
+  tadbeer: 'tadbeer',
+  'vip-mobile-center-karama': 'vip-mobile',
+  vip: 'vip-mobile',
+  'vip-mobile': 'vip-mobile',
+};
+
 function getMetadataForRoute(route) {
   const canonicalUrl = `https://ess.ae${route}`;
 
@@ -346,7 +389,19 @@ function getMetadataForRoute(route) {
     };
   }
 
-  // 2. Department pages (/department/:id)
+  // 2. Knowledge hub articles (/knowledge-hub/:slug)
+  if (route.startsWith('/knowledge-hub/')) {
+    const slug = route.replace('/knowledge-hub/', '').trim();
+    const meta = getArticleSeo(slug);
+    return {
+      title: meta.title,
+      description: meta.desc,
+      keywords: meta.keywords,
+      canonicalUrl,
+    };
+  }
+
+  // 3. Department pages (/department/:id) - legacy support
   if (route.startsWith('/department/')) {
     const deptId = route.replace('/department/', '').trim();
     if (DEPARTMENTS_META[deptId]) {
@@ -360,7 +415,7 @@ function getMetadataForRoute(route) {
     }
   }
 
-  // 3. Service pages (/service/:id)
+  // 4. Service pages (/service/:id) - legacy support
   if (route.startsWith('/service/')) {
     const serviceId = route.replace('/service/', '').trim();
     const meta = getServiceSeo(serviceId);
@@ -372,10 +427,29 @@ function getMetadataForRoute(route) {
     };
   }
 
-  // 4. Knowledge hub articles (/knowledge-hub/:slug)
-  if (route.startsWith('/knowledge-hub/')) {
-    const slug = route.replace('/knowledge-hub/', '').trim();
-    const meta = getArticleSeo(slug);
+  // 5. Canonical and Clean routes: /{departmentSlug} or /{departmentSlug}/{serviceSlug}
+  const cleanRoute = route.replace(/^\/ar\//, '/');
+  const segments = cleanRoute.split('/').filter(Boolean);
+
+  if (segments.length === 1 && DEPARTMENT_SLUGS_TO_ID[segments[0]]) {
+    const deptId = DEPARTMENT_SLUGS_TO_ID[segments[0]];
+    if (DEPARTMENTS_META[deptId]) {
+      const meta = DEPARTMENTS_META[deptId];
+      return {
+        title: meta.title,
+        description: meta.desc,
+        keywords: meta.keywords,
+        canonicalUrl,
+      };
+    }
+  }
+
+  if (segments.length === 2 && DEPARTMENT_SLUGS_TO_ID[segments[0]]) {
+    const deptId = DEPARTMENT_SLUGS_TO_ID[segments[0]];
+    const prefix = deptId === 'ded' ? 'det' : deptId === 'municipality' ? 'dm' : deptId === 'attestation' ? 'atlas' : deptId;
+    const rawServiceSlug = segments[1];
+    const serviceKey = rawServiceSlug.startsWith(`${prefix}-`) ? rawServiceSlug : `${prefix}-${rawServiceSlug}`;
+    const meta = getServiceSeo(serviceKey);
     return {
       title: meta.title,
       description: meta.desc,

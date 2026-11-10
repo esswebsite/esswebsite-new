@@ -30,6 +30,7 @@ import { getServiceDetails } from '../data/departmentExtendedData';
 import { DepartmentLogo } from './DepartmentLogo';
 import { OFFICIAL_MAPS, OFFICIAL_SAME_AS } from '../data/socialAndMapLinks';
 import { getOpeningHoursForDept } from '../data/centerTimings';
+import { getDepartmentPath, getServicePath, CANONICAL_BASE } from '../utils/router';
 
 interface SingleServicePageProps {
   serviceId: string;
@@ -62,7 +63,11 @@ export const SingleServicePage: React.FC<SingleServicePageProps> = ({
 
   const serviceDetails = getServiceDetails(currentService, currentDept);
 
-  const totalStandard = currentService.govFee + currentService.serviceFee;
+  const isDetService =
+    currentService.departmentId === 'ded' ||
+    currentService.departmentId === 'det' ||
+    Boolean(currentService.isPriceUponConsultation);
+  const totalStandard = currentService.govFee;
   const totalWithVip = totalStandard + (currentService.vipFastTrackFee || 0);
 
   // Facility showcase image (the 2nd featured image on page)
@@ -124,7 +129,9 @@ export const SingleServicePage: React.FC<SingleServicePageProps> = ({
       canonicalTag.setAttribute('rel', 'canonical');
       document.head.appendChild(canonicalTag);
     }
-    canonicalTag.setAttribute('href', `${window.location.origin}/#service/${currentService.id}`);
+    const canonicalServiceUrl = `${CANONICAL_BASE}${getServicePath(currentService.id, currentDept.id, language)}`;
+    const canonicalDepartmentUrl = `${CANONICAL_BASE}${getDepartmentPath(currentDept.id, language)}`;
+    canonicalTag.setAttribute('href', canonicalServiceUrl);
 
     // Structured Data JSON-LD with official brand naming, Google Profile & alternate names
     const jsonLdData = {
@@ -132,7 +139,7 @@ export const SingleServicePage: React.FC<SingleServicePageProps> = ({
       '@graph': [
         {
           '@type': ['LocalBusiness', 'ProfessionalService'],
-          '@id': `${window.location.origin}/#organization`,
+          '@id': `${CANONICAL_BASE}/#organization`,
           name: 'Karama Business Center',
           alternateName: [
             'KBC',
@@ -163,11 +170,11 @@ export const SingleServicePage: React.FC<SingleServicePageProps> = ({
         },
         {
           '@type': 'Service',
-          '@id': `${window.location.origin}/#service/${currentService.id}`,
+          '@id': canonicalServiceUrl,
           name: isAr ? currentService.titleAr : currentService.titleEn,
           serviceType: currentService.category,
           provider: {
-            '@id': `${window.location.origin}/#organization`,
+            '@id': `${CANONICAL_BASE}/#organization`,
           },
           offers: {
             '@type': 'Offer',
@@ -189,19 +196,19 @@ export const SingleServicePage: React.FC<SingleServicePageProps> = ({
               '@type': 'ListItem',
               position: 1,
               name: isAr ? 'الرئيسية' : 'Home',
-              item: `${window.location.origin}/#home`,
+              item: `${CANONICAL_BASE}${language === 'ar' ? '/ar' : ''}/`,
             },
             {
               '@type': 'ListItem',
               position: 2,
               name: isAr ? currentDept.nameAr : currentDept.nameEn,
-              item: `${window.location.origin}/#department/${currentDept.id}`,
+              item: canonicalDepartmentUrl,
             },
             {
               '@type': 'ListItem',
               position: 3,
               name: isAr ? currentService.titleAr : currentService.titleEn,
-              item: `${window.location.origin}/#service/${currentService.id}`,
+              item: canonicalServiceUrl,
             },
           ],
         },
@@ -322,7 +329,7 @@ export const SingleServicePage: React.FC<SingleServicePageProps> = ({
               </p>
 
               {/* Service SLA & Tariff Highlights */}
-              <div className="mt-8 pt-6 border-t border-white/20 grid grid-cols-2 sm:grid-cols-4 gap-4 text-xs">
+              <div className="mt-8 pt-6 border-t border-white/20 grid grid-cols-2 sm:grid-cols-3 gap-4 text-xs">
                 <div>
                   <span className="text-teal-200 block">{isAr ? 'مدة الإنجاز الرسمية' : 'Turnaround SLA'}</span>
                   <span className="text-lg font-extrabold text-white flex items-center gap-1.5 mt-0.5">
@@ -331,26 +338,27 @@ export const SingleServicePage: React.FC<SingleServicePageProps> = ({
                   </span>
                 </div>
 
-                <div>
-                  <span className="text-teal-200 block">{isAr ? 'الرسوم الحكومية' : 'Government Fee'}</span>
-                  <span className="text-lg font-extrabold text-white mt-0.5 block tabular-nums">
-                    {currentService.govFee.toLocaleString()} <span className="text-xs font-bold text-teal-200">AED</span>
-                  </span>
+                <div className={isDetService ? 'col-span-2' : ''}>
+                  <span className="text-teal-200 block">{isAr ? 'الرسوم الحكومية الرسمية' : 'Official Government Fee'}</span>
+                  {isDetService ? (
+                    <span className="text-base sm:text-lg font-extrabold text-white mt-0.5 block">
+                      {isAr ? 'حسب النشاط / استشارة فورية' : 'Upon Consultation / Activity Based'}
+                    </span>
+                  ) : (
+                    <span className="text-lg font-extrabold text-white mt-0.5 block tabular-nums">
+                      {currentService.govFee.toLocaleString()} <span className="text-xs font-bold text-teal-200">AED</span>
+                    </span>
+                  )}
                 </div>
 
-                <div>
-                  <span className="text-teal-200 block">{isAr ? 'رسوم الطباعة والتدقيق (ESS)' : 'ESS Typing Fee'}</span>
-                  <span className="text-lg font-extrabold text-white mt-0.5 block tabular-nums">
-                    {currentService.serviceFee.toLocaleString()} <span className="text-xs font-bold text-teal-200">AED</span>
-                  </span>
-                </div>
-
-                <div>
-                  <span className="text-teal-200 block">{isAr ? 'إجمالي التقدير القياسي' : 'Standard Total'}</span>
-                  <span className="text-lg font-extrabold text-teal-200 mt-0.5 block tabular-nums">
-                    {totalStandard.toLocaleString()} <span className="text-xs font-bold text-white">AED</span>
-                  </span>
-                </div>
+                {!isDetService && (
+                  <div>
+                    <span className="text-teal-200 block">{isAr ? 'الإجمالي الحكومي' : 'Official Total'}</span>
+                    <span className="text-lg font-extrabold text-teal-200 mt-0.5 block tabular-nums">
+                      {totalStandard.toLocaleString()} <span className="text-xs font-bold text-white">AED</span>
+                    </span>
+                  </div>
+                )}
               </div>
             </div>
 
@@ -860,37 +868,41 @@ export const SingleServicePage: React.FC<SingleServicePageProps> = ({
 
           <div className="bg-white rounded-2xl border border-slate-200 shadow-lg overflow-hidden">
             <div className="p-6 sm:p-8 space-y-4">
-              <div className="flex items-center justify-between py-3 border-b border-slate-100">
-                <div>
-                  <span className="font-bold text-sm text-slate-900 block">
-                    {isAr ? 'الرسوم الحكومية الرسمية للجهة المختصة' : 'Official Government Authority Tariff'}
-                  </span>
-                  <span className="text-xs text-slate-500">
-                    {isAr
-                      ? `سداد مباشر إلى خزينة ${currentService.authorityAr}`
-                      : `Settled directly to official treasury of ${currentService.authorityEn}`}
-                  </span>
-                </div>
-                <span className="text-base font-extrabold text-[#1E2528] tabular-nums">
-                  {currentService.govFee.toLocaleString()} <span className="text-xs font-bold text-slate-500">AED</span>
-                </span>
-              </div>
-
-              <div className="flex items-center justify-between py-3 border-b border-slate-100">
-                <div>
-                  <span className="font-bold text-sm text-slate-900 block">
-                    {isAr ? 'رسوم الطباعة والتدقيق المعتمد (ESS)' : 'ESS Certified Typing & Pre-Audit Fee'}
-                  </span>
-                  <span className="text-xs text-slate-500">
-                    {isAr ? 'شاملة التدقيق المسبق للشروط ومتابعة الملف' : 'Includes comprehensive document pre-audit & dedicated officer'}
+              {isDetService ? (
+                <div className="flex items-center justify-between py-3 border-b border-slate-100">
+                  <div>
+                    <span className="font-bold text-sm text-slate-900 block">
+                      {isAr ? 'الرسوم الحكومية الرسمية لدائرة الاقتصاد والسياحة' : 'Official DET Government Fee'}
+                    </span>
+                    <span className="text-xs text-slate-500">
+                      {isAr
+                        ? 'تُحدد الرسوم الحكومية حسب الأنشطة التجارية المختارة والشكل القانوني للشركة'
+                        : 'Government voucher calculated directly according to chosen commercial activities & legal structure'}
+                    </span>
+                  </div>
+                  <span className="text-sm sm:text-base font-extrabold text-[#128B94]">
+                    {isAr ? 'حسب النشاط / استشارة فورية' : 'Upon Consultation / Activity Based'}
                   </span>
                 </div>
-                <span className="text-base font-extrabold text-[#1E2528] tabular-nums">
-                  {currentService.serviceFee.toLocaleString()} <span className="text-xs font-bold text-slate-500">AED</span>
-                </span>
-              </div>
+              ) : (
+                <div className="flex items-center justify-between py-3 border-b border-slate-100">
+                  <div>
+                    <span className="font-bold text-sm text-slate-900 block">
+                      {isAr ? 'الرسوم الحكومية الرسمية للجهة المختصة' : 'Official Government Authority Tariff'}
+                    </span>
+                    <span className="text-xs text-slate-500">
+                      {isAr
+                        ? `سداد مباشر إلى خزينة ${currentService.authorityAr}`
+                        : `Settled directly to official treasury of ${currentService.authorityEn}`}
+                    </span>
+                  </div>
+                  <span className="text-base font-extrabold text-[#1E2528] tabular-nums">
+                    {currentService.govFee.toLocaleString()} <span className="text-xs font-bold text-slate-500">AED</span>
+                  </span>
+                </div>
+              )}
 
-              {currentService.vipFastTrackFee > 0 && (
+              {currentService.vipFastTrackFee > 0 && !isDetService && (
                 <div className="flex items-center justify-between py-3 border-b border-slate-100 bg-teal-50/50 -mx-6 sm:-mx-8 px-6 sm:px-8">
                   <div>
                     <span className="font-bold text-sm text-[#01403F] block flex items-center gap-1.5">
@@ -911,12 +923,18 @@ export const SingleServicePage: React.FC<SingleServicePageProps> = ({
               <div className="pt-4 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                 <div>
                   <span className="text-xs text-slate-400 block font-medium">
-                    {isAr ? 'الإجمالي التقديري الاعتيادي' : 'Standard Estimated Total'}
+                    {isAr ? 'الرسوم الحكومية الرسمية المعتمدة' : 'Official Government Fee'}
                   </span>
-                  <span className="text-3xl font-extrabold text-[#1E2528] tabular-nums">
-                    {totalStandard.toLocaleString()}{' '}
-                    <span className="text-base font-bold text-slate-500">AED</span>
-                  </span>
+                  {isDetService ? (
+                    <span className="text-xl sm:text-2xl font-extrabold text-[#128B94]">
+                      {isAr ? 'حسب النشاط التجاري' : 'Based on Business Activity'}
+                    </span>
+                  ) : (
+                    <span className="text-3xl font-extrabold text-[#1E2528] tabular-nums">
+                      {totalStandard.toLocaleString()}{' '}
+                      <span className="text-base font-bold text-slate-500">AED</span>
+                    </span>
+                  )}
                 </div>
 
                 <div className="flex items-center gap-3">

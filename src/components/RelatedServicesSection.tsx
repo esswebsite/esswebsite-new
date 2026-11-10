@@ -5,6 +5,7 @@ import {
   getContextualRelatedServices,
   RelatedServiceItem,
 } from '../data/relatedServicesData';
+import { getDepartmentPath, getServicePath } from '../utils/router';
 
 export interface RelatedServicesSectionProps {
   language: Language;
@@ -55,7 +56,8 @@ export const RelatedServicesSection: React.FC<RelatedServicesSectionProps> = ({
       if (onNavigateToService) {
         onNavigateToService(item.id);
       } else {
-        window.history.pushState(null, '', `/service/${item.id}`);
+        const path = getServicePath(item.id, item.departmentId, language);
+        window.history.pushState(null, '', path);
         window.dispatchEvent(new PopStateEvent('popstate'));
         window.scrollTo({ top: 0, behavior: 'smooth' });
       }
@@ -63,7 +65,8 @@ export const RelatedServicesSection: React.FC<RelatedServicesSectionProps> = ({
       if (onNavigateToDepartment) {
         onNavigateToDepartment(item.departmentId);
       } else {
-        window.history.pushState(null, '', `/department/${item.departmentId}`);
+        const path = getDepartmentPath(item.departmentId, language);
+        window.history.pushState(null, '', path);
         window.dispatchEvent(new PopStateEvent('popstate'));
         window.scrollTo({ top: 0, behavior: 'smooth' });
       }

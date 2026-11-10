@@ -131,20 +131,29 @@ export const FeeCalculator: React.FC<FeeCalculatorProps> = ({
     return DEPARTMENTS.find((d) => d.id === selectedDeptId) || DEPARTMENTS[0];
   }, [selectedDeptId]);
 
+  const isDetService =
+    currentService.departmentId === 'ded' ||
+    currentService.departmentId === 'det' ||
+    Boolean(currentService.isPriceUponConsultation);
+
   const generalCalculations = useMemo(() => {
-    const govBase = currentService.govFee * applicantsCount;
-    let serviceBase = currentService.serviceFee * applicantsCount;
+    const isDet =
+      currentService.departmentId === 'ded' ||
+      currentService.departmentId === 'det' ||
+      Boolean(currentService.isPriceUponConsultation);
+
+    const govBase = isDet ? 0 : currentService.govFee * applicantsCount;
     let tierAddon = 0;
 
-    if (selectedTier === 'vip') {
-      tierAddon = (currentService.vipFastTrackFee || 350) * applicantsCount;
-    } else if (selectedTier === 'doorstep') {
-      tierAddon = 950;
+    if (!isDet) {
+      if (selectedTier === 'vip') {
+        tierAddon = (currentService.vipFastTrackFee || 0) * applicantsCount;
+      } else if (selectedTier === 'doorstep') {
+        tierAddon = 950;
+      }
     }
 
-    const typingSubtotal = serviceBase + tierAddon;
-    const vat = Math.round(typingSubtotal * 0.05);
-    const total = govBase + typingSubtotal + vat;
+    const total = isDet ? 0 : govBase + tierAddon;
 
     let timeEn = currentService.processingTimeEn;
     let timeAr = currentService.processingTimeAr;
@@ -157,11 +166,12 @@ export const FeeCalculator: React.FC<FeeCalculatorProps> = ({
     }
 
     return {
+      isDet,
       govBase,
-      serviceBase,
+      serviceBase: 0,
       tierAddon,
-      typingSubtotal,
-      vat,
+      typingSubtotal: 0,
+      vat: 0,
       total,
       timeEn,
       timeAr,
@@ -507,8 +517,8 @@ export const FeeCalculator: React.FC<FeeCalculatorProps> = ({
                 </h3>
                 <p className="text-xs text-slate-500 mt-1">
                   {isAr
-                    ? 'جميع الفئات تشمل الرسوم الحكومية الرسمية + رسم الطباعة الموحد 52.50 درهم.'
-                    : 'All categories include official Government Fee + unified Typing Fee of 52.50 AED.'}
+                    ? 'الرسوم الحكومية الرسمية المعتمدة لبطاقة الصحة المهنية حسب الفئة والنشاط.'
+                    : 'Official statutory Government Fees for Occupational Health Cards by category.'}
                 </p>
               </div>
 
@@ -540,9 +550,7 @@ export const FeeCalculator: React.FC<FeeCalculatorProps> = ({
                     <tr>
                       <th className="py-3 px-4 w-12 text-center">#</th>
                       <th className="py-3 px-4">{isAr ? 'الفئة والنشاط المهني' : 'Category & Industry Description'}</th>
-                      <th className="py-3 px-4 text-right rtl:text-left">{isAr ? 'الرسم الحكومي' : 'Govt Fee'}</th>
-                      <th className="py-3 px-4 text-right rtl:text-left">{isAr ? 'رسم الطباعة' : 'Typing Fee'}</th>
-                      <th className="py-3 px-4 text-right rtl:text-left text-[#128B94] font-extrabold">{isAr ? 'الإجمالي الرسمي' : 'Total Fee'}</th>
+                      <th className="py-3 px-4 text-right rtl:text-left text-[#128B94] font-extrabold">{isAr ? 'الرسم الحكومي الرسمي' : 'Official Government Fee'}</th>
                       <th className="py-3 px-4 text-center">{isAr ? 'الإجراء' : 'Action'}</th>
                     </tr>
                   </thead>
@@ -559,14 +567,8 @@ export const FeeCalculator: React.FC<FeeCalculatorProps> = ({
                           <span className="font-bold text-slate-900 block">{isAr ? item.categoryAr : item.categoryEn}</span>
                           <span className="text-[11px] text-slate-500">{isAr ? item.categoryEn : item.categoryAr}</span>
                         </td>
-                        <td className="py-3 px-4 text-right rtl:text-left tabular-nums text-slate-600">
-                          {item.govtFee} AED
-                        </td>
-                        <td className="py-3 px-4 text-right rtl:text-left tabular-nums text-slate-600">
-                          {item.typingFee} AED
-                        </td>
                         <td className="py-3 px-4 text-right rtl:text-left tabular-nums text-sm font-extrabold text-[#128B94]">
-                          {item.totalFee} AED
+                          {item.govtFee} AED
                         </td>
                         <td className="py-3 px-4 text-center">
                           <button
@@ -922,42 +924,29 @@ export const FeeCalculator: React.FC<FeeCalculatorProps> = ({
 
               <div className="py-5 space-y-3.5 text-xs sm:text-sm border-b border-white/20">
                 {/* Government Tariff */}
+                {/* Government Tariff */}
                 <div className="flex items-center justify-between">
                   <span className="text-teal-100">{t.estimatedGovFee}</span>
                   <span className="font-semibold text-white tabular-nums">
-                    {generalCalculations.govBase === 0
-                      ? isAr ? 'معفى / حسب النشاط' : 'Varies / Exempt'
+                    {generalCalculations.isDet
+                      ? (isAr ? 'حسب النشاط / استشارة فورية' : 'Upon Consultation / Activity Based')
                       : `${generalCalculations.govBase.toLocaleString()} AED`}
                   </span>
                 </div>
 
-                {/* ESS Certified Typing */}
-                <div className="flex items-center justify-between">
-                  <span className="text-teal-100">{t.estimatedEssFee}</span>
-                  <span className="font-semibold text-white tabular-nums">
-                    {generalCalculations.serviceBase.toLocaleString()} AED
-                  </span>
-                </div>
-
                 {/* Priority / Van Add-on */}
-                {generalCalculations.tierAddon > 0 && (
+                {generalCalculations.tierAddon > 0 && !generalCalculations.isDet && (
                   <div className="flex items-center justify-between">
                     <span className="text-teal-200">
                       {selectedTier === 'vip'
-                        ? isAr ? 'رسوم مجلس كبار الشخصيات VIP' : 'VIP Majlis Express Liaison'
-                        : isAr ? 'إرسال الحافلة المتنقلة لموقعك' : 'Mobile Van Dispatch Fee'}
+                        ? (isAr ? 'رسوم مجلس كبار الشخصيات VIP' : 'VIP Majlis Express Liaison')
+                        : (isAr ? 'إرسال الحافلة المتنقلة لموقعك' : 'Mobile Van Dispatch Fee')}
                     </span>
                     <span className="font-bold text-white tabular-nums">
                       +{generalCalculations.tierAddon.toLocaleString()} AED
                     </span>
                   </div>
                 )}
-
-                {/* UAE VAT (5%) */}
-                <div className="flex items-center justify-between text-teal-200 text-xs">
-                  <span>{t.estimatedVat}</span>
-                  <span className="tabular-nums">+{generalCalculations.vat.toLocaleString()} AED</span>
-                </div>
               </div>
 
               {/* Total and Turnaround Time */}
@@ -966,9 +955,15 @@ export const FeeCalculator: React.FC<FeeCalculatorProps> = ({
                   <span className="text-xs font-bold text-teal-100 uppercase tracking-wider">
                     {t.estimatedTotal}
                   </span>
-                  <span className="text-3xl font-extrabold text-white tabular-nums">
-                    {generalCalculations.total.toLocaleString()} <span className="text-sm font-semibold text-teal-200">AED</span>
-                  </span>
+                  {generalCalculations.isDet ? (
+                    <span className="text-xl font-extrabold text-white">
+                      {isAr ? 'حسب النشاط التجاري' : 'Based on Activity'}
+                    </span>
+                  ) : (
+                    <span className="text-3xl font-extrabold text-white tabular-nums">
+                      {generalCalculations.total.toLocaleString()} <span className="text-sm font-semibold text-teal-200">AED</span>
+                    </span>
+                  )}
                 </div>
 
                 <div className="flex items-center gap-2 text-xs text-white bg-white/10 p-3 rounded-md border border-white/20">

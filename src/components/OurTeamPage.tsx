@@ -230,7 +230,7 @@ export const OurTeamPage: React.FC<OurTeamPageProps> = ({
                 { id: 'amer', labelEn: 'Amer (GDRFA)', labelAr: 'آمر (إقامة دبي)' },
                 { id: 'salem', labelEn: 'DHA Health', labelAr: 'صحة دبي (DHA)' },
                 { id: 'det-tasheel', labelEn: 'DET / Courts / Tasheel', labelAr: 'اقتصادية دبي ومحاكم وتسهيل' },
-                { id: 'typing', labelEn: 'Typing Services', labelAr: 'الطباعة الحكومية' },
+                { id: 'attestation', labelEn: 'Atlas Attestation', labelAr: 'أطلس للتصديقات' },
                 { id: 'sales', labelEn: 'Sales & Marketing', labelAr: 'المبيعات والتسويق' },
                 { id: 'corporate', labelEn: 'Finance, IT & HR', labelAr: 'المالية وتقنية الموارد' },
               ].map((pill) => (

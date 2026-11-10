@@ -245,26 +245,26 @@ export const IMMIGRATION_STANDALONE_PRICES = [
 // 2. OCCUPATIONAL HEALTH CARD (OHC) CATEGORIES (Page 7)
 // -------------------------------------------------------------
 export const OHC_CATEGORIES_PRICELIST: OhcCategoryPrice[] = [
-  { sr: 1, categoryEn: 'Food Handlers', categoryAr: 'متداولو الأغذية والمطاعم', govtFee: 170, typingFee: 52.5, totalFee: 222.5 },
-  { sr: 2, categoryEn: 'RTA Drivers Screening', categoryAr: 'فحص سائقي هيئة الطرق والمواصلات', govtFee: 170, typingFee: 52.5, totalFee: 222.5 },
-  { sr: 3, categoryEn: 'Agriculture Industries', categoryAr: 'الأنشطة والمهن الزراعية', govtFee: 200, typingFee: 52.5, totalFee: 252.5 },
-  { sr: 4, categoryEn: 'Cement, Ceramic, Concrete, Tissue & Textile', categoryAr: 'صناعات الأسمنت والسيراميك والمنسوجات', govtFee: 200, typingFee: 52.5, totalFee: 252.5 },
-  { sr: 5, categoryEn: 'Construction Industries', categoryAr: 'قطاع الإنشاءات والمقاولات', govtFee: 200, typingFee: 52.5, totalFee: 252.5 },
-  { sr: 6, categoryEn: 'Electric Services', categoryAr: 'الخدمات والتركيبات الكهربائية', govtFee: 200, typingFee: 52.5, totalFee: 252.5 },
-  { sr: 7, categoryEn: 'Glass Industries', categoryAr: 'صناعات وتركيبات الزجاج', govtFee: 200, typingFee: 52.5, totalFee: 252.5 },
-  { sr: 8, categoryEn: 'Ionizing Radiation', categoryAr: 'العمل في مجالات الإشعاع المؤين', govtFee: 200, typingFee: 52.5, totalFee: 252.5 },
-  { sr: 9, categoryEn: 'Waste Management & Hygiene Service Industries', categoryAr: 'إدارة النفايات وخدمات النظافة العامة', govtFee: 200, typingFee: 52.5, totalFee: 252.5 },
-  { sr: 10, categoryEn: 'Education Establishment', categoryAr: 'المنشآت التعليمية والمدارس', govtFee: 200, typingFee: 52.5, totalFee: 252.5 },
-  { sr: 11, categoryEn: 'Carpenter & Noise Producing Industries', categoryAr: 'النجارة والأنشطة المنتجة للضجيج', govtFee: 220, typingFee: 52.5, totalFee: 272.5 },
-  { sr: 12, categoryEn: 'Leather Industries', categoryAr: 'صناعات وتجارة الجلود', govtFee: 270, typingFee: 52.5, totalFee: 322.5 },
-  { sr: 13, categoryEn: 'Veterinary Service', categoryAr: 'الخدمات والعيادات البيطرية', govtFee: 270, typingFee: 52.5, totalFee: 322.5 },
-  { sr: 14, categoryEn: 'Pre Employment Local', categoryAr: 'الفحص الطبي المسبق للتوظيف المحلي', govtFee: 270, typingFee: 52.5, totalFee: 322.5 },
-  { sr: 15, categoryEn: 'Oil Refining, Plastic & Chemical Industries', categoryAr: 'تكرير النفط والصناعات البلاستيكية والكيماوية', govtFee: 300, typingFee: 52.5, totalFee: 352.5 },
-  { sr: 16, categoryEn: 'Car Workshops & Service Center', categoryAr: 'ورش وصيانة وتصليح السيارات', govtFee: 340, typingFee: 52.5, totalFee: 392.5 },
-  { sr: 17, categoryEn: 'Beauticians & Related Services / Spa Workers', categoryAr: 'صالونات التجميل والعناية ومراكز السبا', govtFee: 540, typingFee: 52.5, totalFee: 592.5 },
-  { sr: 18, categoryEn: 'Health Care Workers', categoryAr: 'العاملون في الرعاية الصحية والمستشفيات', govtFee: 570, typingFee: 52.5, totalFee: 622.5 },
-  { sr: 19, categoryEn: 'DHA License Services', categoryAr: 'خدمات وتراخيص هيئة الصحة بدبي', govtFee: 770, typingFee: 52.5, totalFee: 822.5 },
-  { sr: 20, categoryEn: 'Diwan Staff', categoryAr: 'موظفو وممثلو الديوان', govtFee: 770, typingFee: 52.5, totalFee: 822.5 },
+  { sr: 1, categoryEn: 'Food Handlers', categoryAr: 'متداولو الأغذية والمطاعم', govtFee: 170, typingFee: 0, totalFee: 170 },
+  { sr: 2, categoryEn: 'RTA Drivers Screening', categoryAr: 'فحص سائقي هيئة الطرق والمواصلات', govtFee: 170, typingFee: 0, totalFee: 170 },
+  { sr: 3, categoryEn: 'Agriculture Industries', categoryAr: 'الأنشطة والمهن الزراعية', govtFee: 200, typingFee: 0, totalFee: 200 },
+  { sr: 4, categoryEn: 'Cement, Ceramic, Concrete, Tissue & Textile', categoryAr: 'صناعات الأسمنت والسيراميك والمنسوجات', govtFee: 200, typingFee: 0, totalFee: 200 },
+  { sr: 5, categoryEn: 'Construction Industries', categoryAr: 'قطاع الإنشاءات والمقاولات', govtFee: 200, typingFee: 0, totalFee: 200 },
+  { sr: 6, categoryEn: 'Electric Services', categoryAr: 'الخدمات والتركيبات الكهربائية', govtFee: 200, typingFee: 0, totalFee: 200 },
+  { sr: 7, categoryEn: 'Glass Industries', categoryAr: 'صناعات وتركيبات الزجاج', govtFee: 200, typingFee: 0, totalFee: 200 },
+  { sr: 8, categoryEn: 'Ionizing Radiation', categoryAr: 'العمل في مجالات الإشعاع المؤين', govtFee: 200, typingFee: 0, totalFee: 200 },
+  { sr: 9, categoryEn: 'Waste Management & Hygiene Service Industries', categoryAr: 'إدارة النفايات وخدمات النظافة العامة', govtFee: 200, typingFee: 0, totalFee: 200 },
+  { sr: 10, categoryEn: 'Education Establishment', categoryAr: 'المنشآت التعليمية والمدارس', govtFee: 200, typingFee: 0, totalFee: 200 },
+  { sr: 11, categoryEn: 'Carpenter & Noise Producing Industries', categoryAr: 'النجارة والأنشطة المنتجة للضجيج', govtFee: 220, typingFee: 0, totalFee: 220 },
+  { sr: 12, categoryEn: 'Leather Industries', categoryAr: 'صناعات وتجارة الجلود', govtFee: 270, typingFee: 0, totalFee: 270 },
+  { sr: 13, categoryEn: 'Veterinary Service', categoryAr: 'الخدمات والعيادات البيطرية', govtFee: 270, typingFee: 0, totalFee: 270 },
+  { sr: 14, categoryEn: 'Pre Employment Local', categoryAr: 'الفحص الطبي المسبق للتوظيف المحلي', govtFee: 270, typingFee: 0, totalFee: 270 },
+  { sr: 15, categoryEn: 'Oil Refining, Plastic & Chemical Industries', categoryAr: 'تكرير النفط والصناعات البلاستيكية والكيماوية', govtFee: 300, typingFee: 0, totalFee: 300 },
+  { sr: 16, categoryEn: 'Car Workshops & Service Center', categoryAr: 'ورش وصيانة وتصليح السيارات', govtFee: 340, typingFee: 0, totalFee: 340 },
+  { sr: 17, categoryEn: 'Beauticians & Related Services / Spa Workers', categoryAr: 'صالونات التجميل والعناية ومراكز السبا', govtFee: 540, typingFee: 0, totalFee: 540 },
+  { sr: 18, categoryEn: 'Health Care Workers', categoryAr: 'العاملون في الرعاية الصحية والمستشفيات', govtFee: 570, typingFee: 0, totalFee: 570 },
+  { sr: 19, categoryEn: 'DHA License Services', categoryAr: 'خدمات وتراخيص هيئة الصحة بدبي', govtFee: 770, typingFee: 0, totalFee: 770 },
+  { sr: 20, categoryEn: 'Diwan Staff', categoryAr: 'موظفو وممثلو الديوان', govtFee: 770, typingFee: 0, totalFee: 770 },
 ];
 
 // -------------------------------------------------------------
@@ -272,8 +272,8 @@ export const OHC_CATEGORIES_PRICELIST: OhcCategoryPrice[] = [
 // -------------------------------------------------------------
 export const TASHEEL_CONTRACTS_PRICES = [
   { id: 'offer-letter-typing', nameEn: 'Offer Letter Typing', nameAr: 'طباعة عرض العمل الإلكتروني', cost: 279.77 },
-  { id: 'labor-insurance-standard', nameEn: 'Labor Dubai Insurance (Standard)', nameAr: 'التأمين العمالي بدبي (أساسي)', cost: 224 },
-  { id: 'labor-insurance-extended', nameEn: 'Labor Dubai Insurance (Extended)', nameAr: 'التأمين العمالي بدبي (موسع)', cost: 269 },
+  { id: 'new-labour-card', nameEn: 'New Labour Card Fee', nameAr: 'رسوم بطاقة عمل جديدة', cost: 224 },
+  { id: 'labour-insurance', nameEn: 'Labour Dubai Insurance', nameAr: 'التأمين العمالي بدبي', cost: 269 },
 ];
 
 export const TASHEEL_CANCELLATION_PRICES = [
@@ -408,12 +408,16 @@ export const ATTESTATION_COUNTRIES_PRICELIST: AttestationCountryPrice[] = [
   { sr: 111, countryEn: 'Lithuania', countryAr: 'ليتوانيا', documentTypeEn: 'Education / Personal', documentTypeAr: 'تعليمي / شخصي', chargesMofaAed: 1750, processingTimeDays: '45-60' },
   { sr: 112, countryEn: 'Uganda', countryAr: 'أوغندا', documentTypeEn: 'Education / Personal', documentTypeAr: 'تعليمي / شخصي', chargesMofaAed: 1350, processingTimeDays: '15-20' },
   { sr: 113, countryEn: 'Syria', countryAr: 'سوريا', documentTypeEn: 'Personal', documentTypeAr: 'شخصي', chargesMofaAed: 1550, processingTimeDays: '20' },
-  { sr: 114, countryEn: 'Malta', countryAr: 'مالطا', documentTypeEn: 'Education / Personal', documentTypeAr: 'تعليمي / شخصي', chargesMofaAed: 1750, processingTimeDays: '18-20' },
-  { sr: 115, countryEn: 'Moldova', countryAr: 'مولدوفا', documentTypeEn: 'Education / Personal', documentTypeAr: 'تعليمي / شخصي', chargesMofaAed: 1750, processingTimeDays: '30-40' },
-  { sr: 116, countryEn: 'Estonia', countryAr: 'إستونيا', documentTypeEn: 'Education / Personal', documentTypeAr: 'تعليمي / شخصي', chargesMofaAed: 1950, processingTimeDays: '20-22' },
-  { sr: 117, countryEn: 'Monaco', countryAr: 'موناكو', documentTypeEn: 'Education / Personal', documentTypeAr: 'تعليمي / شخصي', chargesMofaAed: 2450, processingTimeDays: '18-20' },
-  { sr: 118, countryEn: 'Tanzania', countryAr: 'تنزانيا', documentTypeEn: 'Education / Personal', documentTypeAr: 'تعليمي / شخصي', chargesMofaAed: 2500, processingTimeDays: '15-20' },
-  { sr: 119, countryEn: 'Tajikistan', countryAr: 'طاجيكستان', documentTypeEn: 'Education / Personal', documentTypeAr: 'تعليمي / شخصي', chargesMofaAed: 2100, processingTimeDays: '25-30' },
+  { sr: 114, countryEn: 'Mexico', countryAr: 'المكسيك', documentTypeEn: 'Education / Personal', documentTypeAr: 'تعليمي / شخصي', chargesMofaAed: 0, processingTimeDays: '25-30' },
+  { sr: 115, countryEn: 'Malta', countryAr: 'مالطا', documentTypeEn: 'Education / Personal', documentTypeAr: 'تعليمي / شخصي', chargesMofaAed: 1750, processingTimeDays: '18-20' },
+  { sr: 116, countryEn: 'Moldova', countryAr: 'مولدوفا', documentTypeEn: 'Education / Personal', documentTypeAr: 'تعليمي / شخصي', chargesMofaAed: 1750, processingTimeDays: '30-40' },
+  { sr: 117, countryEn: 'Estonia', countryAr: 'إستونيا', documentTypeEn: 'Education / Personal', documentTypeAr: 'تعليمي / شخصي', chargesMofaAed: 1950, processingTimeDays: '20-22' },
+  { sr: 118, countryEn: 'Cameroon', countryAr: 'الكاميرون', documentTypeEn: 'Education / Personal', documentTypeAr: 'تعليمي / شخصي', chargesMofaAed: 1300, processingTimeDays: '8-10' },
+  { sr: 119, countryEn: 'Ghana', countryAr: 'غانا', documentTypeEn: 'Education / Personal', documentTypeAr: 'تعليمي / شخصي', chargesMofaAed: 1550, processingTimeDays: '20-22' },
+  { sr: 120, countryEn: 'Monaco', countryAr: 'موناكو', documentTypeEn: 'Education / Personal', documentTypeAr: 'تعليمي / شخصي', chargesMofaAed: 2450, processingTimeDays: '18-20' },
+  { sr: 121, countryEn: 'Tanzania', countryAr: 'تنزانيا', documentTypeEn: 'Education / Personal', documentTypeAr: 'تعليمي / شخصي', chargesMofaAed: 2500, processingTimeDays: '15-20' },
+  { sr: 122, countryEn: 'Tajikistan', countryAr: 'طاجيكستان', documentTypeEn: 'Education / Personal', documentTypeAr: 'تعليمي / شخصي', chargesMofaAed: 2100, processingTimeDays: '25-30' },
+  { sr: 123, countryEn: 'Uganda', countryAr: 'أوغندا', documentTypeEn: 'Education / Personal', documentTypeAr: 'تعليمي / شخصي', chargesMofaAed: 1450, processingTimeDays: '15-20' },
 ];
 
 // -------------------------------------------------------------
@@ -434,6 +438,7 @@ export const CONSULATE_FEES_PRICELIST: ConsulateFeeItem[] = [
   { countryEn: 'Bulgaria', countryAr: 'بلغاريا', type: 'Both', feeAed: 200, turnaroundDays: '4-6' },
   { countryEn: 'Qatar', countryAr: 'قطر', type: 'Both', feeAed: 250 },
   { countryEn: 'Germany', countryAr: 'ألمانيا', type: 'Both', feeAed: 350, turnaroundDays: '4-6' },
+  { countryEn: 'Lebanon (Commercial)', countryAr: 'قنصلية لبنان (تجاري)', type: 'Commercial', feeAed: 0, turnaroundDays: 'Case Specific' },
   { countryEn: 'Yemen', countryAr: 'اليمن', type: 'Both', feeAed: 300 },
   { countryEn: 'Bahrain (Commercial)', countryAr: 'البحرين (تجاري)', type: 'Commercial', feeAed: 450 },
   { countryEn: 'Bahrain (Personal)', countryAr: 'البحرين (شخصي)', type: 'Personal', feeAed: 250 },

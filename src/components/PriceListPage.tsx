@@ -786,10 +786,8 @@ Tel: +971 4 342 6666 | Web: ess.ae`;
                     <tr className="bg-slate-100/80 text-slate-700 font-bold border-b border-slate-200">
                       <th className="py-3 px-4 w-12 text-center">#</th>
                       <th className="py-3 px-4">{isAr ? 'الفئة المهنية / النشاط' : 'Professional Category'}</th>
-                      <th className="py-3 px-4 text-right rtl:text-left">{isAr ? 'الرسم الحكومي' : 'Government Fee'}</th>
-                      <th className="py-3 px-4 text-right rtl:text-left">{isAr ? 'رسوم الطباعة' : 'Typing Fee'}</th>
                       <th className="py-3 px-4 text-right rtl:text-left font-black text-[#128B94]">
-                        {isAr ? 'الإجمالي الشامل' : 'Total (Govt + Typing)'}
+                        {isAr ? 'الرسم الحكومي الرسمي' : 'Official Government Fee'}
                       </th>
                       <th className="py-3 px-4 text-center">{isAr ? 'إجراء' : 'Action'}</th>
                     </tr>
@@ -802,14 +800,8 @@ Tel: +971 4 342 6666 | Web: ess.ae`;
                           <span className="font-bold text-slate-900 block">{isAr ? item.categoryAr : item.categoryEn}</span>
                           <span className="text-[11px] text-slate-500">{isAr ? item.categoryEn : item.categoryAr}</span>
                         </td>
-                        <td className="py-3 px-4 text-right rtl:text-left font-mono text-slate-700">
-                          {item.govtFee} AED
-                        </td>
-                        <td className="py-3 px-4 text-right rtl:text-left font-mono text-slate-500">
-                          {item.typingFee} AED
-                        </td>
                         <td className="py-3 px-4 text-right rtl:text-left font-mono font-black text-[#128B94]">
-                          {item.totalFee.toFixed(2)} AED
+                          {item.govtFee} AED
                         </td>
                         <td className="py-3 px-4 text-center">
                           <button

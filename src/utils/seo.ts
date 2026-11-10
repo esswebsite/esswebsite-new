@@ -78,8 +78,6 @@ export function getServiceSchema(
   faqs: { questionEn: string; questionAr: string; answerEn: string; answerAr: string }[] = [],
   isAr: boolean = false
 ) {
-  const totalStandard = service.govFee + service.serviceFee;
-
   const serviceEntity = {
     '@type': 'Service',
     '@id': `${canonicalUrl}/#service`,
@@ -93,29 +91,9 @@ export function getServiceSchema(
       '@type': 'AdministrativeArea',
       name: 'Dubai, United Arab Emirates',
     },
-    hasOfferCatalog: {
-      '@type': 'OfferCatalog',
-      name: isAr ? 'تفصيل الرسوم الحكومية والخدمية' : 'Itemized Fee Breakdown',
-      itemListElement: [
-        {
-          '@type': 'Offer',
-          name: isAr ? 'الرسوم الحكومية الرسمية المعتمدة' : 'Official Government Authority Tariff',
-          price: service.govFee,
-          priceCurrency: 'AED',
-          eligibleRegion: 'AE-DU',
-        },
-        {
-          '@type': 'Offer',
-          name: isAr ? 'رسوم الطباعة والتدقيق بالمركز' : 'Authorized Center Service Fee',
-          price: service.serviceFee,
-          priceCurrency: 'AED',
-          eligibleRegion: 'AE-DU',
-        },
-      ],
-    },
     offers: {
       '@type': 'Offer',
-      price: totalStandard,
+      price: service.govFee,
       priceCurrency: 'AED',
       availability: 'https://schema.org/InStock',
       priceValidUntil: '2026-12-31',

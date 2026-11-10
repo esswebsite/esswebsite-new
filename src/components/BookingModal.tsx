@@ -338,7 +338,9 @@ export const BookingModal: React.FC<BookingModalProps> = ({
                                     {isAr ? service.authorityAr : service.authorityEn}
                                   </span>
                                   <span className="text-xs font-mono font-bold tabular-nums text-slate-800 shrink-0">
-                                    {(service.govFee + service.serviceFee).toLocaleString()} AED
+                                    {service.departmentId === 'ded' || service.departmentId === 'det' || service.isPriceUponConsultation
+                                      ? (isAr ? 'حسب النشاط' : 'Upon Consultation')
+                                      : `${service.govFee.toLocaleString()} AED`}
                                   </span>
                                 </div>
                                 <div className="text-xs font-bold text-slate-900 mt-0.5">
@@ -348,11 +350,6 @@ export const BookingModal: React.FC<BookingModalProps> = ({
                                   <span className="flex items-center gap-1">
                                     <Clock className="w-3 h-3 text-slate-400" />
                                     <span>{isAr ? service.processingTimeAr : service.processingTimeEn}</span>
-                                  </span>
-                                  <span className="text-slate-300">·</span>
-                                  <span>
-                                    {isAr ? 'رسوم الحكومة: ' : 'Gov fee: '}
-                                    <strong className="text-slate-700">{service.govFee} AED</strong>
                                   </span>
                                 </div>
                               </div>

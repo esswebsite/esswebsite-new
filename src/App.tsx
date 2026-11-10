@@ -31,46 +31,7 @@ import { EventsPage } from './components/EventsPage';
 import { PriceListPage } from './components/PriceListPage';
 import { SERVICES } from './data/departmentsData';
 import { applyRouteSeo } from './utils/routeSeo';
-
-const LEGACY_SERVICE_MAP: Record<string, string> = {
-  'amer-residency-new-renewal-golden': 'amer-residency-visa-new',
-  'amer-sponsorship-parents-dependents-family': 'amer-family-sponsorship-visa',
-  'amer-entry-permits-tourist-job-work': 'amer-tourist-visit-visa',
-  'amer-status-visa-hold-unhold': 'amer-visa-status-change',
-  'amer-establishment-card-block-removal': 'amer-establishment-card',
-  'amer-portal-mobile-number-update': 'amer-portal-mobile-update',
-  'amer-staff-absconding-fine-reduction': 'amer-fine-reduction',
-  // Legacy DET combined IDs -> Dedicated DET Single Service Pages
-  'det-licensing-new-instant-etrader': 'det-commercial-license-new',
-  'det-activity-partner-manager-amendments': 'det-license-amendment-partner-activity',
-  'det-trade-name-moa-lsa-signing': 'det-trade-name-reservation',
-  'det-permits-mulin-ads-sales-kiosks': 'det-commercial-permits-mulin',
-  'det-compliance-fines-cancellations': 'det-license-cancellation-liquidation',
-  // Legacy Tasheel combined IDs -> Dedicated Tasheel Single Service Pages
-  'tasheel-work-permits-quota-new-mission': 'tasheel-electronic-work-permit-new',
-  'tasheel-offer-letters-labour-contracts': 'tasheel-job-offer-unified-contract',
-  'tasheel-company-file-esign-card': 'tasheel-company-establishment-card',
-  'tasheel-noc-family-issuance': 'tasheel-family-sponsorship-work-permit',
-  'tasheel-labour-claims-absconding': 'tasheel-labour-cancellation-absconding',
-  // Legacy ICP combined IDs -> Dedicated ICP Single Service Pages
-  'icp-eid-new-renewal-replace': 'icp-emirates-id-new',
-  'icp-urgent-biometric-appointments': 'icp-urgent-biometric-appointment',
-  'icp-branding-driver-permits': 'icp-smart-services-data-update',
-  // Legacy Dubai Municipality combined IDs -> Dedicated DM Single Service Pages
-  'dm-ejari-registration-cancellation': 'dm-ejari-registration',
-  'dm-food-labels-pest-control': 'dm-foodwatch-label-pest-control',
-  'dm-signage-flyer-permits': 'dm-signage-advertising-permits',
-  // Legacy OHC, Attestation, Notary, Typing, Salem, RTA, Tawjeeh, Tadbeer, VIP IDs
-  'ohc-card-new-renewal-doctor-license': 'ohc-food-handlers-card',
-  'atlas-mofa-justice-attestation': 'atlas-mofa-attestation',
-  'notary-poa-declarations-contracts': 'notary-power-of-attorney-poa',
-  'typing-legal-translation-moj-dockets': 'typing-moj-certified-legal-translation',
-  'salem-results-2hr-6hr-24hr': 'salem-standard-medical-fitness-24hr',
-  'rta-license-renewal-mulkiya-transfer': 'rta-driving-license-renewal',
-  'tawjeeh-worker-classes-zajel-delivery': 'tawjeeh-worker-awareness-classes',
-  'tadbeer-domestic-maid-visas': 'tadbeer-domestic-worker-sponsorship',
-  'ess-doorstep-mobile-van': 'vip-mobile-government-van',
-};
+import { resolveRoute, getDepartmentPath, getServicePath } from './utils/router';
 
 const parseRoute = (): PageView => {
   // Check if 404 fallback stored a redirect path in sessionStorage or in ?p= query param
@@ -101,123 +62,17 @@ const parseRoute = (): PageView => {
     window.history.replaceState(null, '', cleanTarget);
   }
 
-  // Check if legacy hash exists (e.g. #service/foo or #about) and rewrite to clean path
-  const hash = window.location.hash;
-  if (hash && hash !== '#') {
-    const clean = hash.replace(/^#\/?/, '').trim();
-    let newPath = '/' + clean;
-    if (clean === 'home' || clean === '') newPath = '/';
-
-    // Replace hash with clean path in browser URL bar
-    window.history.replaceState(null, '', newPath);
-
-    if (!clean || clean === 'home') return { type: 'home' };
-    if (clean === 'about') return { type: 'about' };
-    if (clean === 'departments' || clean === 'services' || clean === 'departments-services') {
-      return { type: 'departments' };
-    }
-    if (clean === 'gallery') return { type: 'gallery' };
-    if (clean === 'faq') return { type: 'faq' };
-    if (clean === 'contact') return { type: 'contact' };
-    if (clean === 'team') return { type: 'team' };
-    if (clean === 'ceo') return { type: 'ceo' };
-    if (clean === 'awards' || clean === 'certificates') return { type: 'awards' };
-    if (clean === 'clients' || clean === 'customers') return { type: 'clients' };
-    if (clean === 'events') return { type: 'events' };
-    if (clean === 'pricelist' || clean === 'prices' || clean === 'pricing' || clean === 'calculator') {
-      return { type: 'pricelist' };
-    }
-    if (clean === 'knowledge-hub' || clean.startsWith('knowledge-hub/')) {
-      const slug = clean.replace(/^knowledge-hub\/?/, '').split('?')[0].trim();
-      return { type: 'blog', postSlug: slug || undefined };
-    }
-    if (clean === 'blog' || clean.startsWith('blog/')) {
-      const slug = clean.replace(/^blog\/?/, '').split('?')[0].trim();
-      return { type: 'blog', postSlug: slug || undefined };
-    }
-    if (clean.startsWith('department/')) {
-      const deptId = clean.replace('department/', '').trim();
-      return { type: 'department', deptId: deptId || 'amer' };
-    }
-    if (clean.startsWith('service/')) {
-      let serviceId = clean.replace('service/', '').trim();
-      if (LEGACY_SERVICE_MAP[serviceId]) {
-        serviceId = LEGACY_SERVICE_MAP[serviceId];
-      }
-      return { type: 'service', serviceId: serviceId || 'golden-visa-10yr' };
-    }
-  }
-
   // Normalize /index.html in URL bar to clean /
   if (window.location.pathname === '/index.html') {
     window.history.replaceState(null, '', '/');
   }
 
-  // Parse clean pathname with URI decoding and trailing slash removal
-  let pathname = window.location.pathname;
-  try {
-    pathname = decodeURIComponent(pathname);
-  } catch (e) {}
-
-  if (pathname.startsWith('/ar/')) {
-    pathname = pathname.replace(/^\/ar/, '');
-  } else if (pathname === '/ar') {
-    pathname = '/';
+  const res = resolveRoute(window.location.pathname, window.location.hash);
+  if (res.isLegacyRedirect && res.canonicalPath && window.location.pathname !== res.canonicalPath) {
+    window.history.replaceState(null, '', res.canonicalPath);
   }
 
-  const path = pathname.replace(/\/+$/, '') || '/';
-  if (path === '/' || path === '/home' || path === '/index.html') return { type: 'home' };
-  if (path === '/about') return { type: 'about' };
-  if (path === '/departments' || path === '/services' || path === '/departments-services') {
-    return { type: 'departments' };
-  }
-  if (path === '/gallery') return { type: 'gallery' };
-  if (path === '/faq') return { type: 'faq' };
-  if (path === '/contact') return { type: 'contact' };
-  if (path === '/team') return { type: 'team' };
-  if (path === '/ceo') return { type: 'ceo' };
-  if (path === '/awards' || path === '/certificates') return { type: 'awards' };
-  if (path === '/clients' || path === '/customers') return { type: 'clients' };
-  if (path === '/events') return { type: 'events' };
-  if (path === '/pricelist' || path === '/pricing' || path === '/calculator' || path === '/prices') {
-    return { type: 'pricelist' };
-  }
-
-  if (path.startsWith('/knowledge-hub')) {
-    const slug = path.replace(/^\/knowledge-hub\/?/, '').split('?')[0].trim();
-    return { type: 'blog', postSlug: slug || undefined };
-  }
-  if (path.startsWith('/blog')) {
-    const slug = path.replace(/^\/blog\/?/, '').split('?')[0].trim();
-    return { type: 'blog', postSlug: slug || undefined };
-  }
-
-  if (path.startsWith('/department/')) {
-    const deptId = path.replace(/^\/department\//, '').trim();
-    return { type: 'department', deptId: deptId || 'amer' };
-  }
-  if (path.startsWith('/departments/')) {
-    const deptId = path.replace(/^\/departments\//, '').trim();
-    return { type: 'department', deptId: deptId || 'amer' };
-  }
-
-  if (path.startsWith('/service/')) {
-    let serviceId = path.replace(/^\/service\//, '').trim();
-    if (LEGACY_SERVICE_MAP[serviceId]) {
-      serviceId = LEGACY_SERVICE_MAP[serviceId];
-    }
-    return { type: 'service', serviceId: serviceId || 'golden-visa-10yr' };
-  }
-  if (path.startsWith('/services/')) {
-    const parts = path.replace(/^\/services\//, '').split('/').filter(Boolean);
-    let serviceId = parts.length > 1 ? parts[1] : parts[0];
-    if (LEGACY_SERVICE_MAP[serviceId]) {
-      serviceId = LEGACY_SERVICE_MAP[serviceId];
-    }
-    return { type: 'service', serviceId: serviceId || 'golden-visa-10yr' };
-  }
-
-  return { type: 'home' };
+  return res.pageView.type === 'not_found' ? { type: 'home' } : res.pageView;
 };
 
 export default function App() {
@@ -311,10 +166,15 @@ export default function App() {
   const navigateToClients = () => navigateTo('/clients', { type: 'clients' });
   const navigateToEvents = () => navigateTo('/events', { type: 'events' });
   const navigateToPriceList = () => navigateTo('/pricelist', { type: 'pricelist' });
-  const navigateToDepartment = (deptId: string) =>
-    navigateTo(`/department/${deptId}`, { type: 'department', deptId });
-  const navigateToService = (serviceId: string) =>
-    navigateTo(`/service/${serviceId}`, { type: 'service', serviceId });
+  const navigateToDepartment = (deptId: string) => {
+    const path = getDepartmentPath(deptId, language);
+    navigateTo(path, { type: 'department', deptId });
+  };
+  const navigateToService = (serviceId: string) => {
+    const path = getServicePath(serviceId, undefined, language);
+    const service = SERVICES.find((s) => s.id === serviceId);
+    navigateTo(path, { type: 'service', serviceId, deptId: service?.departmentId });
+  };
 
   const handleNavigatePage = (page: string) => {
     if (page === 'home') {
