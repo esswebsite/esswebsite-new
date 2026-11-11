@@ -132,8 +132,8 @@ export const DEPARTMENTS: Department[] = [
     officialGovUrl: 'https://www.dm.gov.ae/',
     officialGovPortalNameEn: 'Dubai Municipality Public Health',
     officialGovPortalNameAr: 'إدارة الصحة والسلامة - بلدية دبي',
-    descriptionEn: 'Issuance and renewal of Occupational Health Cards (OHC) for food handlers (AED 170), salons & spas (AED 540), construction (AED 200), RTA drivers (AED 170), healthcare (AED 570), and DHA doctor licenses (AED 770).',
-    descriptionAr: 'إصدار وتجديد بطاقات الصحة المهنية لمتداولي الأغذية (170 درهم)، الصالونات والسبا (540 درهم)، الإنشاءات (200 درهم)، سائقي هيئة الطرق (170 درهم)، وتراخيص الأطباء (770 درهم).',
+    descriptionEn: 'Issuance and renewal of Occupational Health Cards (OHC) for food handlers, salons & spas, construction, RTA drivers, healthcare staff, and DHA medical personnel.',
+    descriptionAr: 'إصدار وتجديد بطاقات الصحة المهنية لمتداولي الأغذية، الصالونات والسبا، الإنشاءات، سائقي هيئة الطرق، والكوادر الطبية المعتمدة.',
   },
   {
     id: 'attestation',
@@ -151,8 +151,8 @@ export const DEPARTMENTS: Department[] = [
     officialGovUrl: 'https://www.mofa.gov.ae/en/Services/Attestation',
     officialGovPortalNameEn: 'UAE MoFA Attestation Portal',
     officialGovPortalNameAr: 'منظومة التصديقات - وزارة الخارجية',
-    descriptionEn: 'MOFA attestation (Personal AED 200 | Commercial AED 1,200), Ministry of Justice (AED 110), sworn legal translation (AED 38/page), 119+ foreign embassy legalizations, Hague Apostille, MoE degree equivalency, marriage & birth certificates, and police clearance.',
-    descriptionAr: 'تصديق وزارة الخارجية (شخصي 200 درهم | تجاري 1,200 درهم)، وزارة العدل (110 دراهم)، الترجمة القانونية المحلفة (38 درهماً/صفحة)، تصديق سفارات 119 دولة، الأبوستيل، معادلة الشهادات الجامعية، عقود الزواج والميلاد، وبحث الحالة الجنائية.'
+    descriptionEn: 'MOFA attestation for personal and commercial documents, Ministry of Justice attestation, sworn legal translation across 30+ languages, 119+ foreign embassy legalizations, Hague Apostille, MoE degree equivalency, marriage & birth certificates, and police clearance.',
+    descriptionAr: 'تصديق وزارة الخارجية للوثائق الشخصية والتجارية، وزارة العدل، الترجمة القانونية المحلفة، تصديق سفارات 119 دولة، الأبوستيل، معادلة الشهادات الجامعية، عقود الزواج والميلاد، وبحث الحالة الجنائية.',
   },
   {
     id: 'notary',
@@ -171,7 +171,7 @@ export const DEPARTMENTS: Department[] = [
     officialGovPortalNameEn: 'Dubai Courts Public Services',
     officialGovPortalNameAr: 'الخدمات الإلكترونية لمحاكم دبي',
     descriptionEn: 'General & Special Power of Attorney (POA), corporate MOAs & share transfers, legal declarations & affidavits, Dubai Courts labour/civil/commercial lawsuit registration, and non-Muslim family wills.',
-    descriptionAr: 'صياغة وتوثيق الوكالات العامة والخاصة، عقود التأسيس وملاحق بيع الحصص، الإقرارات العدلية، قيد الدعاوى العمالية والمدنية والتجارية بمحاكم دبي، وتوثيق وصايا غير المسلمين.'
+    descriptionAr: 'صياغة وتوثيق الوكالات العامة والخاصة، عقود التأسيس وملاحق بيع الحصص، الإقرارات العدلية، قيد الدعاوى العمالية والمدنية والتجارية بمحاكم دبي، وتوثيق وصايا غير المسلمين.',
   },
   {
     id: 'salem',
@@ -189,8 +189,8 @@ export const DEPARTMENTS: Department[] = [
     officialGovUrl: 'https://services.dha.gov.ae/sheryan/',
     officialGovPortalNameEn: 'Dubai Health Sheryan / Salem Portal',
     officialGovPortalNameAr: 'منظومة شريان وسالم - صحة دبي',
-    descriptionEn: 'Official UAE residency medical fitness results: Standard 24-Hour (AED 322 baseline tariff), Express 6-Hour, Super Express 2-Hour VIP Majlis, VIP drive-through car blood collection, domestic vaccinations, mobile squads, and blood type tests.',
-    descriptionAr: 'نتائج الفحص الطبي المعتمدة لتثبيت الإقامة: عادي 24 ساعة (322 درهم الرسم المعتمد)، عاجل 6 ساعات، فائق السرعة ساعتان بمجلس VIP، سحب الدم من السيارة، تطعيمات العمالة المساعدة، والفحص المتنقل.'
+    descriptionEn: 'Official UAE residency medical fitness results: Standard 24-Hour, Express 6-Hour, Super Express 2-Hour VIP Majlis, VIP drive-through car blood collection, domestic vaccinations, mobile squads, and blood type tests.',
+    descriptionAr: 'نتائج الفحص الطبي المعتمدة لتثبيت الإقامة: عادي 24 ساعة، عاجل 6 ساعات، فائق السرعة ساعتان بمجلس VIP، سحب الدم من السيارة، تطعيمات العمالة المساعدة، والفحص المتنقل.',
   },
   {
     id: 'rta',
@@ -281,8 +281,8 @@ const RAW_SERVICES: ServiceItem[] = [
     titleEn: 'Residency Visa (New)',
     titleAr: 'تأشيرة إقامة جديدة (داخل وخارج الدولة)',
     category: 'residency',
-    shortDescEn: 'Comprehensive end-to-end issuance and stamping of new UAE residency visas for company employees, business partners, and investors under GDRFA authority. Complete breakdown: Inside UAE (AED 3,056) or Outside UAE (AED 1,731).',
-    shortDescAr: 'إصدار وتثبيت تأشيرة الإقامة الجديدة للموظفين والشركاء والمستثمرين بإشراف إقامة دبي. باقة متكاملة: داخل الدولة (3,056 درهم) تشمل إذن الدخول، تعديل الوضع، الفحص الطبي، الهوية، والتثبيت | خارج الدولة (1,731 درهم).',
+    shortDescEn: 'Comprehensive end-to-end issuance and stamping of new UAE residency visas for company employees, business partners, and investors under GDRFA authority. Complete package for applicants inside or outside the UAE.',
+    shortDescAr: 'إصدار وتثبيت تأشيرة الإقامة الجديدة للموظفين والشركاء والمستثمرين بإشراف إقامة دبي، تشمل إذن الدخول، تعديل الوضع، الفحص الطبي، الهوية، والتثبيت للمتقدمين داخل أو خارج الدولة.',
     govFee: 3056,
     serviceFee: 0,
     vipFastTrackFee: 400,
@@ -539,8 +539,8 @@ const RAW_SERVICES: ServiceItem[] = [
     titleEn: 'Employment Entry Permit (Pink Visa)',
     titleAr: 'إذن دخول للعمل (التأشيرة الوردية)',
     category: 'residency',
-    shortDescEn: 'Issuance of official electronic employment entry permits (outside UAE: AED 476 | inside UAE: AED 1,125) following MoHRE electronic work permit quota approval. Valid for 60 days to complete visa stamping.',
-    shortDescAr: 'إصدار أذونات الدخول الرسمية للعمل (خارج الدولة: 476 درهم | داخل الدولة: 1,125 درهم) بعد موافقة وزارة الموارد البشرية، صالحة لمدة 60 يوماً لإتمام الفحص وتثبيت الإقامة.',
+    shortDescEn: 'Issuance of official electronic employment entry permits (for applicants outside or inside the UAE) following MoHRE electronic work permit quota approval. Valid for 60 days to complete visa stamping.',
+    shortDescAr: 'إصدار أذونات الدخول الرسمية للعمل (للمتقدمين داخل وخارج الدولة) بعد موافقة وزارة الموارد البشرية، صالحة لمدة 60 يوماً لإتمام الفحص وتثبيت الإقامة.',
     govFee: 476,
     serviceFee: 0,
     vipFastTrackFee: 150,
@@ -579,8 +579,8 @@ const RAW_SERVICES: ServiceItem[] = [
     titleEn: 'Visa Status Change (Inside UAE)',
     titleAr: 'تعديل وضع التأشيرة (داخل الدولة بدون مغادرة)',
     category: 'residency',
-    shortDescEn: 'Legally convert any visit visa, tourist visa, or cancelled residence visa to a new employment or partner visa inside the UAE without exiting the country. Official fee: AED 676 for employee, AED 640 for family.',
-    shortDescAr: 'تعديل الوضع القانوني للتأشيرة (676 درهم للموظف / 640 درهم للعائلة) من زيارة أو إقامة ملغاة إلى إقامة جديدة داخل الدولة دون الحاجة للسفر أو مغادرة المطار.',
+    shortDescEn: 'Legally convert any visit visa, tourist visa, or cancelled residence visa to a new employment or partner visa inside the UAE without exiting the country.',
+    shortDescAr: 'تعديل الوضع القانوني للتأشيرة للموظفين والعائلات من زيارة أو إقامة ملغاة إلى إقامة جديدة داخل الدولة دون الحاجة للسفر أو مغادرة المطار.',
     govFee: 676,
     serviceFee: 0,
     vipFastTrackFee: 150,
@@ -658,8 +658,8 @@ const RAW_SERVICES: ServiceItem[] = [
     titleEn: 'Establishment Card (Issuance & Renewal)',
     titleAr: 'بطاقة المنشأة (إصدار وتجديد للمؤسسات والشركات)',
     category: 'corporate',
-    shortDescEn: 'Corporate immigration file registration and establishment card issuance (New: AED 476 | Renewal: AED 576). Required for every mainland and freezone company to issue employee and investor visas.',
-    shortDescAr: 'فتح ملف المنشأة وإصدار وتجديد بطاقة المنشأة للهجرة (جديد: 476 درهم | تجديد: 576 درهم) لشركات دبي لتمكينها من إصدار تأشيرات الموظفين والشركاء.',
+    shortDescEn: 'Corporate immigration file registration and establishment card issuance and renewal. Required for every mainland and freezone company to issue employee and investor visas.',
+    shortDescAr: 'فتح ملف المنشأة وإصدار وتجديد بطاقة المنشأة للهجرة لشركات دبي لتمكينها من إصدار تأشيرات الموظفين والشركاء.',
     govFee: 476,
     serviceFee: 0,
     vipFastTrackFee: 200,
@@ -776,8 +776,8 @@ const RAW_SERVICES: ServiceItem[] = [
     titleEn: 'Overstay Fine Reduction Petition',
     titleAr: 'طلب استرحام لتخفيض غرامات الإقامة المتراكمة',
     category: 'residency',
-    shortDescEn: 'Legal drafting and official submission of humanitarian fine reduction petitions (Labor petition: AED 325 | Family petition: AED 285) to discount overstay penalties accrued under GDRFA Dubai authority.',
-    shortDescAr: 'صياغة قانونية وتقديم طلب استرحام معتمد لتخفيض غرامات التأخير ومخالفات الإقامة (طلب استرحام عامل: 325 درهم | استرحام عائلة: 285 درهم) وإعفاء الحالات الإنسانية.',
+    shortDescEn: 'Legal drafting and official submission of humanitarian fine reduction petitions to discount overstay penalties accrued under GDRFA Dubai authority.',
+    shortDescAr: 'صياغة قانونية وتقديم طلب استرحام معتمد لتخفيض غرامات التأخير ومخالفات الإقامة وإعفاء الحالات الإنسانية لدى إقامة دبي.',
     govFee: 325,
     serviceFee: 0,
     vipFastTrackFee: 250,
@@ -1149,8 +1149,8 @@ const RAW_SERVICES: ServiceItem[] = [
     titleEn: 'DED E-Trader License (Home & Social Media)',
     titleAr: 'رخصة تاجر إلكتروني (للأعمال المنزلية والتجارة الرقمية)',
     category: 'corporate',
-    shortDescEn: 'Official home-based commercial and professional permit (AED 1,070 DET fee + AED 300 Chamber) for Instagram, TikTok, Amazon, Noon, and freelance e-commerce sellers.',
-    shortDescAr: 'الترخيص الرسمي لمزاولة التجارة الإلكترونية والأعمال الحرة من المنزل وعبر منصات التواصل الاجتماعي (إنستغرام، تيك توك، أمازون، نون) برسوم حكومية 1,370 درهم شاملة الغرفة.',
+    shortDescEn: 'Official home-based commercial and professional permit for Instagram, TikTok, Amazon, Noon, and freelance e-commerce sellers in Dubai.',
+    shortDescAr: 'الترخيص الرسمي لمزاولة التجارة الإلكترونية والأعمال الحرة من المنزل وعبر منصات التواصل الاجتماعي (إنستغرام، تيك توك، أمازون، نون).',
     govFee: 0,
     isPriceUponConsultation: true,
     serviceFee: 0,
@@ -1224,8 +1224,8 @@ const RAW_SERVICES: ServiceItem[] = [
     titleEn: 'Trade Name Reservation & Initial Approval',
     titleAr: 'حجز الاسم التجاري وإصدار الموافقة المبدئية',
     category: 'corporate',
-    shortDescEn: 'Official DET commercial trade name search, reservation certificate (AED 620 Arabic name), and Initial Approval issuance to lock your brand and sign Ejari.',
-    shortDescAr: 'البحث الفوري وحجز الاسم التجاري (620 درهم للاسم العربي) وإصدار شهادة الموافقة المبدئية من اقتصادية دبي لحماية العلامة التجارية وتوقيع عقد إيجاري.',
+    shortDescEn: 'Official DET commercial trade name search, reservation certificate, and Initial Approval issuance to lock your brand and sign Ejari.',
+    shortDescAr: 'البحث الفوري وحجز الاسم التجاري وإصدار شهادة الموافقة المبدئية من اقتصادية دبي لحماية العلامة التجارية وتوقيع عقد إيجاري.',
     govFee: 0,
     isPriceUponConsultation: true,
     serviceFee: 0,
@@ -1711,8 +1711,8 @@ const RAW_SERVICES: ServiceItem[] = [
     titleEn: 'Part-Time & Golden Visa Holder Work Permit',
     titleAr: 'تصريح العمل الجزئي وتصريح عمل حاملي الإقامة الذهبية',
     category: 'labor',
-    shortDescEn: '1-Year MoHRE Part-Time Work Permits (AED 600 gov fee), Golden Visa Holder Work Permits, and Student/Juvenile Training Permits—with zero company quota deduction.',
-    shortDescAr: 'إصدار تصريح العمل الجزئي لمدة سنة (رسوم حكومية 600 درهم)، تصريح عمل حاملي الإقامة الذهبية، وتصاريح تدريب الطلاب — بدون خصم من رصيد كوتا الشركة.',
+    shortDescEn: '1-Year MoHRE Part-Time Work Permits, Golden Visa Holder Work Permits, and Student/Juvenile Training Permits—with zero company quota deduction.',
+    shortDescAr: 'إصدار تصريح العمل الجزئي لمدة سنة، تصريح عمل حاملي الإقامة الذهبية، وتصاريح تدريب الطلاب — بدون خصم من رصيد كوتا الشركة.',
     govFee: 279.77,
     serviceFee: 0,
     vipFastTrackFee: 120,
@@ -1786,8 +1786,8 @@ const RAW_SERVICES: ServiceItem[] = [
     titleEn: 'Work Permit Cancellation, Out-of-Country & Absconding',
     titleAr: 'إلغاء تصريح وبطاقة العمل، الإلغاء خارج الدولة، وبلاغات الانقطاع',
     category: 'labor',
-    shortDescEn: 'Instant MoHRE Labour Card cancellation (AED 0 ministry fee + typing), cancellation for staff outside UAE 6+ months, absconding withdrawal, and direct Amer visa cancellation.',
-    shortDescAr: 'الإلغاء الفوري لتصريح وبطاقة العمل (معفى من الرسوم الوزارية)، إلغاء العمالة المتواجدة خارج الدولة لأكثر من 6 أشهر، تسوية بلاغات الانقطاع، وإلغاء الإقامة في آمر.',
+    shortDescEn: 'Instant MoHRE Labour Card cancellation, cancellation for staff outside UAE 6+ months, absconding withdrawal, and direct Amer visa cancellation.',
+    shortDescAr: 'الإلغاء الفوري لتصريح وبطاقة العمل، إلغاء العمالة المتواجدة خارج الدولة لأكثر من 6 أشهر، تسوية بلاغات الانقطاع، وإلغاء الإقامة في آمر.',
     govFee: 77,
     serviceFee: 0,
     vipFastTrackFee: 100,
@@ -1806,12 +1806,12 @@ const RAW_SERVICES: ServiceItem[] = [
       'توقيع العامل على إقرار استلام المستحقات ونموذج الإلغاء (يُعفى منه من هم خارج الدولة لأكثر من 6 أشهر)'
     ],
     keyBenefitsEn: [
-      'Zero (AED 0) MoHRE ministry fee for standard work permit cancellation—pay only typing fee',
+      'Official statutory processing for standard work permit cancellation',
       'Complete both Tasheel Labour Card Cancellation and Amer Residency Visa Cancellation in 30 mins',
       'Removes departing employee from WPS payroll roster immediately to prevent company blocks'
     ],
     keyBenefitsAr: [
-      'إعفاء كامل (0 درهم رسوم وزارة) لمعاملة إلغاء بطاقة العمل العادية — تُدفع رسوم الطباعة فقط',
+      'معالجة معتمدة رسمياً لمعاملة إلغاء بطاقة وتصريح العمل',
       'إتمام إلغاء بطاقة العمل في تسهيل وإلغاء الإقامة في آمر معاً خلال 30 دقيقة في نفس الصالة',
       'إخراج الموظف فوراً من كشف رواتب نظام حماية الأجور (WPS) لحماية ملف الشركة من الإيقاف'
     ]
@@ -1826,8 +1826,8 @@ const RAW_SERVICES: ServiceItem[] = [
     titleEn: 'New Emirates ID Application & Biometrics',
     titleAr: 'إصدار بطاقة الهوية الإماراتية الجديدة والبصمة',
     category: 'residency',
-    shortDescEn: 'Official ICP New Emirates ID typing (AED 386 for 2-Year Visa | AED 1,186 for 10-Year Golden Visa) co-located with Karama Medical Center (KMFC) and biometric stations.',
-    shortDescAr: 'طباعة ومعالجة طلب الهوية الإماراتية الجديدة (386 درهم لإقامة سنتين | 1,186 درهم للإقامة الذهبية 10 سنوات) بالتكامل مع مركز الكرامة الطبي (KMFC) ومحطات البصمة.',
+    shortDescEn: 'Official ICP New Emirates ID typing co-located with Karama Medical Center (KMFC) and biometric stations.',
+    shortDescAr: 'طباعة ومعالجة طلب الهوية الإماراتية الجديدة بالتكامل مع مركز الكرامة الطبي (KMFC) ومحطات البصمة.',
     govFee: 386,
     serviceFee: 0,
     vipFastTrackFee: 150,
@@ -2272,8 +2272,8 @@ const RAW_SERVICES: ServiceItem[] = [
     titleEn: 'Food Handlers & Hospitality Occupational Health Card',
     titleAr: 'بطاقة الصحة المهنية لمتداولي الأغذية والمطاعم',
     category: 'medical',
-    shortDescEn: 'Mandatory Dubai Municipality Occupational Health Card for chefs, waiters, kitchen stewards, bakers, and food delivery staff. Official tariff: AED 170 Govt + AED 52.50 Typing = AED 222.50 total.',
-    shortDescAr: 'بطاقة الصحة المهنية الإلزامية من بلدية دبي للطهاة ومقدمي الأغذية وعمال المطابخ وسائقي التوصيل. التعرفة الرسمية: 170 درهماً حكومياً + 52.50 درهم طباعة = 222.50 درهماً.',
+    shortDescEn: 'Mandatory Dubai Municipality Occupational Health Card for chefs, waiters, kitchen stewards, bakers, and food delivery staff.',
+    shortDescAr: 'بطاقة الصحة المهنية الإلزامية من بلدية دبي للطهاة ومقدمي الأغذية وعمال المطابخ وسائقي التوصيل.',
     govFee: 170,
     serviceFee: 0,
     vipFastTrackFee: 100,
@@ -2294,13 +2294,13 @@ const RAW_SERVICES: ServiceItem[] = [
       'نسخة الرخصة التجارية لنشاط الأغذية والربط بحساب فود ووتش'
     ],
     keyBenefitsEn: [
-      'Official statutory tariff: AED 222.50 with direct zero-markup transparent billing',
-      'Avoids strict AED 5,000+ individual municipal health inspector penalties',
+      'Official statutory processing with zero service markups and transparent billing',
+      'Avoids strict individual municipal health inspector penalties',
       'Direct computerized synchronization into Dubai Municipality Foodwatch database'
     ],
     keyBenefitsAr: [
-      'التعرفة الرسمية المعتمدة: 222.50 درهم بشفافية تامة دون أي زيادات خفية',
-      'تفادي غرامات التفتيش البلدي الفورية الصارمة التي تبدأ من 5,000 درهم',
+      'معالجة حكومية رسمية معتمدة بشفافية تامة دون أي زيادات خفية',
+      'تفادي غرامات التفتيش البلدي الفورية الصارمة',
       'ربط إلكتروني فوري ومباشر مع نظام ومنصة "فود ووتش" لسلامة الغذاء'
     ],
     isPopular: true
@@ -2311,8 +2311,8 @@ const RAW_SERVICES: ServiceItem[] = [
     titleEn: 'Barbers, Beauticians, Salons & Spa Staff Health Card',
     titleAr: 'بطاقة الصحة المهنية لصالونات الحلاقة والتجميل ومراكز السبا',
     category: 'medical',
-    shortDescEn: 'Statutory municipal medical clearance and serological viral screening for gents barbers, beauticians, nail technicians, and massage therapists. Official tariff: AED 540 Govt + AED 52.50 Typing = AED 592.50.',
-    shortDescAr: 'الفحص الطبي البلدي الإلزامي والتحاليل الفيروسية لصالونات الحلاقة الرجالية، خبيرات التجميل، أخصائيات الأظافر، والتدليك. التعرفة الرسمية: 540 درهماً حكومياً + 52.50 درهم طباعة = 592.50 درهماً.',
+    shortDescEn: 'Statutory municipal medical clearance and serological viral screening for gents barbers, beauticians, nail technicians, and massage therapists.',
+    shortDescAr: 'الفحص الطبي البلدي الإلزامي والتحاليل الفيروسية لصالونات الحلاقة الرجالية، خبيرات التجميل، أخصائيات الأظافر، والتدليك.',
     govFee: 540,
     serviceFee: 0,
     vipFastTrackFee: 120,
@@ -2333,12 +2333,12 @@ const RAW_SERVICES: ServiceItem[] = [
     keyBenefitsEn: [
       'Comprehensive viral serology panel (Hepatitis B, Hepatitis C, HIV)',
       'Clinical dermatologist physical checkup ensuring customer safety',
-      'Official statutory tariff: AED 592.50 inclusive of official government vouchers'
+      'Official statutory compliance with verified government vouchers'
     ],
     keyBenefitsAr: [
       'فحص مناعي فيروسي شامل يشمل التهاب الكبد B وC ونقص المناعة',
       'كشف سريري جلدي من قبل طبيب مرخص لضمان سلامة المتعاملين',
-      'التعرفة الرسمية المعتمدة: 592.50 درهم شاملة إيصال السداد الحكومي'
+      'مطابقة تامة للمتطلبات الرسمية مع إيصال السداد الحكومي'
     ]
   },
   {
@@ -2347,8 +2347,8 @@ const RAW_SERVICES: ServiceItem[] = [
     titleEn: 'Construction Workers & RTA Professional Drivers Health Card',
     titleAr: 'بطاقة الصحة المهنية لعمال الإنشاءات وسائقي هيئة الطرق',
     category: 'medical',
-    shortDescEn: 'Occupational health certification for industrial construction workers (AED 200 Govt + AED 52.50 Typing = AED 252.50) and RTA public/commercial chauffeurs (AED 170 Govt + AED 52.50 Typing = AED 222.50).',
-    shortDescAr: 'الفحص وإصدار بطاقات الصحة المهنية لعمال قطاع الإنشاءات والمقاولات (252.50 درهم) وسائقي النقل التجاري وهيئة الطرق (222.50 درهم) للتحقق من اللياقة المهنية.',
+    shortDescEn: 'Occupational health certification for industrial construction workers and RTA public and commercial chauffeurs.',
+    shortDescAr: 'الفحص وإصدار بطاقات الصحة المهنية لعمال قطاع الإنشاءات والمقاولات وسائقي النقل التجاري وهيئة الطرق.',
     govFee: 200,
     serviceFee: 0,
     vipFastTrackFee: 100,
@@ -2367,14 +2367,14 @@ const RAW_SERVICES: ServiceItem[] = [
       'تقرير الفحص السريري المعتمد من عيادات مركز الكرامة'
     ],
     keyBenefitsEn: [
-      'Exact statutory pricing: Construction AED 252.50 | RTA Chauffeurs AED 222.50',
+      'Exact statutory government procedures for construction and RTA chauffeurs',
       'Occupational cardiopulmonary and vision safety assessment',
       'Bulk processing rates and on-site testing for construction contractors'
     ],
     keyBenefitsAr: [
-      'تسعير رسمي معتمد: قطاع المقاولات 252.50 درهم | سائقو هيئة الطرق 222.50 درهم',
+      'إجراءات حكومية رسمية معتمدة لقطاع المقاولات وسائقي هيئة الطرق',
       'تقييم سريري شامل للياقة البدنية وصحة القلب والجهاز التنفسي والنظر',
-      'باقات خصم وفحوصات موقعية لشركات المقاولات الكبرى'
+      'باقات وفحوصات موقعية لشركات المقاولات الكبرى'
     ]
   },
   {
@@ -2383,15 +2383,15 @@ const RAW_SERVICES: ServiceItem[] = [
     titleEn: 'Healthcare Staff & DHA / Diwan Doctor License Health Card',
     titleAr: 'بطاقة الصحة المهنية للكوادر الصحية وتراخيص أطباء هيئة الصحة والديوان',
     category: 'medical',
-    shortDescEn: 'Highest statutory tier medical clearance for hospital personnel (AED 570 Govt + AED 52.50 Typing = AED 622.50) and licensed DHA/Diwan doctors & consultants (AED 770 Govt + AED 52.50 Typing = AED 822.50).',
-    shortDescAr: 'الفحص الطبي والترخيص المهني المعتمد لكوادر المستشفيات والتمريض (622.50 درهم) وتراخيص أطباء هيئة الصحة وموظفي الديوان (822.50 درهم).',
+    shortDescEn: 'Highest statutory tier medical clearance for hospital personnel and licensed DHA and Diwan doctors and consultants.',
+    shortDescAr: 'الفحص الطبي والترخيص المهني المعتمد لكوادر المستشفيات والتمريض وتراخيص أطباء هيئة الصحة وموظفي الديوان.',
     govFee: 770,
     serviceFee: 0,
     vipFastTrackFee: 150,
     processingTimeEn: '24 - 48 Hours',
     processingTimeAr: '24 - 48 ساعة',
-    authorityEn: 'Dubai Health Authority (DHA) & Dubai Municipality',
-    authorityAr: 'هيئة الصحة بدبي وبلدية دبي',
+    authorityEn: 'Dubai Municipality (Public Health) & Dubai Health',
+    authorityAr: 'بلدية دبي (الصحة العامة) وصحة دبي',
     requiredDocumentsEn: [
       'Original passport, visa copy, and Emirates ID card',
       'DHA Professional License copy or medical facility appointment letter',
@@ -2403,7 +2403,7 @@ const RAW_SERVICES: ServiceItem[] = [
       'سجل التطعيمات وفحوصات الأجسام المضادة للأمراض السارية'
     ],
     keyBenefitsEn: [
-      'Official statutory tariffs: Healthcare AED 622.50 | DHA Doctor License AED 822.50',
+      'Official statutory certification for healthcare and DHA doctor licenses',
       'Immediate synchronization into Dubai Health Authority licensure system',
       'High-complexity laboratory immunological screening conducted in-house'
     ],
@@ -2423,8 +2423,8 @@ const RAW_SERVICES: ServiceItem[] = [
     titleEn: 'UAE Ministry of Foreign Affairs (MOFA) & MOJ Attestation',
     titleAr: 'تصديق وزارة الخارجية الإماراتية (MOFA) ووزارة العدل',
     category: 'legal',
-    shortDescEn: 'Official government certification stamps by UAE MOFA: Personal Documents AED 200 | Commercial Documents AED 1,200 | Ministry of Justice AED 110, with free insured doorstep courier.',
-    shortDescAr: 'التصديق الرسمي المعتمد من وزارة الخارجية: المستندات الشخصية 200 درهم | المستندات التجارية 1,200 درهم | وزارة العدل 110 دراهم، مع خدمة التوصيل المجاني.',
+    shortDescEn: 'Official government certification stamps by UAE MOFA for personal and commercial documents, and Ministry of Justice, with free insured doorstep courier.',
+    shortDescAr: 'التصديق الرسمي المعتمد من وزارة الخارجية للمستندات الشخصية والتجارية ووزارة العدل، مع خدمة التوصيل المجاني.',
     govFee: 200,
     serviceFee: 0,
     vipFastTrackFee: 150,
@@ -2443,12 +2443,12 @@ const RAW_SERVICES: ServiceItem[] = [
       'ترجمة قانونية معتمدة من وزارة العدل في حال كان المستند بلغة أجنبية'
     ],
     keyBenefitsEn: [
-      'Official government tariffs: Personal AED 200 | Commercial AED 1,200 with official MOFA QR stamp',
+      'Official government authentication with verified MOFA QR stamp',
       '100% legal validity across all UAE ministries, courts, GDRFA Amer, and banks',
       'Complimentary insured doorstep collection and return delivery anywhere in Dubai'
     ],
     keyBenefitsAr: [
-      'الرسوم الحكومية الرسمية: 200 درهم للشخصي | 1,200 درهم للتجاري بختم QR الرسمي',
+      'اعتماد حكومي رسمي موثق بختم QR الرسمي من وزارة الخارجية',
       'حجية قانونية كاملة بنسبة 100% لدى كافة الوزارات والمحاكم وإقامة دبي والبنوك',
       'خدمة استلام وتوصيل مجانية ومؤمنة من وإلى باب منزلك أو مكتبك في دبي'
     ],
@@ -2829,8 +2829,8 @@ const RAW_SERVICES: ServiceItem[] = [
     titleEn: 'Ministry of Justice (MOJ) Certified Legal Translation',
     titleAr: 'الترجمة القانونية المحلفة المعتمدة من وزارة العدل (30+ لغة)',
     category: 'legal',
-    shortDescEn: 'Official sworn legal translation across 30+ languages certified by the UAE Ministry of Justice for Dubai Courts, Notary Public, MOFA, and embassies. Transparent statutory tariff: AED 38 per page.',
-    shortDescAr: 'ترجمة قانونية محلفة ومعتمدة من وزارة العدل لأكثر من 30 لغة ومقبولة لدى محاكم دبي، الكاتب العدل، الخارجية، والسفارات. التعرفة الرسمية المعتمدة: 38 درهماً للصفحة.',
+    shortDescEn: 'Official sworn legal translation across 30+ languages certified by the UAE Ministry of Justice for Dubai Courts, Notary Public, MOFA, and embassies.',
+    shortDescAr: 'ترجمة قانونية محلفة ومعتمدة من وزارة العدل لأكثر من 30 لغة ومقبولة لدى محاكم دبي، الكاتب العدل، الخارجية، والسفارات.',
     govFee: 38,
     serviceFee: 0,
     vipFastTrackFee: 50,
@@ -2847,12 +2847,12 @@ const RAW_SERVICES: ServiceItem[] = [
       'صور جوازات السفر للأسماء الواردة لضبط تهجئة الأسماء الحرفية بدقة'
     ],
     keyBenefitsEn: [
-      'Official statutory rate: AED 38 per page inclusive of MOJ sworn translator stamp',
+      'Official statutory certification inclusive of MOJ sworn translator stamp',
       '100% legal acceptance by Dubai Courts, Notary Public, MOFA, GDRFA, and foreign embassies',
       'Same-day rush translation service available in under 2 hours'
     ],
     keyBenefitsAr: [
-      'التعرفة الرسمية المعتمدة: 38 درهماً للصفحة شاملة ختم وتوقيع المترجم المحلف',
+      'اعتماد رسمي موثق شامل ختم وتوقيع المترجم المحلف من وزارة العدل',
       'قبول قانوني بنسبة 100% لدى محاكم دبي، الكاتب العدل، الخارجية، إقامة دبي، والسفارات',
       'خدمة ترجمة فورية عاجلة للحالات الطارئة تسلم خلال أقل من ساعتين'
     ],
@@ -2972,8 +2972,8 @@ const RAW_SERVICES: ServiceItem[] = [
     titleEn: 'Standard 24-Hour DHA Residency Medical Fitness Test',
     titleAr: 'الفحص الطبي العادي للياقة الإقامة خلال 24 ساعة (صحة دبي / سالم)',
     category: 'medical',
-    shortDescEn: 'Official Dubai Health & Salem residency visa medical fitness screening at the baseline statutory government tariff: AED 322 with digital chest X-ray and venipuncture blood testing in 24 hours.',
-    shortDescAr: 'الفحص الطبي الرسمي المعتمد من صحة دبي ونظام سالم لتثبيت وتجديد الإقامة بالتعرفة الحكومية الأساسية: 322 درهماً شاملة سحب الدم وأشعة الصدر ورفع النتيجة خلال 24 ساعة.',
+    shortDescEn: 'Official Dubai Health & Salem residency visa medical fitness screening with digital chest X-ray and venipuncture blood testing in 24 hours.',
+    shortDescAr: 'الفحص الطبي الرسمي المعتمد من صحة دبي ونظام سالم لتثبيت وتجديد الإقامة شامل سحب الدم وأشعة الصدر ورفع النتيجة خلال 24 ساعة.',
     govFee: 322,
     serviceFee: 0,
     vipFastTrackFee: 100,
@@ -2992,12 +2992,12 @@ const RAW_SERVICES: ServiceItem[] = [
       'صورة شخصية رقمية حديثة بخلفية بيضاء'
     ],
     keyBenefitsEn: [
-      'Official baseline government tariff: exactly AED 322 with transparent pricing',
+      'Official baseline government procedures with complete transparency',
       'Processed at our accredited on-site Al Karama Medical Fitness Center (Next to Karama Post Office)',
       'Direct computerized integration with GDRFA Amer for immediate residency visa stamping'
     ],
     keyBenefitsAr: [
-      'التعرفة الحكومية الأساسية المعتمدة: 322 درهماً بشفافية تامة دون أي زيادات خفية',
+      'إجراءات حكومية رسمية معتمدة بشفافية تامة دون أي زيادات خفية',
       'إجراء الفحص داخل مركز الكرامة الطبي المعتمد بجوار بريد الكرامة',
       'ربط إلكتروني فوري ومباشر مع نظام إقامة دبي (آمر) لتثبيت التأشيرة فوراً'
     ],
@@ -3584,8 +3584,8 @@ const RAW_SERVICES: ServiceItem[] = [
     titleEn: 'Housemaid Residency Visa Renewal, Salem Medical & Contract Extension',
     titleAr: 'تجديد إقامة العمالة المساعدة، فحص سالم الطبي، وتمديد عقود تدبير',
     category: 'residency',
-    shortDescEn: 'Synchronized 2-year renewal cycle for domestic workers: on-site Salem medical fitness screening (AED 322), Hepatitis B booster, Emirates ID renewal, and Amer 2-year residency stamping.',
-    shortDescAr: 'دورة تجديد متكاملة لإقامة العمالة المساعدة لسنتين: فحص سالم الطبي بالمركز (322 درهماً)، جرعة لقاح الكبد التنشيطية، تجديد الهوية، وتثبيت الإقامة لدى آمر في زيارة واحدة.',
+    shortDescEn: 'Synchronized 2-year renewal cycle for domestic workers: on-site Salem medical fitness screening, Hepatitis B booster, Emirates ID renewal, and Amer 2-year residency stamping.',
+    shortDescAr: 'دورة تجديد متكاملة لإقامة العمالة المساعدة لسنتين: فحص سالم الطبي بالمركز، جرعة لقاح الكبد التنشيطية، تجديد الهوية، وتثبيت الإقامة لدى آمر في زيارة واحدة.',
     govFee: 1450,
     serviceFee: 0,
     vipFastTrackFee: 200,

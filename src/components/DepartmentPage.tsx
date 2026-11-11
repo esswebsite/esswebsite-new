@@ -548,11 +548,8 @@ export const DepartmentPage: React.FC<DepartmentPageProps> = ({
 
           {/* Services Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {filteredServices.map((service) => {
-              const totalEst = service.govFee + service.serviceFee;
-
-              return (
-                <div
+            {filteredServices.map((service) => (
+              <div
                   key={service.id}
                   className="bg-white rounded-xl border border-slate-200 hover:border-[#128B94] hover:shadow-lg transition-all p-6 flex flex-col justify-between group"
                 >
@@ -599,25 +596,8 @@ export const DepartmentPage: React.FC<DepartmentPageProps> = ({
                     </ul>
                   </div>
 
-                    {/* Pricing Strip & Action Buttons */}
+                    {/* Action Buttons */}
                     <div className="pt-4 border-t border-slate-100">
-                      <div className="flex items-baseline justify-between mb-4">
-                        <div>
-                          <span className="text-[10px] text-slate-400 block font-medium">
-                            {language === 'ar' ? 'الرسوم الحكومية الرسمية' : 'Official Government Fee'}
-                          </span>
-                          {service.departmentId === 'ded' || service.departmentId === 'det' || service.isPriceUponConsultation ? (
-                            <span className="text-xs font-bold text-[#128B94]">
-                              {language === 'ar' ? 'حسب النشاط / استشارة فورية' : 'Upon Consultation / Activity Based'}
-                            </span>
-                          ) : (
-                            <span className="text-lg font-extrabold text-[#1E2528] tabular-nums">
-                              {service.govFee.toLocaleString()} <span className="text-xs font-bold text-slate-500">AED</span>
-                            </span>
-                          )}
-                        </div>
-                      </div>
-
                     <div className="grid grid-cols-2 gap-2">
                       {/* Direct Link to Single Service Page */}
                       <button
@@ -640,8 +620,7 @@ export const DepartmentPage: React.FC<DepartmentPageProps> = ({
                     </div>
                   </div>
                 </div>
-              );
-            })}
+              ))}
           </div>
         </div>
       </section>

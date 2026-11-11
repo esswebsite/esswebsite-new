@@ -92,7 +92,7 @@ export const ArticleSidebar: React.FC<ArticleSidebarProps> = ({
             placeholder={
               isAr
                 ? 'ابحث بالكلمات المفتاحية (مثل: إيجاري، فحص طبي)...'
-                : 'Search regulations, fees, visas, ejari...'
+                : 'Search regulations, residency visas, ejari...'
             }
             className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-xs text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#128B94]/20 focus:border-[#128B94] transition-all"
           />
@@ -192,9 +192,9 @@ export const ArticleSidebar: React.FC<ArticleSidebarProps> = ({
               </span>
             </div>
             <div className="flex justify-between items-center text-slate-200">
-              <span>{isAr ? 'الرسوم الحكومية:' : 'Statutory Fee:'}</span>
+              <span>{isAr ? 'الاعتماد الحكومي:' : 'Accreditation:'}</span>
               <span className="font-semibold text-white">
-                {contextualService.govFee > 0 ? `AED ${contextualService.govFee}` : (isAr ? 'تحدد حسب الطلب' : 'Variable')}
+                {isAr ? 'مركز معتمد رسمياً' : 'Official Authorized Center'}
               </span>
             </div>
           </div>

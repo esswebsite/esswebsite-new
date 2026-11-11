@@ -337,11 +337,6 @@ export const BookingModal: React.FC<BookingModalProps> = ({
                                   <span className="text-[11px] font-bold text-[#128B94] truncate">
                                     {isAr ? service.authorityAr : service.authorityEn}
                                   </span>
-                                  <span className="text-xs font-mono font-bold tabular-nums text-slate-800 shrink-0">
-                                    {service.departmentId === 'ded' || service.departmentId === 'det' || service.isPriceUponConsultation
-                                      ? (isAr ? 'حسب النشاط' : 'Upon Consultation')
-                                      : `${service.govFee.toLocaleString()} AED`}
-                                  </span>
                                 </div>
                                 <div className="text-xs font-bold text-slate-900 mt-0.5">
                                   {isAr ? service.titleAr : service.titleEn}

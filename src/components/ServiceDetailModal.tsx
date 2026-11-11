@@ -74,11 +74,9 @@ export const ServiceDetailModal: React.FC<ServiceDetailModalProps> = ({
             </div>
 
             <div>
-              <span className="text-teal-200 block">{t.govFeeLabel}</span>
-              <span className="font-bold text-white text-sm mt-0.5">
-                {isDetService
-                  ? (language === 'ar' ? 'حسب النشاط / استشارة فورية' : 'Upon Consultation / Activity Based')
-                  : `${service.govFee.toLocaleString()} AED`}
+              <span className="text-teal-200 block">{language === 'ar' ? 'الجهة الحكومية' : 'Governing Authority'}</span>
+              <span className="font-bold text-white text-sm mt-0.5 block">
+                {language === 'ar' ? service.authorityAr : service.authorityEn}
               </span>
             </div>
           </div>

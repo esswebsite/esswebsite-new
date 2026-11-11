@@ -51,7 +51,7 @@ export const SALEM_RTA_TAWJEEH_TADBEER_VIP_DEPARTMENT_RICH_MAP: Record<string, D
       },
     ],
     whyChooseBulletPointsEn: [
-      'Official statutory tariffs: Food Handlers AED 222.50 | Construction AED 252.50 | Salons/Spas AED 592.50 | Healthcare AED 622.50 | DHA AED 822.50',
+      'Official statutory government fees: Food Handlers AED 170 | Construction AED 200 | Salons/Spas AED 540 | Healthcare AED 570 | DHA AED 770',
       'All 20 statutory Dubai Municipality categories tested and issued in one location',
       'Accredited clinical examination rooms and sterile sample testing laboratories on-site',
       'Direct integration with Dubai Municipality Foodwatch compliance database',
@@ -59,7 +59,7 @@ export const SALEM_RTA_TAWJEEH_TADBEER_VIP_DEPARTMENT_RICH_MAP: Record<string, D
       'Bulk processing corporate rates and priority appointment blocks for restaurant chains and hotel groups',
     ],
     whyChooseBulletPointsAr: [
-      'الرسوم الرسمية المعتمدة: متداولو الأغذية 222.50 درهم | المقاولات 252.50 درهم | الصالونات 592.50 درهم | الرعاية الصحية 622.50 درهم | تراخيص الأطباء 822.50 درهم',
+      'الرسوم الحكومية الرسمية المعتمدة: متداولو الأغذية 170 درهم | المقاولات 200 درهم | الصالونات 540 درهم | الرعاية الصحية 570 درهم | تراخيص الأطباء 770 درهم',
       'تغطية كاملة لكافة الفئات العشرين الإلزامية لبلدية وصحة دبي تحت سقف واحد',
       'عيادات فحص سريري معتمدة ومختبرات طبية متطورة ومطابقة لأعلى معايير التعقيم',
       'ربط إلكتروني فوري ومباشر مع نظام ومنصة "فود ووتش" لسلامة الغذاء',
@@ -561,13 +561,13 @@ export const SALEM_RTA_TAWJEEH_TADBEER_VIP_SERVICES_RICH_MAP: Record<string, Ser
   // ============================================================================
   'ohc-food-handlers-card': {
     detailedOverviewEn:
-      'The Occupational Health Card (OHC) for Food Handlers & Hospitality Personnel is legally mandatory under Dubai Municipality Food Safety regulations for all individuals involved in preparing, serving, handling, packaging, or transporting food and beverages in Dubai restaurants, cafés, cloud kitchens, hotel dining rooms, bakeries, supermarkets, and catering companies. Operating in direct alignment with page 7 of our official price schedule, the government tariff is AED 170 plus the standardized typing fee of AED 52.50, totaling AED 222.50. At our accredited clinic inside Karama Business Center, food handlers undergo comprehensive communicable disease screening, clinical physical examinations, and certified laboratory stool culture tests. Results are synchronized directly with the Dubai Municipality inspection portal and Foodwatch, safeguarding food businesses against strict municipal penalties starting at AED 5,000 per uncertified staff member.',
+      'The Occupational Health Card (OHC) for Food Handlers & Hospitality Personnel is legally mandatory under Dubai Municipality Food Safety regulations for all individuals involved in preparing, serving, handling, packaging, or transporting food and beverages in Dubai restaurants, cafés, cloud kitchens, hotel dining rooms, bakeries, supermarkets, and catering companies. Operating in direct alignment with page 7 of our official price schedule, the official government fee is AED 170. At our accredited clinic inside Karama Business Center, food handlers undergo comprehensive communicable disease screening, clinical physical examinations, and certified laboratory stool culture tests. Results are synchronized directly with the Dubai Municipality inspection portal and Foodwatch, safeguarding food businesses against strict municipal penalties starting at AED 5,000 per uncertified staff member.',
     detailedOverviewAr:
-      'تُعد بطاقة الصحة المهنية (OHC) لمتداولي الأغذية والعاملين في قطاع الضيافة متطلباً قانونياً إلزامياً بموجب لوائح سلامة الغذاء ببلدية دبي لكل من يتصل عمله بإعداد أو طهي أو تقديم أو تعبئة أو نقل الأغذية والمشروبات في مطاعم ومقاهي ومطابخ دبي السحابية وفنادقها والمخابز وشركات التموين. وتماشياً مع الصفحة 7 من قائمة أسعارنا الرسمية المعتمدة، تبلغ الرسوم الحكومية 170 درهماً ورسم الطباعة الموحد 52.50 درهماً، بإجمالي 222.50 درهماً فقط. وفي عياداتنا المعتمدة بمركز الكرامة للأعمال، يخضع متداول الأغذية لفحص سريري وطبي شامل ومزرعة براز مخبرية معتمدة لخلوه من النزلات المعوية والبكتيريا المعدية، مع ربط النتائج آلياً بنظام التفتيش البلدي ومنصة "فود ووتش" لحماية المنشأة من غرامات التفتيش التي تبدأ من 5,000 درهم.',
+      'تُعد بطاقة الصحة المهنية (OHC) لمتداولي الأغذية والعاملين في قطاع الضيافة متطلباً قانونياً إلزامياً بموجب لوائح سلامة الغذاء ببلدية دبي لكل من يتصل عمله بإعداد أو طهي أو تقديم أو تعبئة أو نقل الأغذية والمشروبات في مطاعم ومقاهي ومطابخ دبي السحابية وفنادقها والمخابز وشركات التموين. وتماشياً مع الصفحة 7 من قائمة أسعارنا الرسمية المعتمدة، تبلغ الرسوم الحكومية الرسمية 170 درهماً فقط. وفي عياداتنا المعتمدة بمركز الكرامة للأعمال، يخضع متداول الأغذية لفحص سريري وطبي شامل ومزرعة براز مخبرية معتمدة لخلوه من النزلات المعوية والبكتيريا المعدية، مع ربط النتائج آلياً بنظام التفتيش البلدي ومنصة "فود ووتش" لحماية المنشأة من غرامات التفتيش التي تبدأ من 5,000 درهم.',
     legalFrameworkEn:
-      'Mandated by Dubai Municipality Food Safety Department Directives, Public Health Local Order No. 11 of 2003, and Foodwatch Inspection Standards (2026 Tariff: AED 222.50).',
+      'Mandated by Dubai Municipality Food Safety Department Directives, Public Health Local Order No. 11 of 2003, and Foodwatch Inspection Standards (Official Government Fee: AED 170).',
     legalFrameworkAr:
-      'إلزامية بموجب قرارات إدارة سلامة الغذاء ببلدية دبي، والأمر المحلي رقم 11 لسنة 2003 بشأن الصحة العامة، ومعايير منصة فود ووتش (تعرفة 2026: 222.50 درهم).',
+      'إلزامية بموجب قرارات إدارة سلامة الغذاء ببلدية دبي، والأمر المحلي رقم 11 لسنة 2003 بشأن الصحة العامة، ومعايير منصة فود ووتش (الرسم الحكومي الرسمي: 170 درهم).',
     eligibilityEn: [
       'Chefs, cooks, kitchen stewards, bakers, butchers, and food preparation assistants',
       'Waiters, waitresses, baristas, bartenders, and food/beverage service staff',
@@ -586,8 +586,8 @@ export const SALEM_RTA_TAWJEEH_TADBEER_VIP_SERVICES_RICH_MAP: Record<string, Ser
         stepNumber: 1,
         titleEn: 'Application Typing & Foodwatch Verification',
         titleAr: 'طباعة الطلب والربط مع منصة فود ووتش',
-        descEn: 'Verifying trade license matching and issuing the official AED 222.50 food handler testing token.',
-        descAr: 'مطابقة النشاط التجاري للمطعم وإصدار استمارة الفحص المعتمدة بتعرفة 222.50 درهم.',
+        descEn: 'Verifying trade license matching and issuing the official AED 170 food handler testing token.',
+        descAr: 'مطابقة النشاط التجاري للمطعم وإصدار استمارة الفحص المعتمدة بالرسم الحكومي (170 درهم).',
         durationEn: '10 Mins',
         durationAr: '10 دقائق',
       },
@@ -612,10 +612,10 @@ export const SALEM_RTA_TAWJEEH_TADBEER_VIP_SERVICES_RICH_MAP: Record<string, Ser
     ],
     faqs: [
       {
-        questionEn: 'What is the exact official total cost for a Food Handler Occupational Health Card in Dubai?',
-        questionAr: 'كم تبلغ التكلفة الإجمالية الرسمية لبطاقة الصحة المهنية لمتداولي الأغذية في دبي؟',
-        answerEn: 'As verified on page 7 of our official price list: the Dubai Municipality government fee is AED 170.00 and the authorized typing fee is AED 52.50, totaling exactly AED 222.50 with no hidden charges.',
-        answerAr: 'وفق الصفحة 7 من قائمة أسعارنا الرسمية: الرسوم الحكومية لبلدية دبي هي 170 درهماً، ورسم الطباعة المعتمد هو 52.50 درهماً، بإجمالي 222.50 درهماً دون أي رسوم إضافية خفية.',
+        questionEn: 'What is the exact official government fee for a Food Handler Occupational Health Card in Dubai?',
+        questionAr: 'كم تبلغ الرسوم الحكومية الرسمية لبطاقة الصحة المهنية لمتداولي الأغذية في دبي؟',
+        answerEn: 'As verified on page 7 of our official price list: the Dubai Municipality statutory government fee is AED 170.00.',
+        answerAr: 'وفق الصفحة 7 من قائمة أسعارنا الرسمية: الرسوم الحكومية الرسمية لبلدية دبي هي 170 درهماً.',
       },
     ],
     reviews: [
@@ -650,13 +650,13 @@ export const SALEM_RTA_TAWJEEH_TADBEER_VIP_SERVICES_RICH_MAP: Record<string, Ser
 
   'ohc-salon-beauty-spa-card': {
     detailedOverviewEn:
-      'The Occupational Health Card (OHC) for Barbers, Beauticians, Salons, and Spa Professionals is mandatory for all personal care and aesthetic service providers in Dubai. Because beauticians, hair stylists, massage therapists, nail technicians, and tattoo/piercing specialists come into close physical contact with clients and use sharp grooming implements, Dubai Municipality enforces strict blood-borne disease screening protocols. Reflecting page 7 of our official price schedule, the statutory government fee is AED 540 plus the AED 52.50 typing fee, totaling AED 592.50. At Karama Business Center, salon professionals undergo targeted serological blood testing (for Hepatitis B, Hepatitis C, and HIV) and clinical evaluations, receiving their official digital OHC card in 24 to 48 hours to guarantee full salon inspection compliance.',
+      'The Occupational Health Card (OHC) for Barbers, Beauticians, Salons, and Spa Professionals is mandatory for all personal care and aesthetic service providers in Dubai. Because beauticians, hair stylists, massage therapists, nail technicians, and tattoo/piercing specialists come into close physical contact with clients and use sharp grooming implements, Dubai Municipality enforces strict blood-borne disease screening protocols. Reflecting page 7 of our official price schedule, the statutory government fee is AED 540. At Karama Business Center, salon professionals undergo targeted serological blood testing (for Hepatitis B, Hepatitis C, and HIV) and clinical evaluations, receiving their official digital OHC card in 24 to 48 hours to guarantee full salon inspection compliance.',
     detailedOverviewAr:
-      'تُعد بطاقة الصحة المهنية (OHC) لصالونات الحلاقة والتجميل ومراكز السبا متطلباً صحياً وقانونياً إلزامياً لكافة ممارسي مهن العناية الشخصية والتجميل في دبي. ونظراً لطبيعة عمل مصففي الشعر، وخبراء التجميل، وأخصائيي التدليك، وفنيي العناية بالأظافر التي تقتضي الملامسة المباشرة واستخدام أدوات الحلاقة والقص، تفرض بلدية دبي بروتوكول فحص مناعي دقيق لمنع انتقال الفيروسات المنقولة بالدم. وتماشياً مع الصفحة 7 من جدول أسعارنا المعتمد، تبلغ الرسوم الحكومية 540 درهماً ورسم الطباعة 52.50 درهماً، بإجمالي 592.50 درهماً. وفي مركز الكرامة للأعمال، يخضع ممارسو التجميل لفحوصات الدم المعتمدة (لالتهاب الكبد الوبائي B وC وفيروس نقص المناعة) والكشف السريري لإصدار البطاقة الرقمية خلال 24 - 48 ساعة.',
+      'تُعد بطاقة الصحة المهنية (OHC) لصالونات الحلاقة والتجميل ومراكز السبا متطلباً صحياً وقانونياً إلزامياً لكافة ممارسي مهن العناية الشخصية والتجميل في دبي. ونظراً لطبيعة عمل مصففي الشعر، وخبراء التجميل، وأخصائيي التدليك، وفنيي العناية بالأظافر التي تقتضي الملامسة المباشرة واستخدام أدوات الحلاقة والقص، تفرض بلدية دبي بروتوكول فحص مناعي دقيق لمنع انتقال الفيروسات المنقولة بالدم. وتماشياً مع الصفحة 7 من جدول أسعارنا المعتمد، تبلغ الرسوم الحكومية الرسمية 540 درهماً. وفي مركز الكرامة للأعمال، يخضع ممارسو التجميل لفحوصات الدم المعتمدة (لالتهاب الكبد الوبائي B وC وفيروس نقص المناعة) والكشف السريري لإصدار البطاقة الرقمية خلال 24 - 48 ساعة.',
     legalFrameworkEn:
-      'Regulated by Dubai Municipality Public Health Local Order No. 11 of 2003, Personal Care & Salon Health Regulations, and Dubai Health Authority directives (Official Tariff: AED 592.50).',
+      'Regulated by Dubai Municipality Public Health Local Order No. 11 of 2003, Personal Care & Salon Health Regulations, and Dubai Health Authority directives (Official Government Fee: AED 540).',
     legalFrameworkAr:
-      'خاضعة للأمر المحلي رقم 11 لسنة 2003 لبلدية دبي بشأن الصحة العامة ولوائح صحة صالونات التجميل والعناية الشخصية (التعرفة الرسمية: 592.50 درهم).',
+      'خاضعة للأمر المحلي رقم 11 لسنة 2003 لبلدية دبي بشأن الصحة العامة ولوائح صحة صالونات التجميل والعناية الشخصية (الرسم الحكومي الرسمي: 540 درهم).',
     eligibilityEn: [
       'Gents barbers, hairstylists, and grooming specialists',
       'Ladies salon hairdressers, makeup artists, and aesthetic technicians',
@@ -675,8 +675,8 @@ export const SALEM_RTA_TAWJEEH_TADBEER_VIP_SERVICES_RICH_MAP: Record<string, Ser
         stepNumber: 1,
         titleEn: 'Salon Visa Mapping & Application Typing',
         titleAr: 'تدقيق مهنة الصالون وطباعة استمارة الفحص',
-        descEn: 'Verifying salon trade license and issuing the AED 592.50 aesthetic category OHC token.',
-        descAr: 'مطابقة رخصة الصالون والمسمى المهني وإصدار استمارة فحص فئة التجميل بقيمة 592.50 درهم.',
+        descEn: 'Verifying salon trade license and issuing the AED 540 aesthetic category OHC token.',
+        descAr: 'مطابقة رخصة الصالون والمسمى المهني وإصدار استمارة فحص فئة التجميل بقيمة 540 درهم.',
         durationEn: '10 Mins',
         durationAr: '10 دقائق',
       },
@@ -701,10 +701,10 @@ export const SALEM_RTA_TAWJEEH_TADBEER_VIP_SERVICES_RICH_MAP: Record<string, Ser
     ],
     faqs: [
       {
-        questionEn: 'Why is the Occupational Health Card fee higher for salons and barbers (AED 592.50) than for food handlers (AED 222.50)?',
-        questionAr: 'لماذا تبلغ رسوم بطاقة الصحة المهنية للصالونات والحلاقين 592.50 درهم مقارنة بـ 222.50 درهم لمتداولي الأغذية؟',
-        answerEn: 'Because personal care and salon workers work closely with customer skin and sharp metal tools, Dubai Municipality requires specialized viral serology blood panels (including Hepatitis B surface antigen/antibodies and Hepatitis C), which carry an official government laboratory fee of AED 540 + AED 52.50 typing = AED 592.50.',
-        answerAr: 'نظراً لأن العاملين في الصالونات يتعاملون مع أدوات حلاقة وقص قد تسبب جروحاً دقيقة، تشترط بلدية دبي فحوصات مخبرية مناعية متقدمة للدم تشمل التهاب الكبد الوبائي بفصائله، وحددت لها رسماً حكومياً رسمياً قدره 540 درهماً + 52.50 درهم طباعة = 592.50 درهماً.',
+        questionEn: 'Why is the Occupational Health Card fee higher for salons and barbers (AED 540) than for food handlers (AED 170)?',
+        questionAr: 'لماذا تبلغ رسوم بطاقة الصحة المهنية للصالونات والحلاقين 540 درهم مقارنة بـ 170 درهم لمتداولي الأغذية؟',
+        answerEn: 'Because personal care and salon workers work closely with customer skin and sharp metal tools, Dubai Municipality requires specialized viral serology blood panels (including Hepatitis B surface antigen/antibodies and Hepatitis C), which carry an official government laboratory fee of AED 540.',
+        answerAr: 'نظراً لأن العاملين في الصالونات يتعاملون مع أدوات حلاقة وقص قد تسبب جروحاً دقيقة، تشترط بلدية دبي فحوصات مخبرية مناعية متقدمة للدم تشمل التهاب الكبد الوبائي بفصائله، وحددت لها رسماً حكومياً رسمياً قدره 540 درهماً.',
       },
     ],
     reviews: [
@@ -716,8 +716,8 @@ export const SALEM_RTA_TAWJEEH_TADBEER_VIP_SERVICES_RICH_MAP: Record<string, Ser
         companyAr: 'صالونات وسبا ليتوال الفاخرة',
         rating: 5,
         date: 'October 2026',
-        commentEn: 'Sent our whole team of 12 therapists and beauticians to Karama Business Center for their OHC cards. Clean private clinic, respectful treatment, exact AED 592.50 price, and cards issued in 24 hours.',
-        commentAr: 'أرسلنا فريقنا المكون من 12 أخصائية تجميل وتدليك لمركز الكرامة للأعمال لإصدار بطاقات الصحة المهنية. عيادات راقية وفحص احترافي وسعر معتمد 592.50 درهم وصدور البطاقات خلال 24 ساعة.',
+        commentEn: 'Sent our whole team of 12 therapists and beauticians to Karama Business Center for their OHC cards. Clean private clinic, respectful treatment, exact AED 540 government fee, and cards issued in 24 hours.',
+        commentAr: 'أرسلنا فريقنا المكون من 12 أخصائية تجميل وتدليك لمركز الكرامة للأعمال لإصدار بطاقات الصحة المهنية. عيادات راقية وفحص احترافي وسعر معتمد 540 درهم وصدور البطاقات خلال 24 ساعة.',
       },
     ],
     targetKeywords: {
@@ -726,10 +726,10 @@ export const SALEM_RTA_TAWJEEH_TADBEER_VIP_SERVICES_RICH_MAP: Record<string, Ser
         'barber occupational health card',
         'beautician health card dubai',
         'spa therapist ohc test dubai',
-        'ohc card 592 aed dubai',
+        'ohc card 540 aed dubai',
       ],
       longTail: [
-        'official salon and beautician occupational health card fee 592.50 aed dubai',
+        'official salon and beautician occupational health card fee 540 aed dubai',
         'dubai municipality health card for barbers and beauty therapists karama',
         'hepatitis b and blood screening for salon occupational health card dubai',
         'fast beauty salon staff ohc card issuance and renewal dubai',
@@ -739,21 +739,21 @@ export const SALEM_RTA_TAWJEEH_TADBEER_VIP_SERVICES_RICH_MAP: Record<string, Ser
 
   'ohc-construction-rta-drivers-card': {
     detailedOverviewEn:
-      'Occupational Health Cards (OHC) for Construction Workers & RTA Professional Chauffeurs/Drivers are specialized occupational medical certifications mandated by Dubai Municipality and the Roads & Transport Authority to verify fitness for heavy physical labor, industrial occupational safety, and public commercial driving. According to page 7 of our official price schedule: RTA Drivers carry a government fee of AED 170 plus AED 52.50 typing, totaling AED 222.50; Construction & Building Workers carry a government fee of AED 200 plus AED 52.50 typing, totaling AED 252.50. At Karama Business Center, candidates undergo comprehensive clinical occupational health assessments, cardiovascular and pulmonary evaluations, and visual/communicable disease checks, ensuring full regulatory compliance and eliminating stop-work contractor penalties.',
+      'Occupational Health Cards (OHC) for Construction Workers & RTA Professional Chauffeurs/Drivers are specialized occupational medical certifications mandated by Dubai Municipality and the Roads & Transport Authority to verify fitness for heavy physical labor, industrial occupational safety, and public commercial driving. According to page 7 of our official price schedule: RTA Drivers carry an official government fee of AED 170; Construction & Building Workers carry an official government fee of AED 200. At Karama Business Center, candidates undergo comprehensive clinical occupational health assessments, cardiovascular and pulmonary evaluations, and visual/communicable disease checks, ensuring full regulatory compliance and eliminating stop-work contractor penalties.',
     detailedOverviewAr:
-      'تُعد بطاقات الصحة المهنية (OHC) لعمال قطاع الإنشاءات والمقاولات وسائقي هيئة الطرق والمواصلات (RTA) شهادات فحص مهني متخصصة ملزمة من بلدية دبي وهيئة الطرق للتحقق من اللياقة البدنية والمهنية للعمل في المواقع الإنشائية والقيادة التجارية العامة بأمان. وتماشياً مع الصفحة 7 من قائمة أسعارنا الرسمية: يبلغ رسم سائقي هيئة الطرق 170 درهماً حكومياً + 52.50 درهم طباعة = 222.50 درهماً؛ بينما يبلغ رسم عمال الإنشاءات والمقاولات 200 درهم حكومي + 52.50 درهم طباعة = 252.50 درهماً. وفي مركز الكرامة للأعمال، يخضع المرشحون لتقييم مهني وسريري شامل للقلب والجهاز التنفسي والنظر لحماية المقاولين والشركات من إيقاف العمل وغرامات التفتيش.',
+      'تُعد بطاقات الصحة المهنية (OHC) لعمال قطاع الإنشاءات والمقاولات وسائقي هيئة الطرق والمواصلات (RTA) شهادات فحص مهني متخصصة ملزمة من بلدية دبي وهيئة الطرق للتحقق من اللياقة البدنية والمهنية للعمل في المواقع الإنشائية والقيادة التجارية العامة بأمان. وتماشياً مع الصفحة 7 من قائمة أسعارنا الرسمية: يبلغ الرسم الحكومي الرسمي لسائقي هيئة الطرق 170 درهماً؛ بينما يبلغ الرسم الحكومي لعمال الإنشاءات والمقاولات 200 درهم. وفي مركز الكرامة للأعمال، يخضع المرشحون لتقييم مهني وسريري شامل للقلب والجهاز التنفسي والنظر لحماية المقاولين والشركات من إيقاف العمل وغرامات التفتيش.',
     legalFrameworkEn:
-      'Mandated under Dubai Municipality Public Health Local Order No. 11 of 2003, Industrial Safety Directives, and RTA Commercial Driver Licensing Standards (Official Tariffs: AED 222.50 / AED 252.50).',
+      'Mandated under Dubai Municipality Public Health Local Order No. 11 of 2003, Industrial Safety Directives, and RTA Commercial Driver Licensing Standards (Official Government Tariffs: AED 170 / AED 200).',
     legalFrameworkAr:
-      'إلزامية بموجب الأمر المحلي رقم 11 لسنة 2003 بشأن الصحة العامة ببلدية دبي، ومعايير السلامة الإنشائية، ولوائح ترخيص السائقين التجاريين بهيئة الطرق (التعرفة: 222.50 درهم / 252.50 درهم).',
+      'إلزامية بموجب الأمر المحلي رقم 11 لسنة 2003 بشأن الصحة العامة ببلدية دبي، ومعايير السلامة الإنشائية، ولوائح ترخيص السائقين التجاريين بهيئة الطرق (الرسم الحكومي الرسمي: 170 درهم / 200 درهم).',
     eligibilityEn: [
-      'Construction site workers, carpenters, masons, steel fixers, and scaffolding operators (AED 252.50)',
-      'RTA taxi drivers, luxury limousine chauffeurs, public bus drivers, and delivery truck operators (AED 222.50)',
+      'Construction site workers, carpenters, masons, steel fixers, and scaffolding operators (AED 200 Govt Fee)',
+      'RTA taxi drivers, luxury limousine chauffeurs, public bus drivers, and delivery truck operators (AED 170 Govt Fee)',
       'Heavy equipment operators and industrial manufacturing plant workers',
     ],
     eligibilityAr: [
-      'عمال المواقع الإنشائية، والنجارون، والبناؤون، وحدادو المسلح، وعمال السقالات (252.50 درهم)',
-      'سائقو مركبات الأجرة (تاكسي دبي)، وسائقو الليموزين، وسائقو الحافلات العامة، والشاحنات (222.50 درهم)',
+      'عمال المواقع الإنشائية، والنجارون، والبناؤون، وحدادو المسلح، وعمال السقالات (رسم حكومي 200 درهم)',
+      'سائقو مركبات الأجرة (تاكسي دبي)، وسائقو الليموزين، وسائقو الحافلات العامة، والشاحنات (رسم حكومي 170 درهم)',
       'مشغلو المعدات والآليات الثقيلة وعمال المصانع والمنشآت الصناعية بدبي',
     ],
     galleryImages: COMMON_GALLERY,
@@ -762,8 +762,8 @@ export const SALEM_RTA_TAWJEEH_TADBEER_VIP_SERVICES_RICH_MAP: Record<string, Ser
         stepNumber: 1,
         titleEn: 'Trade License & Visa Category Audit',
         titleAr: 'تدقيق رخصة المقاولات أو النقل وتحديد الفئة',
-        descEn: 'Verifying construction vs. driving designation and issuing the AED 252.50 or AED 222.50 official token.',
-        descAr: 'التحقق من المسمى الإنشائي أو المروري وإصدار استمارة الفحص المعتمدة بتعرفة 252.50 درهم أو 222.50 درهم.',
+        descEn: 'Verifying construction vs. driving designation and issuing the official government token (AED 170 or AED 200).',
+        descAr: 'التحقق من المسمى الإنشائي أو المروري وإصدار استمارة الفحص المعتمدة بالرسم الحكومي (170 درهم أو 200 درهم).',
         durationEn: '10 Mins',
         durationAr: '10 دقائق',
       },
@@ -803,21 +803,21 @@ export const SALEM_RTA_TAWJEEH_TADBEER_VIP_SERVICES_RICH_MAP: Record<string, Ser
         companyAr: 'المطوع للمقاولات العامة',
         rating: 5,
         date: 'October 2026',
-        commentEn: 'Handled OHC certifications for our batch of 40 construction workers and 8 heavy truck drivers at Karama Business Center. Flawless service, exact tariffs, and zero site-inspection fines.',
-        commentAr: 'أنجزنا بطاقات الصحة المهنية لـ 40 عاملاً إنشائياً و8 سائقي شاحنات بمركز الكرامة للأعمال. خدمة ممتازة ورسوم مطابقة لجدول الأسعار وحماية تامة من مخالفات التفتيش.',
+        commentEn: 'Handled OHC certifications for our batch of 40 construction workers and 8 heavy truck drivers at Karama Business Center. Flawless service, exact government tariffs, and zero site-inspection fines.',
+        commentAr: 'أنجزنا بطاقات الصحة المهنية لـ 40 عاملاً إنشائياً و8 سائقي شاحنات بمركز الكرامة للأعمال. خدمة ممتازة ورسوم حكومية دقيقة وحماية تامة من مخالفات التفتيش.',
       },
     ],
     targetKeywords: {
       shortTail: [
         'construction ohc card dubai',
         'rta driver health card dubai',
-        'occupational health card 252 aed',
+        'occupational health card 200 aed',
         'contractor medical card dubai',
         'heavy driver health check karama',
       ],
       longTail: [
-        'official construction worker occupational health card fee 252.50 aed dubai',
-        'rta driver occupational health card fee 222.50 aed karama dubai',
+        'official construction worker occupational health card fee 200 aed dubai',
+        'rta driver occupational health card fee 170 aed karama dubai',
         'bulk construction site occupational health card testing dubai',
         'dubai municipality occupational safety health card for laborers',
       ],
@@ -826,23 +826,23 @@ export const SALEM_RTA_TAWJEEH_TADBEER_VIP_SERVICES_RICH_MAP: Record<string, Ser
 
   'ohc-healthcare-dha-doctor-license-card': {
     detailedOverviewEn:
-      'The Occupational Health Card (OHC) for Healthcare Personnel & DHA / Diwan Doctor Licensees is the highest tier of municipal medical clearance in Dubai, required for doctors, surgeons, dentists, nurses, pharmacists, lab technicians, and hospital allied health staff. Reflecting page 7 of our official price schedule: Healthcare Personnel carry a government fee of AED 570 plus AED 52.50 typing, totaling AED 622.50; DHA License & Diwan Personnel carry a government fee of AED 770 plus AED 52.50 typing, totaling AED 822.50. At Karama Business Center, clinical professionals undergo rigorous serological screening (Hepatitis B, Hepatitis C, HIV, and Rubella/MMR antibody titers) and physician clinical sign-offs, synchronized directly with Dubai Health Authority (DHA) and Dubai Municipality registries.',
+      'The Occupational Health Card (OHC) for Healthcare Personnel & DHA / Diwan Doctor Licensees is the highest tier of municipal medical clearance in Dubai, required for doctors, surgeons, dentists, nurses, pharmacists, lab technicians, and hospital allied health staff. Reflecting page 7 of our official price schedule: Healthcare Personnel carry an official government fee of AED 570; DHA License & Diwan Personnel carry an official government fee of AED 770. At Karama Business Center, clinical professionals undergo rigorous serological screening (Hepatitis B, Hepatitis C, HIV, and Rubella/MMR antibody titers) and physician clinical sign-offs, synchronized directly with Dubai Health Authority (DHA) and Dubai Municipality registries.',
     detailedOverviewAr:
-      'تُعد بطاقة الصحة المهنية (OHC) للكوادر الطبية والتمريضية وتراخيص أطباء هيئة الصحة والديوان (DHA / Diwan) أعلى فئات الفحص المهني المعتمدة في إمارة دبي، وهي إلزامية للأطباء، والجراحين، وأطباء الأسنان، والممرضين، والصيادلة، وفنيي المختبرات وكوادر المستشفيات والعيادات. وتماشياً مع الصفحة 7 من قائمة أسعارنا الرسمية المعتمدة: تبلغ رسوم كوادر الرعاية الصحية والمستشفيات 570 درهماً حكومياً + 52.50 درهم طباعة = 622.50 درهماً؛ بينما تبلغ رسوم تراخيص أطباء هيئة الصحة وموظفي الديوان 770 درهماً حكومياً + 52.50 درهم طباعة = 822.50 درهماً. وفي مركز الكرامة للأعمال، يخضع الكادر الطبي لفحص مناعي دقيق للأجسام المضادة والفيروسات وكشف سريري معتمد للربط المباشر مع سجلات هيئة الصحة وبلدية دبي.',
+      'تُعد بطاقة الصحة المهنية (OHC) للكوادر الطبية والتمريضية وتراخيص أطباء هيئة الصحة والديوان (DHA / Diwan) أعلى فئات الفحص المهني المعتمدة في إمارة دبي، وهي إلزامية للأطباء، والجراحين، وأطباء الأسنان، والممرضين، والصيادلة، وفنيي المختبرات وكوادر المستشفيات والعيادات. وتماشياً مع الصفحة 7 من قائمة أسعارنا الرسمية المعتمدة: يبلغ الرسم الحكومي لكوادر الرعاية الصحية والمستشفيات 570 درهماً؛ بينما يبلغ الرسم الحكومي لتراخيص أطباء هيئة الصحة وموظفي الديوان 770 درهماً. وفي مركز الكرامة للأعمال، يخضع الكادر الطبي لفحص مناعي دقيق للأجسام المضادة والفيروسات وكشف سريري معتمد للربط المباشر مع سجلات هيئة الصحة وبلدية دبي.',
     legalFrameworkEn:
-      'Regulated under Dubai Health Authority (DHA) Health Professional Licensure Standards and Dubai Municipality Public Health Local Order No. 11 of 2003 (Official Tariffs: AED 622.50 / AED 822.50).',
+      'Regulated under Dubai Health Authority (DHA) Health Professional Licensure Standards and Dubai Municipality Public Health Local Order No. 11 of 2003 (Official Government Tariffs: AED 570 / AED 770).',
     legalFrameworkAr:
-      'خاضعة لمعايير ترخيص المهنيين الصحيين بهيئة الصحة بدبي والأمر المحلي رقم 11 لسنة 2003 بشأن الصحة العامة (التعرفة: 622.50 درهم / 822.50 درهم).',
+      'خاضعة لمعايير ترخيص المهنيين الصحيين بهيئة الصحة بدبي والأمر المحلي رقم 11 لسنة 2003 بشأن الصحة العامة (الرسم الحكومي الرسمي: 570 درهم / 770 درهم).',
     eligibilityEn: [
-      'Doctors, surgeons, and specialists applying for or renewing their DHA professional license (AED 822.50)',
-      'Registered nurses, midwives, and healthcare clinic assistants (AED 622.50)',
-      'Clinical pharmacists, dental assistants, and hospital laboratory technologists (AED 622.50)',
+      'Doctors, surgeons, and specialists applying for or renewing their DHA professional license (AED 770 Govt Fee)',
+      'Registered nurses, midwives, and healthcare clinic assistants (AED 570 Govt Fee)',
+      'Clinical pharmacists, dental assistants, and hospital laboratory technologists (AED 570 Govt Fee)',
       'Healthcare and medical tourism facility staff requiring municipal OHC compliance',
     ],
     eligibilityAr: [
-      'الأطباء والجراحون والاستشاريون الحاصلون على ترخيص هيئة الصحة بدبي أو الديوان (822.50 درهم)',
-      'الممرضون والممرضات القانونيون والقابلات ومساعدو التمريض في العيادات والمستشفيات (622.50 درهم)',
-      'الصيادلة وفنيو الأسنان وتقنيو المختبرات الطبية بالمراكز الصحية (622.50 درهم)',
+      'الأطباء والجراحون والاستشاريون الحاصلون على ترخيص هيئة الصحة بدبي أو الديوان (رسم حكومي 770 درهم)',
+      'الممرضون والممرضات القانونيون والقابلات ومساعدو التمريض في العيادات والمستشفيات (رسم حكومي 570 درهم)',
+      'الصيادلة وفنيو الأسنان وتقنيو المختبرات الطبية بالمراكز الصحية (رسم حكومي 570 درهم)',
       'كوادر وموظفو منشآت الرعاية الصحية والسياحة العلاجية بدبي',
     ],
     galleryImages: COMMON_GALLERY,
@@ -851,8 +851,8 @@ export const SALEM_RTA_TAWJEEH_TADBEER_VIP_SERVICES_RICH_MAP: Record<string, Ser
         stepNumber: 1,
         titleEn: 'DHA License Verification & Application Typing',
         titleAr: 'تدقيق الترخيص الطبي وطباعة استمارة الفحص',
-        descEn: 'Verifying healthcare facility license and issuing the AED 622.50 or AED 822.50 official token.',
-        descAr: 'تدقيق ترخيص المنشأة الصحية وإصدار استمارة الفحص الرسمية بقيمة 622.50 درهم أو 822.50 درهم.',
+        descEn: 'Verifying healthcare facility license and issuing the official government token (AED 570 or AED 770).',
+        descAr: 'تدقيق ترخيص المنشأة الصحية وإصدار استمارة الفحص الرسمية بالرسم الحكومي (570 درهم أو 770 درهم).',
         durationEn: '10 Mins',
         durationAr: '10 دقائق',
       },
@@ -879,8 +879,8 @@ export const SALEM_RTA_TAWJEEH_TADBEER_VIP_SERVICES_RICH_MAP: Record<string, Ser
       {
         questionEn: 'What is the exact official tariff for a DHA Doctor License Occupational Health Card at Karama Business Center?',
         questionAr: 'كم تبلغ التعرفة الرسمية لبطاقة الصحة المهنية لترخيص أطباء هيئة الصحة في مركز الكرامة؟',
-        answerEn: 'As verified on page 7 of our official price list: the government fee is AED 770.00 and the authorized typing fee is AED 52.50, totaling exactly AED 822.50.',
-        answerAr: 'وفق الصفحة 7 من قائمة أسعارنا الرسمية: الرسوم الحكومية هي 770 درهماً ورسم الطباعة المعتمد هو 52.50 درهماً، بإجمالي 822.50 درهماً بالضبط.',
+        answerEn: 'As verified on page 7 of our official price list: the statutory government fee is AED 770.00.',
+        answerAr: 'وفق الصفحة 7 من قائمة أسعارنا الرسمية: الرسوم الحكومية الرسمية هي 770 درهماً.',
       },
     ],
     reviews: [
@@ -918,33 +918,33 @@ export const SALEM_RTA_TAWJEEH_TADBEER_VIP_SERVICES_RICH_MAP: Record<string, Ser
   // ============================================================================
   'salem-standard-medical-fitness-24hr': {
     detailedOverviewEn:
-      'The Standard 24-Hour DHA Residency Medical Fitness Test at Karama Medical Fitness Express Service Center (KMFC / Salem) is Dubai’s official baseline government medical screening for all new and renewing UAE residence visa applicants, investor visas, employment work permits, and family sponsorships. Operating under the Dubai Health Authority and Salem digital core, our certified Al Karama diagnostic center conducts low-dose digital pulmonary chest X-rays and venipuncture blood testing (screening for HIV, Hepatitis B for high-risk categories, and active pulmonary tuberculosis) at the official baseline government tariff of AED 322. Results and verified medical certificates are issued within 24 hours and uploaded directly into GDRFA Amer immigration servers, enabling immediate visa stamping.',
+      'The Standard 24-Hour DHA Residency Medical Fitness Test at Karama Medical Fitness Express Service Center (KMFC / Salem) is Dubai’s official baseline government medical screening for all new and renewing UAE residence visa applicants, investor visas, employment work permits, and family sponsorships. Operating under the Dubai Health Authority and Salem digital core, our certified Al Karama diagnostic center conducts low-dose digital pulmonary chest X-rays and venipuncture blood testing (screening for HIV, Hepatitis B for high-risk categories, and active pulmonary tuberculosis) with fast turnaround. Results and verified medical certificates are issued within 24 hours and uploaded directly into GDRFA Amer immigration servers, enabling immediate visa stamping.',
     detailedOverviewAr:
-      'يُعد الفحص الطبي العادي للياقة الإقامة خلال 24 ساعة في مركز الكرامة للياقة الطبية السريعة (KMFC / سالم) الفحص الحكومي الرسمي المعتمد من هيئة الصحة بدبي لكافة المتقدمين لإصدار أو تجديد تأشيرات الإقامة بدولة الإمارات، وإقامات المستثمرين، وتصاريح العمل، وكفالة الأسرة. ويجري المركز في منطقة الكرامة أشعة الصدر الرقمية منخفضة الإشعاع وسحب عينة الدم الوريدية (للكشف عن فيروس نقص المناعة، والتهاب الكبد الوبائي B، والدرن الرئوي) بالتعرفة الحكومية الرسمية المعتمدة البالغة 322 درهماً. وتصدر النتائج والشهادة الطبية المعتمدة خلال 24 ساعة مع رفعها تلقائياً لنظام إقامة دبي (آمر) لإنهاء تثبيت التأشيرة فوراً.',
+      'يُعد الفحص الطبي العادي للياقة الإقامة خلال 24 ساعة في مركز الكرامة للياقة الطبية السريعة (KMFC / سالم) الفحص الحكومي الرسمي المعتمد من هيئة الصحة بدبي لكافة المتقدمين لإصدار أو تجديد تأشيرات الإقامة بدولة الإمارات، وإقامات المستثمرين، وتصاريح العمل، وكفالة الأسرة. ويجري المركز في منطقة الكرامة أشعة الصدر الرقمية منخفضة الإشعاع وسحب عينة الدم الوريدية (للكشف عن فيروس نقص المناعة، والتهاب الكبد الوبائي B، والدرن الرئوي) وفق أعلى المعايير الصحية. وتصدر النتائج والشهادة الطبية المعتمدة خلال 24 ساعة مع رفعها تلقائياً لنظام إقامة دبي (آمر) لإنهاء تثبيت التأشيرة فوراً.',
     legalFrameworkEn:
-      'Governed by UAE Federal Cabinet Resolution No. 5 of 2008 and Cabinet Resolution No. 7 of 2016 Concerning Medical Fitness Examination for Residency, administered by Dubai Health (Official Baseline Tariff: AED 322).',
+      'Governed by UAE Federal Cabinet Resolution No. 5 of 2008 and Cabinet Resolution No. 7 of 2016 Concerning Medical Fitness Examination for Residency, administered by Dubai Health.',
     legalFrameworkAr:
-      'خاضعة لقرار مجلس الوزراء الاتحادي رقم 5 لسنة 2008 وقرار مجلس الوزراء رقم 7 لسنة 2016 بشأن الفحص الطبي للوافدين للإقامة، وتنفذها صحة دبي (التعرفة الأساسية: 322 درهم).',
+      'خاضعة لقرار مجلس الوزراء الاتحادي رقم 5 لسنة 2008 وقرار مجلس الوزراء رقم 7 لسنة 2016 بشأن الفحص الطبي للوافدين للإقامة، وتنفذها صحة دبي.',
     eligibilityEn: [
       'New private sector and free-zone employees applying for first-time UAE residence visas',
       'Existing residents renewing their 2-year or 3-year employment, partner, or investor visas',
       'Expatriate family members (spouses, adult dependents over 18) applying for family sponsorship visas',
-      'Applicants seeking the official AED 322 government baseline tariff with 24-hour turnaround',
+      'Applicants seeking the official DHA medical fitness certificate with 24-hour turnaround',
     ],
     eligibilityAr: [
       'الموظفون الجدد في القطاع الخاص والمناطق الحرة المتقدمون لإصدار تأشيرة الإقامة الأولى',
       'المقيمون الراغبون في تجديد إقامات العمل أو الشريك أو المستثمر (سنتان أو 3 سنوات)',
       'أفراد الأسرة البالغون (الزوجة، الأبناء فوق 18 عاماً) المتقدمون لتأشيرة كفالة العائلة',
-      'المتعاملون الراغبون في الفحص بالتعرفة الحكومية الرسمية (322 درهماً) خلال 24 ساعة',
+      'المتعاملون الراغبون في الفحص الطبي الرسمي المعتمد خلال 24 ساعة',
     ],
     galleryImages: COMMON_GALLERY,
     processSteps: [
       {
         stepNumber: 1,
-        titleEn: 'Identity Intake & Smart Salem Token (AED 322)',
-        titleAr: 'التسجيل وإصدار رمز فحص سالم الرسمي (322 درهم)',
-        descEn: 'Matching passport, visa, and Emirates ID application to generate the official AED 322 Salem token.',
-        descAr: 'مطابقة الجواز والتأشيرة واستمارة الهوية وإصدار استمارة سالم الرسمية بقيمة 322 درهماً.',
+        titleEn: 'Identity Intake & Smart Salem Token',
+        titleAr: 'التسجيل وإصدار رمز فحص سالم الرسمي',
+        descEn: 'Matching passport, visa, and Emirates ID application to generate the official Salem token.',
+        descAr: 'مطابقة الجواز والتأشيرة واستمارة الهوية وإصدار استمارة سالم الرسمية المعتمدة.',
         durationEn: '5 Mins',
         durationAr: '5 دقائق',
       },
@@ -969,10 +969,10 @@ export const SALEM_RTA_TAWJEEH_TADBEER_VIP_SERVICES_RICH_MAP: Record<string, Ser
     ],
     faqs: [
       {
-        questionEn: 'What is the official baseline government fee for standard residency medical fitness in Dubai?',
-        questionAr: 'ما هي الرسوم الحكومية الرسمية لفحص الإقامة الطبي العادي في دبي؟',
-        answerEn: 'The official baseline government tariff set by Dubai Health / Salem is exactly AED 322 for standard 24-hour turnaround, which includes the physical check, blood test, chest X-ray, and direct electronic upload to GDRFA immigration.',
-        answerAr: 'الرسوم الحكومية الرسمية المعتمدة من صحة دبي ونظام سالم هي 322 درهماً بالضبط للفحص العادي (24 ساعة)، وتشمل سحب الدم وأشعة الصدر ورفع النتيجة إلكترونياً لإقامة دبي.',
+        questionEn: 'How is standard residency medical fitness processed and uploaded in Dubai?',
+        questionAr: 'كيف يتم إجراء ورفع فحص الإقامة الطبي العادي رسمياً في دبي؟',
+        answerEn: 'The residency medical fitness examination conducted at Karama Medical Center includes the physical check, blood test, chest X-ray, and direct electronic upload to GDRFA immigration within 24 hours.',
+        answerAr: 'يشمل فحص اللياقة الطبية للإقامة في مركز الكرامة الطبي سحب عينة الدم وأشعة الصدر ورفع النتيجة الطبية المعتمدة إلكترونياً إلى إقامة دبي خلال 24 ساعة.',
       },
     ],
     reviews: [
@@ -984,13 +984,13 @@ export const SALEM_RTA_TAWJEEH_TADBEER_VIP_SERVICES_RICH_MAP: Record<string, Ser
         companyAr: 'ديلويت الشرق الأوسط',
         rating: 5,
         date: 'October 2026',
-        commentEn: 'Completed my standard medical test at Karama Medical Center for AED 322. The center is spotless, well-organized, and my Salem result was uploaded to Amer in exactly 22 hours.',
-        commentAr: 'أجريت الفحص الطبي العادي بمركز الكرامة الطبي برسم 322 درهماً. مركز نظيف ومنظم للغاية ورفعت نتيجتي بنظام سالم لإقامة دبي خلال 22 ساعة.',
+        commentEn: 'Completed my standard medical test at Karama Medical Center. The center is spotless, well-organized, and my Salem result was uploaded to Amer in exactly 22 hours.',
+        commentAr: 'أجريت الفحص الطبي العادي بمركز الكرامة الطبي. مركز نظيف ومنظم للغاية ورفعت نتيجتي بنظام سالم لإقامة دبي خلال 22 ساعة.',
       },
     ],
     targetKeywords: {
       shortTail: [
-        'medical fitness test 322 aed dubai',
+        'medical fitness test karama dubai',
         'salem medical center karama',
         'karama medical center residency test',
         '24 hour medical fitness dubai',
@@ -2412,9 +2412,9 @@ export const SALEM_RTA_TAWJEEH_TADBEER_VIP_SERVICES_RICH_MAP: Record<string, Ser
 
   'tadbeer-maid-visa-renewal-medical': {
     detailedOverviewEn:
-      'Housemaid & Nanny Residency Visa Renewal, Salem Medical & Tadbeer Contract Renewal at Karama Business Center (KBC) delivers an effortless, synchronized renewal cycle for domestic personnel. Under UAE immigration rules, domestic worker residence visas are valid for 2 years and must be renewed prior to expiry to avoid overstay fines. At Karama Business Center, we coordinate the entire renewal chain in one single visit: on-site Salem residency medical fitness screening (AED 322 standard or 2-hour express), mandatory Hepatitis B booster vaccination, ICP biometric Emirates ID renewal, MoHRE Tadbeer contract renewal and fee voucher settlement, and GDRFA Amer 2-year residency stamping.',
+      'Housemaid & Nanny Residency Visa Renewal, Salem Medical & Tadbeer Contract Renewal at Karama Business Center (KBC) delivers an effortless, synchronized renewal cycle for domestic personnel. Under UAE immigration rules, domestic worker residence visas are valid for 2 years and must be renewed prior to expiry to avoid overstay fines. At Karama Business Center, we coordinate the entire renewal chain in one single visit: on-site Salem residency medical fitness screening (standard or 2-hour express), mandatory Hepatitis B booster vaccination, ICP biometric Emirates ID renewal, MoHRE Tadbeer contract renewal, and GDRFA Amer 2-year residency stamping.',
     detailedOverviewAr:
-      'توفر خدمة "تجديد إقامة العمالة المساعدة والمربيات، وفحص سالم الطبي، وتجديد عقود تدبير" في مركز الكرامة للأعمال (KBC) دورة تجديد متكاملة ومترابطة للمساعدين المنزليين في زيارة واحدة. فبموجب لوائح الإقامة، تمتد صلاحية إقامة العامل المنزلي لسنتين ويجب تجديدها قبل الانتهاء لتفادي الغرامات. وفي مركز الكرامة للأعمال، ننسق سلسلة التجديد بأكملها تحت سقف واحد: الفحص الطبي للياقة الإقامة بمركز سالم (322 درهماً أو السريع خلال ساعتين)، وجرعة لقاح الكبد الوبائي التنشيطية، وتجديد بطاقة الهوية الإماراتية (ICP)، وتجديد عقد عمل تدبير لدى الوزارة، وتثبيت الإقامة لسنتين لدى كاونتر آمر.',
+      'توفر خدمة "تجديد إقامة العمالة المساعدة والمربيات، وفحص سالم الطبي، وتجديد عقود تدبير" في مركز الكرامة للأعمال (KBC) دورة تجديد متكاملة ومترابطة للمساعدين المنزليين في زيارة واحدة. فبموجب لوائح الإقامة، تمتد صلاحية إقامة العامل المنزلي لسنتين ويجب تجديدها قبل الانتهاء لتفادي الغرامات. وفي مركز الكرامة للأعمال، ننسق سلسلة التجديد بأكملها تحت سقف واحد: الفحص الطبي للياقة الإقامة بمركز سالم (العادي أو السريع خلال ساعتين)، وجرعة لقاح الكبد الوبائي التنشيطية، وتجديد بطاقة الهوية الإماراتية (ICP)، وتجديد عقد عمل تدبير لدى الوزارة، وتثبيت الإقامة لسنتين لدى كاونتر آمر.',
     legalFrameworkEn:
       'Governed by UAE Federal Decree-Law No. 9 of 2022 Concerning Domestic Workers and GDRFA Dubai Domestic Visa Renewal Directives.',
     legalFrameworkAr:

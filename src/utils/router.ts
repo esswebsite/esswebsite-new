@@ -87,8 +87,8 @@ export function resolveRoute(
         };
       }
     } else if (cleanHash === 'pricelist' || cleanHash === 'pricing' || cleanHash === 'calculator') {
-      const canonical = `${lang === 'ar' ? '/ar' : ''}/pricelist`;
-      return { pageView: { type: 'pricelist' }, language: lang, canonicalPath: canonical, isLegacyRedirect: true };
+      const canonical = `${lang === 'ar' ? '/ar' : ''}/departments`;
+      return { pageView: { type: 'departments' }, language: lang, canonicalPath: canonical, isLegacyRedirect: true };
     } else if (cleanHash === 'contact') {
       const canonical = `${lang === 'ar' ? '/ar' : ''}/contact`;
       return { pageView: { type: 'contact' }, language: lang, canonicalPath: canonical, isLegacyRedirect: true };
@@ -122,7 +122,7 @@ export function resolveRoute(
     return { pageView: { type: 'departments' }, language: lang, canonicalPath: `${lang === 'ar' ? '/ar' : ''}/departments` };
   }
   if (primary === 'pricelist' || primary === 'pricing' || primary === 'calculator') {
-    return { pageView: { type: 'pricelist' }, language: lang, canonicalPath: `${lang === 'ar' ? '/ar' : ''}/pricelist` };
+    return { pageView: { type: 'departments' }, language: lang, canonicalPath: `${lang === 'ar' ? '/ar' : ''}/departments` };
   }
   if (primary === 'contact') {
     return { pageView: { type: 'contact' }, language: lang, canonicalPath: `${lang === 'ar' ? '/ar' : ''}/contact` };
@@ -277,7 +277,7 @@ export function buildPath(pageView: PageView, lang: Language): string {
     case 'service':
       return getServicePath(pageView.serviceId, pageView.deptId, lang);
     case 'pricelist':
-      return `${prefix}/pricelist`;
+      return `${prefix}/departments`;
     case 'contact':
       return `${prefix}/contact`;
     case 'team':

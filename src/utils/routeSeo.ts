@@ -164,11 +164,6 @@ export const CORE_PAGES_META: Record<string, { title: string; desc: string; keyw
     desc: 'Access 14 official government departments under one roof at Karama Business Center: Amer GDRFA, Tasheel MOHRE, DET, ICP ID & DHA Salem.',
     keywords: 'Government departments Dubai, Amer Center Karama, DET licensing Dubai, Tasheel MOHRE Dubai, ICP Emirates ID typing, DHA Salem medical',
   },
-  '/pricelist': {
-    title: 'Official Dubai Visa & Government Fees 2026 | ESS KBC',
-    desc: 'Transparent 2026 Dubai government tariffs: UAE residency visa, Golden Visa, DET trade license, Tasheel work permit & Salem medical fees.',
-    keywords: 'UAE visa fees 2026, Dubai Golden Visa price, trade license fee Dubai, Tasheel work permit cost, Salem medical test fee, Amer center charges',
-  },
   '/knowledge-hub': {
     title: 'Dubai Visa & Immigration Guides 2026 | ESS Amer Hub',
     desc: 'Authoritative UAE visa guides, Golden Visa rules, Emirates ID procedures, DET trade license renewal, and labor regulations by Dubai PROs.',
@@ -788,16 +783,6 @@ export function getSchemaForRoute(
             name: isOhc ? 'OccupationalMedicine' : 'PublicHealth',
           },
           bodyLocation: 'Blood, Lungs (Chest X-Ray)',
-          offers: {
-            '@type': 'Offer',
-            priceCurrency: 'AED',
-            price: `${s.govFee || 260}.00`,
-            availability: 'https://schema.org/InStock',
-            validFrom: '2026-01-01',
-            seller: {
-              '@id': 'https://ess.ae/#kmfc-clinic',
-            },
-          },
         },
         {
           '@type': 'FAQPage',
@@ -891,19 +876,6 @@ export function getSchemaForRoute(
             '@type': 'Audience',
             audienceType: 'UAE Residents, Expatriates, and Investors',
           },
-          ...(s.govFee > 0
-            ? {
-                offers: {
-                  '@type': 'Offer',
-                  priceCurrency: 'AED',
-                  price: `${s.govFee}.00`,
-                  availability: 'https://schema.org/InStock',
-                  seller: {
-                    '@id': 'https://ess.ae/#organization',
-                  },
-                },
-              }
-            : {}),
         },
       ],
     };

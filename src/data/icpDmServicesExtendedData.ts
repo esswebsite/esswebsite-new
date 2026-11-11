@@ -47,12 +47,12 @@ export const ICP_DM_SERVICES_RICH_MAP: Record<string, ServiceRichDetails> = {
 
 At Karama Business Center (KBC), our ICP Smart E-Channel desk is co-located directly inside the same building as the **Karama Medical Fitness Express Service Center (KMFC — known across Dubai as Karama Medical Center)** and our Authorized Amer (GDRFA) Center. This means a newly arrived employee, investor, or family dependent can complete their DHA Medical Fitness blood test and X-ray, type their New Emirates ID application, and book or complete their biometric fingerprinting in one seamless visit next to Karama Post Office.
 
-For 2026, official ICP government fees for a New Emirates ID are transparent and aligned with your visa validity: **AED 286 for a 1-Year Visa**, **AED 386 for a 2-Year Employment/Family Visa**, and **AED 1,186 for a 10-Year Golden Visa** (inclusive of smart card issuance, e-channel fees, and Zajel courier delivery).`,
+For 2026, official ICP government issuance for a New Emirates ID is aligned with your residency visa validity (1-Year, 2-Year Employment or Family Visa, or 10-Year Golden Visa), inclusive of smart card issuance, federal e-channel registration, and Zajel courier delivery.`,
     detailedOverviewAr: `تُعد **بطاقة الهوية الإماراتية** الصادرة عن الهيئة الاتحادية للهوية والجنسية والجمارك وأمن المنافذ (ICP) الوثيقة الرسمية الإلزامية لإثبات الهوية لكافة المواطنين والمقيمين في دولة الإمارات. وتحتوي البطاقة على شريحة ذكية مشفرة تضم البصمات العشرية وبصمة العين والتوقيع الرقمي المعتمد، ولا يمكن لأي مقيم في دبي فتح حساب بنكي، توثيق عقد إيجاري، تفعيل شريحة هاتف، أو استخدام البوابات الذكية في مطارات دبي بدونها.
 
 يمتاز مركز الكرامة للأعمال (KBC) بضم مكتب خدمات الهوية الاتحادية (ICP)، و**مركز الكرامة للياقة الطبية السريعة (KMFC - المعروف بمركز الكرامة الطبي)**، ومركز "آمر" لإقامة دبي في مبنى واحد بجوار بريد الكرامة. يتيح هذا التكامل للمقيم الجديد إجراء الفحص الطبي للدم والأشعة، وطباعة استمارة الهوية الإماراتية الجديدة، وتنسيق البصمة البيومترية في زيارة واحدة منسقة دون عناء التنقل.
 
-تُطبق الرسوم الحكومية الرسمية المقررة لعام 2026 بشفافية تامة حسب مدة الإقامة: **286 درهماً لإقامة سنة واحدة**، **386 درهماً لإقامة سنتين (عمل أو أسرة)**، و**1,186 درهماً للإقامة الذهبية لمدة 10 سنوات** شاملة رسوم الإصدار والتوصيل.`,
+تُطبق المعايير الحكومية الرسمية المقررة بحسب مدة الإقامة (سنة واحدة، سنتين للعمل أو الأسرة، أو 10 سنوات للإقامة الذهبية) شاملة إجراءات الإصدار والتسجيل الاتحادي والتوصيل المعتمد.`,
     legalFrameworkEn: `UAE Federal Law No. 9 of 2006 on the Population Register and Identity Card System and ICP Executive Smart Services Regulations.`,
     legalFrameworkAr: `القانون الاتحادي رقم (9) لسنة 2006 في شأن نظام السجل السكاني وبطاقة الهوية واللوائح التنفيذية للهيئة الاتحادية للهوية والجنسية.`,
     eligibilityEn: [
@@ -238,12 +238,12 @@ Our ICP typing officers also capture a fresh high-resolution ICAO-compliant stud
 
 At Karama Business Center (KBC), our authorized ICP typing counter immediately deactivates the lost or stolen card’s old serial number in the federal registry (preventing any unauthorized identity misuse) and submits your replacement card printing order on the spot.
 
-For urgent travelers, banking signatories, or property buyers who cannot wait 3–4 business days for standard printing, we also process **Fawri Urgent 24-Hour Emirates ID Replacement (خدمة فوري المستعجلة خلال 24 ساعة)**. Standard ICP replacement government fee is **AED 386** (AED 300 replacement fee + AED 70 service fee + Zajel delivery), with an optional AED 150 Fawri urgent printing surcharge.`,
+For urgent travelers, banking signatories, or property buyers who cannot wait 3–4 business days for standard printing, we also process **Fawri Urgent 24-Hour Emirates ID Replacement (خدمة فوري المستعجلة خلال 24 ساعة)** with expedited printing and courier dispatch.`,
     detailedOverviewAr: `في حال فقدان بطاقة الهوية الإماراتية أو سرقتها أو تعرضها للتلف (مثل كسر البطاقة أو تعطل الشريحة الذكية)، أو عند الحاجة لتحديث البيانات المطبوعة على البطاقة (مثل تغيير الاسم أو الجنسية أو المسمى الوظيفي)، يتوجب التقديم فوراً على معاملة **إصدار بدل فاقد أو تالف لبطاقة الهوية الإماراتية** لدى الهيئة الاتحادية للهوية والجنسية (ICP).
 
 في مركز الكرامة للأعمال (KBC)، يقوم موظفو الهوية المعتمدون بإيقاف الرقم التسلسلي للبطاقة المفقودة فوراً في النظام الاتحادي (لحمايتك من أي استغلال غير قانوني للهوية)، ورفع طلب طباعة البطاقة البديلة بنفس مدة الصلاحية المتبقية في إقامتك.
 
-كما نوفر للمتعاملين المستعجلين خيار **خدمة "فوري" (Fawri)** لاستلام البطاقة البديلة المطبوعة خلال 24 ساعة فقط. تبلغ الرسوم الحكومية الأساسية لإصدار بدل فاقد أو تالف **386 درهماً** (مع إمكانية إضافة 150 درهماً لخدمة الطباعة الفورية المستعجلة).`,
+كما نوفر للمتعاملين المستعجلين خيار **خدمة "فوري" (Fawri)** لاستلام البطاقة البديلة المطبوعة خلال 24 ساعة فقط مع التوصيل السريع.`,
     legalFrameworkEn: `UAE Federal Law No. 9 of 2006 and ICP Smart Identity Card Replacement & Data Modification Directives.`,
     legalFrameworkAr: `القانون الاتحادي رقم (9) لسنة 2006 ولوائح الهيئة الاتحادية للهوية والجنسية بشأن استبدال البطاقات المفقودة والتالفة وتحديث البيانات.`,
     eligibilityEn: [

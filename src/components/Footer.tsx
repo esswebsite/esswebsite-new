@@ -105,14 +105,7 @@ export const Footer: React.FC<FooterProps> = ({
                   {t.navDepartmentsServices || (isAr ? 'الدوائر والخدمات' : 'Departments & Services')}
                 </button>
               </li>
-              <li>
-                <button
-                  onClick={() => handlePageClick('pricelist')}
-                  className="hover:text-teal-300 transition-colors cursor-pointer text-left rtl:text-right text-teal-400 font-bold block"
-                >
-                  {isAr ? 'جدول أسعار ورسوم الخدمات (2026)' : 'Services Price List & Calculator'}
-                </button>
-              </li>
+
               <li>
                 <button
                   onClick={() => handlePageClick('gallery')}

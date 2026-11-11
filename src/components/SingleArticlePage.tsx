@@ -587,9 +587,9 @@ export const SingleArticlePage: React.FC<SingleArticlePageProps> = ({
                         </span>
                       </div>
                       <div>
-                        <span className="text-slate-400">{isAr ? 'الرسوم الحكومية: ' : 'Government Fee: '}</span>
+                        <span className="text-slate-400">{isAr ? 'الاعتماد الحكومي: ' : 'Accreditation: '}</span>
                         <span className="font-semibold text-white">
-                          {relatedService.govFee > 0 ? `AED ${relatedService.govFee}` : (isAr ? 'حسب الحالة' : 'Variable')}
+                          {isAr ? 'مركز معتمد رسمياً' : 'Official Authorized Center'}
                         </span>
                       </div>
                     </div>

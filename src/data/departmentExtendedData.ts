@@ -656,10 +656,10 @@ export const DEPARTMENT_RICH_MAP: Record<string, DepartmentRichDetails> = {
     ],
     faqs: [
       {
-        questionEn: 'How much is the Emirates ID fee for a 2-year Dubai residency visa in 2026?',
-        questionAr: 'كم تبلغ رسوم الهوية الإماراتية لإقامة مدتها سنتان في عام 2026؟',
-        answerEn: 'The official ICP government fee for a 2-Year Emirates ID (New or Renewal) is AED 386 (inclusive of smart card issuance, e-channel fees, and Zajel courier delivery).',
-        answerAr: 'تبلغ الرسوم الحكومية الرسمية لبطاقة الهوية الإماراتية لمدة سنتين (إصدار جديد أو تجديد) 386 درهماً شاملة رسوم البطاقة الذكية والتوصيل عبر زاجل.',
+        questionEn: 'How is the Emirates ID application processed for a 2-year Dubai residency visa?',
+        questionAr: 'كيف تتم معالجة طلب الهوية الإماراتية لإقامة مدتها سنتان بدبي؟',
+        answerEn: 'Our authorized ICP typing desk verifies your passport data, generates the official electronic application with verified QR barcode, and books your nearest biometric slot. Once processed, your digital ID is accessible immediately in the UAE Pass app while the physical card is delivered via courier.',
+        answerAr: 'يقوم مكتبنا المعتمد لدى الهيئة الاتحادية بتدقيق بيانات الجواز وطباعة استمارة الهوية الإلكترونية المعتمدة برمز QR وحجز موعد البصمة، مع إتاحة الهوية الرقمية فوراً عبر تطبيق UAE Pass وشحن البطاقة المطبوعة لموقعك.',
       },
       {
         questionEn: 'Do I need to give fingerprints again when renewing my Emirates ID?',
@@ -994,14 +994,10 @@ export function getServiceDetails(
     ],
     faqs: [
       {
-        questionEn: `What is the official government fee for ${service.titleEn}?`,
-        questionAr: `ما هي الرسوم الحكومية الرسمية لـ ${service.titleAr}؟`,
-        answerEn: service.govFee > 0
-          ? `The official government authority fee is AED ${service.govFee.toLocaleString()}. Official receipts from ${service.authorityEn} are issued immediately.`
-          : `Official government fees for ${dept.nameEn} licensing services vary according to your specific business activities and legal structure. Contact our senior consultants for an instant tailored voucher estimate.`,
-        answerAr: service.govFee > 0
-          ? `الرسوم الحكومية الرسمية هي ${service.govFee.toLocaleString()} درهم، مع تسليم إيصال حكومي رسمي فوري من ${service.authorityAr}.`
-          : `تعتمد الرسوم الحكومية الرسمية لتراخيص ${dept.nameAr} على نوع الأنشطة التجارية المختارة والشكل القانوني للشركة، ويتم تقديم عرض مخصص وفوري عند الاستشارة.`,
+        questionEn: `How is ${service.titleEn} officially verified and processed?`,
+        questionAr: `كيف يتم التحقق من طلب ${service.titleAr} وإنجازه رسمياً؟`,
+        answerEn: `All applications for ${service.titleEn} are audited by certified relationship officers and submitted directly through the official ministerial e-channel of ${service.authorityEn}. Verified electronic receipts and transaction tracking codes are issued immediately upon lodgement.`,
+        answerAr: `تتم مراجعة وتدقيق كافة متطلبات ${service.titleAr} بواسطة مستشارينا المعتمدين ورفعها مباشرة عبر المنظومة الإلكترونية الرسمية لـ ${service.authorityAr}، مع تزويد المتعامل بإيصالات ورقم تتبع فوري للمعاملة.`,
       },
       {
         questionEn: `What is the estimated turnaround time for this service?`,

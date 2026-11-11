@@ -47,12 +47,12 @@ export const TASHEEL_SERVICES_RICH_MAP: Record<string, ServiceRichDetails> = {
 
 Under UAE Federal Decree-Law No. 33 of 2021 and the MoHRE 3-Category Establishment Classification System, government work permit fees are determined by your company's cultural diversity and Tawteen compliance tier (Category 1, Category 2 Tiers A/B/C/D, or Category 3) as well as whether the employee holds an attested university/diploma qualification (Skilled Worker Levels 1–5) or non-degree classification (Levels 6–9).
 
-Our senior Tasheel officers pre-audit your candidate’s academic attestation, verify your company's active electronic quota and WPS status, submit the Work Permit Initial Approval, process the mandatory Workers Protection Programme (WPP) employee insurance (replacing the legacy AED 3,000 bank guarantee with a low-cost insurance policy starting from AED 120–250), and synchronize the approved work permit directly with our adjacent Amer (GDRFA) desk to issue the employee's Employment Entry Permit (Pink Visa) and schedule their DHA Medical Fitness Test at our on-site Karama Medical Center (KMFC).`,
+Our senior Tasheel officers pre-audit your candidate’s academic attestation, verify your company's active electronic quota and WPS status, submit the Work Permit Initial Approval, process the mandatory Workers Protection Programme (WPP) employee insurance (replacing the legacy cash bank guarantee with a low-cost insurance policy), and synchronize the approved work permit directly with our adjacent Amer (GDRFA) desk to issue the employee's Employment Entry Permit (Pink Visa) and schedule their DHA Medical Fitness Test at our on-site Karama Medical Center (KMFC).`,
     detailedOverviewAr: `يُعد إصدار تصريح العمل الإلكتروني الجديد من وزارة الموارد البشرية والتوطين (MoHRE) الموافقة القانونية الإلزامية لأي منشأة في القطاع الخاص لتوظيف واستقدام عامل من داخل أو خارج دولة الإمارات. ومن خلال مركز الكرامة للأعمال (KBC) المعتمد رسمياً كمركز "تسهيل" بترخيص رقم 4108 تحت إدارة الإمارات لخدمات رجال الأعمال (ESS)، نُنجز كافة مراحل إصدار تصاريح العمل الجديدة بسرعة ودقة تضمن عدم الرفض.
 
 بموجب المرسوم بقانون اتحادي رقم (33) لسنة 2021 ونظام تصنيف المنشآت (الفئات 1 و2 و3)، تُحتسب الرسوم الحكومية لتصريح العمل لمدة سنتين بناءً على فئة الشركة ومدى التزامها بتنوع الثقافات ومستهدفات التوطين، وكذلك المستوى المهني للعامل (عمالة ماهرة للمؤهلات الجامعية والدبلوم المصدق في المستويات 1 إلى 5، أو عمالة محدودة المهارة في المستويات 6 إلى 9).
 
-يقوم خبراؤنا في قسم تسهيل بتدقيق الشهادات العلمية المصدقة، التحقق من توفر الكوتا الإلكترونية وسلامة نظام حماية الأجور (WPS)، تقديم طلب الموافقة المبدئية لتصريح العمل، إصدار وثيقة التأمين العمالي المعتمدة (كبديل اقتصادي عن الضمان المصرفي البالغ 3,000 درهم)، ثم تحويل الملف مباشرة إلى قسم "آمر" المجاور في نفس المبنى لإصدار إذن دخول العمل وإجراء الفحص الطبي في مركز الكرامة الطبي (KMFC) تحت سقف واحد.`,
+يقوم خبراؤنا في قسم تسهيل بتدقيق الشهادات العلمية المصدقة، التحقق من توفر الكوتا الإلكترونية وسلامة نظام حماية الأجور (WPS)، تقديم طلب الموافقة المبدئية لتصريح العمل، إصدار وثيقة التأمين العمالي المعتمدة (كبديل اقتصادي عن الضمان المصرفي النقدي)، ثم تحويل الملف مباشرة إلى قسم "آمر" المجاور في نفس المبنى لإصدار إذن دخول العمل وإجراء الفحص الطبي في مركز الكرامة الطبي (KMFC) تحت سقف واحد.`,
     legalFrameworkEn: `UAE Federal Decree-Law No. 33 of 2021 on the Regulation of Labour Relations, Cabinet Resolution No. 1 of 2022, and MoHRE Establishment Classification & Work Permit Tariff Directives (Cabinet Resolution No. 18 of 2022).`,
     legalFrameworkAr: `المرسوم بقانون اتحادي رقم (33) لسنة 2021 بشأن تنظيم علاقات العمل، وقرار مجلس الوزراء رقم (1) لسنة 2022، وقرار مجلس الوزراء رقم (18) لسنة 2022 بشأن تصنيف المنشآت ورسوم تصاريح العمل.`,
     eligibilityEn: [
@@ -108,16 +108,16 @@ Our senior Tasheel officers pre-audit your candidate’s academic attestation, v
     ],
     faqs: [
       {
-        questionEn: 'How much are the official MoHRE 2-Year Work Permit fees in 2026?',
-        questionAr: 'كم تبلغ الرسوم الحكومية الرسمية لإصدار تصريح عمل لمدة سنتين في عام 2026؟',
-        answerEn: 'MoHRE work permit fees depend on your company’s classification tier: Category 1 starts from AED 250; Category 2 (where most SMEs start in Tier A/B) ranges from AED 1,200 to AED 3,450 for a 2-year permit (Skilled workers cost significantly less than Unskilled workers); and Category 3 is AED 5,000. In addition, the initial work permit request fee is AED 200 and employee protection insurance starts from approx. AED 130–250.',
-        answerAr: 'تعتمد رسوم تصريح العمل لمدة سنتين على فئة تصنيف المنشأة لدى الوزارة؛ حيث تبدأ في الفئة الأولى من 250 درهماً، وفي الفئة الثانية (التي تضم معظم الشركات في المستويات أ/ب/ج/د) تتراوح بين 1,200 و3,450 درهماً لمدة سنتين (وتكون رسوم العمالة الماهرة أقل بكثير من العمالة غير الماهرة)، بينما تبلغ في الفئة الثالثة 5,000 درهم، يضاف إليها رسوم تقديم الطلب (200 درهم) ووثيقة التأمين العمالي.',
+        questionEn: 'How are official MoHRE 2-Year Work Permits categorized and verified?',
+        questionAr: 'كيف يتم تصنيف واعتماد تصاريح العمل لمدة سنتين في وزارة الموارد البشرية؟',
+        answerEn: 'MoHRE work permits are structured according to company classification tiers (Category 1, Category 2, and Category 3) and candidate professional skill levels. Skilled employees with attested degrees enjoy streamlined processing and optimized statutory categories.',
+        answerAr: 'تُصنف تصاريح العمل وفقاً لفئات المنشأة المعتمدة لدى الوزارة والمستوى المهني للعامل، حيث تحظى الكوادر الماهرة الحاصلة على مؤهلات مصدقة بتسهيلات نوعية واعتماد فوري.',
       },
       {
-        questionEn: 'Do we still need to pay a AED 3,000 Bank Guarantee per employee?',
-        questionAr: 'هل لا يزال دفع الضمان المصرفي البالغ 3,000 درهم لكل عامل إلزامياً؟',
-        answerEn: 'No! MoHRE replaced the mandatory AED 3,000 cash bank guarantee with the low-cost Workers Protection Programme (WPP) insurance policy, which costs only around AED 130 to AED 250 for 2 years depending on worker skill category.',
-        answerAr: 'لا! استبدلت وزارة الموارد البشرية والتوطين الضمان المصرفي النقدي البالغ 3,000 درهم بنظام "التأمين العمالي" منخفض التكلفة، والذي يتراوح بين 130 و250 درهماً فقط لمدة سنتين.',
+        questionEn: 'Is a cash Bank Guarantee required for new employees in Dubai?',
+        questionAr: 'هل يلزم إيداع ضمان مصرفي نقدي للعمالة الجديدة في دبي؟',
+        answerEn: 'No! MoHRE replaced the legacy cash bank guarantee with the low-cost Workers Protection Programme (WPP) insurance policy, issued electronically on the spot at our Tasheel desk.',
+        answerAr: 'لا! استبدلت وزارة الموارد البشرية والتوطين الضمان المصرفي النقدي بنظام وثيقة التأمين العمالي المعتمدة، والتي تصدر إلكترونياً وفورياً من خلال قسم تسهيل في مركزنا.',
       },
     ],
     reviews: [
@@ -566,7 +566,7 @@ Because the Ministry verifies the applicant’s live fingerprint against the Fed
         stepNumber: 3,
         titleEn: 'Smart Card Encoding, Fee Payment & Instant Handover',
         titleAr: 'برمجة البطاقة الذكية والتسليم الفوري',
-        descEn: 'Paying the official MoHRE E-Signature fee (AED 250 gov fee) and activating the physical smart card on the spot.',
+        descEn: 'Paying the official statutory fee and activating the physical smart card on the spot.',
         descAr: 'سداد الرسوم الحكومية الرسمية وبرمجة البطاقة الذكية وتسليمها للمتعامل مفعلة وجاهزة للاستخدام فوراً.',
         durationEn: '10 Mins',
         durationAr: '10 دقائق',
@@ -601,7 +601,7 @@ Because the Ministry verifies the applicant’s live fingerprint against the Fed
     ],
     targetKeywords: {
       shortTail: ['e-signature card mohre', 'tasheel e signature card', 'pro card mohre', 'electronic signature card dubai', 'mohre smart card'],
-      longTail: ['how to get e-signature card in tasheel dubai', 'mohre e-signature card fee 250 aed', 'activate e-signature card without emirates id', 'link multiple companies to one e-signature card'],
+      longTail: ['how to get e-signature card in tasheel dubai', 'mohre e-signature card authorized typing', 'activate e-signature card without emirates id', 'link multiple companies to one e-signature card'],
     },
   },
 
@@ -659,7 +659,7 @@ At Karama Business Center (KBC), our Tasheel desk processes Mission Quota alloca
         stepNumber: 3,
         titleEn: 'MoHRE & GDRFA Mission Permit Issuance',
         titleAr: 'سداد الرسوم وإصدار تصريح المهمة وإذن الدخول',
-        descEn: 'Settling the MoHRE mission permit fee (AED 300–600) and issuing the 90-day GDRFA Mission Entry Visa.',
+        descEn: 'Settling the official MoHRE mission permit fee and issuing the 90-day GDRFA Mission Entry Visa.',
         descAr: 'سداد الرسوم الحكومية المقررة وإصدار تصريح العمل المؤقت أو إذن دخول المهمة لمدة 90 يوماً.',
         durationEn: '24 Hours',
         durationAr: '24 ساعة',
@@ -698,14 +698,14 @@ At Karama Business Center (KBC), our Tasheel desk processes Mission Quota alloca
   'tasheel-part-time-work-permit': {
     detailedOverviewEn: `Modern businesses in Dubai frequently require specialized talent—such as chartered accountants, IT engineers, graphic designers, digital marketers, legal advisors, or university students—for a specific number of hours per week without needing to sponsor their full-time residency visa. Under UAE Federal Decree-Law No. 33 of 2021, the Ministry of Human Resources and Emiratisation (MoHRE) offers official **Part-Time Work Permits (تصريح العمل الجزئي)**, **Juvenile Work Permits (for ages 15–18)**, and **Student Training Permits**.
 
-A **MoHRE Part-Time Work Permit** allows a skilled employee (who is already employed full-time with another UAE mainland or free zone company, or holding a Golden Visa / Freelance Visa) to work legally for a second employer for less than normal full-time working hours. Crucially, under updated MoHRE regulations for Skilled Workers (Levels 1–5), obtaining a Part-Time Work Permit is streamlined, valid for 1 year, and requires a government fee of only AED 100 initial application + AED 500 issuance fee—with zero visa quota deduction from your company's main MoHRE establishment file!
+A **MoHRE Part-Time Work Permit** allows a skilled employee (who is already employed full-time with another UAE mainland or free zone company, or holding a Golden Visa / Freelance Visa) to work legally for a second employer for less than normal full-time working hours. Crucially, under updated MoHRE regulations for Skilled Workers (Levels 1–5), obtaining a Part-Time Work Permit is streamlined, valid for 1 year, with zero visa quota deduction from your company's main MoHRE establishment file!
 
-At Karama Business Center (KBC), our Tasheel specialists issue Part-Time Work Permits within 24 hours, protecting both the secondary employer and the professional fromAED 50,000 illegal employment penalties.`,
+At Karama Business Center (KBC), our Tasheel specialists issue Part-Time Work Permits within 24 hours, protecting both the secondary employer and the professional from illegal employment penalties.`,
     detailedOverviewAr: `تحتاج الكثير من الشركات في دبي إلى الاستعانة بخبرات وكفاءات متخصصة — كالمحاسبين القانونيين، مهندسي التقنية، المصممين، مسؤولي التسويق الرقمي، أو طلاب الجامعات — للعمل لساعات محددة أسبوعياً دون الحاجة لنقل كفالتهم أو إصدار إقامة كاملة لهم. وبموجب قانون العمل الإماراتي، توفر وزارة الموارد البشرية والتوطين (تسهيل) **تصريح العمل الجزئي (Part-Time Work Permit)**، وتصريح عمل الأحداث (15-18 سنة)، وتصريح تدريب الطلاب.
 
-يتيح **تصريح العمل الجزئي** للموظف المقيم (سواء كان يعمل لدى شركة أخرى في الدولة، أو يحمل الإقامة الذهبية، أو الإقامة الخضراء) العمل بشكل قانوني تماماً لدى صاحب عمل ثانٍ لساعات عمل جزئية. وتبلغ الرسوم الحكومية لتصريح العمل الجزئي لمدة سنة واحدة 600 درهم فقط (100 درهم تقديم طلب + 500 درهم إصدار)، والأهم من ذلك أنه **لا يستهلك من رصيد الكوتا الرئيسية** للشركة!
+يتيح **تصريح العمل الجزئي** للموظف المقيم (سواء كان يعمل لدى شركة أخرى في الدولة، أو يحمل الإقامة الذهبية، أو الإقامة الخضراء) العمل بشكل قانوني تماماً لدى صاحب عمل ثانٍ لساعات عمل جزئية، والأهم من ذلك أنه **لا يستهلك من رصيد الكوتا الرئيسية** للشركة!
 
-في مركز الكرامة للأعمال (KBC)، نصدر تصاريح العمل الجزئي خلال 24 ساعة، مما يحمي الشركة والموظف من غرامات العمل لدى الغير دون تصريح (50,000 درهم).`,
+في مركز الكرامة للأعمال (KBC)، نصدر تصاريح العمل الجزئي خلال 24 ساعة، مما يحمي الشركة والموظف من مخالفات العمل لدى الغير دون تصريح.`,
     legalFrameworkEn: `UAE Federal Decree-Law No. 33 of 2021 (Article 7 Defining Part-Time and Flexible Work Models) and Cabinet Resolution No. 1 of 2022.`,
     legalFrameworkAr: `المرسوم بقانون اتحادي رقم (33) لسنة 2021 (المادة 7 بشأن أنماط العمل الجزئي والمرن) وقرار مجلس الوزراء رقم (1) لسنة 2022.`,
     eligibilityEn: [
@@ -733,10 +733,10 @@ At Karama Business Center (KBC), our Tasheel specialists issue Part-Time Work Pe
       },
       {
         stepNumber: 2,
-        titleEn: 'MoHRE Fee Payment (AED 600 Total Gov Fee)',
-        titleAr: 'سداد الرسوم الحكومية لتصريح العمل الجزئي (600 درهم)',
-        descEn: 'Settling AED 100 application fee + AED 500 1-year Part-Time Work Permit issuance fee.',
-        descAr: 'سداد إذن الدفع الحكومي البالغ 100 درهم طلب + 500 درهم إصدار تصريح عمل جزئي لمدة سنة.',
+        titleEn: 'MoHRE Electronic Fee Voucher Settlement',
+        titleAr: 'سداد الرسوم الحكومية الرسمية إلكترونياً',
+        descEn: 'Settling the official application and 1-year Part-Time Work Permit issuance voucher.',
+        descAr: 'سداد إذن الدفع الحكومي المعتمد لطلب وإصدار تصريح العمل الجزئي لمدة سنة.',
         durationEn: '10 Mins',
         durationAr: '10 دقائق',
       },
@@ -773,13 +773,13 @@ At Karama Business Center (KBC), our Tasheel specialists issue Part-Time Work Pe
         companyAr: 'أورا ستوديو للإبداع ذ.م.م',
         rating: 5,
         date: 'October 2026',
-        commentEn: 'Issued Part-Time Work Permits for our accountant and social media photographer at KBC Tasheel for just AED 600 gov fee each. Now our team is 100% legal without needing extra office quota!',
-        commentAr: 'أصدرنا تصاريح عمل جزئي للمحاسب والمصور لدينا عبر قسم تسهيل في مركز الكرامة للأعمال برسوم حكومية 600 درهم فقط، وأصبح عملهم قانونياً 100% دون استهلاك كوتا المكتب!',
+        commentEn: 'Issued Part-Time Work Permits for our accountant and social media photographer at KBC Tasheel smoothly. Now our team is 100% legal without needing extra office quota!',
+        commentAr: 'أصدرنا تصاريح عمل جزئي للمحاسب والمصور لدينا عبر قسم تسهيل في مركز الكرامة للأعمال بسهولة وسرعة، وأصبح عملهم قانونياً 100% دون استهلاك كوتا المكتب!',
       },
     ],
     targetKeywords: {
       shortTail: ['part time work permit uae', 'part time labour card dubai', 'golden visa work permit mohre', 'student work permit dubai', 'flexible work permit tasheel'],
-      longTail: ['how to get part time work permit in dubai cost 600 aed', 'can i work for two companies in uae legally', 'mohre work permit for golden visa holders fee', 'juvenile and student training work permit dubai'],
+      longTail: ['how to get part time work permit in dubai legally', 'can i work for two companies in uae legally', 'mohre work permit for golden visa holders', 'juvenile and student training work permit dubai'],
     },
   },
 
@@ -789,12 +789,12 @@ At Karama Business Center (KBC), our Tasheel specialists issue Part-Time Work Pe
   'tasheel-family-sponsorship-work-permit': {
     detailedOverviewEn: `One of the most cost-effective and popular ways for Dubai mainland companies to hire talented residents is the **MoHRE Work Permit for Residents on Family Sponsorship (تصريح عمل لمن هم على إقامة ذويهم)**. This permit allows wives, husbands, sons, and daughters who hold a valid UAE Residency Visa sponsored by their family member to work full-time in the private sector while keeping their cherished family residency visa intact—meaning the employer does not need to pay for a GDRFA entry permit, status change, DHA medical test, or Emirates ID!
 
-Even better: under MoHRE Establishment Classification incentives, issuing a Family Sponsorship Work Permit (especially for female dependents sponsored by their husband or father) enjoys the lowest government fee structure in the UAE—starting from just AED 300 to AED 500 for a full 2-year Labour Card—and **does NOT deduct from your company's electronic visa quota**!
+Even better: under MoHRE Establishment Classification incentives, issuing a Family Sponsorship Work Permit enjoys the lowest government fee tier for a full 2-year Labour Card—and **does NOT deduct from your company's electronic visa quota**!
 
 At Karama Business Center (KBC), our Tasheel desk drafts the bilingual **Family Sponsor No Objection Certificate (NOC / شهادة عدم ممانعة من الكفيل)**, generates the Unified Employment Contract, and issues the 2-year Family Sponsorship Labour Card within 24 hours.`,
     detailedOverviewAr: `يُعد **تصريح العمل لمن هم على إقامة ذويهم (Family Sponsorship Work Permit)** الصادر عن وزارة الموارد البشرية والتوطين (تسهيل) الخيار الأذكى والأقل تكلفة للشركات في دبي لتوظيف الكفاءات المقيمة داخل الدولة؛ حيث يتيح للزوجة أو الزوج أو الأبناء والبنات المكفولين على إقامة أسرهم العمل بشكل قانوني كامل في القطاع الخاص مع الاحتفاظ بإقامتهم العائلية كما هي — مما يوفر على صاحب العمل رسوم إذن الدخول، تعديل الوضع، الفحص الطبي، والهوية الإماراتية!
 
-والأفضل من ذلك أن تصريح العمل على كفالة الأسرة يتميز برسوم حكومية رمزية للغاية (تبدأ من 300 درهم فقط لمدة سنتين للإناث على كفالة ذويهن)، كما أنه **لا يستهلك من رصيد الكوتا الإلكترونية للمنشأة** في معظم الأنشطة!
+والأفضل من ذلك أن تصريح العمل على كفالة الأسرة يتميز برسوم حكومية مخفضة للغاية لمدة سنتين، كما أنه **لا يستهلك من رصيد الكوتا الإلكترونية للمنشأة** في معظم الأنشطة!
 
 في مركز الكرامة للأعمال (KBC)، يقوم قسم تسهيل بصياغة **شهادة عدم الممانعة من الكفيل (NOC)**، وإعداد عرض وعقد العمل الموحد، وإصدار بطاقة العمل لمدة سنتين خلال 24 ساعة فقط.`,
     legalFrameworkEn: `UAE Federal Decree-Law No. 33 of 2021 and Cabinet Resolution No. 1 of 2022 (Work Permits for Residents Sponsored by Their Families).`,
@@ -936,10 +936,10 @@ At Karama Business Center (KBC), our integrated Tasheel and Amer desks execute t
     ],
     faqs: [
       {
-        questionEn: 'How much is the government fee for cancelling a MoHRE Work Permit / Labour Card?',
-        questionAr: 'كم تبلغ الرسوم الحكومية لإلغاء تصريح وبطاقة العمل في تسهيل؟',
-        answerEn: 'Standard MoHRE Work Permit / Labour Card cancellation has ZERO (AED 0) ministry government fee! You only pay the authorized Tasheel typing center service fee (AED 83–100) plus the GDRFA Amer residency visa cancellation fee.',
-        answerAr: 'الإلغاء العادي لتصريح وبطاقة العمل معفى تماماً من الرسوم الحكومية الوزارية (0 درهم رسوم وزارة)! ويتم فقط سداد رسوم خدمة الطباعة في مركز تسهيل، تليها رسوم إلغاء الإقامة في قسم آمر.',
+        questionEn: 'How is a MoHRE Work Permit / Labour Card officially cancelled?',
+        questionAr: 'كيف يتم إلغاء تصريح وبطاقة العمل رسمياً في تسهيل؟',
+        answerEn: 'Standard MoHRE Labour Card cancellation is processed instantly at our Tasheel desk upon verifying the signed employee end-of-service settlement, followed immediately by residency visa cancellation at our adjacent Amer counter.',
+        answerAr: 'يتم إلغاء بطاقة وتصريح العمل فورياً في قسم تسهيل لدينا بمجرد التحقق من توقيع براءة الذمة وتصفية المستحقات، ثم استكمال إلغاء الإقامة فوراً لدى كاونتر آمر المجاور.',
       },
       {
         questionEn: 'How can a company cancel the Labour Card of an employee who left the UAE and never returned?',

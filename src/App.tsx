@@ -6,7 +6,6 @@ import { DepartmentsGrid } from './components/DepartmentsGrid';
 import { ServiceFinder } from './components/ServiceFinder';
 import { ServiceDetailModal } from './components/ServiceDetailModal';
 import { VipExperience } from './components/VipExperience';
-import { FeeCalculator } from './components/FeeCalculator';
 import { BookingModal } from './components/BookingModal';
 import { WhyChooseUs } from './components/WhyChooseUs';
 import { ClientLogoCarousel } from './components/ClientLogoCarousel';
@@ -28,7 +27,6 @@ import { SingleArticlePage } from './components/SingleArticlePage';
 import { AwardsPage } from './components/AwardsPage';
 import { ClientsPage } from './components/ClientsPage';
 import { EventsPage } from './components/EventsPage';
-import { PriceListPage } from './components/PriceListPage';
 import { SERVICES } from './data/departmentsData';
 import { applyRouteSeo } from './utils/routeSeo';
 import { resolveRoute, getDepartmentPath, getServicePath } from './utils/router';
@@ -89,8 +87,6 @@ export default function App() {
   const [serviceSearchQuery, setServiceSearchQuery] = useState('');
   const [selectedDeptId, setSelectedDeptId] = useState<string | undefined>(undefined);
 
-  // Fee Calculator Preselection
-  const [calculatorServiceId, setCalculatorServiceId] = useState<string>(SERVICES[0].id);
 
   // Sync RTL/LTR with HTML root document
   useEffect(() => {
@@ -165,7 +161,7 @@ export default function App() {
   const navigateToAwards = () => navigateTo('/awards', { type: 'awards' });
   const navigateToClients = () => navigateTo('/clients', { type: 'clients' });
   const navigateToEvents = () => navigateTo('/events', { type: 'events' });
-  const navigateToPriceList = () => navigateTo('/pricelist', { type: 'pricelist' });
+  const navigateToPriceList = () => navigateToDepartments();
   const navigateToDepartment = (deptId: string) => {
     const path = getDepartmentPath(deptId, language);
     navigateTo(path, { type: 'department', deptId });
@@ -202,7 +198,7 @@ export default function App() {
     } else if (page === 'events') {
       navigateToEvents();
     } else if (page === 'pricelist' || page === 'prices' || page === 'pricing' || page === 'calculator') {
-      navigateToPriceList();
+      navigateToDepartments();
     } else if (page.startsWith('department/')) {
       navigateToDepartment(page.replace('department/', ''));
     } else if (page.startsWith('service/')) {
@@ -252,8 +248,7 @@ export default function App() {
   };
 
   const handleCalculateFeeFromService = (service: ServiceItem) => {
-    setCalculatorServiceId(service.id);
-    navigateToPriceList();
+    handleOpenBooking(service);
   };
 
   const handleBookWithEstimate = (service: ServiceItem, channel: 'flagship' | 'vip_majlis' | 'doorstep_van') => {
@@ -479,10 +474,11 @@ export default function App() {
         )}
 
         {pageView.type === 'pricelist' && (
-          <PriceListPage
+          <DepartmentsServicesPage
             language={language}
             onNavigateToHome={navigateToHome}
-            onNavigateToContact={navigateToContact}
+            onNavigateToDepartment={navigateToDepartment}
+            onNavigateToService={navigateToService}
             onOpenBooking={handleOpenBooking}
           />
         )}

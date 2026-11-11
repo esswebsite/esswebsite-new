@@ -1344,8 +1344,8 @@ Dubai Municipality food safety and public health inspectors conduct unannounced 
     officialSourceUrl: 'https://www.mofa.gov.ae/en/Services/Attestation',
     officialSourceLabelEn: 'MoFA Official Electronic Attestation Portal',
     officialSourceLabelAr: 'بوابة تصديق المستندات الرسمية بوزارة الخارجية',
-    disclaimerEn: 'Statutory MoFA attestation tariffs (AED 150 per standard personal certificate) are set by Federal Cabinet Decree. Private legal translation, consular logistics, and international courier fees are billed separately.',
-    disclaimerAr: 'تبلغ الرسوم الحكومية الرسمية لتصديق المستندات الفردية 150 درهماً بموجب القرارات الوزارية، وتُفصل رسوم الترجمة والخدمات اللوجستية والشحن بشكل مستقل.',
+    disclaimerEn: 'Statutory MoFA attestation tariffs are set by Federal Cabinet Decree. Private legal translation, consular logistics, and international courier services are coordinated separately.',
+    disclaimerAr: 'تخضع الرسوم الحكومية الرسمية لتصديق المستندات الفردية للقرارات الوزارية، وتُفصل خدمات الترجمة القانونية واللوجستية والشحن بشكل مستقل.',
     tableOfContents: [
       { id: 'attestation-chain', titleEn: 'The 4-Stage Legalization Chain', titleAr: 'سلسلة التصديقات الدولية الرباعية' },
       { id: 'personal-document-types', titleEn: 'Marriage, Birth & Degree Certificates', titleAr: 'شهادات الزواج والميلاد والمؤهلات الدراسية' },
@@ -1445,7 +1445,7 @@ Physical courier processing remains mandatory for:
 Under this route, an authorized courier collects the physical dossier, delivers it to the MoFA verification center where an official adhesive stamp is applied, and returns it to your doorstep.
 
 <h2 id="comparing-costs-and-timelines">3. Comparing Tariffs & Processing Speeds</h2>
-- **Official Tariff**: The statutory government fee is **AED 150 per personal document** across both digital and physical routes.
+- **Official Tariff**: The statutory government fee is standardized per personal document across both digital and physical routes.
 - **Turnaround Time**: Digital e-DAS attestation is typically completed within **2 to 6 business hours**, whereas physical courier routing takes **24 to 72 hours** depending on courier transit.
 
 <h2 id="which-route-fits-you">4. How KBC Selects the Optimal Route</h2>
@@ -1457,7 +1457,7 @@ At Karama Business Center, our typists inspect your document format immediately 
 يُطبق على المستندات والشهادات الصادرة إلكترونياً والتي تحمل توقيعاً رقمياً معتمداً؛ حيث تصدر الوزارة رمز تحقق (QR Code) معتمداً في بوابات الإقامة والعمل دون الحاجة لملصق ورقي.
 
 <h2 id="courier-workflow">التصديق الورقي التقليدي</h2>
-يظل إلزامياً للمستندات الأصلية الورقية التي تحمل أختاماً حية أو أختاماً قنصلية سابقة؛ حيث يتم إرسالها عبر البريد لوضع الملصق الرسمي وإعادتها لصاحب العلاقة. تبلغ الرسوم الحكومية لكلا المسارين 150 درهماً للمستند الشخصي.`,
+يظل إلزامياً للمستندات الأصلية الورقية التي تحمل أختاماً حية أو أختاماً قنصلية سابقة؛ حيث يتم إرسالها عبر البريد لوضع الملصق الرسمي وإعادتها لصاحب العلاقة وفق التعرفة الرسمية الموحدة للمستند الشخصي.`,
   },
 
   // =========================================================================
@@ -1670,7 +1670,7 @@ Established to empower creative startups and commercial ventures, Dubai SME prov
 
 <h2 id="key-incentives-and-exemptions">2. Key Incentives & Licensing Exemptions</h2>
 Under official directives, accredited members benefit from:
-- **5-Year Licensing Fee Relief**: 100% Emirati-owned startups enrolled in Dubai SME pay nominal flat fees (AED 1,000 annually) for their trade license during their first 5 years of operation.
+- **5-Year Licensing Fee Relief**: 100% Emirati-owned startups enrolled in Dubai SME pay nominal flat government fees for their trade license during their first 5 years of operation.
 - **Government Procurement Program**: Law No. 12 of 2020 mandates that Dubai Government departments and semi-governmental entities allocate **10% of their total procurement contracts** and **5% of commercial leases** directly to registered Dubai SME members.
 - **Financing Facilities**: Seed capital and credit guarantee facilities provided in collaboration with the Mohammed Bin Rashid Fund for SME.
 
@@ -1690,7 +1690,7 @@ At Karama Business Center, our corporate advisory desk bridges the gap between o
 تشكل المشاريع الصغيرة والمتوسطة أكثر من 94% من إجمالي الشركات العاملة في دولة الإمارات. وتقود **مؤسسة محمد بن راشد لتنمية المشاريع الصغيرة والمتوسطة (Dubai SME)** التابعة لاقتصادية دبي جهود تمكين رواد الأعمال وأصحاب الابتكارات.
 
 <h2 id="key-incentives-and-exemptions">أهم المزايا والحوافز الحكومية</h2>
-- **إعفاءات الرسوم**: سداد رسوم رمزية مقطوعة قدرها 1,000 درهم سنوياً للرخصة خلال أول 5 سنوات للشركات الوطنية المؤهلة.
+- **إعفاءات الرسوم**: سداد رسوم رمزية مقطوعة للرخصة خلال أول 5 سنوات للشركات الوطنية المؤهلة.
 - **برنامج المشتريات الحكومية**: تخصيص نسبة لا تقل عن **10% من مشتريات الدوائر الحكومية** بدبي للشركات المسجلة في المؤسسة.
 - **حلول التمويل**: تسهيلات تمويلية عبر صندوق محمد بن راشد لدعم المشاريع.
 

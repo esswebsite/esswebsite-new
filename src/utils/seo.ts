@@ -35,7 +35,6 @@ export function getLocalBusinessSchema() {
     ],
     url: CANONICAL_BASE,
     telephone: '+97143426666',
-    priceRange: 'AED 50 - 15000',
     hasMap: OFFICIAL_MAPS.shareUrl,
     sameAs: [...OFFICIAL_SAME_AS],
     address: {
@@ -90,13 +89,6 @@ export function getServiceSchema(
     areaServed: {
       '@type': 'AdministrativeArea',
       name: 'Dubai, United Arab Emirates',
-    },
-    offers: {
-      '@type': 'Offer',
-      price: service.govFee,
-      priceCurrency: 'AED',
-      availability: 'https://schema.org/InStock',
-      priceValidUntil: '2026-12-31',
     },
   };
 

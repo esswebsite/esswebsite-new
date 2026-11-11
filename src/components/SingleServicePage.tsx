@@ -67,8 +67,6 @@ export const SingleServicePage: React.FC<SingleServicePageProps> = ({
     currentService.departmentId === 'ded' ||
     currentService.departmentId === 'det' ||
     Boolean(currentService.isPriceUponConsultation);
-  const totalStandard = currentService.govFee;
-  const totalWithVip = totalStandard + (currentService.vipFastTrackFee || 0);
 
   // Facility showcase image (the 2nd featured image on page)
   const facilityImage =
@@ -176,12 +174,6 @@ export const SingleServicePage: React.FC<SingleServicePageProps> = ({
           provider: {
             '@id': `${CANONICAL_BASE}/#organization`,
           },
-          offers: {
-            '@type': 'Offer',
-            price: totalStandard,
-            priceCurrency: 'AED',
-            availability: 'https://schema.org/InStock',
-          },
           description: isAr ? currentService.shortDescAr : currentService.shortDescEn,
           aggregateRating: {
             '@type': 'AggregateRating',
@@ -239,7 +231,7 @@ export const SingleServicePage: React.FC<SingleServicePageProps> = ({
       const tag = document.getElementById('jsonld-service');
       if (tag) tag.remove();
     };
-  }, [currentService, currentDept, serviceDetails, isAr, totalStandard]);
+  }, [currentService, currentDept, serviceDetails, isAr]);
 
   return (
     <div className={`bg-white min-h-screen text-[#1E2528] pt-18 sm:pt-22 lg:pt-24 ${isAr ? 'font-arabic' : ''}`}>
@@ -328,37 +320,23 @@ export const SingleServicePage: React.FC<SingleServicePageProps> = ({
                 {isAr ? currentService.shortDescAr : currentService.shortDescEn}
               </p>
 
-              {/* Service SLA & Tariff Highlights */}
-              <div className="mt-8 pt-6 border-t border-white/20 grid grid-cols-2 sm:grid-cols-3 gap-4 text-xs">
+              {/* Service SLA & Authority Highlights */}
+              <div className="mt-8 pt-6 border-t border-white/20 grid grid-cols-2 gap-4 text-xs">
                 <div>
                   <span className="text-teal-200 block">{isAr ? 'مدة الإنجاز الرسمية' : 'Turnaround SLA'}</span>
-                  <span className="text-lg font-extrabold text-white flex items-center gap-1.5 mt-0.5">
+                  <span className="text-base sm:text-lg font-extrabold text-white flex items-center gap-1.5 mt-0.5">
                     <Clock className="w-4 h-4 text-teal-300" />
                     <span>{isAr ? currentService.processingTimeAr : currentService.processingTimeEn}</span>
                   </span>
                 </div>
 
-                <div className={isDetService ? 'col-span-2' : ''}>
-                  <span className="text-teal-200 block">{isAr ? 'الرسوم الحكومية الرسمية' : 'Official Government Fee'}</span>
-                  {isDetService ? (
-                    <span className="text-base sm:text-lg font-extrabold text-white mt-0.5 block">
-                      {isAr ? 'حسب النشاط / استشارة فورية' : 'Upon Consultation / Activity Based'}
-                    </span>
-                  ) : (
-                    <span className="text-lg font-extrabold text-white mt-0.5 block tabular-nums">
-                      {currentService.govFee.toLocaleString()} <span className="text-xs font-bold text-teal-200">AED</span>
-                    </span>
-                  )}
+                <div>
+                  <span className="text-teal-200 block">{isAr ? 'الجهة الحكومية المختصة' : 'Government Authority'}</span>
+                  <span className="text-base sm:text-lg font-extrabold text-white flex items-center gap-1.5 mt-0.5">
+                    <Building2 className="w-4 h-4 text-teal-300" />
+                    <span>{isAr ? currentService.authorityAr : currentService.authorityEn}</span>
+                  </span>
                 </div>
-
-                {!isDetService && (
-                  <div>
-                    <span className="text-teal-200 block">{isAr ? 'الإجمالي الحكومي' : 'Official Total'}</span>
-                    <span className="text-lg font-extrabold text-teal-200 mt-0.5 block tabular-nums">
-                      {totalStandard.toLocaleString()} <span className="text-xs font-bold text-white">AED</span>
-                    </span>
-                  </div>
-                )}
               </div>
             </div>
 
@@ -750,12 +728,12 @@ export const SingleServicePage: React.FC<SingleServicePageProps> = ({
                 <Shield className="w-5 h-5 text-[#128B94]" />
               </div>
               <h3 className="font-bold text-sm text-[#1E2528] mb-1">
-                {isAr ? 'شفافية الرسوم الرسمية' : 'Exact Government Tariffs'}
+                {isAr ? 'إيصالات حكومية معتمدة' : 'Official Government Receipts'}
               </h3>
               <p className="text-xs text-slate-600 leading-relaxed">
                 {isAr
-                  ? 'إيصالات دفع إلكترونية رسمية صادرة مباشرة من الجهة الحكومية لكل درهم مسدد.'
-                  : 'Official ministerial receipts issued immediately for all statutory fees.'}
+                  ? 'إيصالات دفع إلكترونية رسمية صادرة مباشرة من الجهة الحكومية لكل معاملة معتمدة.'
+                  : 'Official ministerial receipts issued immediately for all processed transactions.'}
               </p>
             </div>
 
@@ -847,129 +825,95 @@ export const SingleServicePage: React.FC<SingleServicePageProps> = ({
         </div>
       </section>
 
-      {/* 7. Transparent Fee Breakdown & Calculation Card */}
+      {/* 7. Service Consultation & Appointment Booking */}
       <section className="py-16 sm:py-20 bg-[#F8FAFA] border-b border-slate-200/80">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10">
             <div className="text-xs font-bold tracking-wider text-[#128B94] uppercase mb-2">
-              {isAr ? 'الرسوم الرسمية المعتمدة' : 'Official Transparent Tariff'}
+              {isAr ? 'حجز الموعد والاستشارة المعتمدة' : 'Official Appointment & Consultation'}
             </div>
             <h2 className="text-2xl sm:text-3xl font-extrabold text-[#1E2528] tracking-tight">
               {isAr
-                ? `تفصيل الرسوم الحكومية لـ ${currentService.titleAr}`
-                : `Itemized Pricing Breakdown for ${currentService.titleEn}`}
+                ? `طلب وإنجاز ${currentService.titleAr}`
+                : `Book or Inquire About ${currentService.titleEn}`}
             </h2>
             <p className="mt-2 text-sm text-slate-600">
               {isAr
-                ? 'وضوح كامل دون أي رسوم مخفية، مطابقة لتعرفة حكومة دبي لعام 2026.'
-                : 'Compliant with 2026 official UAE government rates and certified typing tariffs.'}
+                ? 'تواصل مع مستشارينا المعتمدين بمركز الكرامة للأعمال لإنجاز معاملتك بالمسار السريع.'
+                : 'Connect with our accredited relationship officers at Karama Business Center for express transaction processing.'}
             </p>
           </div>
 
           <div className="bg-white rounded-2xl border border-slate-200 shadow-lg overflow-hidden">
-            <div className="p-6 sm:p-8 space-y-4">
-              {isDetService ? (
-                <div className="flex items-center justify-between py-3 border-b border-slate-100">
-                  <div>
-                    <span className="font-bold text-sm text-slate-900 block">
-                      {isAr ? 'الرسوم الحكومية الرسمية لدائرة الاقتصاد والسياحة' : 'Official DET Government Fee'}
-                    </span>
-                    <span className="text-xs text-slate-500">
-                      {isAr
-                        ? 'تُحدد الرسوم الحكومية حسب الأنشطة التجارية المختارة والشكل القانوني للشركة'
-                        : 'Government voucher calculated directly according to chosen commercial activities & legal structure'}
-                    </span>
-                  </div>
-                  <span className="text-sm sm:text-base font-extrabold text-[#128B94]">
-                    {isAr ? 'حسب النشاط / استشارة فورية' : 'Upon Consultation / Activity Based'}
+            <div className="p-6 sm:p-8 space-y-6">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pb-6 border-b border-slate-100 text-xs">
+                <div className="p-4 rounded-xl bg-slate-50 border border-slate-200/60">
+                  <span className="text-slate-400 block font-medium uppercase text-[10px] mb-1">
+                    {isAr ? 'الجهة الحكومية' : 'Governing Entity'}
+                  </span>
+                  <span className="text-sm font-bold text-slate-900 block">
+                    {isAr ? currentService.authorityAr : currentService.authorityEn}
                   </span>
                 </div>
-              ) : (
-                <div className="flex items-center justify-between py-3 border-b border-slate-100">
-                  <div>
-                    <span className="font-bold text-sm text-slate-900 block">
-                      {isAr ? 'الرسوم الحكومية الرسمية للجهة المختصة' : 'Official Government Authority Tariff'}
-                    </span>
-                    <span className="text-xs text-slate-500">
-                      {isAr
-                        ? `سداد مباشر إلى خزينة ${currentService.authorityAr}`
-                        : `Settled directly to official treasury of ${currentService.authorityEn}`}
-                    </span>
-                  </div>
-                  <span className="text-base font-extrabold text-[#1E2528] tabular-nums">
-                    {currentService.govFee.toLocaleString()} <span className="text-xs font-bold text-slate-500">AED</span>
-                  </span>
-                </div>
-              )}
 
-              {currentService.vipFastTrackFee > 0 && !isDetService && (
-                <div className="flex items-center justify-between py-3 border-b border-slate-100 bg-teal-50/50 -mx-6 sm:-mx-8 px-6 sm:px-8">
-                  <div>
-                    <span className="font-bold text-sm text-[#01403F] block flex items-center gap-1.5">
-                      <Sparkles className="w-3.5 h-3.5 text-[#128B94]" />
-                      <span>{isAr ? 'ترقية مسار VIP والمجلس التنفيذي (اختياري)' : 'Optional VIP Majlis & Express Fast-Track'}</span>
-                    </span>
-                    <span className="text-xs text-slate-600">
-                      {isAr ? 'استقبال خاص، فحص طبي عاجل، وإنجاز فائق السرعة' : 'Private lounge, priority medical, and zero-wait processing'}
-                    </span>
-                  </div>
-                  <span className="text-base font-extrabold text-[#128B94] tabular-nums">
-                    +{currentService.vipFastTrackFee.toLocaleString()} <span className="text-xs font-bold text-slate-500">AED</span>
+                <div className="p-4 rounded-xl bg-slate-50 border border-slate-200/60">
+                  <span className="text-slate-400 block font-medium uppercase text-[10px] mb-1">
+                    {isAr ? 'مدة الإنجاز' : 'Turnaround Time'}
+                  </span>
+                  <span className="text-sm font-bold text-slate-900 block">
+                    {isAr ? currentService.processingTimeAr : currentService.processingTimeEn}
                   </span>
                 </div>
-              )}
 
-              {/* Total Calculation */}
-              <div className="pt-4 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                <div className="p-4 rounded-xl bg-teal-50/70 border border-teal-200/60">
+                  <span className="text-teal-700 block font-medium uppercase text-[10px] mb-1">
+                    {isAr ? 'قنوات التقديم' : 'Available Channels'}
+                  </span>
+                  <span className="text-sm font-bold text-[#01403F] block">
+                    {isAr ? 'المركز · VIP · الحافلة المتنقلة' : 'Center · VIP · Mobile Van'}
+                  </span>
+                </div>
+              </div>
+
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pt-2">
                 <div>
-                  <span className="text-xs text-slate-400 block font-medium">
-                    {isAr ? 'الرسوم الحكومية الرسمية المعتمدة' : 'Official Government Fee'}
-                  </span>
-                  {isDetService ? (
-                    <span className="text-xl sm:text-2xl font-extrabold text-[#128B94]">
-                      {isAr ? 'حسب النشاط التجاري' : 'Based on Business Activity'}
-                    </span>
-                  ) : (
-                    <span className="text-3xl font-extrabold text-[#1E2528] tabular-nums">
-                      {totalStandard.toLocaleString()}{' '}
-                      <span className="text-base font-bold text-slate-500">AED</span>
-                    </span>
-                  )}
+                  <h4 className="text-base font-bold text-slate-900">
+                    {isAr ? 'جاهز لإنجاز معاملتك؟' : 'Ready to Submit Your Application?'}
+                  </h4>
+                  <p className="text-xs text-slate-500 mt-0.5">
+                    {isAr
+                      ? 'احجز موعدك الآن لدى مركز الكرامة للأعمال للتدقيق المباشر وتنفيذ المعاملة فوراً.'
+                      : 'Schedule an appointment at Karama Business Center for same-day document review and processing.'}
+                  </p>
                 </div>
 
-                <div className="flex items-center gap-3">
-                  {onCalculateFee && (
-                    <button
-                      onClick={() => onCalculateFee(currentService)}
-                      className="px-4 py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-800 rounded-lg text-xs font-bold transition-colors cursor-pointer"
-                    >
-                      {isAr ? 'تعديل المعايير في الحاسبة' : 'Open in Calculator'}
-                    </button>
-                  )}
+                <div className="flex items-center gap-3 shrink-0">
+                  <a
+                    href="https://wa.me/97143426666"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-5 py-3 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg text-xs sm:text-sm font-bold transition-all shadow-md flex items-center gap-2 cursor-pointer active:scale-[0.98]"
+                  >
+                    <span>{isAr ? 'استشارة فورية عبر واتساب' : 'WhatsApp Consultation'}</span>
+                  </a>
 
                   <button
                     onClick={() => onOpenBooking(currentService)}
                     className="px-6 py-3 bg-[#128B94] hover:bg-[#01403F] text-white rounded-lg text-xs sm:text-sm font-bold transition-all shadow-md flex items-center gap-2 cursor-pointer active:scale-[0.98]"
                   >
                     <Calendar className="w-4 h-4" />
-                    <span>{isAr ? 'حجز موعد بالتعرفة الرسمية' : 'Book at Official Tariff'}</span>
+                    <span>{isAr ? 'حجز موعد إنجاز' : 'Book Appointment'}</span>
                   </button>
                 </div>
               </div>
 
-              {/* VAT & Statutory Disclaimer Notice */}
-              <div className="pt-4 border-t border-slate-100 text-[11px] text-slate-500 space-y-1.5 leading-relaxed bg-slate-50/80 -mx-6 sm:-mx-8 -mb-6 sm:-mb-8 p-5">
-                <p>
-                  <strong className="text-slate-700">{isAr ? 'الشفافية الضريبية:' : 'Tax & Fee Transparency:'}</strong>{' '}
-                  {isAr
-                    ? 'الرسوم الحكومية الرسمية معفاة من ضريبة القيمة المضافة بموجب المرسوم بقانون اتحادي رقم (8) لسنة 2017. رسوم الطباعة وخدمات المركز خاضعة لضريبة القيمة المضافة بنسبة 5%.'
-                    : 'Statutory government tariffs are exempt from UAE VAT under Federal Decree-Law No. (8) of 2017. KBC/ESS private typing and administrative service charges are inclusive of 5% UAE VAT.'}
-                </p>
+              {/* Notice */}
+              <div className="pt-4 border-t border-slate-100 text-[11px] text-slate-500 leading-relaxed bg-slate-50/80 -mx-6 sm:-mx-8 -mb-6 sm:-mb-8 p-5">
                 <p>
                   <strong className="text-slate-700">{isAr ? 'ملاحظة الإنجاز والموافقات:' : 'Processing SLAs & Approvals:'}</strong>{' '}
                   {isAr
-                    ? 'مواعيد الفحص الطبي (ساعتان، 6 ساعات، 24 ساعة) تعكس باقات المختبر المعتمدة بنظام سالم بمركز الكرامة الطبي. تخضع اعتمادات الإقامة والتأشيرات وتراخيص العمل للتدقيق الأمني والموافقات السيادية للجهات الحكومية المعنية.'
-                    : 'Medical fitness turnaround times (2h, 6h, 24h) reflect authorized DHA Salem laboratory tiers at our co-located medical center. Final residency stamping, visas, and permits remain strictly subject to sovereign authority background clearance and ministerial approvals.'}
+                    ? 'تخضع اعتمادات الإقامة والتأشيرات وتراخيص العمل والفحوصات الطبية للتدقيق الأمني والموافقات السيادية للجهات الحكومية المعنية وفق القوانين واللوائح التنفيذية بدولة الإمارات.'
+                    : 'Final residency stamping, entry permits, and medical fitness approvals remain subject to sovereign authority background clearance and official ministerial review.'}
                 </p>
               </div>
             </div>

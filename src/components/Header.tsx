@@ -23,7 +23,6 @@ import {
   Zap,
   BookOpen,
   Users,
-  Calculator,
 } from 'lucide-react';
 import { Language, ServiceItem } from '../types';
 import { TRANSLATIONS } from '../data/translations';
@@ -461,18 +460,10 @@ export const Header: React.FC<HeaderProps> = ({
                     {/* Left Bottom Footer Action */}
                     <div className="pt-2 border-t border-slate-200/80 space-y-1.5">
                       <button
-                        onClick={() => handlePageClick('pricelist')}
+                        onClick={() => handlePageClick('departments')}
                         className="w-full py-2.5 px-3 rounded-xl bg-gradient-to-r from-[#128B94] to-[#01403F] hover:from-[#0f767e] hover:to-[#012f2e] text-white text-xs font-bold text-center transition-all flex items-center justify-center gap-2 cursor-pointer shadow-xs"
                       >
-                        <Calculator className="w-4 h-4 text-white shrink-0" />
-                        <span>{isAr ? 'جدول أسعار ورسوم الخدمات (حاسبة)' : 'Official Services Price List & Calculator'}</span>
-                      </button>
-
-                      <button
-                        onClick={() => handlePageClick('departments')}
-                        className="w-full py-2 px-3 rounded-xl bg-teal-50 hover:bg-teal-100 text-[#128B94] hover:text-[#01403F] text-xs font-bold text-center transition-colors flex items-center justify-center gap-1.5 cursor-pointer border border-teal-200/60"
-                      >
-                        <Layers className="w-3.5 h-3.5 shrink-0" />
+                        <Layers className="w-4 h-4 text-white shrink-0" />
                         <span>{isAr ? 'تصفح جميع الدوائر والخدمات' : 'View Full Services Directory'}</span>
                       </button>
                     </div>
@@ -547,10 +538,8 @@ export const Header: React.FC<HeaderProps> = ({
                               </span>
 
                               <div className="flex items-center gap-1.5">
-                                <span className="font-bold text-slate-800">
-                                  {service.departmentId === 'ded' || service.departmentId === 'det' || service.isPriceUponConsultation
-                                    ? (isAr ? 'حسب النشاط' : 'Upon Consultation')
-                                    : `${isAr ? 'الرسم الحكومي:' : 'Gov:'} ${service.govFee.toLocaleString()} ${isAr ? 'درهم' : 'AED'}`}
+                                <span className="font-semibold text-[11px] text-[#128B94]">
+                                  {isAr ? service.authorityAr : service.authorityEn}
                                 </span>
                                 {service.isPopular && (
                                   <span className="text-[9px] font-bold text-[#128B94] bg-teal-50 px-1.5 py-0.2 rounded border border-teal-200/60 uppercase">
@@ -576,13 +565,6 @@ export const Header: React.FC<HeaderProps> = ({
                       </div>
 
                       <div className="flex items-center gap-2 shrink-0">
-                        <button
-                          onClick={() => handlePageClick('pricelist')}
-                          className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#128B94] hover:bg-[#01403F] text-white font-bold text-xs transition-colors cursor-pointer shadow-xs"
-                        >
-                          <Calculator className="w-3.5 h-3.5 text-white" />
-                          <span>{isAr ? 'جدول الأسعار والحاسبة' : 'Price List & Calculator'}</span>
-                        </button>
 
                         <button
                           onClick={() => {
@@ -731,17 +713,6 @@ export const Header: React.FC<HeaderProps> = ({
               {mobileDeptsExpanded && (
                 <div className="p-2 space-y-1.5 bg-white border-t border-slate-200/80">
                   <button
-                    onClick={() => handlePageClick('pricelist')}
-                    className="w-full p-2.5 rounded-lg bg-gradient-to-r from-[#128B94] to-[#01403F] text-white font-bold text-xs flex items-center justify-between cursor-pointer shadow-xs"
-                  >
-                    <div className="flex items-center gap-2">
-                      <Calculator className="w-4 h-4 text-white shrink-0" />
-                      <span>{isAr ? 'جدول أسعار ورسوم الخدمات (حاسبة)' : 'Official Services Price List & Calculator'}</span>
-                    </div>
-                    <ArrowRight className="w-3.5 h-3.5 rtl:rotate-180 shrink-0" />
-                  </button>
-
-                  <button
                     onClick={() => handlePageClick('departments')}
                     className="w-full p-2.5 rounded-lg bg-teal-50 hover:bg-teal-100 text-[#128B94] font-bold text-xs flex items-center justify-between cursor-pointer"
                   >
@@ -794,10 +765,8 @@ export const Header: React.FC<HeaderProps> = ({
                                   <span className="truncate pr-2 rtl:pr-0 rtl:pl-2">
                                     {isAr ? service.titleAr : service.titleEn}
                                   </span>
-                                  <span className="text-[10px] text-slate-400 shrink-0 font-mono">
-                                    {service.departmentId === 'ded' || service.departmentId === 'det' || service.isPriceUponConsultation
-                                      ? (isAr ? 'حسب النشاط' : 'Consultation')
-                                      : `${service.govFee} AED`}
+                                  <span className="text-[10px] text-teal-700 shrink-0 font-medium">
+                                    {isAr ? service.processingTimeAr : service.processingTimeEn}
                                   </span>
                                 </button>
                               ))}
@@ -994,10 +963,10 @@ export const Header: React.FC<HeaderProps> = ({
             </div>
             <div className="grid grid-cols-2 gap-2 text-xs">
               <button
-                onClick={() => handlePageClick('calculator')}
+                onClick={() => handlePageClick('departments')}
                 className="p-2.5 rounded-lg bg-slate-50 hover:bg-slate-100 text-slate-700 font-semibold text-center border border-slate-200/80 cursor-pointer"
               >
-                {t.navCalculator}
+                {isAr ? 'دليل الخدمات' : 'Services Directory'}
               </button>
               <button
                 onClick={() => handlePageClick('vip-mobile')}

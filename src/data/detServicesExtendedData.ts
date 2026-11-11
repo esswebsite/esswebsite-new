@@ -114,10 +114,10 @@ Because our Al Karama complex integrates DET licensing desks, Dubai Municipality
         answerAr: 'نعم. بموجب المرسوم بقانون اتحادي رقم 32 لسنة 2021، يحق للأجانب تملك الشركات ذات المسؤولية المحدودة في بر دبي الرئيسي بنسبة 100% في أكثر من 2,000 نشاط تجاري دون الحاجة لشريك مواطن.',
       },
       {
-        questionEn: 'How much does a new DET Commercial Trade License cost in 2026?',
-        questionAr: 'كم تبلغ تكلفة إصدار رخصة تجارية جديدة من اقتصادية دبي في عام 2026؟',
-        answerEn: 'Standard DET government fees for a new commercial trade license start from approximately AED 8,500 to AED 12,500 depending on the specific commercial activity, trade name type (Arabic vs. foreign/numeric name), and market fees (2.5% of annual Ejari rent). At KBC, we provide an exact itemized DET voucher breakdown before you pay.',
-        answerAr: 'تبدأ الرسوم الحكومية الأساسية لإصدار رخصة تجارية جديدة من حوالي 8,500 إلى 12,500 درهم حسب نوع النشاط التجاري وطبيعة الاسم التجاري ورسوم السوق (2.5% من قيمة عقد الإيجار). نوفر في مركز الكرامة للأعمال كشفاً تفصيلياً دقيقاً قبل سداد أي درهم.',
+        questionEn: 'How are official DET Commercial Trade License fees determined?',
+        questionAr: 'كيف يتم احتساب الرسوم الرسمية لإصدار رخصة تجارية من اقتصادية دبي؟',
+        answerEn: 'Official DET government fees for a commercial trade license depend on the specific commercial activities selected, trade name type (Arabic vs. foreign name), and market fees calculated against the commercial lease. At KBC, our DET specialists provide an official itemized DET payment voucher directly from the government system before settlement.',
+        answerAr: 'تُحدد الرسوم الحكومية الرسمية لإصدار رخصة تجارية بناءً على الأنشطة الاقتصادية المحددة، ونوع الاسم التجاري، ورسوم السوق المقررة على عقد الإيجار. ويوفر خبراؤنا في مركز الكرامة للأعمال إذن الدفع الحكومي المعتمد والمفصل مباشرة قبل السداد.',
       },
       {
         questionEn: 'How many investor and employee visas can I get on a Commercial License?',
@@ -268,12 +268,12 @@ This means you can walk into Karama Business Center in the morning, receive your
   'det-etrader-license': {
     detailedOverviewEn: `The DED Trader License (commonly known as the DET E-Trader License / رخصة تاجر إلكتروني) is an official commercial and professional permit issued by the Dubai Department of Economy and Tourism specifically designed for home-based entrepreneurs, social media sellers, independent freelancers, and digital creators operating across Instagram, TikTok, Amazon UAE, Noon, and personal e-commerce websites.
 
-Instead of operating informally and risking DET commercial compliance fines of up to AED 50,000 for unlicensed social media trading, the E-Trader License legalizes your online brand in Dubai for an ultra-low government fee of just AED 1,070 (plus AED 300 mandatory Dubai Chamber membership — total AED 1,370 per year). It requires zero physical office space and zero Ejari tenancy registration, linking directly to your residential Makani number in Dubai.
+Instead of operating informally and risking DET commercial compliance fines for unlicensed social media trading, the E-Trader License legalizes your online brand in Dubai with low-cost official government registration. It requires zero physical office space and zero Ejari tenancy registration, linking directly to your residential Makani number in Dubai.
 
 At Karama Business Center (KBC), our DET specialists verify your residential eligibility, register your social media handles and website domains under your official trade name, and issue your E-Trader License within 60 minutes. Your license grants you official intellectual property protection for your brand name, eligibility to apply for commercial payment gateways (Stripe, Tabby, Tamara, Network International), and legal authorization to participate in Dubai pop-up markets and exhibitions.`,
     detailedOverviewAr: `تُعد رخصة تاجر إلكتروني (DED E-Trader License) الصادرة عن دائرة الاقتصاد والسياحة بدبي الحل الحكومي الرسمي المخصص لرواد الأعمال المنزليين، تجار منصات التواصل الاجتماعي (إنستغرام، تيك توك، سناب شات)، المستقلين (Freelancers)، وأصحاب المتاجر الإلكترونية على منصات أمازون ونون والمواقع الخاصة.
 
-بدلاً من العمل غير المرخص والتعرض لغرامات الرقابة التجارية التي قد تصل إلى 50,000 درهم، تمنحك رخصة تاجر إلكتروني غطاءً قانونياً رسمياً لعلامتك التجارية في دبي بتكلفة حكومية مخفضة للغاية تبلغ 1,070 درهماً فقط (بالإضافة إلى 300 درهم رسوم عضوية غرفة دبي — بإجمالي 1,370 درهماً سنوياً)، دون الحاجة لاستئجار مكتب أو تقديم عقد إيجاري، حيث تُربط الرخصة مباشرة برقم "مكاني" لمقر سكنك في دبي.
+بدلاً من العمل غير المرخص والتعرض لغرامات الرقابة التجارية، تمنحك رخصة تاجر إلكتروني غطاءً قانونياً رسمياً لعلامتك التجارية في دبي بتكلفة حكومية ميسرة، دون الحاجة لاستئجار مكتب أو تقديم عقد إيجاري، حيث تُربط الرخصة مباشرة برقم "مكاني" لمقر سكنك في دبي.
 
 في مركز الكرامة للأعمال (KBC)، يقوم خبراؤنا بتدقيق الأهلية، تسجيل حسابات التواصل الاجتماعي والنطاقات الإلكترونية باسمك التجاري، وإصدار رخصة تاجر إلكتروني خلال 60 دقيقة، مما يتيح لك فتح حساب بنكي تجاري وتفعيل بوابات الدفع الإلكتروني (تبي، تمارا، سترايب) والمشاركة القانونية في المعارض والبازارات.`,
     legalFrameworkEn: `DET E-Trader Regulatory Program under the Consumer Protection and Commercial Compliance Sector of the Dubai Department of Economy and Tourism.`,

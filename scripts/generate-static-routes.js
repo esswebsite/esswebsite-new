@@ -33,9 +33,9 @@ while ((sMatch = serviceRegex.exec(deptText)) !== null) {
   const start = sMatch.index;
   const chunk = deptText.slice(start, start + 1200);
   const descMatch = chunk.match(/shortDescEn:\s*['"]([^'"]+)['"]/);
-  const feeMatch = chunk.match(/govFee:\s*(\d+)/);
+  const feeMatch = chunk.match(/govFee:\s*([\d.]+)/);
   const shortDescEn = descMatch ? descMatch[1] : '';
-  const govFee = feeMatch ? parseInt(feeMatch[1], 10) : 0;
+  const govFee = feeMatch ? parseFloat(feeMatch[1]) : 0;
   servicesMap[id] = { id, departmentId, titleEn, shortDescEn, govFee };
 }
 
@@ -205,11 +205,6 @@ const CORE_PAGES_META = {
     desc: 'Access 14 official government departments under one roof at Karama Business Center: Amer GDRFA, Tasheel MOHRE, DET, ICP ID & DHA Salem.',
     keywords: 'Government departments Dubai, Amer Center Karama, DET licensing Dubai, Tasheel MOHRE Dubai, ICP Emirates ID typing, DHA Salem medical',
   },
-  '/pricelist': {
-    title: 'Official Dubai Visa & Government Fees 2026 | ESS KBC',
-    desc: 'Transparent 2026 Dubai government tariffs: UAE residency visa, Golden Visa, DET trade license, Tasheel work permit & Salem medical fees.',
-    keywords: 'UAE visa fees 2026, Dubai Golden Visa price, trade license fee Dubai, Tasheel work permit cost, Salem medical test fee, Amer center charges',
-  },
   '/knowledge-hub': {
     title: 'Dubai Visa & Immigration Guides 2026 | ESS Amer Hub',
     desc: 'Authoritative UAE visa guides, Golden Visa rules, Emirates ID procedures, DET trade license renewal, and labor regulations by Dubai PROs.',
@@ -340,17 +335,17 @@ const DEPARTMENTS_META = {
 const ARTICLES_META = {
   'emirates-id-renewal-guide': {
     title: 'Emirates ID Renewal Guide 2026 | ICP Karama Dubai ESS',
-    desc: 'Official guide on Emirates ID renewal in Dubai. Step-by-step biometric booking, required documents, ICP government fees, and fast delivery.',
+    desc: 'Official guide on Emirates ID renewal in Dubai. Step-by-step biometric booking, required documents, ICP government portal steps, and fast delivery.',
     keywords: 'emirates id renewal, emirates id status, ICP smart services, Emirates ID biometrics Dubai, renew emirates id online',
   },
   'uae-residence-visa-renewal': {
     title: 'UAE Residence Visa Renewal Guide | Amer Center Dubai',
-    desc: 'Complete guide on UAE residency visa renewal in Dubai. GDRFA document requirements, 2-year costs, medical fitness test, and Emirates ID steps.',
+    desc: 'Complete guide on UAE residency visa renewal in Dubai. GDRFA document requirements, 2-year timelines, medical fitness test, and Emirates ID steps.',
     keywords: 'uae residence visa renewal, dubai residency renewal, amer center near me, residence visa renewal documents, GDRFA renewal',
   },
   'uae-visa-status-change': {
     title: 'UAE Visa Status Change Guide | In-Country Amer Dubai',
-    desc: 'Learn how to change your UAE visa status inside the country without exit. Official Amer Center Karama process, fees, and GDRFA approval tips.',
+    desc: 'Learn how to change your UAE visa status inside the country without exit. Official Amer Center Karama process, guidelines, and GDRFA approval tips.',
     keywords: 'uae visa status change, inside country status change, amer center dubai, status change without exit, visa transfer dubai',
   },
   'uae-overstay-fines-guide': {
@@ -360,27 +355,27 @@ const ARTICLES_META = {
   },
   'uae-golden-visa-eligibility': {
     title: 'UAE Golden Visa Eligibility Guide 2026 | Dubai ESS',
-    desc: 'Complete 10-year UAE Golden Visa eligibility guide for real estate investors, executives, and doctors. Requirements, costs, and VIP processing.',
+    desc: 'Complete 10-year UAE Golden Visa eligibility guide for real estate investors, executives, and doctors. Requirements, approval steps, and VIP processing.',
     keywords: 'golden visa dubai, golden visa uae, 10 year visa uae, property investor golden visa, executive golden visa dubai',
   },
   'dubai-trade-licence-guide': {
     title: 'Dubai Trade License Guide 2026 | DET Business Setup',
-    desc: 'How to choose the right Dubai trade license: commercial, professional, and industrial. 100% foreign ownership rules and DET Karama fees.',
+    desc: 'How to choose the right Dubai trade license: commercial, professional, and industrial. 100% foreign ownership rules and DET Karama setup procedures.',
     keywords: 'dubai trade license, trade license dubai with visa, DET business setup, mainland commercial license, LLC formation dubai',
   },
   'dubai-instant-licence': {
     title: 'Dubai Instant License Guide | 5-Minute Setup DET ESS',
-    desc: 'Issue your Dubai trade license instantly without lease agreement for year one. DET eligibility criteria, activity list, and cost breakdown.',
+    desc: 'Issue your Dubai trade license instantly without lease agreement for year one. DET eligibility criteria, activity list, and official setup guidelines.',
     keywords: 'dubai instant licence, instant trade license dubai, DET instant license, start business dubai, trade license without office',
   },
   'dubai-trade-licence-renewal': {
     title: 'Dubai Trade License Renewal Guide | Ejari & DET KBC',
-    desc: 'Step-by-step trade license renewal in Dubai. Required Ejari certificate, partner passport copies, DET penalty avoidance, and fees.',
-    keywords: 'dubai trade license renewal, renew trade license dubai, ejari trade license renewal, DET license renewal fee, avoid trade license penalties',
+    desc: 'Step-by-step trade license renewal in Dubai. Required Ejari certificate, partner passport copies, DET penalty avoidance, and official voucher steps.',
+    keywords: 'dubai trade license renewal, renew trade license dubai, ejari trade license renewal, DET license renewal, avoid trade license penalties',
   },
   'uae-work-permit-guide': {
     title: 'UAE Work Permit Guide 2026 | MOHRE Tasheel Dubai ESS',
-    desc: 'Comprehensive guide to UAE electronic work permits. Quota applications, MOHRE offer letters, labor contracts, and Tasheel Karama fees.',
+    desc: 'Comprehensive guide to UAE electronic work permits. Quota applications, MOHRE offer letters, labor contracts, and Tasheel Karama typing guidelines.',
     keywords: 'tasheel dubai, uae work permit, electronic work permit mohre, labor contract dubai, tasheel center dubai',
   },
   'uae-employment-contract-changes': {
@@ -395,7 +390,7 @@ const ARTICLES_META = {
   },
   'dubai-ejari-registration-guide': {
     title: 'Dubai Ejari Registration Guide 2026 | DLD Center ESS',
-    desc: 'Official guide for tenancy contract Ejari registration in Dubai. Required documents for tenants and landlords, DLD fees, and fast approvals.',
+    desc: 'Official guide for tenancy contract Ejari registration in Dubai. Required documents for tenants and landlords, DLD guidelines, and fast approvals.',
     keywords: 'ejari services, ejari registration dubai, tenancy contract registration, dld ejari karama, renew ejari online',
   },
   'ejari-digital-services': {
@@ -405,7 +400,7 @@ const ARTICLES_META = {
   },
   'uae-residency-medical-fitness': {
     title: 'UAE Visa Medical Fitness Guide | DHA Salem Karama ESS',
-    desc: 'Everything you need to know about DHA Salem medical fitness tests for Dubai residency. Blood tests, chest X-rays, VIP 2-hour packages & fees.',
+    desc: 'Everything you need to know about DHA Salem medical fitness tests for Dubai residency. Blood tests, chest X-rays, VIP 2-hour packages & results.',
     keywords: 'medical for dubai visa, dha salem, visa medical test karama, kmfc dubai, 2 hour express medical test',
   },
   'dubai-occupational-health-card': {
@@ -420,7 +415,7 @@ const ARTICLES_META = {
   },
   'mofa-digital-attestation': {
     title: 'MOFA Digital Attestation vs Courier Guide | Dubai ESS',
-    desc: 'Understand digital MOFA e-attestation versus physical courier-based legalization in Dubai. Fees, turnaround times, and apostille details.',
+    desc: 'Understand digital MOFA e-attestation versus physical courier-based legalization in Dubai. Official procedures, turnaround times, and apostille details.',
     keywords: 'digital attestation mofa, mofa online verification, apostille dubai, atlas attestation karama, certificate verification',
   },
   'uae-legal-translation-guide': {
@@ -837,16 +832,6 @@ function getSchemaForRoute(route, canonicalUrl, options) {
             name: isOhc ? 'OccupationalMedicine' : 'PublicHealth',
           },
           bodyLocation: 'Blood, Lungs (Chest X-Ray)',
-          offers: {
-            '@type': 'Offer',
-            priceCurrency: 'AED',
-            price: `${s.govFee || 260}.00`,
-            availability: 'https://schema.org/InStock',
-            validFrom: '2026-01-01',
-            seller: {
-              '@id': 'https://ess.ae/#kmfc-clinic',
-            },
-          },
         },
         {
           '@type': 'FAQPage',
@@ -939,19 +924,6 @@ function getSchemaForRoute(route, canonicalUrl, options) {
             '@type': 'Audience',
             audienceType: 'UAE Residents, Expatriates, and Investors',
           },
-          ...(s.govFee > 0
-            ? {
-                offers: {
-                  '@type': 'Offer',
-                  priceCurrency: 'AED',
-                  price: `${s.govFee}.00`,
-                  availability: 'https://schema.org/InStock',
-                  seller: {
-                    '@id': 'https://ess.ae/#organization',
-                  },
-                },
-              }
-            : {}),
         },
       ],
     };

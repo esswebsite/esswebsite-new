@@ -199,11 +199,8 @@ export const ServiceFinder: React.FC<ServiceFinderProps> = ({
         ) : (
           <>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-              {visibleServices.map((service) => {
-                const totalEst = service.govFee + service.serviceFee;
-
-                return (
-                  <div
+              {visibleServices.map((service) => (
+                <div
                     key={service.id}
                     className="bg-white rounded-xl border border-slate-200 hover:border-[#128B94] hover:shadow-md transition-all duration-200 p-5 flex flex-col justify-between group relative"
                   >
@@ -248,23 +245,12 @@ export const ServiceFinder: React.FC<ServiceFinderProps> = ({
                       </p>
                     </div>
 
-                    {/* Pricing and Action Strip */}
+                    {/* Action Strip */}
                     <div className="mt-5 pt-3.5 border-t border-slate-100">
-                      <div className="flex items-baseline justify-between mb-3">
-                        <div>
-                          <span className="text-[10px] text-slate-400 block font-medium">
-                            {language === 'ar' ? 'الرسوم الحكومية الرسمية' : 'Official Government Fee'}
-                          </span>
-                          {service.departmentId === 'ded' || service.departmentId === 'det' || service.isPriceUponConsultation ? (
-                            <span className="text-[11px] font-bold text-[#128B94]">
-                              {language === 'ar' ? 'حسب النشاط / استشارة فورية' : 'Upon Consultation / Activity Based'}
-                            </span>
-                          ) : (
-                            <span className="text-base font-extrabold text-[#1E2528] tabular-nums">
-                              {service.govFee.toLocaleString()} <span className="text-[10px] font-bold text-slate-500">AED</span>
-                            </span>
-                          )}
-                        </div>
+                      <div className="flex items-center justify-between mb-3">
+                        <span className="text-[11px] font-semibold text-[#128B94]">
+                          {language === 'ar' ? 'معاملة حكومية معتمدة' : 'Authorized Service'}
+                        </span>
 
                         <button
                           onClick={() => (onOpenServicePage ? onOpenServicePage(service.id) : onOpenDetails(service))}
@@ -294,8 +280,7 @@ export const ServiceFinder: React.FC<ServiceFinderProps> = ({
                       </div>
                     </div>
                   </div>
-                );
-              })}
+                ))}
             </div>
 
             {/* Expand / Collapse "View All Services" Button if more than 8 services */}

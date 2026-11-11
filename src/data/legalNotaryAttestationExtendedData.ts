@@ -308,10 +308,10 @@ export const LEGAL_SERVICES_RICH_MAP: Record<string, ServiceRichDetails> = {
     ],
     faqs: [
       {
-        questionEn: 'What is the exact official UAE MOFA fee for personal vs. commercial documents in 2026?',
-        questionAr: 'كم تبلغ الرسوم الحكومية الرسمية لتصديق وزارة الخارجية للمستندات الشخصية والتجارية في 2026؟',
-        answerEn: 'The official UAE Ministry of Foreign Affairs (MOFA) government fee is AED 200 per document for personal/individual certificates (degrees, marriage, birth, PCC) and AED 1,200 per document for commercial/company records (MOA, corporate POA, board resolutions). Ministry of Justice attestation is AED 110.',
-        answerAr: 'الرسم الحكومي الرسمي لوزارة الخارجية الإماراتية هو 200 درهم لكل مستند شخصي (شهادات دراسية، زواج، ميلاد، حسن سيرة)، و1,200 درهم لكل مستند تجاري للشركات (عقد تأسيس، وكالة تجارية، قرار مجلس إدارة)، بينما يبلغ رسم تصديق وزارة العدل 110 دراهم.',
+        questionEn: 'How are official UAE MOFA attestations verified and processed for personal vs. commercial documents?',
+        questionAr: 'كيف يتم التحقق وتصديق المستندات الشخصية والتجارية لدى وزارة الخارجية الإماراتية؟',
+        answerEn: 'Official UAE Ministry of Foreign Affairs (MOFA) attestations are processed through certified digital channels and consular physical desks for personal certificates (degrees, marriage, birth, PCC) and commercial company records (MOA, corporate POA, board resolutions) with instant official digital verification QR codes.',
+        answerAr: 'يتم إنجاز تصديقات وزارة الخارجية الإماراتية رسمياً عبر القنوات الرقمية المعتمدة والأختام الحية للمستندات الشخصية والشهادات الدراسية والوثائق التجارية للشركات مع تزويد المتعامل برمز التحقق الذكي (QR) المعتمد رسمياً.',
       },
       {
         questionEn: 'Can MOFA in Dubai attest my foreign degree if it does not yet have the UAE Embassy stamp from my home country?',

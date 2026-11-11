@@ -54,7 +54,7 @@ export const TRANSLATIONS = {
 
     // Services Catalog
     servicesSectionTitle: 'Comprehensive Government Services',
-    servicesSectionDesc: 'Browse, compare requirements, calculate fees, and initiate applications with verified official turnaround times.',
+    servicesSectionDesc: 'Browse, compare requirements, and initiate applications with verified official turnaround times.',
     filterAll: 'All Services',
     filterResidency: 'Residency & Golden Visa',
     filterCorporate: 'Business & DED Setup',
@@ -96,7 +96,7 @@ export const TRANSLATIONS = {
     estimatedGovFee: 'Government Authority Tariff',
     estimatedEssFee: 'ESS Certified Typing & Liaison',
     estimatedVat: 'UAE VAT (5% on typing fee only)',
-    estimatedTotal: 'Estimated Total (AED)',
+    estimatedTotal: 'Estimated Total',
     estimatedTime: 'Estimated Turnaround Time',
     bookWithEstimateBtn: 'Book Appointment With This Estimate',
 
@@ -215,7 +215,7 @@ export const TRANSLATIONS = {
 
     // Services Catalog
     servicesSectionTitle: 'الدليل الشامل للخدمات الحكومية',
-    servicesSectionDesc: 'تصفح المتطلبات، واحسب الرسوم الرسمية بدقة، وقدم معاملتك مع ضمان الالتزام بالمواعيد المحددة.',
+    servicesSectionDesc: 'تصفح المتطلبات واطلع على المعايير الرسمية بدقة، وقدم معاملتك مع ضمان الالتزام بالمواعيد المحددة.',
     filterAll: 'جميع الخدمات',
     filterResidency: 'الإقامات والتأشيرة الذهبية',
     filterCorporate: 'تأسيس الشركات واقتصادية دبي',
