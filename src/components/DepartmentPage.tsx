@@ -14,16 +14,29 @@ import {
   Building2,
   Users,
   Search,
-  ExternalLink
+  ExternalLink,
+  Youtube,
+  Facebook,
+  Instagram,
+  Linkedin,
+  Phone,
 } from 'lucide-react';
 import { Department, Language, ServiceItem } from '../types';
 import { DEPARTMENTS, SERVICES } from '../data/departmentsData';
 import { TRANSLATIONS } from '../data/translations';
 import { getDepartmentDetails } from '../data/departmentExtendedData';
 import { DepartmentLogo } from './DepartmentLogo';
-import { OFFICIAL_MAPS, OFFICIAL_SAME_AS } from '../data/socialAndMapLinks';
+import {
+  OFFICIAL_MAPS,
+  OFFICIAL_SAME_AS,
+  AMER_OFFICIAL_GBP,
+  AMER_OFFICIAL_SOCIAL_LINKS,
+  AMER_SAME_AS
+} from '../data/socialAndMapLinks';
+import { AMER_CENTER_ENTITY_SCHEMA } from '../utils/routeSeo';
 import { GoogleReviewsSection } from './GoogleReviewsSection';
 import { getDepartmentPath, CANONICAL_BASE } from '../utils/router';
+import { OFFICIAL_PHONE, OFFICIAL_PHONE_TEL, getWhatsAppUrl } from '../utils/whatsapp';
 
 interface DepartmentPageProps {
   deptId: string;
@@ -49,6 +62,7 @@ export const DepartmentPage: React.FC<DepartmentPageProps> = ({
   // Find department
   const currentDept = DEPARTMENTS.find((d) => d.id === deptId) || DEPARTMENTS[0];
   const deptDetails = getDepartmentDetails(currentDept);
+  const isAmer = currentDept.id === 'amer';
 
   // Filter services belonging to this department
   const departmentServices = SERVICES.filter((s) => s.departmentId === currentDept.id);
@@ -65,14 +79,22 @@ export const DepartmentPage: React.FC<DepartmentPageProps> = ({
 
   // Dynamic SEO & Structured Data Injection
   useEffect(() => {
-    const pageTitle =
-      language === 'ar'
-        ? `${currentDept.nameAr} - الخدمات الحكومية المعتمدة | الإمارات لخدمات رجال الأعمال (ESS)`
-        : `${currentDept.nameEn} Services Dubai | Authorized Government Center | ESS`;
-    const metaDesc =
-      language === 'ar'
-        ? `دليل خدمات ${currentDept.nameAr} في دبي. إنجاز فوري للإقامات، الرخص، العقود والمعاملات الحكومية الرسمية مع كفالة تامة وتتبع مباشر.`
-        : `Official ${currentDept.nameEn} government processing in Dubai. Fast-track residency, corporate setup, and labor clearances with certified typing and zero rejection audit.`;
+    const isAmer = currentDept.id === 'amer';
+    const pageTitle = isAmer
+      ? (language === 'ar'
+          ? 'مركز آمر الكرامة دبي | خدمات الإقامة والتأشيرات والجوازات'
+          : 'Amer Center Karama Dubai | UAE Visa & Immigration Services')
+      : (language === 'ar'
+          ? `${currentDept.nameAr} - الخدمات الحكومية المعتمدة | الإمارات لخدمات رجال الأعمال (ESS)`
+          : `${currentDept.nameEn} Services Dubai | Authorized Government Center | ESS`);
+
+    const metaDesc = isAmer
+      ? (language === 'ar'
+          ? 'تبحث عن مركز آمر في الكرامة، دبي؟ احصل على خدمات إصدار وتجديد وإلغاء تأشيرات الإقامة، كفالة الأسرة، أذونات الدخول وتعديل الوضع المعتمدة من إقامة دبي.'
+          : 'Looking for an Amer Center in Karama, Dubai? Get assistance with UAE residence visas, renewals, cancellations, family visas, visit visas and immigration services.')
+      : (language === 'ar'
+          ? `دليل خدمات ${currentDept.nameAr} في دبي. إنجاز فوري للإقامات، الرخص، العقود والمعاملات الحكومية الرسمية مع كفالة تامة وتتبع مباشر.`
+          : `Official ${currentDept.nameEn} government processing in Dubai. Fast-track residency, corporate setup, and labor clearances with certified typing and zero rejection audit.`);
 
     document.title = pageTitle;
 
@@ -91,86 +113,144 @@ export const DepartmentPage: React.FC<DepartmentPageProps> = ({
     let ogDescTag = document.querySelector('meta[property="og:description"]');
     if (ogDescTag) ogDescTag.setAttribute('content', metaDesc);
 
-    // Canonical tag
+    // Canonical tag (self-referencing canonical)
     let canonicalTag = document.querySelector('link[rel="canonical"]');
     if (!canonicalTag) {
       canonicalTag = document.createElement('link');
       canonicalTag.setAttribute('rel', 'canonical');
       document.head.appendChild(canonicalTag);
     }
-    const canonicalDepartmentUrl = `${CANONICAL_BASE}${getDepartmentPath(currentDept.id, language)}`;
+    const canonicalDepartmentUrl = isAmer
+      ? `${CANONICAL_BASE}/amer-center-karama/`
+      : `${CANONICAL_BASE}${getDepartmentPath(currentDept.id, language)}`;
     canonicalTag.setAttribute('href', canonicalDepartmentUrl);
 
     // Structured Data JSON-LD
-    const jsonLdData = {
-      '@context': 'https://schema.org',
-      '@graph': [
-        {
-          '@type': 'GovernmentService',
-          '@id': canonicalDepartmentUrl,
-          name: language === 'ar' ? currentDept.nameAr : currentDept.nameEn,
-          serviceType: 'Public Administration & Businessmen Services',
-          provider: {
-            '@type': 'LocalBusiness',
-            name: 'Emirates Secretarial Services & Karama Business Center',
-            telephone: '+97143426666',
-            hasMap: OFFICIAL_MAPS.shareUrl,
-            sameAs: [...OFFICIAL_SAME_AS],
-            address: {
-              '@type': 'PostalAddress',
-              streetAddress: 'Al Karama, Next to Karama Post Office',
-              addressLocality: 'Dubai',
-              addressCountry: 'AE',
-            },
-            geo: {
-              '@type': 'GeoCoordinates',
-              latitude: OFFICIAL_MAPS.coordinates.latitude,
-              longitude: OFFICIAL_MAPS.coordinates.longitude,
-            },
-            url: window.location.origin,
-          },
-          areaServed: {
-            '@type': 'AdministrativeArea',
-            name: 'Dubai, United Arab Emirates',
-          },
-          description: language === 'ar' ? currentDept.descriptionAr : currentDept.descriptionEn,
-        },
-        {
-          '@type': 'BreadcrumbList',
-          itemListElement: [
+    const jsonLdData = isAmer
+      ? {
+          '@context': 'https://schema.org',
+          '@graph': [
             {
-              '@type': 'ListItem',
-              position: 1,
-              name: language === 'ar' ? 'الرئيسية' : 'Home',
-              item: `${CANONICAL_BASE}${language === 'ar' ? '/ar' : ''}/`,
+              '@type': 'BreadcrumbList',
+              '@id': 'https://ess.ae/amer-center-karama/#breadcrumb',
+              itemListElement: [
+                {
+                  '@type': 'ListItem',
+                  position: 1,
+                  name: language === 'ar' ? 'الرئيسية' : 'Home',
+                  item: `${CANONICAL_BASE}${language === 'ar' ? '/ar' : ''}/`,
+                },
+                {
+                  '@type': 'ListItem',
+                  position: 2,
+                  name: language === 'ar' ? 'مركز آمر الكرامة' : 'Amer Center Karama',
+                  item: 'https://ess.ae/amer-center-karama/',
+                },
+              ],
             },
+            AMER_CENTER_ENTITY_SCHEMA,
             {
-              '@type': 'ListItem',
-              position: 2,
-              name: language === 'ar' ? 'الدوائر الحكومية' : 'Departments',
-              item: `${CANONICAL_BASE}${language === 'ar' ? '/ar' : ''}/departments`,
+              '@type': 'GovernmentService',
+              '@id': 'https://ess.ae/amer-center-karama/#service',
+              name: language === 'ar' ? 'خدمات مركز آمر لإنجاز معاملات الإقامة والتأشيرات بالكرامة' : 'Amer Center Immigration & Visa Services Karama',
+              serviceType: 'Immigration & Residency Services',
+              provider: {
+                '@id': 'https://ess.ae/amer-center-karama/#amer-center',
+              },
+              serviceOperator: {
+                '@type': 'GovernmentOrganization',
+                name: 'General Directorate of Residency and Foreigners Affairs (GDRFA)',
+                url: 'https://gdrfad.gov.ae',
+              },
+              areaServed: {
+                '@type': 'AdministrativeArea',
+                name: 'Dubai, United Arab Emirates',
+              },
+              description: language === 'ar' ? currentDept.descriptionAr : currentDept.descriptionEn,
             },
             {
-              '@type': 'ListItem',
-              position: 3,
-              name: language === 'ar' ? currentDept.nameAr : currentDept.nameEn,
-              item: canonicalDepartmentUrl,
+              '@type': 'FAQPage',
+              '@id': 'https://ess.ae/amer-center-karama/#faq',
+              mainEntity: deptDetails.faqs.map((faq) => ({
+                '@type': 'Question',
+                name: language === 'ar' ? faq.questionAr : faq.questionEn,
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: language === 'ar' ? faq.answerAr : faq.answerEn,
+                },
+              })),
             },
           ],
-        },
-        {
-          '@type': 'FAQPage',
-          mainEntity: deptDetails.faqs.map((faq) => ({
-            '@type': 'Question',
-            name: language === 'ar' ? faq.questionAr : faq.questionEn,
-            acceptedAnswer: {
-              '@type': 'Answer',
-              text: language === 'ar' ? faq.answerAr : faq.answerEn,
+        }
+      : {
+          '@context': 'https://schema.org',
+          '@graph': [
+            {
+              '@type': 'GovernmentService',
+              '@id': canonicalDepartmentUrl,
+              name: language === 'ar' ? currentDept.nameAr : currentDept.nameEn,
+              serviceType: 'Public Administration & Businessmen Services',
+              provider: {
+                '@type': 'LocalBusiness',
+                name: 'Emirates Secretarial Services & Karama Business Center',
+                telephone: '+97143426666',
+                hasMap: OFFICIAL_MAPS.shareUrl,
+                sameAs: [...OFFICIAL_SAME_AS],
+                address: {
+                  '@type': 'PostalAddress',
+                  streetAddress: 'Al Karama, Next to Karama Post Office',
+                  addressLocality: 'Dubai',
+                  addressCountry: 'AE',
+                },
+                geo: {
+                  '@type': 'GeoCoordinates',
+                  latitude: OFFICIAL_MAPS.coordinates.latitude,
+                  longitude: OFFICIAL_MAPS.coordinates.longitude,
+                },
+                url: window.location.origin,
+              },
+              areaServed: {
+                '@type': 'AdministrativeArea',
+                name: 'Dubai, United Arab Emirates',
+              },
+              description: language === 'ar' ? currentDept.descriptionAr : currentDept.descriptionEn,
             },
-          })),
-        },
-      ],
-    };
+            {
+              '@type': 'BreadcrumbList',
+              itemListElement: [
+                {
+                  '@type': 'ListItem',
+                  position: 1,
+                  name: language === 'ar' ? 'الرئيسية' : 'Home',
+                  item: `${CANONICAL_BASE}${language === 'ar' ? '/ar' : ''}/`,
+                },
+                {
+                  '@type': 'ListItem',
+                  position: 2,
+                  name: language === 'ar' ? 'الدوائر الحكومية' : 'Departments',
+                  item: `${CANONICAL_BASE}${language === 'ar' ? '/ar' : ''}/departments`,
+                },
+                {
+                  '@type': 'ListItem',
+                  position: 3,
+                  name: language === 'ar' ? currentDept.nameAr : currentDept.nameEn,
+                  item: canonicalDepartmentUrl,
+                },
+              ],
+            },
+            {
+              '@type': 'FAQPage',
+              mainEntity: deptDetails.faqs.map((faq) => ({
+                '@type': 'Question',
+                name: language === 'ar' ? faq.questionAr : faq.questionEn,
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: language === 'ar' ? faq.answerAr : faq.answerEn,
+                },
+              })),
+            },
+          ],
+        };
 
     let scriptTag = document.getElementById('jsonld-department');
     if (!scriptTag) {
@@ -262,11 +342,17 @@ export const DepartmentPage: React.FC<DepartmentPageProps> = ({
 
               {/* Title & Subheadline */}
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight">
-                {language === 'ar' ? currentDept.nameAr : currentDept.nameEn}
+                {isAmer
+                  ? (language === 'ar' ? 'مركز آمر في الكرامة، دبي' : 'Amer Center in Karama, Dubai')
+                  : (language === 'ar' ? currentDept.nameAr : currentDept.nameEn)}
               </h1>
 
               <p className="mt-4 text-base sm:text-lg text-teal-50 leading-relaxed font-normal">
-                {language === 'ar' ? currentDept.descriptionAr : currentDept.descriptionEn}
+                {isAmer
+                  ? (language === 'ar'
+                      ? 'مزود خدمة معتمد لتسهيل المعاملات الحكومية بترخيص مركز آمر رقم 772 من إقامة دبي. في الطابق الأرضي، بناية الفجر، مقابل بريد الكرامة المركزي، الكرامة، دبي. إنجاز فوري لتأشيرات الإقامة، تجديد الإقامة، كفالة الأسرة، أذونات الدخول وتعديل الوضع.'
+                      : 'Authorized private service provider assisting with relevant government transactions under GDRFA Amer Center License #772. Conveniently located on the Ground Floor of Al Fajer Building, opposite Central Karama Post Office, Al Karama, Dubai. Direct assistance for UAE residence visas, renewals, cancellations, family visas, entry permits, and status changes.')
+                  : (language === 'ar' ? currentDept.descriptionAr : currentDept.descriptionEn)}
               </p>
 
               {/* Quick Trust Highlights */}
@@ -307,24 +393,37 @@ export const DepartmentPage: React.FC<DepartmentPageProps> = ({
                   : 'Choose between our flagship center, private VIP Majlis, or luxury mobile van at your doorstep.'}
               </p>
 
-              <div className="space-y-3">
-                <button
-                  onClick={() => onOpenBooking(departmentServices[0])}
-                  className="w-full py-3 px-4 text-xs sm:text-sm font-bold bg-white text-[#01403F] hover:bg-teal-50 rounded-lg transition-all shadow-md flex items-center justify-center gap-2 cursor-pointer active:scale-[0.98]"
-                >
-                  <Calendar className="w-4 h-4 text-[#128B94]" />
-                  <span>{language === 'ar' ? 'حجز موعد / حافلة متنقلة' : 'Book Appointment / Van'}</span>
-                </button>
-
+              <div className="space-y-2.5">
                 <a
-                  href="https://wa.me/97143426666"
+                  href={getWhatsAppUrl(`Hello, I would like to inquire about services under ${language === 'ar' ? currentDept.nameAr : currentDept.nameEn} at Karama Business Center`)}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full py-2.5 px-4 text-xs font-bold bg-[#128B94] hover:bg-[#095E63] text-white rounded-lg transition-colors flex items-center justify-center gap-2 cursor-pointer border border-teal-300/40"
+                  className="w-full py-3 px-4 text-xs sm:text-sm font-bold bg-[#25D366] hover:bg-[#20bd5a] text-white rounded-lg transition-all shadow-md flex items-center justify-center gap-2 cursor-pointer active:scale-[0.98]"
                 >
-                  <PhoneCall className="w-3.5 h-3.5" />
+                  <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4 text-white" aria-hidden="true">
+                    <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.63C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.9C17.18 3.03 14.69 2 12.04 2ZM12.05 20.15C10.57 20.15 9.12 19.76 7.85 19.01L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 14.99 3.81 13.47 3.81 11.91C3.81 7.37 7.5 3.68 12.05 3.68C14.25 3.68 16.31 4.54 17.87 6.1C19.42 7.66 20.28 9.72 20.28 11.92C20.28 16.46 16.59 20.15 12.05 20.15ZM16.57 14.44C16.32 14.31 15.11 13.72 14.88 13.64C14.66 13.55 14.49 13.51 14.33 13.76C14.16 14.01 13.67 14.58 13.52 14.75C13.37 14.92 13.22 14.94 12.97 14.81C12.72 14.69 11.91 14.42 10.95 13.57C10.2 12.9 9.69 12.08 9.54 11.83C9.39 11.58 9.53 11.44 9.65 11.32C9.76 11.21 9.9 11.03 10.02 10.89C10.15 10.74 10.19 10.64 10.27 10.47C10.35 10.3 10.31 10.16 10.25 10.03C10.19 9.91 9.69 8.68 9.48 8.18C9.28 7.69 9.07 7.76 8.92 7.75C8.77 7.74 8.61 7.74 8.44 7.74C8.28 7.74 8.01 7.8 7.78 8.05C7.55 8.3 6.9 8.91 6.9 10.15C6.9 11.39 7.8 12.59 7.93 12.75C8.05 12.92 9.72 15.49 12.28 16.6C12.89 16.86 13.36 17.02 13.73 17.14C14.34 17.33 14.9 17.31 15.34 17.24C15.83 17.17 16.85 16.62 17.06 16.03C17.27 15.44 17.27 14.94 17.21 14.83C17.15 14.72 16.98 14.66 16.57 14.44Z" />
+                  </svg>
                   <span>{language === 'ar' ? 'محادثة فورية مع الضابط المختص' : 'WhatsApp Senior Officer'}</span>
                 </a>
+
+                <div className="grid grid-cols-2 gap-2">
+                  <a
+                    href={OFFICIAL_PHONE_TEL}
+                    className="py-2.5 px-3 text-xs font-bold bg-white/15 hover:bg-white/25 text-white rounded-lg transition-colors flex items-center justify-center gap-1.5 border border-white/20 cursor-pointer"
+                    title={`Call Desk: ${OFFICIAL_PHONE}`}
+                  >
+                    <Phone className="w-3.5 h-3.5 text-teal-200" />
+                    <span>{language === 'ar' ? 'اتصال مباشر' : 'Direct Call'}</span>
+                  </a>
+
+                  <button
+                    onClick={() => onOpenBooking(departmentServices[0])}
+                    className="py-2.5 px-3 text-xs font-bold bg-white text-[#01403F] hover:bg-teal-50 rounded-lg transition-all shadow-xs flex items-center justify-center gap-1.5 cursor-pointer active:scale-[0.98]"
+                  >
+                    <Calendar className="w-3.5 h-3.5 text-[#128B94]" />
+                    <span>{language === 'ar' ? 'حجز موعد' : 'Book'}</span>
+                  </button>
+                </div>
               </div>
             </div>
           </div>
@@ -339,12 +438,18 @@ export const DepartmentPage: React.FC<DepartmentPageProps> = ({
             <div className="lg:col-span-7 space-y-6">
               <div>
                 <div className="text-xs font-bold tracking-wider text-[#128B94] uppercase mb-2">
-                  {language === 'ar' ? 'عن الدائرة واختصاصاتها' : 'Department Profile & Jurisdiction'}
+                  {isAmer
+                    ? (language === 'ar' ? 'مركز آمر المعتمد بالكرامة' : 'Authorized Amer Center Karama')
+                    : (language === 'ar' ? 'عن الدائرة واختصاصاتها' : 'Department Profile & Jurisdiction')}
                 </div>
                 <h2 className="text-2xl sm:text-3xl font-extrabold text-[#1E2528] tracking-tight">
-                  {language === 'ar'
-                    ? `دور ${currentDept.nameAr} في المنظومة الحكومية بدبي`
-                    : `About ${currentDept.nameEn} Operations at ESS`}
+                  {isAmer
+                    ? (language === 'ar'
+                        ? 'مركز آمر المحلي لمعاملات الإقامة والهجرة في دبي'
+                        : 'Your Local Amer Center for Dubai Immigration Services')
+                    : (language === 'ar'
+                        ? `دور ${currentDept.nameAr} في المنظومة الحكومية بدبي`
+                        : `About ${currentDept.nameEn} Operations at ESS`)}
                 </h2>
               </div>
 
@@ -519,18 +624,48 @@ export const DepartmentPage: React.FC<DepartmentPageProps> = ({
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8">
             <div>
               <div className="text-xs font-bold tracking-wider text-[#128B94] uppercase mb-2">
-                {language === 'ar' ? 'الدليل الرسمي للخدمات' : 'Department Services Catalog'}
+                {isAmer
+                  ? (language === 'ar' ? 'دليل خدمات آمر المعتمدة' : 'Official Amer Services Catalog')
+                  : (language === 'ar' ? 'الدليل الرسمي للخدمات' : 'Department Services Catalog')}
               </div>
               <h2 className="text-2xl sm:text-3xl font-extrabold text-[#1E2528] tracking-tight">
-                {language === 'ar'
-                  ? `جميع خدمات ${currentDept.nameAr} (${departmentServices.length})`
-                  : `All Services Under ${currentDept.nameEn} (${departmentServices.length})`}
+                {isAmer
+                  ? (language === 'ar'
+                      ? `خدمات مركز آمر في الكرامة (${departmentServices.length})`
+                      : `Amer Center Services in Karama (${departmentServices.length})`)
+                  : (language === 'ar'
+                      ? `جميع خدمات ${currentDept.nameAr} (${departmentServices.length})`
+                      : `All Services Under ${currentDept.nameEn} (${departmentServices.length})`)}
               </h2>
               <p className="mt-2 text-sm text-slate-600">
-                {language === 'ar'
-                  ? 'انقر على أي خدمة لمعرفة المتطلبات الكاملة، الرسوم الحكومية، والبدء في الإجراءات فوراً.'
-                  : 'Click on any service to view required documents, legal basis, transparent fees, and initiate booking.'}
+                {isAmer
+                  ? (language === 'ar'
+                      ? 'اختر الخدمة للاطلاع على المتطلبات القانونية والمستندات المطلوبة وبدء الإجراءات فوراً دون طوابير انتظار.'
+                      : 'Select any service below to view required documents, legal eligibility, and initiate your application without delays.')
+                  : (language === 'ar'
+                      ? 'انقر على أي خدمة لمعرفة المتطلبات الكاملة، والبدء في الإجراءات فوراً.'
+                      : 'Click on any service to view required documents, legal basis, and initiate booking.')}
               </p>
+
+              {isAmer && (
+                <div className="flex items-center gap-2 mt-4 flex-wrap text-xs">
+                  <span className="font-semibold text-slate-500 mr-1">
+                    {language === 'ar' ? 'الأقسام الرئيسية:' : 'Key Service Categories:'}
+                  </span>
+                  <span className="px-3 py-1 bg-teal-50 text-[#01403F] border border-teal-200/80 rounded-full font-bold">
+                    {language === 'ar' ? 'خدمات تأشيرات الإقامة' : 'UAE Residence Visa Services'}
+                  </span>
+                  <span className="px-3 py-1 bg-teal-50 text-[#01403F] border border-teal-200/80 rounded-full font-bold">
+                    {language === 'ar' ? 'خدمات كفالة الأسرة' : 'Family Visa and Sponsorship Services'}
+                  </span>
+                  <span className="px-3 py-1 bg-teal-50 text-[#01403F] border border-teal-200/80 rounded-full font-bold">
+                    {language === 'ar' ? 'تأشيرات الزيارة وأذونات الدخول' : 'Dubai Visit Visa and Entry Permit Services'}
+                  </span>
+                  <span className="px-3 py-1 bg-teal-50 text-[#01403F] border border-teal-200/80 rounded-full font-bold">
+                    {language === 'ar' ? 'خدمات تجديد وإلغاء الإقامة' : 'Visa Renewal and Cancellation Services'}
+                  </span>
+                </div>
+              )}
             </div>
 
             {/* Quick Search inside Department Services */}
@@ -597,45 +732,64 @@ export const DepartmentPage: React.FC<DepartmentPageProps> = ({
                   </div>
 
                     {/* Action Buttons */}
-                    <div className="pt-4 border-t border-slate-100">
-                    <div className="grid grid-cols-2 gap-2">
-                      {/* Direct Link to Single Service Page */}
-                      <button
-                        onClick={() => onNavigateToService(service.id)}
-                        className="w-full py-2 px-3 text-xs font-bold text-[#128B94] bg-teal-50 hover:bg-teal-100 rounded-lg transition-colors flex items-center justify-center gap-1 cursor-pointer"
-                        title="View Full Documentation & Legal Details"
-                      >
-                        <span>{language === 'ar' ? 'صفحة الخدمة' : 'View Page'}</span>
-                        <ChevronRight className="w-3.5 h-3.5" />
-                      </button>
+                    <div className="pt-4 border-t border-slate-100 space-y-2">
+                      <div className="grid grid-cols-2 gap-2">
+                        {/* Direct Link to Single Service Page */}
+                        <button
+                          onClick={() => onNavigateToService(service.id)}
+                          className="w-full py-2 px-2.5 text-xs font-bold text-[#128B94] bg-teal-50 hover:bg-teal-100 rounded-lg transition-colors flex items-center justify-center gap-1 cursor-pointer"
+                          title="View Full Documentation & Legal Details"
+                        >
+                          <span>{language === 'ar' ? 'صفحة الخدمة' : 'View Page'}</span>
+                          <ChevronRight className="w-3.5 h-3.5 rtl:rotate-180" />
+                        </button>
 
-                      {/* Direct Book Button */}
-                      <button
-                        onClick={() => onOpenBooking(service)}
-                        className="w-full py-2 px-3 text-xs font-bold text-white bg-[#128B94] hover:bg-[#01403F] rounded-lg transition-colors flex items-center justify-center gap-1 cursor-pointer active:scale-[0.98]"
+                        {/* Direct Book Button */}
+                        <button
+                          onClick={() => onOpenBooking(service)}
+                          className="w-full py-2 px-2.5 text-xs font-bold text-white bg-[#128B94] hover:bg-[#01403F] rounded-lg transition-colors flex items-center justify-center gap-1 cursor-pointer active:scale-[0.98]"
+                        >
+                          <Calendar className="w-3 h-3" />
+                          <span>{language === 'ar' ? 'حجز فوري' : 'Book Now'}</span>
+                        </button>
+                      </div>
+
+                      {/* Direct WhatsApp CTA */}
+                      <a
+                        href={getWhatsAppUrl(`Hello, I would like to inquire about ${service.titleEn} at Karama Business Center`)}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-full py-1.5 px-3 text-[11px] font-bold text-emerald-800 bg-emerald-50 hover:bg-emerald-100 border border-emerald-200 rounded-lg transition-colors flex items-center justify-center gap-1.5 cursor-pointer"
                       >
-                        <Calendar className="w-3 h-3" />
-                        <span>{language === 'ar' ? 'حجز فوري' : 'Book Now'}</span>
-                      </button>
+                        <svg viewBox="0 0 24 24" fill="currentColor" className="w-3 h-3 text-[#25D366]" aria-hidden="true">
+                          <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.63C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.9C17.18 3.03 14.69 2 12.04 2ZM12.05 20.15C10.57 20.15 9.12 19.76 7.85 19.01L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 14.99 3.81 13.47 3.81 11.91C3.81 7.37 7.5 3.68 12.05 3.68C14.25 3.68 16.31 4.54 17.87 6.1C19.42 7.66 20.28 9.72 20.28 11.92C20.28 16.46 16.59 20.15 12.05 20.15ZM16.57 14.44C16.32 14.31 15.11 13.72 14.88 13.64C14.66 13.55 14.49 13.51 14.33 13.76C14.16 14.01 13.67 14.58 13.52 14.75C13.37 14.92 13.22 14.94 12.97 14.81C12.72 14.69 11.91 14.42 10.95 13.57C10.2 12.9 9.69 12.08 9.54 11.83C9.39 11.58 9.53 11.44 9.65 11.32C9.76 11.21 9.9 11.03 10.02 10.89C10.15 10.74 10.19 10.64 10.27 10.47C10.35 10.3 10.31 10.16 10.25 10.03C10.19 9.91 9.69 8.68 9.48 8.18C9.28 7.69 9.07 7.76 8.92 7.75C8.77 7.74 8.61 7.74 8.44 7.74C8.28 7.74 8.01 7.8 7.78 8.05C7.55 8.3 6.9 8.91 6.9 10.15C6.9 11.39 7.8 12.59 7.93 12.75C8.05 12.92 9.72 15.49 12.28 16.6C12.89 16.86 13.36 17.02 13.73 17.14C14.34 17.33 14.9 17.31 15.34 17.24C15.83 17.17 16.85 16.62 17.06 16.03C17.27 15.44 17.27 14.94 17.21 14.83C17.15 14.72 16.98 14.66 16.57 14.44Z" />
+                        </svg>
+                        <span>{language === 'ar' ? 'استفسار عبر واتساب' : 'WhatsApp Inquiry'}</span>
+                      </a>
                     </div>
-                  </div>
                 </div>
               ))}
           </div>
         </div>
       </section>
 
-      {/* 6. Why Choose ESS for this Department (Bullet Points & Service Standards) */}
+      {/* 6. Why Choose Section */}
       <section className="py-16 sm:py-20 bg-white border-b border-slate-200/80">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mb-12">
             <div className="text-xs font-bold tracking-wider text-[#128B94] uppercase mb-2">
-              {language === 'ar' ? 'معايير الجودة والالتزام' : 'Our Commitment & Service Standards'}
+              {isAmer
+                ? (language === 'ar' ? 'لماذا تختار مركز آمر الكرامة؟' : 'Why Visit Amer Center Karama?')
+                : (language === 'ar' ? 'معايير الجودة والالتزام' : 'Our Commitment & Service Standards')}
             </div>
             <h2 className="text-2xl sm:text-3xl font-extrabold text-[#1E2528] tracking-tight">
-              {language === 'ar'
-                ? `لماذا تختار الإمارات لخدمات رجال الأعمال لمعاملات ${currentDept.nameAr}؟`
-                : `Why Choose Emirates Secretariat Services for ${currentDept.nameEn}?`}
+              {isAmer
+                ? (language === 'ar'
+                    ? 'لماذا تختار مركز آمر الكرامة لمعاملاتك؟'
+                    : 'Why Visit Our Amer Center in Karama?')
+                : (language === 'ar'
+                    ? `لماذا تختار الإمارات لخدمات رجال الأعمال لمعاملات ${currentDept.nameAr}؟`
+                    : `Why Choose Emirates Secretariat Services for ${currentDept.nameEn}?`)}
             </h2>
           </div>
 
@@ -667,12 +821,18 @@ export const DepartmentPage: React.FC<DepartmentPageProps> = ({
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <div className="text-xs font-bold tracking-wider text-[#128B94] uppercase mb-2">
-              {language === 'ar' ? 'الأسئلة الشائعة والمعلومات' : 'Frequently Asked Questions'}
+              {isAmer
+                ? (language === 'ar' ? 'الأسئلة الشائعة حول مركز آمر' : 'Amer Center FAQ')
+                : (language === 'ar' ? 'الأسئلة الشائعة والمعلومات' : 'Frequently Asked Questions')}
             </div>
             <h2 className="text-2xl sm:text-3xl font-extrabold text-[#1E2528] tracking-tight">
-              {language === 'ar'
-                ? `أهم الأسئلة الشائعة حول ${currentDept.nameAr}`
-                : `Frequently Asked Questions About ${currentDept.nameEn}`}
+              {isAmer
+                ? (language === 'ar'
+                    ? 'الأسئلة الشائعة حول مركز آمر'
+                    : 'Frequently Asked Questions About Amer Center')
+                : (language === 'ar'
+                    ? `أهم الأسئلة الشائعة حول ${currentDept.nameAr}`
+                    : `Frequently Asked Questions About ${currentDept.nameEn}`)}
             </h2>
           </div>
 
@@ -713,15 +873,22 @@ export const DepartmentPage: React.FC<DepartmentPageProps> = ({
       <GoogleReviewsSection
         language={language}
         departmentId={deptId}
+        mapsUrl={isAmer ? AMER_OFFICIAL_GBP.shareUrl : undefined}
         title={
-          language === 'ar'
-            ? `تقييمات Google الموثقة لـ ${currentDept.nameAr}`
-            : `Verified Google Reviews for ${currentDept.nameEn}`
+          isAmer
+            ? (language === 'ar' ? 'تقييمات Google الموثقة لمركز آمر الكرامة' : 'Verified Google Reviews for Amer Center Karama')
+            : (language === 'ar'
+                ? `تقييمات Google الموثقة لـ ${currentDept.nameAr}`
+                : `Verified Google Reviews for ${currentDept.nameEn}`)
         }
         subtitle={
-          language === 'ar'
-            ? `تجارب حقيقية موثقة من مراجعي قسم ${currentDept.nameAr} على خرائط Google`
-            : `Real verified client experiences for ${currentDept.nameEn} on Google Maps`
+          isAmer
+            ? (language === 'ar'
+                ? 'تجارب حقيقية موثقة لمتعاملي مركز آمر الكرامة على خرائط Google'
+                : 'Real verified client experiences for Amer Center Karama on Google Maps')
+            : (language === 'ar'
+                ? `تجارب حقيقية موثقة من مراجعي قسم ${currentDept.nameAr} على خرائط Google`
+                : `Real verified client experiences for ${currentDept.nameEn} on Google Maps`)
         }
       />
 
@@ -732,37 +899,105 @@ export const DepartmentPage: React.FC<DepartmentPageProps> = ({
             <div className="flex items-start gap-3">
               <MapPin className="w-5 h-5 text-[#128B94] shrink-0 mt-1" />
               <div>
-                <h4 className="text-sm font-bold text-white">
-                  {language === 'ar' ? 'مقر المركز وساعات العمل الرسمية' : 'Official Processing Center Location'}
-                </h4>
+                <h2 className="text-base sm:text-lg font-bold text-white">
+                  {isAmer
+                    ? (language === 'ar' ? 'الموقع وساعات العمل والتواصل' : 'Location, Contact and Working Hours')
+                    : (language === 'ar' ? 'مقر المركز وساعات العمل الرسمية' : 'Official Processing Center Location')}
+                </h2>
                 <p className="text-xs text-slate-300 mt-0.5">
-                  {language === 'ar'
-                    ? 'مركز الكرامة للأعمال، الكرامة، بجوار بريد الكرامة، دبي · مواقف متاحة لمتعاملي المركز'
-                    : 'Karama Business Center, Al Karama, Next to Karama Post Office, Dubai · Easy Visitor Parking'}
+                  {isAmer
+                    ? (language === 'ar'
+                        ? 'الطابق الأرضي، بناية الفجر، مقابل بريد الكرامة المركزي، الكرامة، دبي · الإثنين - الجمعة: 8:00 ص - 8:00 م | السبت: 8:00 ص - 5:00 م'
+                        : 'Ground Floor, Al Fajer Building, Opposite Central Karama Post Office, Al Karama, Dubai · Mon-Fri: 8:00 AM - 8:00 PM | Sat: 8:00 AM - 5:00 PM')
+                    : (language === 'ar'
+                        ? 'مركز الكرامة للأعمال، الكرامة، بجوار بريد الكرامة، دبي · مواقف متاحة لمتعاملي المركز'
+                        : 'Karama Business Center, Al Karama, Next to Karama Post Office, Dubai · Easy Visitor Parking')}
                 </p>
                 <p className="text-[11px] text-teal-300 mt-1">
                   {language === 'ar' ? deptDetails.contactDeskAr : deptDetails.contactDeskEn}
                 </p>
+
+                {/* Amer Dedicated Verified Social Channels */}
+                {isAmer && (
+                  <div className="flex items-center gap-2 mt-3 flex-wrap">
+                    <span className="text-[11px] text-slate-400 font-semibold mr-1">
+                      {language === 'ar' ? 'قنوات آمر الرسمية:' : 'Official Amer Channels:'}
+                    </span>
+                    <a
+                      href={AMER_OFFICIAL_SOCIAL_LINKS.youtube}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="p-1.5 rounded-lg bg-white/10 hover:bg-red-600/80 text-white transition-colors"
+                      title="Amer Center Karama on YouTube"
+                    >
+                      <Youtube className="w-3.5 h-3.5" />
+                    </a>
+                    <a
+                      href={AMER_OFFICIAL_SOCIAL_LINKS.facebook}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="p-1.5 rounded-lg bg-white/10 hover:bg-blue-600/80 text-white transition-colors"
+                      title="Amer Center Karama on Facebook"
+                    >
+                      <Facebook className="w-3.5 h-3.5" />
+                    </a>
+                    <a
+                      href={AMER_OFFICIAL_SOCIAL_LINKS.instagram}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="p-1.5 rounded-lg bg-white/10 hover:bg-pink-600/80 text-white transition-colors"
+                      title="Amer Center Karama on Instagram"
+                    >
+                      <Instagram className="w-3.5 h-3.5" />
+                    </a>
+                    <a
+                      href={AMER_OFFICIAL_SOCIAL_LINKS.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="p-1.5 rounded-lg bg-white/10 hover:bg-sky-600/80 text-white transition-colors"
+                      title="Amer Center Karama on LinkedIn"
+                    >
+                      <Linkedin className="w-3.5 h-3.5" />
+                    </a>
+                  </div>
+                )}
               </div>
             </div>
 
             <div className="flex items-center gap-3 flex-wrap">
               <a
-                href={OFFICIAL_MAPS.shareUrl}
+                href={isAmer ? AMER_OFFICIAL_GBP.shareUrl : OFFICIAL_MAPS.shareUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-4 py-2.5 rounded-lg bg-white/10 hover:bg-white/20 text-teal-200 text-xs font-bold transition-colors flex items-center gap-2 border border-teal-400/30"
               >
                 <MapPin className="w-3.5 h-3.5 text-teal-300" />
-                <span>{language === 'ar' ? 'ملف جوجل الرسمي والخريطة' : 'Official Google Profile & Map'}</span>
+                <span>
+                  {isAmer
+                    ? (language === 'ar' ? 'خرائط Google - مركز آمر الكرامة' : 'Google Maps: Amer Center Karama')
+                    : (language === 'ar' ? 'ملف جوجل الرسمي والخريطة' : 'Official Google Profile & Map')}
+                </span>
               </a>
 
               <a
-                href="tel:043426666"
+                href={getWhatsAppUrl(`Hello, I would like to inquire about ${isAmer ? 'Amer Center Karama' : currentDept.nameEn} services`)}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-4 py-2.5 rounded-lg bg-[#25D366] hover:bg-[#20bd5a] text-white text-xs font-bold transition-all shadow-md flex items-center gap-1.5 cursor-pointer active:scale-[0.98]"
+              >
+                <svg viewBox="0 0 24 24" fill="currentColor" className="w-3.5 h-3.5 text-white" aria-hidden="true">
+                  <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.63C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.9C17.18 3.03 14.69 2 12.04 2ZM12.05 20.15C10.57 20.15 9.12 19.76 7.85 19.01L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 14.99 3.81 13.47 3.81 11.91C3.81 7.37 7.5 3.68 12.05 3.68C14.25 3.68 16.31 4.54 17.87 6.1C19.42 7.66 20.28 9.72 20.28 11.92C20.28 16.46 16.59 20.15 12.05 20.15ZM16.57 14.44C16.32 14.31 15.11 13.72 14.88 13.64C14.66 13.55 14.49 13.51 14.33 13.76C14.16 14.01 13.67 14.58 13.52 14.75C13.37 14.92 13.22 14.94 12.97 14.81C12.72 14.69 11.91 14.42 10.95 13.57C10.2 12.9 9.69 12.08 9.54 11.83C9.39 11.58 9.53 11.44 9.65 11.32C9.76 11.21 9.9 11.03 10.02 10.89C10.15 10.74 10.19 10.64 10.27 10.47C10.35 10.3 10.31 10.16 10.25 10.03C10.19 9.91 9.69 8.68 9.48 8.18C9.28 7.69 9.07 7.76 8.92 7.75C8.77 7.74 8.61 7.74 8.44 7.74C8.28 7.74 8.01 7.8 7.78 8.05C7.55 8.3 6.9 8.91 6.9 10.15C6.9 11.39 7.8 12.59 7.93 12.75C8.05 12.92 9.72 15.49 12.28 16.6C12.89 16.86 13.36 17.02 13.73 17.14C14.34 17.33 14.9 17.31 15.34 17.24C15.83 17.17 16.85 16.62 17.06 16.03C17.27 15.44 17.27 14.94 17.21 14.83C17.15 14.72 16.98 14.66 16.57 14.44Z" />
+                </svg>
+                <span>{language === 'ar' ? 'واتساب' : 'WhatsApp'}</span>
+              </a>
+
+              <a
+                href={OFFICIAL_PHONE_TEL}
                 className="px-4 py-2.5 rounded-lg bg-white/10 hover:bg-white/20 text-white text-xs font-bold transition-colors flex items-center gap-2 border border-white/20"
+                title={`Call Us: ${OFFICIAL_PHONE}`}
               >
                 <PhoneCall className="w-3.5 h-3.5 text-teal-300" />
-                <span dir="ltr">04-342-6666</span>
+                <span dir="ltr">{OFFICIAL_PHONE}</span>
               </a>
 
               <button
@@ -778,23 +1013,33 @@ export const DepartmentPage: React.FC<DepartmentPageProps> = ({
       </section>
 
       {/* 10. Sticky Mobile / Bottom Conversion Bar for Google Ads */}
-      <div className="fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-md border-t border-slate-200/90 py-3 px-4 shadow-xl sm:hidden flex items-center justify-between gap-3">
+      <div className="fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-md border-t border-slate-200/90 py-2.5 px-3 shadow-xl sm:hidden flex items-center justify-between gap-2">
         <a
-          href="https://wa.me/97143426666"
+          href={getWhatsAppUrl(`Hello, I would like to inquire about ${isAmer ? 'Amer Center Karama' : currentDept.nameEn} services`)}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex-1 py-2 px-3 bg-emerald-600 text-white rounded-lg text-xs font-bold text-center flex items-center justify-center gap-1.5"
+          className="flex-1 py-2 px-2 bg-[#25D366] hover:bg-[#20bd5a] text-white rounded-lg text-xs font-bold text-center flex items-center justify-center gap-1.5 shadow-xs"
         >
-          <PhoneCall className="w-3.5 h-3.5" />
+          <svg viewBox="0 0 24 24" fill="currentColor" className="w-3.5 h-3.5 text-white" aria-hidden="true">
+            <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.63C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.9C17.18 3.03 14.69 2 12.04 2ZM12.05 20.15C10.57 20.15 9.12 19.76 7.85 19.01L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 14.99 3.81 13.47 3.81 11.91C3.81 7.37 7.5 3.68 12.05 3.68C14.25 3.68 16.31 4.54 17.87 6.1C19.42 7.66 20.28 9.72 20.28 11.92C20.28 16.46 16.59 20.15 12.05 20.15ZM16.57 14.44C16.32 14.31 15.11 13.72 14.88 13.64C14.66 13.55 14.49 13.51 14.33 13.76C14.16 14.01 13.67 14.58 13.52 14.75C13.37 14.92 13.22 14.94 12.97 14.81C12.72 14.69 11.91 14.42 10.95 13.57C10.2 12.9 9.69 12.08 9.54 11.83C9.39 11.58 9.53 11.44 9.65 11.32C9.76 11.21 9.9 11.03 10.02 10.89C10.15 10.74 10.19 10.64 10.27 10.47C10.35 10.3 10.31 10.16 10.25 10.03C10.19 9.91 9.69 8.68 9.48 8.18C9.28 7.69 9.07 7.76 8.92 7.75C8.77 7.74 8.61 7.74 8.44 7.74C8.28 7.74 8.01 7.8 7.78 8.05C7.55 8.3 6.9 8.91 6.9 10.15C6.9 11.39 7.8 12.59 7.93 12.75C8.05 12.92 9.72 15.49 12.28 16.6C12.89 16.86 13.36 17.02 13.73 17.14C14.34 17.33 14.9 17.31 15.34 17.24C15.83 17.17 16.85 16.62 17.06 16.03C17.27 15.44 17.27 14.94 17.21 14.83C17.15 14.72 16.98 14.66 16.57 14.44Z" />
+          </svg>
           <span>{language === 'ar' ? 'واتساب' : 'WhatsApp'}</span>
+        </a>
+
+        <a
+          href={OFFICIAL_PHONE_TEL}
+          className="py-2 px-2.5 bg-slate-100 hover:bg-slate-200 text-slate-800 rounded-lg text-xs font-bold text-center flex items-center justify-center gap-1 border border-slate-200 shrink-0"
+        >
+          <Phone className="w-3.5 h-3.5 text-[#128B94]" />
+          <span>{language === 'ar' ? 'اتصال' : 'Call'}</span>
         </a>
 
         <button
           onClick={() => onOpenBooking(departmentServices[0])}
-          className="flex-1 py-2 px-3 bg-[#128B94] text-white rounded-lg text-xs font-bold text-center flex items-center justify-center gap-1.5"
+          className="flex-1 py-2 px-2 bg-[#128B94] text-white rounded-lg text-xs font-bold text-center flex items-center justify-center gap-1 shadow-xs"
         >
           <Calendar className="w-3.5 h-3.5" />
-          <span>{language === 'ar' ? 'حجز موعد' : 'Book Now'}</span>
+          <span>{language === 'ar' ? 'حجز' : 'Book'}</span>
         </button>
       </div>
     </div>

@@ -4,6 +4,7 @@ import { ServiceItem, Language } from '../types';
 import { SERVICES, DEPARTMENTS } from '../data/departmentsData';
 import { TRANSLATIONS } from '../data/translations';
 import { DepartmentLogo } from './DepartmentLogo';
+import { getWhatsAppUrl } from '../utils/whatsapp';
 
 interface ServiceFinderProps {
   language: Language;
@@ -262,17 +263,34 @@ export const ServiceFinder: React.FC<ServiceFinderProps> = ({
                         </button>
                       </div>
 
-                      <div className="grid grid-cols-2 gap-2">
+                      <div className="grid grid-cols-3 gap-1.5">
                         <button
                           onClick={() => onOpenDetails(service)}
-                          className="w-full px-2 py-1.5 text-[11px] font-semibold text-slate-700 bg-slate-100 hover:bg-slate-200 rounded-md transition-colors text-center cursor-pointer"
+                          className="w-full px-1 py-1.5 text-[11px] font-semibold text-slate-700 bg-slate-100 hover:bg-slate-200 rounded-md transition-colors text-center cursor-pointer truncate"
                         >
-                          {language === 'ar' ? 'الشروط' : 'Requirements'}
+                          {language === 'ar' ? 'الشروط' : 'Details'}
                         </button>
+
+                        <a
+                          href={getWhatsAppUrl(
+                            language === 'ar'
+                              ? `مرحباً، أود الاستفسار عن خدمة: ${service.titleAr} في مركز كرامة للأعمال.`
+                              : `Hello, I would like to inquire about ${service.titleEn} at Karama Business Center.`
+                          )}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="w-full px-1 py-1.5 text-[11px] font-bold text-white bg-[#25D366] hover:bg-[#20bd5a] rounded-md transition-colors text-center cursor-pointer flex items-center justify-center gap-1"
+                          title={language === 'ar' ? 'استفسار فوري عبر واتساب' : 'WhatsApp Inquiry'}
+                        >
+                          <svg className="w-3 h-3 fill-current shrink-0" viewBox="0 0 24 24">
+                            <path d="M17.472 14.382c-.301-.15-1.782-.879-2.057-.98-.276-.1-.476-.15-.676.15-.2.301-.776.98-.952 1.18-.175.2-.351.226-.652.075-1.928-.965-3.197-1.724-4.471-3.914-.337-.58-.034-.894.116-1.044.136-.135.301-.351.452-.527.15-.175.2-.301.3-.501.1-.2.05-.376-.025-.526-.075-.15-.676-1.63-.927-2.232-.244-.587-.492-.507-.676-.516-.175-.008-.376-.01-.577-.01-.2 0-.526.075-.802.376-.276.301-1.053 1.028-1.053 2.507 0 1.479 1.078 2.908 1.228 3.109.15.2 2.122 3.24 5.141 4.544 2.155.93 2.998.988 4.07.828.653-.098 1.782-.728 2.033-1.431.251-.703.251-1.305.176-1.431-.076-.126-.276-.201-.577-.352z" />
+                          </svg>
+                          <span>{language === 'ar' ? 'واتساب' : 'Chat'}</span>
+                        </a>
 
                         <button
                           onClick={() => onBookService(service)}
-                          className="w-full px-2 py-1.5 text-[11px] font-bold text-white bg-[#128B94] hover:bg-[#01403F] rounded-md transition-colors text-center cursor-pointer flex items-center justify-center gap-1 active:scale-[0.98]"
+                          className="w-full px-1 py-1.5 text-[11px] font-bold text-white bg-[#128B94] hover:bg-[#01403F] rounded-md transition-colors text-center cursor-pointer flex items-center justify-center gap-1 active:scale-[0.98]"
                         >
                           <span>{language === 'ar' ? 'حجز' : 'Book'}</span>
                           <ArrowRight className="w-2.5 h-2.5 rtl:rotate-180" />

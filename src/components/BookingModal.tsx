@@ -1,9 +1,16 @@
 import React, { useState, useEffect } from 'react';
-import { X, Calendar, Clock, MapPin, CheckCircle2, User, Phone, Mail, Building, ArrowRight, ShieldCheck, Truck, Crown, Search, Layers, ChevronDown } from 'lucide-react';
+import { X, Calendar, Clock, MapPin, CheckCircle2, User, Phone, Mail, Building, ArrowRight, ShieldCheck, Truck, Crown, Search, Layers, ChevronDown, PhoneCall, MessageSquare } from 'lucide-react';
 import { ServiceItem, Language, BookingSubmission } from '../types';
 import { SERVICES, DEPARTMENTS } from '../data/departmentsData';
 import { TRANSLATIONS } from '../data/translations';
 import { DepartmentLogo } from './DepartmentLogo';
+import {
+  formatBookingWhatsAppMessage,
+  getWhatsAppUrl,
+  openWhatsApp,
+  OFFICIAL_PHONE,
+  OFFICIAL_PHONE_TEL,
+} from '../utils/whatsapp';
 
 interface BookingModalProps {
   isOpen: boolean;
@@ -48,6 +55,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
 
   // Confirmed State
   const [confirmedBooking, setConfirmedBooking] = useState<BookingSubmission | null>(null);
+  const [waBookingText, setWaBookingText] = useState<string>('');
 
   useEffect(() => {
     if (preselectedService) {
@@ -60,6 +68,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
     if (isOpen) {
       setStep(1);
       setConfirmedBooking(null);
+      setWaBookingText('');
       setFormErrors({});
       if (preselectedService) {
         setSelectedDepartmentId(preselectedService.departmentId);
@@ -137,11 +146,38 @@ export const BookingModal: React.FC<BookingModalProps> = ({
           referenceNumber: randRef,
         };
         setConfirmedBooking(booking);
+
+        // Format all filled details and dispatch to WhatsApp
+        const waMsg = formatBookingWhatsAppMessage({
+          referenceNumber: randRef,
+          departmentName: isAr ? activeDepartment?.nameAr : activeDepartment?.nameEn,
+          serviceTitle: isAr ? activeService.titleAr : activeService.titleEn,
+          serviceId: activeService.id,
+          channel: selectedChannel,
+          date: selectedDate,
+          timeSlot: selectedTimeSlot,
+          fullName,
+          phone,
+          email,
+          companyName,
+          address,
+          notes,
+        });
+
+        setWaBookingText(waMsg);
+        openWhatsApp(waMsg);
         setStep(4);
       }
     } else {
       setStep((prev) => prev + 1);
     }
+  };
+
+  const handleDirectWhatsAppQuick = () => {
+    const quickMsg = `Hello Karama Business Center & ESS, I would like to quickly book an appointment for: ${
+      isAr ? activeService.titleAr : activeService.titleEn
+    } (${activeService.id}). Please assist me directly on WhatsApp.`;
+    openWhatsApp(quickMsg);
   };
 
   const handleResetAndClose = () => {
@@ -479,24 +515,30 @@ export const BookingModal: React.FC<BookingModalProps> = ({
             </div>
           )}
 
-          {/* STEP 4: Instant Confirmation */}
+          {/* STEP 4: Instant Confirmation & WhatsApp Submission */}
           {step === 4 && confirmedBooking && (
-            <div className="text-center py-6">
-              <div className="w-14 h-14 rounded-full bg-teal-100 text-[#128B94] flex items-center justify-center mx-auto mb-4">
-                <CheckCircle2 className="w-8 h-8" />
+            <div className="text-center py-4 sm:py-6">
+              <div className="w-16 h-16 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto mb-3 shadow-inner">
+                <CheckCircle2 className="w-9 h-9" />
               </div>
 
-              <span className="text-xs font-bold text-[#128B94] uppercase tracking-wider">
-                {t.bookingConfirmation}
+              <span className="text-xs font-bold text-emerald-700 bg-emerald-50 px-3 py-1 rounded-full uppercase tracking-wider inline-block">
+                {isAr ? 'تم تجهيز وإرسال تفاصيل الموعد عبر واتساب' : 'Appointment Details Prepared for WhatsApp'}
               </span>
 
-              <h3 className="text-xl font-bold text-slate-900 mt-1">
-                {language === 'ar' ? 'تم تسجيل وتأكيد موعدكم بنجاح' : 'Your Official Appointment is Confirmed'}
+              <h3 className="text-lg sm:text-xl font-extrabold text-slate-900 mt-2">
+                {language === 'ar' ? 'تم تجهيز ملف المعاملة وفتح محادثة واتساب الرسمية' : 'Your File is Ready & Dispatched to Official WhatsApp'}
               </h3>
 
-              <div className="mt-6 p-5 bg-slate-50 rounded-xl border border-slate-200 text-left rtl:text-right space-y-3">
-                <div className="flex items-center justify-between border-b border-slate-200 pb-3">
-                  <span className="text-xs text-slate-500">{t.appointmentReference}</span>
+              <p className="text-xs text-slate-600 mt-1 max-w-md mx-auto">
+                {isAr
+                  ? 'تم تجهيز كافة بياناتك وتوليد نص الاستفسار الرسمي. إذا لم تفتح نافذة واتساب تلقائياً، يرجى الضغط على الزر الأخضر أدناه لإرسالها فوراً.'
+                  : 'Your booking has been compiled into an official request. If WhatsApp did not open automatically, tap the button below to send your details.'}
+              </p>
+
+              <div className="mt-5 p-4 sm:p-5 bg-slate-50 rounded-xl border border-slate-200 text-left rtl:text-right space-y-3">
+                <div className="flex items-center justify-between border-b border-slate-200 pb-2.5">
+                  <span className="text-xs text-slate-500 font-semibold">{t.appointmentReference}</span>
                   <span className="text-sm font-bold font-mono text-[#128B94]">
                     {confirmedBooking.referenceNumber}
                   </span>
@@ -519,18 +561,44 @@ export const BookingModal: React.FC<BookingModalProps> = ({
                     <strong>{language === 'ar' ? 'المتقدم:' : 'Applicant:'}</strong>{' '}
                     {confirmedBooking.fullName} ({confirmedBooking.phone})
                   </p>
+                  {confirmedBooking.notes && (
+                    <p>
+                      <strong>{language === 'ar' ? 'ملاحظات:' : 'Notes:'}</strong>{' '}
+                      {confirmedBooking.notes}
+                    </p>
+                  )}
                 </div>
               </div>
 
-              <p className="mt-5 text-xs text-slate-500 leading-relaxed max-w-md mx-auto">
-                {t.smsNotice}
-              </p>
+              {/* Action Buttons for Step 4 */}
+              <div className="mt-5 space-y-2.5">
+                <a
+                  href={getWhatsAppUrl(waBookingText)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full py-3.5 px-4 bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold text-xs sm:text-sm rounded-xl flex items-center justify-center gap-2 shadow-md transition-all active:scale-[0.98] cursor-pointer"
+                >
+                  <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5 text-white" aria-hidden="true">
+                    <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.63C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.9C17.18 3.03 14.69 2 12.04 2ZM12.05 20.15C10.57 20.15 9.12 19.76 7.85 19.01L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 14.99 3.81 13.47 3.81 11.91C3.81 7.37 7.5 3.68 12.05 3.68C14.25 3.68 16.31 4.54 17.87 6.1C19.42 7.66 20.28 9.72 20.28 11.92C20.28 16.46 16.59 20.15 12.05 20.15ZM16.57 14.44C16.32 14.31 15.11 13.72 14.88 13.64C14.66 13.55 14.49 13.51 14.33 13.76C14.16 14.01 13.67 14.58 13.52 14.75C13.37 14.92 13.22 14.94 12.97 14.81C12.72 14.69 11.91 14.42 10.95 13.57C10.2 12.9 9.69 12.08 9.54 11.83C9.39 11.58 9.53 11.44 9.65 11.32C9.76 11.21 9.9 11.03 10.02 10.89C10.15 10.74 10.19 10.64 10.27 10.47C10.35 10.3 10.31 10.16 10.25 10.03C10.19 9.91 9.69 8.68 9.48 8.18C9.28 7.69 9.07 7.76 8.92 7.75C8.77 7.74 8.61 7.74 8.44 7.74C8.28 7.74 8.01 7.8 7.78 8.05C7.55 8.3 6.9 8.91 6.9 10.15C6.9 11.39 7.8 12.59 7.93 12.75C8.05 12.92 9.72 15.49 12.28 16.6C12.89 16.86 13.36 17.02 13.73 17.14C14.34 17.33 14.9 17.31 15.34 17.24C15.83 17.17 16.85 16.62 17.06 16.03C17.27 15.44 17.27 14.94 17.21 14.83C17.15 14.72 16.98 14.66 16.57 14.44Z" />
+                  </svg>
+                  <span>{isAr ? 'فتح وإرسال التفاصيل في واتساب' : 'Open WhatsApp with Booking Details'}</span>
+                </a>
+
+                {/* Keep Call CTA */}
+                <a
+                  href={OFFICIAL_PHONE_TEL}
+                  className="w-full py-2.5 px-4 bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold text-xs rounded-xl flex items-center justify-center gap-2 transition-colors cursor-pointer"
+                >
+                  <PhoneCall className="w-3.5 h-3.5 text-[#128B94]" />
+                  <span>{isAr ? `أو اتصل بنا مباشرة: ${OFFICIAL_PHONE}` : `Or Call Desk Directly: ${OFFICIAL_PHONE}`}</span>
+                </a>
+              </div>
             </div>
           )}
         </div>
 
         {/* Modal Footer Controls */}
-        <div className="p-5 bg-slate-50 border-t border-slate-200 flex items-center justify-between">
+        <div className="p-4 sm:p-5 bg-slate-50 border-t border-slate-200 flex flex-wrap items-center justify-between gap-3">
           {step > 1 && step < 4 ? (
             <button
               onClick={() => setStep((p) => p - 1)}
@@ -539,16 +607,43 @@ export const BookingModal: React.FC<BookingModalProps> = ({
               {t.prevStepBtn}
             </button>
           ) : (
-            <div />
+            <div className="flex items-center gap-2">
+              {step < 4 && (
+                <button
+                  type="button"
+                  onClick={handleDirectWhatsAppQuick}
+                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-bold text-[#25D366] hover:bg-emerald-50 transition-colors cursor-pointer border border-emerald-200"
+                  title="Direct WhatsApp booking without filling fields"
+                >
+                  <svg viewBox="0 0 24 24" fill="currentColor" className="w-3.5 h-3.5" aria-hidden="true">
+                    <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.63C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.9C17.18 3.03 14.69 2 12.04 2ZM12.05 20.15C10.57 20.15 9.12 19.76 7.85 19.01L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 14.99 3.81 13.47 3.81 11.91C3.81 7.37 7.5 3.68 12.05 3.68C14.25 3.68 16.31 4.54 17.87 6.1C19.42 7.66 20.28 9.72 20.28 11.92C20.28 16.46 16.59 20.15 12.05 20.15ZM16.57 14.44C16.32 14.31 15.11 13.72 14.88 13.64C14.66 13.55 14.49 13.51 14.33 13.76C14.16 14.01 13.67 14.58 13.52 14.75C13.37 14.92 13.22 14.94 12.97 14.81C12.72 14.69 11.91 14.42 10.95 13.57C10.2 12.9 9.69 12.08 9.54 11.83C9.39 11.58 9.53 11.44 9.65 11.32C9.76 11.21 9.9 11.03 10.02 10.89C10.15 10.74 10.19 10.64 10.27 10.47C10.35 10.3 10.31 10.16 10.25 10.03C10.19 9.91 9.69 8.68 9.48 8.18C9.28 7.69 9.07 7.76 8.92 7.75C8.77 7.74 8.61 7.74 8.44 7.74C8.28 7.74 8.01 7.8 7.78 8.05C7.55 8.3 6.9 8.91 6.9 10.15C6.9 11.39 7.8 12.59 7.93 12.75C8.05 12.92 9.72 15.49 12.28 16.6C12.89 16.86 13.36 17.02 13.73 17.14C14.34 17.33 14.9 17.31 15.34 17.24C15.83 17.17 16.85 16.62 17.06 16.03C17.27 15.44 17.27 14.94 17.21 14.83C17.15 14.72 16.98 14.66 16.57 14.44Z" />
+                  </svg>
+                  <span>{isAr ? 'حجز سريع عبر واتساب' : 'Quick WhatsApp Booking'}</span>
+                </button>
+              )}
+            </div>
           )}
 
           {step < 4 ? (
             <button
               onClick={handleNext}
-              className="px-6 py-2.5 text-xs sm:text-sm font-bold text-white bg-[#128B94] hover:bg-[#01403F] rounded-md transition-colors cursor-pointer flex items-center gap-2 shadow-xs"
+              className={`px-6 py-2.5 text-xs sm:text-sm font-bold text-white rounded-md transition-colors cursor-pointer flex items-center gap-2 shadow-xs ${
+                step === 3 ? 'bg-[#25D366] hover:bg-[#20bd5a]' : 'bg-[#128B94] hover:bg-[#01403F]'
+              }`}
             >
-              <span>{step === 3 ? t.confirmBookingBtn : t.nextStepBtn}</span>
-              <ArrowRight className="w-4 h-4 rtl:rotate-180" />
+              {step === 3 ? (
+                <>
+                  <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4 text-white" aria-hidden="true">
+                    <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.63C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.9C17.18 3.03 14.69 2 12.04 2ZM12.05 20.15C10.57 20.15 9.12 19.76 7.85 19.01L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 14.99 3.81 13.47 3.81 11.91C3.81 7.37 7.5 3.68 12.05 3.68C14.25 3.68 16.31 4.54 17.87 6.1C19.42 7.66 20.28 9.72 20.28 11.92C20.28 16.46 16.59 20.15 12.05 20.15ZM16.57 14.44C16.32 14.31 15.11 13.72 14.88 13.64C14.66 13.55 14.49 13.51 14.33 13.76C14.16 14.01 13.67 14.58 13.52 14.75C13.37 14.92 13.22 14.94 12.97 14.81C12.72 14.69 11.91 14.42 10.95 13.57C10.2 12.9 9.69 12.08 9.54 11.83C9.39 11.58 9.53 11.44 9.65 11.32C9.76 11.21 9.9 11.03 10.02 10.89C10.15 10.74 10.19 10.64 10.27 10.47C10.35 10.3 10.31 10.16 10.25 10.03C10.19 9.91 9.69 8.68 9.48 8.18C9.28 7.69 9.07 7.76 8.92 7.75C8.77 7.74 8.61 7.74 8.44 7.74C8.28 7.74 8.01 7.8 7.78 8.05C7.55 8.3 6.9 8.91 6.9 10.15C6.9 11.39 7.8 12.59 7.93 12.75C8.05 12.92 9.72 15.49 12.28 16.6C12.89 16.86 13.36 17.02 13.73 17.14C14.34 17.33 14.9 17.31 15.34 17.24C15.83 17.17 16.85 16.62 17.06 16.03C17.27 15.44 17.27 14.94 17.21 14.83C17.15 14.72 16.98 14.66 16.57 14.44Z" />
+                  </svg>
+                  <span>{isAr ? 'تأكيد وإرسال عبر واتساب' : 'Confirm & Send to WhatsApp'}</span>
+                </>
+              ) : (
+                <>
+                  <span>{t.nextStepBtn}</span>
+                  <ArrowRight className="w-4 h-4 rtl:rotate-180" />
+                </>
+              )}
             </button>
           ) : (
             <button

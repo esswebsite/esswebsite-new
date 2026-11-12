@@ -2,6 +2,7 @@ import React from 'react';
 import { Crown, Truck, Building, Sparkles, Check, ArrowRight, ShieldCheck, MapPin } from 'lucide-react';
 import { Language } from '../types';
 import { TRANSLATIONS } from '../data/translations';
+import { getWhatsAppUrl } from '../utils/whatsapp';
 
 import {
   vipMajlisLoungeImg,
@@ -13,7 +14,7 @@ import {
 interface VipExperienceProps {
   language: Language;
   onBookMajlis: () => void;
-  onBookMobileVan: () => void;
+  onBookMobileVan?: () => void;
 }
 
 export const VipExperience: React.FC<VipExperienceProps> = ({
@@ -99,17 +100,34 @@ export const VipExperience: React.FC<VipExperienceProps> = ({
                 </ul>
               </div>
 
-              <div className="mt-8 pt-6 border-t border-slate-100 flex items-center justify-between">
+              <div className="mt-8 pt-6 border-t border-slate-100 flex items-center justify-between flex-wrap gap-3">
                 <span className="text-xs text-slate-500 font-medium">
                   {language === 'ar' ? 'متاح بالموعد المسبق' : 'By Advance Reservation'}
                 </span>
-                <button
-                  onClick={onBookMajlis}
-                  className="px-5 py-2.5 text-xs sm:text-sm font-bold text-white bg-[#128B94] hover:bg-[#01403F] rounded-md transition-colors cursor-pointer flex items-center gap-2 shadow-xs"
-                >
-                  <span>{t.exploreMajlisBtn}</span>
-                  <ArrowRight className="w-3.5 h-3.5 rtl:rotate-180" />
-                </button>
+                <div className="flex items-center gap-2">
+                  <a
+                    href={getWhatsAppUrl(
+                      language === 'ar'
+                        ? 'مرحباً، أود الاستفسار وحجز مجلس كبار الشخصيات VIP Majlis في مركز كرامة للأعمال.'
+                        : 'Hello, I would like to inquire about and book the VIP Majlis Executive Lounge at Karama Business Center.'
+                    )}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-3.5 py-2.5 text-xs sm:text-sm font-bold text-white bg-[#25D366] hover:bg-[#20bd5a] rounded-md transition-colors cursor-pointer flex items-center gap-1.5 shadow-xs"
+                  >
+                    <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
+                      <path d="M17.472 14.382c-.301-.15-1.782-.879-2.057-.98-.276-.1-.476-.15-.676.15-.2.301-.776.98-.952 1.18-.175.2-.351.226-.652.075-1.928-.965-3.197-1.724-4.471-3.914-.337-.58-.034-.894.116-1.044.136-.135.301-.351.452-.527.15-.175.2-.301.3-.501.1-.2.05-.376-.025-.526-.075-.15-.676-1.63-.927-2.232-.244-.587-.492-.507-.676-.516-.175-.008-.376-.01-.577-.01-.2 0-.526.075-.802.376-.276.301-1.053 1.028-1.053 2.507 0 1.479 1.078 2.908 1.228 3.109.15.2 2.122 3.24 5.141 4.544 2.155.93 2.998.988 4.07.828.653-.098 1.782-.728 2.033-1.431.251-.703.251-1.305.176-1.431-.076-.126-.276-.201-.577-.352z" />
+                    </svg>
+                    <span>{language === 'ar' ? 'واتساب' : 'WhatsApp'}</span>
+                  </a>
+                  <button
+                    onClick={onBookMajlis}
+                    className="px-4 sm:px-5 py-2.5 text-xs sm:text-sm font-bold text-white bg-[#128B94] hover:bg-[#01403F] rounded-md transition-colors cursor-pointer flex items-center gap-1.5 shadow-xs"
+                  >
+                    <span>{t.exploreMajlisBtn}</span>
+                    <ArrowRight className="w-3.5 h-3.5 rtl:rotate-180" />
+                  </button>
+                </div>
               </div>
             </div>
           </div>
@@ -168,18 +186,28 @@ export const VipExperience: React.FC<VipExperienceProps> = ({
                 </ul>
               </div>
 
-              <div className="mt-8 pt-6 border-t border-slate-100 flex items-center justify-between">
+              <div className="mt-8 pt-6 border-t border-slate-100 flex items-center justify-between flex-wrap gap-3">
                 <span className="text-xs text-slate-500 font-medium flex items-center gap-1">
                   <MapPin className="w-3.5 h-3.5 text-[#128B94]" />
                   <span>{language === 'ar' ? 'تغطية لكافة مناطق دبي' : 'All Dubai Emirates Coverage'}</span>
                 </span>
-                <button
-                  onClick={onBookMobileVan}
-                  className="px-5 py-2.5 text-xs sm:text-sm font-bold text-slate-800 bg-white hover:bg-slate-50 rounded-md border border-slate-300 transition-colors cursor-pointer flex items-center gap-2 shadow-2xs"
-                >
-                  <span>{t.requestMobileVanBtn}</span>
-                  <ArrowRight className="w-3.5 h-3.5 rtl:rotate-180" />
-                </button>
+                <div className="flex items-center gap-2">
+                  <a
+                    href={getWhatsAppUrl(
+                      language === 'ar'
+                        ? 'مرحباً، أود الاستفسار عن الخدمات الحكومية والتنفيذية في مركز كرامة للأعمال.'
+                        : 'Hello, I would like to inquire about executive government services at Karama Business Center.'
+                    )}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-4 py-2.5 text-xs sm:text-sm font-bold text-white bg-[#25D366] hover:bg-[#20bd5a] rounded-md transition-colors cursor-pointer flex items-center gap-1.5 shadow-xs"
+                  >
+                    <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
+                      <path d="M17.472 14.382c-.301-.15-1.782-.879-2.057-.98-.276-.1-.476-.15-.676.15-.2.301-.776.98-.952 1.18-.175.2-.351.226-.652.075-1.928-.965-3.197-1.724-4.471-3.914-.337-.58-.034-.894.116-1.044.136-.135.301-.351.452-.527.15-.175.2-.301.3-.501.1-.2.05-.376-.025-.526-.075-.15-.676-1.63-.927-2.232-.244-.587-.492-.507-.676-.516-.175-.008-.376-.01-.577-.01-.2 0-.526.075-.802.376-.276.301-1.053 1.028-1.053 2.507 0 1.479 1.078 2.908 1.228 3.109.15.2 2.122 3.24 5.141 4.544 2.155.93 2.998.988 4.07.828.653-.098 1.782-.728 2.033-1.431.251-.703.251-1.305.176-1.431-.076-.126-.276-.201-.577-.352z" />
+                    </svg>
+                    <span>{language === 'ar' ? 'استفسار عبر واتساب' : 'WhatsApp Inquiry'}</span>
+                  </a>
+                </div>
               </div>
             </div>
           </div>

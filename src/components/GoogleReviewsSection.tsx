@@ -402,6 +402,7 @@ interface GoogleReviewsSectionProps {
   title?: string;
   subtitle?: string;
   className?: string;
+  mapsUrl?: string;
 }
 
 export const GoogleReviewsSection: React.FC<GoogleReviewsSectionProps> = ({
@@ -410,10 +411,15 @@ export const GoogleReviewsSection: React.FC<GoogleReviewsSectionProps> = ({
   title,
   subtitle,
   className = '',
+  mapsUrl,
 }) => {
   const isAr = language === 'ar';
   const [activeSlide, setActiveSlide] = useState(0);
   const [selectedReview, setSelectedReview] = useState<GoogleReview | null>(null);
+
+  const finalMapsUrl =
+    mapsUrl ||
+    (departmentId === 'amer' ? 'https://share.google/jsnhyqPxK3cT3Au1j' : GOOGLE_MAPS_URL);
 
   // Filter reviews by department if departmentId provided
   const filteredReviews = departmentId
@@ -514,7 +520,7 @@ export const GoogleReviewsSection: React.FC<GoogleReviewsSectionProps> = ({
             {/* Right: CTA to Google Maps */}
             <div className="flex items-center gap-3 w-full lg:w-auto">
               <a
-                href={GOOGLE_MAPS_URL}
+                href={finalMapsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex-1 lg:flex-none inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-white border border-slate-300 hover:border-[#4285F4] text-slate-700 hover:text-[#4285F4] text-xs sm:text-sm font-bold shadow-xs hover:shadow-md transition-all cursor-pointer"
@@ -525,7 +531,7 @@ export const GoogleReviewsSection: React.FC<GoogleReviewsSectionProps> = ({
               </a>
 
               <a
-                href={GOOGLE_MAPS_URL}
+                href={finalMapsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex-1 lg:flex-none inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-[#4285F4] hover:bg-[#3367D6] text-white text-xs sm:text-sm font-bold shadow-md shadow-blue-500/20 transition-all cursor-pointer"
@@ -773,7 +779,7 @@ export const GoogleReviewsSection: React.FC<GoogleReviewsSectionProps> = ({
 
             <div className="flex items-center justify-between pt-2">
               <a
-                href={GOOGLE_MAPS_URL}
+                href={finalMapsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-1.5 text-xs text-[#4285F4] hover:underline font-bold"

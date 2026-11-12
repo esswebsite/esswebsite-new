@@ -19,6 +19,8 @@ import { matchDepartmentBySlug, matchServiceBySlug, getServiceUrlSlug, getDepart
 import { SERVICES, DEPARTMENTS } from '../data/departmentsData';
 import { BLOG_POSTS } from '../data/blogData';
 import { ServiceItem } from '../types';
+import { AMER_OFFICIAL_GBP, AMER_SAME_AS } from '../data/socialAndMapLinks';
+import { AMER_SERVICES_RICH_MAP } from '../data/amerServicesExtendedData';
 
 export interface RouteSeoData {
   title: string;
@@ -29,6 +31,59 @@ export interface RouteSeoData {
 }
 
 export const CANONICAL_BASE = 'https://ess.ae';
+
+/**
+ * Dedicated Amer Center Karama Schema Node (Strictly isolated from other departments)
+ * Identified as authorized service provider in Al Karama assisting with GDRFA transactions.
+ */
+export const AMER_CENTER_ENTITY_SCHEMA = {
+  '@type': ['LocalBusiness', 'ProfessionalService'],
+  '@id': 'https://ess.ae/amer-center-karama/#amer-center',
+  name: 'Amer Center Karama Dubai',
+  alternateName: [
+    'Amer Center Al Karama',
+    'Amer Centre Karama',
+    'Amer Center Bur Dubai',
+    'Amer Center Dubai',
+    'Amer Center License 772',
+  ],
+  url: 'https://ess.ae/amer-center-karama/',
+  telephone: '+971-4-342-6666',
+  email: 'info@ess.ae',
+  hasMap: AMER_OFFICIAL_GBP.shareUrl,
+  sameAs: [...AMER_SAME_AS],
+  parentOrganization: {
+    '@id': 'https://ess.ae/#organization',
+  },
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: 'Ground Floor, Al Fajer Building, Opposite Central Karama Post Office, Al Karama',
+    addressLocality: 'Dubai',
+    addressRegion: 'Dubai',
+    postalCode: '00000',
+    addressCountry: 'AE',
+  },
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: 25.2453731,
+    longitude: 55.309525,
+  },
+  openingHoursSpecification: [
+    {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+      opens: '08:00',
+      closes: '20:00',
+    },
+    {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: ['Saturday'],
+      opens: '08:00',
+      closes: '17:00',
+    },
+  ],
+  priceRange: '$$',
+};
 
 // Base Organization Schema Node (Consistent @id across Knowledge Graph)
 export const BASE_ORGANIZATION_SCHEMA = {
@@ -214,9 +269,9 @@ export const CORE_PAGES_META: Record<string, { title: string; desc: string; keyw
 // Specific metadata for 14 authorized departments (50-60 chars title, 120-160 chars desc)
 export const DEPARTMENTS_META: Record<string, { title: string; desc: string; keywords: string }> = {
   amer: {
-    title: 'Amer Center Karama Dubai | UAE Residency & Visit Visa',
-    desc: 'Authorized Amer Center (Lic. #772) in Karama Dubai. Fast UAE residency visa issuance, renewals, entry permits, and family sponsorship.',
-    keywords: 'Amer Center Karama, amer center near me, Amer Dubai, Amer License 772, residence visa renewal, Dubai entry permit, family visa Dubai',
+    title: 'Amer Center Karama Dubai | UAE Visa & Immigration Services',
+    desc: 'Looking for an Amer Center in Karama, Dubai? Get assistance with UAE residence visas, renewals, cancellations, family visas, visit visas and immigration services.',
+    keywords: 'Amer Center, Amer Center Karama, Amer Center Dubai, Amer Centre, Amer Services, Amer Center Near Me, Amer Visa Services, Amer Immigration Services, Amer Typing Center, Amer Center Bur Dubai',
   },
   'golden-visa': {
     title: 'Golden Visa Dubai UAE | 10-Year Residency Center ESS',
@@ -821,6 +876,7 @@ export function getSchemaForRoute(
   // 4. Semi-Government Services (Amer, Golden Visa, DET, Tasheel, ICP, Notary, etc.)
   if (options?.service) {
     const s = options.service;
+    const isAmer = s.departmentId === 'amer';
     const dept = DEPARTMENTS.find((d) => d.id === s.departmentId);
     const op = GOV_OPERATORS[s.departmentId] || {
       name: 'Government of Dubai',
@@ -828,56 +884,75 @@ export function getSchemaForRoute(
     };
     const deptSlug = getDepartmentPath(s.departmentId).replace(/^\//, '');
 
+    const graphElements: Record<string, unknown>[] = [
+      {
+        '@type': 'BreadcrumbList',
+        '@id': `${canonicalUrl}#breadcrumb`,
+        itemListElement: [
+          {
+            '@type': 'ListItem',
+            position: 1,
+            name: 'Home',
+            item: 'https://ess.ae',
+          },
+          {
+            '@type': 'ListItem',
+            position: 2,
+            name: isAmer ? 'Amer Center Karama' : (dept?.nameEn || s.departmentId.toUpperCase()),
+            item: isAmer ? 'https://ess.ae/amer-center-karama/' : `https://ess.ae/${deptSlug}`,
+          },
+          {
+            '@type': 'ListItem',
+            position: 3,
+            name: s.titleEn,
+            item: canonicalUrl,
+          },
+        ],
+      },
+      {
+        '@type': 'GovernmentService',
+        '@id': `${canonicalUrl}#service`,
+        name: s.titleEn,
+        serviceType: dept?.subTitleEn || 'Government Document Clearing',
+        provider: {
+          '@id': isAmer ? 'https://ess.ae/amer-center-karama/#amer-center' : 'https://ess.ae/#organization',
+        },
+        serviceOperator: {
+          '@type': 'GovernmentOrganization',
+          name: op.name,
+          url: op.url,
+        },
+        areaServed: {
+          '@type': 'AdministrativeArea',
+          name: 'Dubai, United Arab Emirates',
+        },
+        serviceAudience: {
+          '@type': 'Audience',
+          audienceType: 'UAE Residents, Expatriates, and Investors',
+        },
+      },
+    ];
+
+    // If Amer service, also attach rich FAQPage schema if available
+    if (isAmer && AMER_SERVICES_RICH_MAP[s.id]?.faqs?.length) {
+      const richFaqs = AMER_SERVICES_RICH_MAP[s.id].faqs;
+      graphElements.push({
+        '@type': 'FAQPage',
+        '@id': `${canonicalUrl}#faq`,
+        mainEntity: richFaqs.map((faq) => ({
+          '@type': 'Question',
+          name: faq.questionEn,
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: faq.answerEn,
+          },
+        })),
+      });
+    }
+
     return {
       '@context': 'https://schema.org',
-      '@graph': [
-        {
-          '@type': 'BreadcrumbList',
-          '@id': `${canonicalUrl}#breadcrumb`,
-          itemListElement: [
-            {
-              '@type': 'ListItem',
-              position: 1,
-              name: 'Home',
-              item: 'https://ess.ae',
-            },
-            {
-              '@type': 'ListItem',
-              position: 2,
-              name: dept?.nameEn || s.departmentId.toUpperCase(),
-              item: `https://ess.ae/${deptSlug}`,
-            },
-            {
-              '@type': 'ListItem',
-              position: 3,
-              name: s.titleEn,
-              item: canonicalUrl,
-            },
-          ],
-        },
-        {
-          '@type': 'GovernmentService',
-          '@id': `${canonicalUrl}#service`,
-          name: s.titleEn,
-          serviceType: dept?.subTitleEn || 'Government Document Clearing',
-          provider: {
-            '@id': 'https://ess.ae/#organization',
-          },
-          serviceOperator: {
-            '@type': 'GovernmentOrganization',
-            name: op.name,
-            url: op.url,
-          },
-          areaServed: {
-            '@type': 'AdministrativeArea',
-            name: 'Dubai, United Arab Emirates',
-          },
-          serviceAudience: {
-            '@type': 'Audience',
-            audienceType: 'UAE Residents, Expatriates, and Investors',
-          },
-        },
-      ],
+      '@graph': graphElements,
     };
   }
 
@@ -999,6 +1074,89 @@ export function getSchemaForRoute(
 
   // 7. Department Pages (e.g. /amer-center-karama, /det-center-karama, etc.)
   if (options?.deptId) {
+    if (options.deptId === 'amer') {
+      return {
+        '@context': 'https://schema.org',
+        '@graph': [
+          {
+            '@type': 'BreadcrumbList',
+            '@id': 'https://ess.ae/amer-center-karama/#breadcrumb',
+            itemListElement: [
+              {
+                '@type': 'ListItem',
+                position: 1,
+                name: 'Home',
+                item: 'https://ess.ae',
+              },
+              {
+                '@type': 'ListItem',
+                position: 2,
+                name: 'Amer Center Karama',
+                item: 'https://ess.ae/amer-center-karama/',
+              },
+            ],
+          },
+          AMER_CENTER_ENTITY_SCHEMA,
+          {
+            '@type': 'GovernmentService',
+            '@id': 'https://ess.ae/amer-center-karama/#service',
+            name: 'Amer Center Immigration & Visa Services Karama',
+            serviceType: 'Immigration & Residency Services',
+            provider: {
+              '@id': 'https://ess.ae/amer-center-karama/#amer-center',
+            },
+            serviceOperator: {
+              '@type': 'GovernmentOrganization',
+              name: 'General Directorate of Residency and Foreigners Affairs (GDRFA)',
+              url: 'https://gdrfad.gov.ae',
+            },
+            areaServed: {
+              '@type': 'AdministrativeArea',
+              name: 'Dubai, United Arab Emirates',
+            },
+          },
+          {
+            '@type': 'FAQPage',
+            '@id': 'https://ess.ae/amer-center-karama/#faq',
+            mainEntity: [
+              {
+                '@type': 'Question',
+                name: 'Where is Amer Center located in Karama, Dubai?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'Amer Center Karama is situated on the Ground Floor of Al Fajer Building, directly opposite the Central Karama Post Office in Al Karama, Dubai.',
+                },
+              },
+              {
+                '@type': 'Question',
+                name: 'What services does Amer Center Karama provide?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'Amer Center Karama provides comprehensive processing for UAE residence visas (new, renewal, cancellation), family sponsorship, visit visas, status change, overstay fine reduction, and absconding clearance under official GDRFA authority.',
+                },
+              },
+              {
+                '@type': 'Question',
+                name: 'Can I complete DHA medical fitness and Emirates ID biometrics at Amer Center Karama?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'Yes. Our integrated facility directly co-locates the Karama Medical Fitness Express Service Center (KMFC / Salem) and ICP biometrics terminals under one roof for complete one-stop processing.',
+                },
+              },
+              {
+                '@type': 'Question',
+                name: 'What are the working hours of Amer Center Karama?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'Amer Center Karama is open Monday to Friday from 8:00 AM to 8:00 PM, and Saturday from 8:00 AM to 5:00 PM. We are closed on Sundays.',
+                },
+              },
+            ],
+          },
+        ],
+      };
+    }
+
     const dept = DEPARTMENTS.find((d) => d.id === options.deptId);
     const op = GOV_OPERATORS[options.deptId] || {
       name: 'Government of Dubai',

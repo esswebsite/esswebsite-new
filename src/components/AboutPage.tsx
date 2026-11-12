@@ -48,6 +48,7 @@ import sheikhMohammedImg from '../assets/images/H.H. Sheikh Mohammed bin Rashid 
 import haniEbrahimImg from '../assets/images/hani ebrahim.jpg';
 import { GoogleReviewsSection } from './GoogleReviewsSection';
 import { TrustBadges } from './TrustBadges';
+import { getWhatsAppUrl, OFFICIAL_PHONE, OFFICIAL_PHONE_TEL } from '../utils/whatsapp';
 
 interface AboutPageProps {
   language: Language;
@@ -244,25 +245,40 @@ export const AboutPage: React.FC<AboutPageProps> = ({
 
               {/* Quick Contact & Action Buttons */}
               <div className="flex flex-wrap items-center gap-3 pt-3">
-                <button
-                  onClick={onOpenBooking}
-                  className="px-6 py-3 rounded-lg bg-white text-[#01403F] hover:bg-teal-50 font-bold text-sm shadow-md transition-all flex items-center gap-2 cursor-pointer"
-                >
-                  <Calendar className="w-4 h-4 text-[#128B94]" />
-                  <span>{isAr ? 'حجز موعد بالمركز' : 'Book Center Appointment'}</span>
-                </button>
                 <a
-                  href="tel:043426666"
+                  href={getWhatsAppUrl(
+                    isAr
+                      ? 'مرحباً، أود التواصل مع فريق مركز كرامة للأعمال والاستفسار عن المعاملات الحكومية.'
+                      : 'Hello, I would like to connect with Karama Business Center regarding government transactions.'
+                  )}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-5 py-3 rounded-lg bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold text-sm shadow-md transition-all flex items-center gap-2"
+                >
+                  <svg className="w-4 h-4 fill-current shrink-0" viewBox="0 0 24 24">
+                    <path d="M17.472 14.382c-.301-.15-1.782-.879-2.057-.98-.276-.1-.476-.15-.676.15-.2.301-.776.98-.952 1.18-.175.2-.351.226-.652.075-1.928-.965-3.197-1.724-4.471-3.914-.337-.58-.034-.894.116-1.044.136-.135.301-.351.452-.527.15-.175.2-.301.3-.501.1-.2.05-.376-.025-.526-.075-.15-.676-1.63-.927-2.232-.244-.587-.492-.507-.676-.516-.175-.008-.376-.01-.577-.01-.2 0-.526.075-.802.376-.276.301-1.053 1.028-1.053 2.507 0 1.479 1.078 2.908 1.228 3.109.15.2 2.122 3.24 5.141 4.544 2.155.93 2.998.988 4.07.828.653-.098 1.782-.728 2.033-1.431.251-.703.251-1.305.176-1.431-.076-.126-.276-.201-.577-.352z" />
+                  </svg>
+                  <span>{isAr ? 'محادثة واتساب فورية' : 'Direct WhatsApp'}</span>
+                </a>
+                <a
+                  href={OFFICIAL_PHONE_TEL}
                   className="px-5 py-3 rounded-lg bg-teal-800/70 hover:bg-teal-800 text-white border border-teal-400/40 font-bold text-sm transition-all flex items-center gap-2"
                 >
                   <PhoneCall className="w-4 h-4 text-teal-300" />
-                  <span dir="ltr">04-342-6666</span>
+                  <span dir="ltr">{OFFICIAL_PHONE}</span>
                 </a>
                 <button
-                  onClick={onNavigateToContact}
-                  className="px-5 py-3 rounded-lg bg-teal-900/60 hover:bg-teal-900 text-white border border-white/20 font-bold text-sm transition-all flex items-center gap-2 cursor-pointer"
+                  onClick={onOpenBooking}
+                  className="px-5 py-3 rounded-lg bg-white text-[#01403F] hover:bg-teal-50 font-bold text-sm shadow-md transition-all flex items-center gap-2 cursor-pointer"
                 >
-                  <span>{isAr ? 'موقع المركز وساعات العمل' : 'Location & Hours'}</span>
+                  <Calendar className="w-4 h-4 text-[#128B94]" />
+                  <span>{isAr ? 'حجز موعد بالمركز' : 'Book Appointment'}</span>
+                </button>
+                <button
+                  onClick={onNavigateToContact}
+                  className="px-4 py-3 rounded-lg bg-teal-900/60 hover:bg-teal-900 text-white border border-white/20 font-bold text-sm transition-all flex items-center gap-2 cursor-pointer"
+                >
+                  <span>{isAr ? 'موقع المركز' : 'Location & Hours'}</span>
                 </button>
               </div>
             </div>

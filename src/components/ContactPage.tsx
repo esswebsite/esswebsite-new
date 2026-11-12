@@ -22,6 +22,13 @@ import { Language } from '../types';
 import { OFFICIAL_MAPS, OFFICIAL_SOCIAL_LINKS, OFFICIAL_CONTACT } from '../data/socialAndMapLinks';
 import { CENTER_TIMINGS } from '../data/centerTimings';
 import { SocialLinks } from './SocialLinks';
+import {
+  formatContactWhatsAppMessage,
+  getWhatsAppUrl,
+  openWhatsApp,
+  OFFICIAL_PHONE,
+  OFFICIAL_PHONE_TEL,
+} from '../utils/whatsapp';
 
 interface ContactPageProps {
   language: Language;
@@ -39,6 +46,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({
 
   const [selectedCenterId, setSelectedCenterId] = useState<string>('kmfc');
   const [formSubmitted, setFormSubmitted] = useState(false);
+  const [waContactText, setWaContactText] = useState<string>('');
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
@@ -50,7 +58,19 @@ export const ContactPage: React.FC<ContactPageProps> = ({
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setFormSubmitted(true);
+    if (formData.name.trim() && formData.phone.trim()) {
+      const waMsg = formatContactWhatsAppMessage({
+        name: formData.name,
+        phone: formData.phone,
+        email: formData.email,
+        serviceType: formData.serviceType,
+        channel: formData.channel,
+        message: formData.message,
+      });
+      setWaContactText(waMsg);
+      openWhatsApp(waMsg);
+      setFormSubmitted(true);
+    }
   };
 
   return (
@@ -363,24 +383,45 @@ export const ContactPage: React.FC<ContactPageProps> = ({
 
               {formSubmitted ? (
                 <div className="p-8 rounded-xl bg-teal-50 border border-teal-200 text-center space-y-4 animate-in fade-in duration-300">
-                  <div className="w-14 h-14 rounded-full bg-[#128B94] text-white flex items-center justify-center mx-auto shadow-sm">
-                    <CheckCircle2 className="w-8 h-8" />
+                  <div className="w-16 h-16 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto shadow-inner">
+                    <CheckCircle2 className="w-9 h-9" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-bold text-slate-900">
-                      {isAr ? 'تم استلام طلبك بنجاح!' : 'Your Request Has Been Received!'}
+                    <span className="text-xs font-bold text-emerald-700 bg-emerald-50 px-3 py-1 rounded-full uppercase tracking-wider inline-block mb-1">
+                      {isAr ? 'تم إرسال الطلب عبر واتساب' : 'Inquiry Dispatched to WhatsApp'}
+                    </span>
+                    <h3 className="text-xl font-extrabold text-slate-900 mt-1">
+                      {isAr ? 'تم استلام وتجهيز طلبكم بنجاح!' : 'Your Request Has Been Prepared & Sent!'}
                     </h3>
-                    <p className="text-xs text-slate-600 mt-1">
+                    <p className="text-xs text-slate-600 mt-1.5">
                       {isAr
-                        ? 'رقم التذكرة المرجعي الخاص بك: #ESS-REQ-2026-8842'
-                        : 'Your official reference inquiry number: #ESS-REQ-2026-8842'}
-                    </p>
-                    <p className="text-xs text-slate-500 mt-2 max-w-md mx-auto">
-                      {isAr
-                        ? 'يقوم مستشارنا الحكومي بتدقيق المتطلبات وسيقوم بالاتصال بك على رقم هاتفك المسجل فوراً.'
-                        : 'A senior typing consultant is currently checking ministerial requirements and will call your phone shortly.'}
+                        ? 'تم تحويل استفسارك إلى ضابط المعاملات المعتمد على واتساب (+971 4 342 6666).'
+                        : 'Your details have been compiled and dispatched to our senior typing consultant on WhatsApp.'}
                     </p>
                   </div>
+
+                  <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-3">
+                    <a
+                      href={getWhatsAppUrl(waContactText)}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full sm:w-auto px-6 py-3 rounded-xl bg-[#25D366] hover:bg-[#20bd5a] text-white text-xs sm:text-sm font-bold shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer active:scale-[0.98]"
+                    >
+                      <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4 text-white" aria-hidden="true">
+                        <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.63C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.9C17.18 3.03 14.69 2 12.04 2ZM12.05 20.15C10.57 20.15 9.12 19.76 7.85 19.01L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 14.99 3.81 13.47 3.81 11.91C3.81 7.37 7.5 3.68 12.05 3.68C14.25 3.68 16.31 4.54 17.87 6.1C19.42 7.66 20.28 9.72 20.28 11.92C20.28 16.46 16.59 20.15 12.05 20.15ZM16.57 14.44C16.32 14.31 15.11 13.72 14.88 13.64C14.66 13.55 14.49 13.51 14.33 13.76C14.16 14.01 13.67 14.58 13.52 14.75C13.37 14.92 13.22 14.94 12.97 14.81C12.72 14.69 11.91 14.42 10.95 13.57C10.2 12.9 9.69 12.08 9.54 11.83C9.39 11.58 9.53 11.44 9.65 11.32C9.76 11.21 9.9 11.03 10.02 10.89C10.15 10.74 10.19 10.64 10.27 10.47C10.35 10.3 10.31 10.16 10.25 10.03C10.19 9.91 9.69 8.68 9.48 8.18C9.28 7.69 9.07 7.76 8.92 7.75C8.77 7.74 8.61 7.74 8.44 7.74C8.28 7.74 8.01 7.8 7.78 8.05C7.55 8.3 6.9 8.91 6.9 10.15C6.9 11.39 7.8 12.59 7.93 12.75C8.05 12.92 9.72 15.49 12.28 16.6C12.89 16.86 13.36 17.02 13.73 17.14C14.34 17.33 14.9 17.31 15.34 17.24C15.83 17.17 16.85 16.62 17.06 16.03C17.27 15.44 17.27 14.94 17.21 14.83C17.15 14.72 16.98 14.66 16.57 14.44Z" />
+                      </svg>
+                      <span>{isAr ? 'فتح المحادثة في واتساب' : 'Open in WhatsApp'}</span>
+                    </a>
+
+                    <a
+                      href={OFFICIAL_PHONE_TEL}
+                      className="w-full sm:w-auto px-5 py-3 rounded-xl bg-white hover:bg-slate-100 text-slate-800 text-xs sm:text-sm font-bold border border-slate-300 transition-colors flex items-center justify-center gap-2 cursor-pointer"
+                    >
+                      <PhoneCall className="w-4 h-4 text-[#128B94]" />
+                      <span>{isAr ? `اتصال هاتفي: ${OFFICIAL_PHONE}` : `Call: ${OFFICIAL_PHONE}`}</span>
+                    </a>
+                  </div>
+
                   <button
                     onClick={() => {
                       setFormSubmitted(false);
@@ -393,7 +434,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({
                         message: '',
                       });
                     }}
-                    className="px-5 py-2.5 rounded-lg bg-[#128B94] text-white text-xs font-bold hover:bg-[#01403F] transition-colors cursor-pointer"
+                    className="text-xs font-semibold text-slate-500 hover:text-slate-800 underline transition-colors cursor-pointer pt-2 block mx-auto"
                   >
                     {isAr ? 'إرسال استفسار آخر' : 'Send Another Inquiry'}
                   </button>
@@ -525,10 +566,12 @@ export const ContactPage: React.FC<ContactPageProps> = ({
 
                   <button
                     type="submit"
-                    className="w-full py-3.5 px-6 rounded-lg bg-[#128B94] hover:bg-[#01403F] text-white font-bold text-sm shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer"
+                    className="w-full py-3.5 px-6 rounded-lg bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold text-sm shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer active:scale-[0.98]"
                   >
-                    <Send className="w-4 h-4" />
-                    <span>{isAr ? 'إرسال الطلب للمستشار الآن' : 'Submit File to Government Consultant'}</span>
+                    <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5 text-white" aria-hidden="true">
+                      <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.63C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.9C17.18 3.03 14.69 2 12.04 2ZM12.05 20.15C10.57 20.15 9.12 19.76 7.85 19.01L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 14.99 3.81 13.47 3.81 11.91C3.81 7.37 7.5 3.68 12.05 3.68C14.25 3.68 16.31 4.54 17.87 6.1C19.42 7.66 20.28 9.72 20.28 11.92C20.28 16.46 16.59 20.15 12.05 20.15ZM16.57 14.44C16.32 14.31 15.11 13.72 14.88 13.64C14.66 13.55 14.49 13.51 14.33 13.76C14.16 14.01 13.67 14.58 13.52 14.75C13.37 14.92 13.22 14.94 12.97 14.81C12.72 14.69 11.91 14.42 10.95 13.57C10.2 12.9 9.69 12.08 9.54 11.83C9.39 11.58 9.53 11.44 9.65 11.32C9.76 11.21 9.9 11.03 10.02 10.89C10.15 10.74 10.19 10.64 10.27 10.47C10.35 10.3 10.31 10.16 10.25 10.03C10.19 9.91 9.69 8.68 9.48 8.18C9.28 7.69 9.07 7.76 8.92 7.75C8.77 7.74 8.61 7.74 8.44 7.74C8.28 7.74 8.01 7.8 7.78 8.05C7.55 8.3 6.9 8.91 6.9 10.15C6.9 11.39 7.8 12.59 7.93 12.75C8.05 12.92 9.72 15.49 12.28 16.6C12.89 16.86 13.36 17.02 13.73 17.14C14.34 17.33 14.9 17.31 15.34 17.24C15.83 17.17 16.85 16.62 17.06 16.03C17.27 15.44 17.27 14.94 17.21 14.83C17.15 14.72 16.98 14.66 16.57 14.44Z" />
+                    </svg>
+                    <span>{isAr ? 'إرسال التفاصيل مباشرة عبر واتساب' : 'Submit & Send Details via WhatsApp'}</span>
                   </button>
                 </form>
               )}

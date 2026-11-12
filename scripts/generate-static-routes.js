@@ -130,6 +130,61 @@ const BASE_ORGANIZATION_SCHEMA = {
   ],
 };
 
+const AMER_CENTER_ENTITY_SCHEMA = {
+  '@type': ['LocalBusiness', 'ProfessionalService'],
+  '@id': 'https://ess.ae/amer-center-karama/#amer-center',
+  name: 'Amer Center Karama Dubai',
+  alternateName: [
+    'Amer Center Al Karama',
+    'Amer Centre Karama',
+    'Amer Center Bur Dubai',
+    'Amer Center Dubai',
+    'Amer Center License 772',
+  ],
+  url: 'https://ess.ae/amer-center-karama/',
+  telephone: '+971-4-342-6666',
+  email: 'info@ess.ae',
+  hasMap: 'https://share.google/jsnhyqPxK3cT3Au1j',
+  sameAs: [
+    'https://share.google/jsnhyqPxK3cT3Au1j',
+    'https://www.youtube.com/channel/UCkZvVRnR4s2l4QVuWJKCNGQ',
+    'https://www.facebook.com/amerkarama.ae/',
+    'https://www.instagram.com/amerkarama.ae/',
+    'https://www.linkedin.com/company/amer-karama-center/',
+  ],
+  parentOrganization: {
+    '@id': 'https://ess.ae/#organization',
+  },
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: 'Ground Floor, Al Fajer Building, Opposite Central Karama Post Office, Al Karama',
+    addressLocality: 'Dubai',
+    addressRegion: 'Dubai',
+    postalCode: '00000',
+    addressCountry: 'AE',
+  },
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: 25.2453731,
+    longitude: 55.309525,
+  },
+  openingHoursSpecification: [
+    {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+      opens: '08:00',
+      closes: '20:00',
+    },
+    {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: ['Saturday'],
+      opens: '08:00',
+      closes: '17:00',
+    },
+  ],
+  priceRange: '$$',
+};
+
 const GOV_OPERATORS = {
   amer: {
     name: 'General Directorate of Residency and Foreigners Affairs (GDRFA)',
@@ -255,9 +310,9 @@ const CORE_PAGES_META = {
 // Specific metadata for 14 authorized departments (50-60 chars title, 120-160 chars desc)
 const DEPARTMENTS_META = {
   amer: {
-    title: 'Amer Center Karama Dubai | UAE Residency & Visit Visa',
-    desc: 'Authorized Amer Center (Lic. #772) in Karama Dubai. Fast UAE residency visa issuance, renewals, entry permits, and family sponsorship.',
-    keywords: 'Amer Center Karama, amer center near me, Amer Dubai, Amer License 772, residence visa renewal, Dubai entry permit, family visa Dubai',
+    title: 'Amer Center Karama Dubai | UAE Visa & Immigration Services',
+    desc: 'Looking for an Amer Center in Karama, Dubai? Get assistance with UAE residence visas, renewals, cancellations, family visas, visit visas and immigration services.',
+    keywords: 'Amer Center, Amer Center Karama, Amer Center Dubai, Amer Centre, Amer Services, Amer Center Near Me, Amer Visa Services, Amer Immigration Services, Amer Typing Center, Amer Center Bur Dubai',
   },
   'golden-visa': {
     title: 'Golden Visa Dubai UAE | 10-Year Residency Center ESS',
@@ -870,6 +925,7 @@ function getSchemaForRoute(route, canonicalUrl, options) {
   // 4. Semi-Government Services (Amer, Golden Visa, DET, Tasheel, ICP, Notary, etc.)
   if (options?.service) {
     const s = options.service;
+    const isAmer = s.departmentId === 'amer';
     const op = GOV_OPERATORS[s.departmentId] || {
       name: 'Government of Dubai',
       url: 'https://dubai.ae',
@@ -892,8 +948,8 @@ function getSchemaForRoute(route, canonicalUrl, options) {
             {
               '@type': 'ListItem',
               position: 2,
-              name: s.departmentId.toUpperCase(),
-              item: `https://ess.ae/${deptSlug}`,
+              name: isAmer ? 'Amer Center Karama' : s.departmentId.toUpperCase(),
+              item: isAmer ? 'https://ess.ae/amer-center-karama/' : `https://ess.ae/${deptSlug}`,
             },
             {
               '@type': 'ListItem',
@@ -909,7 +965,7 @@ function getSchemaForRoute(route, canonicalUrl, options) {
           name: s.titleEn,
           serviceType: 'Government Document Clearing',
           provider: {
-            '@id': 'https://ess.ae/#organization',
+            '@id': isAmer ? 'https://ess.ae/amer-center-karama/#amer-center' : 'https://ess.ae/#organization',
           },
           serviceOperator: {
             '@type': 'GovernmentOrganization',
@@ -1047,6 +1103,89 @@ function getSchemaForRoute(route, canonicalUrl, options) {
 
   // 7. Department Pages (e.g. /amer-center-karama, /det-center-karama, etc.)
   if (options?.deptId) {
+    if (options.deptId === 'amer') {
+      return {
+        '@context': 'https://schema.org',
+        '@graph': [
+          {
+            '@type': 'BreadcrumbList',
+            '@id': 'https://ess.ae/amer-center-karama/#breadcrumb',
+            itemListElement: [
+              {
+                '@type': 'ListItem',
+                position: 1,
+                name: 'Home',
+                item: 'https://ess.ae',
+              },
+              {
+                '@type': 'ListItem',
+                position: 2,
+                name: 'Amer Center Karama',
+                item: 'https://ess.ae/amer-center-karama/',
+              },
+            ],
+          },
+          AMER_CENTER_ENTITY_SCHEMA,
+          {
+            '@type': 'GovernmentService',
+            '@id': 'https://ess.ae/amer-center-karama/#service',
+            name: 'Amer Center Immigration & Visa Services Karama',
+            serviceType: 'Immigration & Residency Services',
+            provider: {
+              '@id': 'https://ess.ae/amer-center-karama/#amer-center',
+            },
+            serviceOperator: {
+              '@type': 'GovernmentOrganization',
+              name: 'General Directorate of Residency and Foreigners Affairs (GDRFA)',
+              url: 'https://gdrfad.gov.ae',
+            },
+            areaServed: {
+              '@type': 'AdministrativeArea',
+              name: 'Dubai, United Arab Emirates',
+            },
+          },
+          {
+            '@type': 'FAQPage',
+            '@id': 'https://ess.ae/amer-center-karama/#faq',
+            mainEntity: [
+              {
+                '@type': 'Question',
+                name: 'Where is Amer Center located in Karama, Dubai?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'Amer Center Karama is situated on the Ground Floor of Al Fajer Building, directly opposite the Central Karama Post Office in Al Karama, Dubai.',
+                },
+              },
+              {
+                '@type': 'Question',
+                name: 'What services does Amer Center Karama provide?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'Amer Center Karama provides comprehensive processing for UAE residence visas (new, renewal, cancellation), family sponsorship, visit visas, status change, overstay fine reduction, and absconding clearance under official GDRFA authority.',
+                },
+              },
+              {
+                '@type': 'Question',
+                name: 'Can I complete DHA medical fitness and Emirates ID biometrics at Amer Center Karama?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'Yes. Our integrated facility directly co-locates the Karama Medical Fitness Express Service Center (KMFC / Salem) and ICP biometrics terminals under one roof for complete one-stop processing.',
+                },
+              },
+              {
+                '@type': 'Question',
+                name: 'What are the working hours of Amer Center Karama?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'Amer Center Karama is open Monday to Friday from 8:00 AM to 8:00 PM, and Saturday from 8:00 AM to 5:00 PM. We are closed on Sundays.',
+                },
+              },
+            ],
+          },
+        ],
+      };
+    }
+
     const op = GOV_OPERATORS[options.deptId] || {
       name: 'Government of Dubai',
       url: 'https://dubai.ae',

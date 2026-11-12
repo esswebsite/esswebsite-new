@@ -70,12 +70,12 @@ export const AMER_SERVICES_RICH_MAP: Record<string, ServiceRichDetails> = {
 
 Whether the applicant is currently inside the UAE on an entry permit, tourist visa, or cancelled status, or arriving fresh from overseas, our dedicated immigration department coordinates every milestone seamlessly. Our flagship facility in Al Karama (conveniently situated next to the Karama Post Office) directly houses the Karama Medical Fitness Express Service Center (KMFC) — known locally throughout Dubai as Karama Medical Center — alongside authorized ICP biometric fingerprint capture desks. This unique integrated facility means applicants do not need to commute across multiple government departments in Dubai. In one streamlined visit, you can complete document pre-auditing, entry permit issuance, in-country status change, urgent venous blood testing, digital chest X-ray screening, and Emirates ID biometric registration.
 
-Every single application undergoes a strict three-tier verification protocol conducted by senior Amer consultants to ensure complete conformity with Ministry of Human Resources and Emiratisation (MoHRE) occupational skill matrices and Dubai Department of Economy and Tourism (DET) commercial mandates. We eliminate rejection risks and unexpected administrative costs through complete tariff transparency: our Inside UAE comprehensive package is AED 3,056 (inclusive of entry permit AED 1,125, status change AED 676, Emirates ID fee AED 386, DHA medical fitness test AED 322, and visa stamping AED 547), while our Outside UAE issuance package is AED 1,731 (entry permit AED 476, Emirates ID fee AED 386, DHA medical test AED 322, and visa stamping AED 547). For business founders, executive directors, and corporate teams with urgent onboarding deadlines, our private VIP Majlis fast-track lane provides expedited priority processing and streamlined delivery.`,
+Every single application undergoes a strict three-tier verification protocol conducted by senior Amer consultants to ensure complete conformity with Ministry of Human Resources and Emiratisation (MoHRE) occupational skill matrices and Dubai Department of Economy and Tourism (DET) commercial mandates. We eliminate rejection risks and unexpected delays through complete document pre-audit: both Inside UAE and Outside UAE packages encompass entry permits, status change, Emirates ID typing, DHA medical fitness testing, and visa stamping under official GDRFA authority. For business founders, executive directors, and corporate teams with urgent onboarding deadlines, our private VIP Majlis fast-track lane provides expedited priority processing and streamlined delivery.`,
     detailedOverviewAr: `تعتبر معالجة وإصدار تأشيرة الإقامة الجديدة في دبي إجراءً قانونياً سيادياً يتبع للإدارة العامة للإقامة وشؤون الأجانب بدبي (GDRFA) والهيئة الاتحادية للهوية والجنسية والجمارك وأمن المنافذ (ICP). ومن خلال مركز الكرامة للأعمال (KBC) وبترخيص مركز آمر المعتمد رقم 772 تحت إدارة الإمارات لخدمات رجال الأعمال (ESS)، نوفر حلاً حكومياً متكاملاً وشاملاً لإصدار وتثبيت الإقامات الجديدة للموظفين والشركاء والمستثمرين.
 
 سواء كان المتعامل متواجداً داخل الدولة بتأشيرة زيارة وسياحة أو قادماً من خارج الإمارات، يتولى فريقنا المتخصص إنجاز كافة المراحل الإجرائية تحت سقف واحد. يتميز مقرنا في الكرامة (بجوار بريد الكرامة) باحتضان مركز الكرامة للياقة الطبية السريعة (KMFC) — المعروف شعبياً في دبي بمركز الكرامة الطبي — إلى جانب منصات البصمة البيومترية المعتمدة للهيئة الاتحادية. هذا التكامل الفريد يوفر على الشركات والمتعاملين عناء التنقل بين الدوائر، ويتيح إنجاز تدقيق المستندات، إصدار إذن الدخول، تعديل الوضع، الفحص الطبي السريع وبصمة الهوية في زيارة واحدة منسقة.
 
-تخضع كل معاملة لتدقيق قانوني ثلاثي للتحقق من استيفاء كافة الشروط المعتمدة ومطابقة المسميات الوظيفية لأنظمة وزارة الموارد البشرية واقتصادية دبي، مع تسليم إيصالات سداد حكومية رسمية فورية. تبلغ تكلفة باقة الداخل 3,056 درهم (تشمل إذن الدخول، تعديل الوضع، الهوية، الفحص الطبي وتثبيت الإقامة)، بينما تبلغ باقة الخارج 1,731 درهم، مع توفر مسار VIP الفوري للحالات التنفيذية والمستعجلة.`,
+تخضع كل معاملة لتدقيق قانوني ثلاثي للتحقق من استيفاء كافة الشروط المعتمدة ومطابقة المسميات الوظيفية لأنظمة وزارة الموارد البشرية واقتصادية دبي، مع تسليم إيصالات سداد حكومية رسمية فورية، مع توفر مسار VIP الفوري للحالات التنفيذية والمستعجلة.`,
     legalFrameworkEn: `Federal Decree-Law No. 29 of 2021 regarding Foreigners Entry and Residence, UAE Cabinet Decision No. 65 of 2022, and GDRFA Dubai Executive Administrative Regulations for Private Sector and Investor Residence Issuance.`,
     legalFrameworkAr: `المرسوم بقانون اتحادي رقم (29) لسنة 2021 بشأن دخول وإقامة الأجانب، وقرار مجلس الوزراء رقم (65) لسنة 2022، واللوائح التنفيذية الصادرة عن الإدارة العامة للإقامة وشؤون الأجانب بدبي لتنظيم إقامات العمل والاستثمار.`,
     eligibilityEn: [
@@ -131,10 +131,10 @@ Every single application undergoes a strict three-tier verification protocol con
     ],
     faqs: [
       {
-        questionEn: 'What is the complete total cost for a new Dubai employment residency visa?',
-        questionAr: 'كم تبلغ التكلفة الإجمالية الكاملة لإصدار إقامة عمل جديدة في دبي؟',
-        answerEn: 'For applicants currently inside the UAE, the all-inclusive official cost is AED 3,056. This includes the entry permit (AED 1,125), in-country status change (AED 676), Emirates ID typing fee (AED 386), standard DHA medical fitness test (AED 322), and residency stamping (AED 547). For applicants outside the UAE, the cost is AED 1,731. All official ministerial receipts are issued immediately.',
-        answerAr: 'للمتواجدين داخل الدولة، تبلغ التكلفة الإجمالية المعتمدة 3,056 درهماً شاملاً إذن الدخول (1,125 درهم)، تعديل الوضع (676 درهم)، الهوية (386 درهم)، الفحص الطبي (322 درهم)، وتثبيت الإقامة (547 درهم). للمتواجدين بالخارج تبلغ 1,731 درهماً، مع تسليم كافة الإيصالات الوزارية الرسمية فوراً.',
+        questionEn: 'What is included in the new Dubai employment residency visa process?',
+        questionAr: 'ما الذي تشمله إجراءات إصدار إقامة العمل الجديدة في دبي؟',
+        answerEn: 'The full process includes electronic entry permit issuance, in-country status change (if inside UAE), Emirates ID registration, DHA medical fitness screening, and official residence permit approval from GDRFA Dubai. Official ministerial receipts are provided for every step.',
+        answerAr: 'تشمل الإجراءات الكاملة إصدار إذن الدخول الإلكتروني، تعديل الوضع الداخلي (للمتواجدين داخل الدولة)، طباعة الهوية الإماراتية، الفحص الطبي بمركز الكرامة، والاعتماد الرسمي للإقامة من إقامة دبي مع تسليم كافة الإيصالات الرسمية فوراً.',
       },
       {
         questionEn: 'Do I need to visit separate centers for medical testing and fingerprinting?',
@@ -214,12 +214,12 @@ Every single application undergoes a strict three-tier verification protocol con
 
 Our comprehensive renewal protocol is specifically engineered to eliminate late submission fines, administrative rejections, and unnecessary trips across Dubai. Because our flagship government campus in Al Karama (situated right next to the Karama Post Office) directly accommodates the Karama Medical Fitness Express Service Center (KMFC) — widely searched and recognized across Dubai as Karama Medical Center — you can complete every mandatory statutory step in a single visit. Upon arrival, our authorized immigration typists conduct an immediate document pre-audit, lodge your Emirates ID renewal application through the ICP federal gateway, and escort you directly to the medical wing for urgent venous blood sampling and digital chest radiography.
 
-Through our direct ministerial server connectivity with both GDRFA Dubai and the Dubai Health Authority (DHA Salem portal), renewal clearances that previously took days are processed within hours. Our transparent official pricing follows strict government tariffs: the standard renewal for a 2-year private sector or family residency is AED 1,450 in government fees, alongside our certified ESS typing and legal pre-audit fee of AED 250. Clients requiring expedited turnaround can leverage our VIP Majlis lounge, where medical fitness test results from Karama Medical Center are fast-tracked within 2 hours or 6 hours, enabling same-day residency renewal approval. From updated salary certificates and valid Ejari contracts to domestic staff clearances, our dedicated case officers oversee your file through to the instant digital residency issuance synced directly with your UAE Pass application. We ensure full compliance with the latest immigration directives, protecting you from unexpected overstay penalties and keeping your official status in Dubai completely secure and up to date.`,
+Through our direct ministerial server connectivity with both GDRFA Dubai and the Dubai Health Authority (DHA Salem portal), renewal clearances that previously took days are processed within hours. Our transparent official procedure follows strict government standards with immediate receipts for all statutory typing and clearances. Clients requiring expedited turnaround can leverage our VIP Majlis lounge, where medical fitness test results from Karama Medical Center are fast-tracked within 2 hours or 6 hours, enabling same-day residency renewal approval. From updated salary certificates and valid Ejari contracts to domestic staff clearances, our dedicated case officers oversee your file through to the instant digital residency issuance synced directly with your UAE Pass application. We ensure full compliance with the latest immigration directives, protecting you from unexpected overstay penalties and keeping your official status in Dubai completely secure and up to date.`,
     detailedOverviewAr: `يعد تجديد تأشيرة الإقامة في دبي خطوة قانونية بالغة الأهمية يتعين بدؤها قبل انتهاء الإقامة الحالية أو خلال فترة السماح الرسمية المحددة بثلاثين يوماً من إقامة دبي (GDRFA). ومن خلال مركز الكرامة للأعمال (KBC) الحاصل على ترخيص مركز آمر المعتمد رقم 772 بإدارة الإمارات لخدمات رجال الأعمال (ESS)، نقدم خدمة تجديد سريعة ومضمونة لإقامات العمل والاستثمار والأسرة.
 
 تم تصميم منظومة التجديد لدينا لتفادي غرامات التأخير وتصفير البيروقراطية والتنقل بين الدوائر في دبي. يضم مجمعنا الحكومي المتكامل في الكرامة (بجوار بريد الكرامة) مركز الكرامة للياقة الطبية السريعة (KMFC) — المعروف شعبياً في دبي بمركز الكرامة الطبي — مما يمكنك من إنجاز تجديد الهوية الإماراتية عبر بوابة الهوية والجنسية، وطباعة الفحص الطبي، وإجراء فحص الدم والأشعة في نفس اللحظة تحت سقف واحد.
 
-بفضل الربط المباشر مع خوادم إقامة دبي وهيئة الصحة (سالم)، تنجز المعاملات بدقة متناهية. تبلغ الرسوم الحكومية الرسمية للتجديد سنتين 1,450 درهماً، مع رسوم تدقيق وطباعة ESS المعتمدة بقيمة 250 درهماً. وللراغبين في الإنجاز فائق السرعة، يوفر مجلس كبار الشخصيات (VIP) استلام نتائج الفحص الطبي من مركز الكرامة الطبي خلال ساعتين أو 6 ساعات واعتماد الإقامة في نفس اليوم ومزامنتها فوراً مع تطبيق الهوية الرقمية UAE Pass.`,
+بفضل الربط المباشر مع خوادم إقامة دبي وهيئة الصحة (سالم)، تنجز المعاملات بدقة متناهية مع تسليم إيصالات سداد حكومية رسمية فورية. وللراغبين في الإنجاز فائق السرعة، يوفر مجلس كبار الشخصيات (VIP) استلام نتائج الفحص الطبي من مركز الكرامة الطبي خلال ساعتين أو 6 ساعات واعتماد الإقامة في نفس اليوم ومزامنتها فوراً مع تطبيق الهوية الرقمية UAE Pass.`,
     legalFrameworkEn: `Federal Decree-Law No. 29 of 2021 regarding Foreigners Entry and Residence, UAE Cabinet Decision No. 65 of 2022 on Residence Renewal, and GDRFA Dubai Grace Period Regulations.`,
     legalFrameworkAr: `المرسوم بقانون اتحادي رقم (29) لسنة 2021 بشأن دخول وإقامة الأجانب، وقرار مجلس الوزراء رقم (65) لسنة 2022 المنظم لتجديد الإقامات، واللوائح التنفيذية لفترات السماح بإقامة دبي.`,
     eligibilityEn: [
@@ -351,19 +351,161 @@ Through our direct ministerial server connectivity with both GDRFA Dubai and the
   },
 
   // =========================================================================
-  // 3. GOLDEN VISA (10-YEAR UAE RESIDENCY)
+  // 3. RESIDENCY VISA CANCELLATION (GDRFA Dubai)
+  // =========================================================================
+  'amer-residency-visa-cancellation': {
+    detailedOverviewEn: `Cancelling a UAE residence visa in Dubai is a formal regulatory procedure governed by the General Directorate of Residency and Foreigners Affairs (GDRFA Dubai) and the Ministry of Human Resources and Emiratisation (MoHRE). Whether an employee is transitioning to a new employer, an expatriate family is relocating, or an investor is restructuring commercial entities, formal visa cancellation must be executed accurately to secure official departure clearances and prevent late overstay penalties.
+
+At Karama Business Center (KBC), operating under authorized Amer Center License #772 and managed by Emirates Secretarial Services (ESS), our dedicated immigration officers handle complete residence visa cancellations with maximum speed and zero friction. Located centrally in Al Karama (Ground Floor, Al Fajer Building, opposite the Central Karama Post Office), our team conducts a thorough pre-audit of all statutory clearance documents—including electronic labor card cancellations, partner share liquidations, or family file sequencing (ensuring dependent family visas are cancelled before the principal sponsor's file is closed).
+
+Upon submission through our direct ministerial link to GDRFA Dubai, official cancellation permits are approved within 2 to 24 hours. Following cancellation, applicants receive their official GDRFA Cancellation Clearance Certificate, activating their statutory grace period (ranging from 30 up to 180 days depending on the professional skill level, investor category, or Golden Visa classification). During this grace window, our on-site team assists you in transitioning to a new residency visa, issuing a visit visa, or finalizing legal exit protocols without fines.`,
+    detailedOverviewAr: `يعد إلغاء تأشيرة الإقامة في دبي إجراءً قانونياً تنظيمياً يخضع لضوابط الإدارة العامة للإقامة وشؤون الأجانب بدبي (GDRFA) ووزارة الموارد البشرية والتوطين (MoHRE). وسواء كان الإلغاء بهدف الانتقال إلى صاحب عمل جديد، أو مغادرة الدولة، أو إعادة هيكلة الشركات للمستثمرين، فإن الإلغاء القانوني الدقيق يضمن استخراج براءة الذمة الرسمية وتفادي غرامات التأخير.
+
+ومن خلال مركز الكرامة للأعمال (KBC) وبترخيص مركز آمر المعتمد رقم 772 بإدارة الإمارات لخدمات رجال الأعمال (ESS)، يتولى فريقنا المختص إنجاز معاملات إلغاء الإقامة بأعلى درجات السرعة والدقة. في مقرنا الاستراتيجي بمنطقة الكرامة (الطابق الأرضي، بناية الفجر، مقابل بريد الكرامة المركزي)، نقوم بالتدقيق المسبق لكافة المتطلبات—بما في ذلك إلغاء بطاقة وتصريح العمل للموظفين، وتنازل الشركاء، وإلغاء إقامات أفراد الأسرة المكفولين مسبقاً قبل إلغاء إقامة الكفيل الرئيسي.
+
+وبفضل الربط الإلكتروني المباشر مع خوادم إقامة دبي، تصدر موافقة الإلغاء خلال 2 إلى 24 ساعة مع تسليم شهادة الإلغاء الرسمية وتفعيل فترة السماح القانونية (من 30 إلى 180 يوماً بحسب المستوى المهني وفئة التأشيرة). ويتيح لك مركزنا الاستفادة من هذه الفترة لتعديل الوضع على كفيل جديد أو تأشيرة سياحية دون مغادرة الدولة.`,
+    legalFrameworkEn: `Federal Decree-Law No. 29 of 2021 regarding Foreigners Entry and Residence, UAE Cabinet Decision No. 65 of 2022 on Residence Regulations, and GDRFA Dubai Visa Cancellation & Grace Period Directives.`,
+    legalFrameworkAr: `المرسوم بقانون اتحادي رقم (29) لسنة 2021 بشأن دخول وإقامة الأجانب، وقرار مجلس الوزراء رقم (65) لسنة 2022، وتوجيهات إقامة دبي المنظمة لإلغاء الإقامات واحتساب فترات السماح القانونية.`,
+    eligibilityEn: [
+      'Applicant holding current or expired UAE residency permit under Dubai GDRFA jurisdiction',
+      'Completion of MoHRE electronic work permit cancellation (for private corporate employees)',
+      'Prior cancellation or status transfer of all sponsored family dependents (for sponsor cancellation)',
+      'Clearance of pending company legal holds or establishment card blocks if applicable',
+    ],
+    eligibilityAr: [
+      'حمل تأشيرة إقامة سارية أو منتهية صادرة عن إقامة دبي',
+      'إنجاز إلغاء تصريح وبطاقة العمل إلكترونياً من وزارة الموارد البشرية والتوطين (لموظفي الشركات)',
+      'إلغاء أو نقل إقامات كافة أفراد الأسرة المكفولين قبل إلغاء إقامة الكفيل الرئيسي',
+      'خلو ملف المنشأة من التعميمات أو البلوكات الإدارية إن وجدت',
+    ],
+    galleryImages: COMMON_GALLERY,
+    processSteps: [
+      {
+        stepNumber: 1,
+        titleEn: 'MoHRE Labor Clearance & Document Audit',
+        titleAr: 'براءة ذمة وزارة الموارد البشرية وتدقيق المستندات',
+        descEn: 'Verification of signed labor cancellation forms, end-of-service settlement confirmation, and corporate clearance verification.',
+        descAr: 'التحقق من توقيع استمارة إلغاء العمل وبراءة ذمة مستحقات نهاية الخدمة والتدقيق الشامل للمستندات.',
+        durationEn: '1 - 2 Hours',
+        durationAr: '1 - 2 ساعة',
+      },
+      {
+        stepNumber: 2,
+        titleEn: 'Electronic GDRFA Cancellation Submission',
+        titleAr: 'التقديم الإلكتروني لإلغاء الإقامة عبر إقامة دبي',
+        descEn: 'Direct electronic submission through the authorized Amer Center system to the GDRFA Dubai central database.',
+        descAr: 'إرسال طلب الإلغاء عبر منصة آمر المعتمدة مباشرة إلى قاعدة بيانات الإدارة العامة للإقامة وشؤون الأجانب.',
+        durationEn: 'Instant',
+        durationAr: 'فوري',
+      },
+      {
+        stepNumber: 3,
+        titleEn: 'Cancellation Approval & Certificate Generation',
+        titleAr: 'اعتماد الإلغاء وإصدار شهادة المغادرة الرسمية',
+        descEn: 'Official validation by GDRFA officers and instant digital issuance of the Residence Visa Cancellation Certificate.',
+        descAr: 'اعتماد ضابط إقامة دبي وإصدار شهادة إلغاء الإقامة الرسمية محددة بفترة السماح القانونية بدقة.',
+        durationEn: '2 - 24 Hours',
+        durationAr: '2 - 24 ساعة',
+      },
+      {
+        stepNumber: 4,
+        titleEn: 'Grace Period Calculation & Status Regularization',
+        titleAr: 'حساب فترة السماح وتعديل الوضع أو المغادرة',
+        descEn: 'Assisting client with in-country status change to a new employment visa, visit visa, or preparing travel exit clearance.',
+        descAr: 'توجيه المتعامل للاستفادة من فترة السماح القانونية لتعديل الوضع الداخلي على تأشيرة جديدة أو التجهيز للمغادرة.',
+        durationEn: 'Same Day',
+        durationAr: 'نفس اليوم',
+      },
+    ],
+    faqs: [
+      {
+        questionEn: 'How long does residence visa cancellation take at Amer Center Karama?',
+        questionAr: 'كم يستغرق إلغاء تأشيرة الإقامة في مركز آمر الكرامة؟',
+        answerEn: 'Standard visa cancellation takes between 2 to 24 hours once all required clearances (such as MoHRE labor cancellation for employees) are submitted. For urgent cases, expedited processing is available.',
+        answerAr: 'يستغرق الإلغاء عادة ما بين ساعتين إلى 24 ساعة فور استكمال الموافقات العمالية المسبقة. كما تتوفر خدمة مستعجلة للحالات الطارئة.',
+      },
+      {
+        questionEn: 'What is the grace period after Dubai visa cancellation?',
+        questionAr: 'ما هي فترة السماح الممنوحة بعد إلغاء تأشيرة الإقامة في دبي؟',
+        answerEn: 'Under updated UAE immigration regulations, the grace period ranges from 30 days up to 180 days, depending on your skill level, job category, property investor status, or Golden Visa holder category. Our officers will specify your exact statutory date on your cancellation certificate.',
+        answerAr: 'وفق اللائحة التنفيذية المحدثة، تتراوح فترة السماح بين 30 يوماً وتصل إلى 180 يوماً للمستويات المهارية العليا والمستثمرين، ويتم تدوين التاريخ المحدد بدقة على شهادة الإلغاء الرسمية.',
+      },
+      {
+        questionEn: 'Can I cancel my visa and remain inside the UAE without exiting?',
+        questionAr: 'هل يمكنني إلغاء الإقامة والبقاء داخل الإمارات دون مغادرة الدولة؟',
+        answerEn: 'Yes. You have the entire grace period to either secure a new employment visa, obtain an investor or partner visa, or transition to a visit visa through an in-country status change handled directly at our Amer Center in Karama.',
+        answerAr: 'نعم، تتيح لك فترة السماح تعديل وضعك داخل الدولة بالانتقال إلى كفيل أو عمل جديد، أو استخراج تأشيرة مستثمر أو تأشيرة زيارة دون الحاجة لمغادرة حدود الدولة.',
+      },
+      {
+        questionEn: 'Must I cancel my family members before cancelling my own visa?',
+        questionAr: 'هل يجب إلغاء إقامات أفراد الأسرة المكفولين قبل إلغاء إقامة الكفيل؟',
+        answerEn: 'Yes. By law, all dependent family visas sponsored under your file must be cancelled first, or formally put on temporary hold if transitioning between corporate sponsors under GDRFA visa hold rules.',
+        answerAr: 'نعم، يشترط القانون إلغاء إقامات كافة أفراد الأسرة المكفولين أولاً أو وضعها قيد التعليق المؤقت (Hold) في حال الانتقال إلى وظيفة جديدة وفق ضوابط إقامة دبي.',
+      },
+    ],
+    reviews: [
+      {
+        name: 'Mohamed Farouk',
+        roleEn: 'Operations Manager',
+        roleAr: 'مدير عمليات',
+        companyEn: 'Apex Global Trading LLC',
+        companyAr: 'أبيكس جلوبال للتجارة',
+        rating: 5,
+        date: 'March 2026',
+        commentEn: 'Cancelled my Dubai employment visa smoothly at Amer Center Karama. Everything took less than a day and they gave me the official cancellation certificate with 60 days grace period.',
+        commentAr: 'ألغيت إقامة العمل بكل سلاسة في مركز آمر الكرامة. الإجراءات استغرقت أقل من يوم واستلمت شهادة الإلغاء مع فترة سماح 60 يوماً. خدمة ممتازة وراقية.',
+      },
+      {
+        name: 'Ramesh Patel',
+        roleEn: 'Commercial Director',
+        roleAr: 'مدير تجاري',
+        companyEn: 'Prime Star Properties',
+        companyAr: 'برايم ستار العقارية',
+        rating: 5,
+        date: 'February 2026',
+        commentEn: 'Very organized team at Karama Business Center opposite the Post Office. Cancelled my dependent visas and transferred immediately to my new company sponsor.',
+        commentAr: 'فريق منظم جداً في مركز الكرامة للأعمال مقابل البريد المركزي. ألغيت إقامات الأسرة ونقلتها مباشرة إلى كفيلي الجديد بكل احترافية.',
+      },
+    ],
+    targetKeywords: {
+      shortTail: [
+        'Amer Visa Cancellation',
+        'Residence Visa Cancellation Dubai',
+        'Dubai Visa Cancellation',
+        'Cancel UAE Residence Visa',
+        'Amer Center Karama',
+      ],
+      longTail: [
+        'how to cancel Dubai residence visa at Amer center Karama',
+        'residence visa cancellation grace period Dubai',
+        'employee visa cancellation requirements GDRFA Dubai',
+        'Amer center near me visa cancellation process',
+        'Dubai visa cancellation certificate online Amer',
+      ],
+    },
+    featuredFacilityImage: {
+      url: heroCenterImage,
+      captionEn: 'Authorized Amer Center Immigration Stamping & Cancellation Counter',
+      captionAr: 'منصات إلغاء وتثبيت الإقامات بمركز آمر المعتمد في مركز الكرامة للأعمال',
+      locationBadgeEn: 'Ground Floor, Al Fajer Building, Al Karama, Dubai',
+      locationBadgeAr: 'الطابق الأرضي، بناية الفجر، الكرامة، دبي',
+    },
+  },
+
+  // =========================================================================
+  // 4. GOLDEN VISA (10-YEAR UAE RESIDENCY)
   // =========================================================================
   'golden-visa-10yr': {
     detailedOverviewEn: `The UAE Golden Visa is a premier 10-year self-sponsored residency program enacted by the UAE Federal Government to attract and retain global investors, entrepreneurs, exceptional talents, scientists, senior executives, and real estate owners. At Karama Business Center (KBC), operating under authorized Amer Center License #772 and managed by Emirates Secretarial Services (ESS), we operate a specialized executive concierge desk dedicated exclusively to Dubai Golden Visa nominations, background audits, and GDRFA/ICP issuance.
 
 Unlike conventional visas requiring a local corporate employer or national sponsor, the Golden Visa grants you 100% self-sponsored residency, complete flexibility to reside outside the UAE for unlimited periods without visa invalidation, and comprehensive sponsorship privileges for your spouse, children of any age, and domestic staff. Our government facility in Al Karama (located next to Karama Post Office) directly houses the Karama Medical Fitness Express Service Center (KMFC) — known locally throughout Dubai as Karama Medical Center — alongside high-security ICP biometric terminals. This infrastructure allows our VIP clients to undergo comprehensive file evaluation, title deed verification with Dubai Land Department (DLD), specialized medical fitness screening, and biometric capture within a private, confidential executive environment.
 
-Whether you qualify under the Real Estate Investor track (property ownership valued at AED 2,000,000 or above, including mortgaged properties with bank clearance letters), the Senior Executive track (holding an attested bachelor degree, valid Dubai employment contract, and verified monthly salary of AED 30,000+), or as an Entrepreneur, Inventor, or Medical Specialist, our senior legal advisors conduct a meticulous document pre-audit. Our transparent official pricing includes GDRFA Golden Visa nomination and approval fees (AED 2,800), comprehensive ESS VIP concierge typing, title audit, and legal documentation (AED 1,150), and optional VIP Majlis fast-track processing (AED 750) ensuring priority medical screening at Karama Medical Center and rapid 48-hour card dispatch. Our dedicated case managers coordinate every single touchpoint from initial file submission to final card delivery, ensuring total peace of mind for you and your family.`,
+Whether you qualify under the Real Estate Investor track (property ownership valued at AED 2,000,000 or above, including mortgaged properties with bank clearance letters), the Senior Executive track (holding an attested bachelor degree, valid Dubai employment contract, and verified monthly salary of AED 30,000+), or as an Entrepreneur, Inventor, or Medical Specialist, our senior legal advisors conduct a meticulous document pre-audit. We provide comprehensive concierge typing, title deed verification, nomination vetting, and priority medical screening at Karama Medical Center with rapid card dispatch. Our dedicated case managers coordinate every single touchpoint from initial file submission to final card delivery, ensuring total peace of mind for you and your family.`,
     detailedOverviewAr: `تعتبر الإقامة الذهبية لدولة الإمارات العربية المتحدة برنامج إقامة سيادية ذاتية لمدة 10 سنوات أقرته القيادة الرشيدة لجذب واستبقاء المستثمرين العالميين، ورواد الأعمال، والمديرين التنفيذيين، والأطباء، والعلماء، والمواهب الاستثنائية، وملاك العقار. ومن خلال مركز الكرامة للأعمال (KBC) وبترخيص مركز آمر المعتمد رقم 772 تحت إدارة الإمارات لخدمات رجال الأعمال (ESS)، نوفر قسماً تنفيذياً متخصصاً في تدقيق وترشيح وإصدار الإقامات الذهبية عبر إقامة دبي والهيئة الاتحادية.
 
 تمنحك الإقامة الذهبية تملكاً وإقامة ذاتية بنسبة 100% دون الحاجة لكفيل أو ضامن محلي، مع حرية تامة في الإقامة خارج الدولة لأي مدة دون إلغاء الإقامة، وحق كفالة الأسرة والأبناء دون سقف للعمر، والعمالة المساعدة. ويتميز مركزنا في الكرامة (بجوار بريد الكرامة) باحتضان مركز الكرامة للياقة الطبية السريعة (KMFC / مركز الكرامة الطبي) ومنصات البصمة البيومترية ومجلس كبار الشخصيات الفاخر، مما يتيح إنجاز كافة الفحوصات والتحقق من صكوك دائرة الأراضي والأملاك في جلسة واحدة تتسم بأعلى درجات الخصوصية والراحة.
 
-تبلغ الرسوم الحكومية الرسمية 2,800 درهم، ورسوم الطباعة والاستشارات التنفيذية لـ ESS مبلغ 1,150 درهماً، مع توفر خيار المسار الذهبي فائق السرعة VIP بمبلغ 750 درهماً لتنسيق إنجاز الفحص الطبي في مركز الكرامة الطبي واستلام بطاقة الإقامة خلال 48 إلى 72 ساعة.`,
+نوفر خدمات التدقيق القانوني الشامل والطباعة التنفيذية المعتمدة، مع توفر خيار المسار الذهبي فائق السرعة VIP لتنسيق إنجاز الفحص الطبي في مركز الكرامة الطبي واستلام بطاقة الإقامة في وقت قياسي.`,
     legalFrameworkEn: `UAE Cabinet Resolution No. 65 of 2022 regarding Golden Residence Categories, Federal Decree-Law No. 29 of 2021, and Dubai Land Department / GDRFA Executive Directives for 10-Year Golden Visas.`,
     legalFrameworkAr: `قرار مجلس الوزراء رقم (65) لسنة 2022 بشأن فئات الإقامة الذهبية، والمرسوم بقانون اتحادي رقم (29) لسنة 2021، واللوائح التنفيذية المشتركة بين دائرة الأراضي والأملاك وإقامة دبي.`,
     eligibilityEn: [

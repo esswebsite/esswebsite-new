@@ -278,7 +278,6 @@ export default function App() {
               language={language}
               onSearchSubmit={handleHeroSearch}
               onOpenBooking={() => handleOpenBooking()}
-              onOpenMobileBooking={handleBookMobileVan}
             />
 
             {/* Authorized Government Departments Grid */}
@@ -318,11 +317,10 @@ export default function App() {
               onOpenBooking={() => handleOpenBooking()}
             />
 
-            {/* 2026 Executive Experience: VIP Majlis & Mobile Doorstep Van */}
+            {/* 2026 Executive Experience: VIP Majlis */}
             <VipExperience
               language={language}
               onBookMajlis={handleBookMajlis}
-              onBookMobileVan={handleBookMobileVan}
             />
 
             {/* Official Help & Frequently Asked Questions */}

@@ -1,6 +1,13 @@
 import React, { useState } from 'react';
-import { Phone, MessageSquare, Clock, X, CheckCircle2 } from 'lucide-react';
+import { Phone, MessageSquare, Clock, X, CheckCircle2, PhoneCall } from 'lucide-react';
 import { Language } from '../types';
+import {
+  formatCallbackWhatsAppMessage,
+  getWhatsAppUrl,
+  openWhatsApp,
+  OFFICIAL_PHONE,
+  OFFICIAL_PHONE_TEL,
+} from '../utils/whatsapp';
 
 interface CustomerSupportBarProps {
   language: Language;
@@ -11,17 +18,15 @@ export const CustomerSupportBar: React.FC<CustomerSupportBarProps> = ({ language
   const [callbackPhone, setCallbackPhone] = useState('');
   const [callbackName, setCallbackName] = useState('');
   const [submitted, setSubmitted] = useState(false);
+  const [waCallbackText, setWaCallbackText] = useState('');
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (callbackPhone.trim()) {
+      const waMsg = formatCallbackWhatsAppMessage(callbackName, callbackPhone);
+      setWaCallbackText(waMsg);
+      openWhatsApp(waMsg);
       setSubmitted(true);
-      setTimeout(() => {
-        setSubmitted(false);
-        setShowCallbackModal(false);
-        setCallbackPhone('');
-        setCallbackName('');
-      }, 2500);
     }
   };
 
@@ -88,16 +93,54 @@ export const CustomerSupportBar: React.FC<CustomerSupportBarProps> = ({ language
             </button>
 
             {submitted ? (
-              <div className="text-center py-6">
-                <CheckCircle2 className="w-10 h-10 text-emerald-600 mx-auto mb-2" />
-                <h3 className="font-bold text-slate-900 text-base">
-                  {language === 'ar' ? 'تم استلام طلبكم بنجاح' : 'Callback Request Confirmed'}
-                </h3>
-                <p className="text-xs text-slate-500 mt-1">
-                  {language === 'ar'
-                    ? 'سيتواصل معكم أحد مستشارينا المعتمدين خلال 15 دقيقة.'
-                    : 'A certified relationship officer will contact you within 15 minutes.'}
-                </p>
+              <div className="text-center py-5 space-y-3">
+                <div className="w-12 h-12 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto shadow-inner">
+                  <CheckCircle2 className="w-7 h-7" />
+                </div>
+                <div>
+                  <h3 className="font-extrabold text-slate-900 text-base">
+                    {language === 'ar' ? 'تم تسجيل وتجهيز طلبكم بنجاح' : 'Callback Request Sent to WhatsApp'}
+                  </h3>
+                  <p className="text-xs text-slate-500 mt-1">
+                    {language === 'ar'
+                      ? 'تم تحويل رقمكم إلى ضابط الاتصال المعتمد على واتساب للمعاودة الفورية.'
+                      : 'Your contact has been forwarded to our relationship desk on WhatsApp for 15-minute priority callback.'}
+                  </p>
+                </div>
+
+                <div className="pt-2 space-y-2">
+                  <a
+                    href={getWhatsAppUrl(waCallbackText)}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full py-2.5 px-3 bg-[#25D366] hover:bg-[#20bd5a] text-white text-xs font-bold rounded-lg flex items-center justify-center gap-1.5 shadow-sm transition-all"
+                  >
+                    <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4 text-white" aria-hidden="true">
+                      <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.63C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.9C17.18 3.03 14.69 2 12.04 2ZM12.05 20.15C10.57 20.15 9.12 19.76 7.85 19.01L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 14.99 3.81 13.47 3.81 11.91C3.81 7.37 7.5 3.68 12.05 3.68C14.25 3.68 16.31 4.54 17.87 6.1C19.42 7.66 20.28 9.72 20.28 11.92C20.28 16.46 16.59 20.15 12.05 20.15ZM16.57 14.44C16.32 14.31 15.11 13.72 14.88 13.64C14.66 13.55 14.49 13.51 14.33 13.76C14.16 14.01 13.67 14.58 13.52 14.75C13.37 14.92 13.22 14.94 12.97 14.81C12.72 14.69 11.91 14.42 10.95 13.57C10.2 12.9 9.69 12.08 9.54 11.83C9.39 11.58 9.53 11.44 9.65 11.32C9.76 11.21 9.9 11.03 10.02 10.89C10.15 10.74 10.19 10.64 10.27 10.47C10.35 10.3 10.31 10.16 10.25 10.03C10.19 9.91 9.69 8.68 9.48 8.18C9.28 7.69 9.07 7.76 8.92 7.75C8.77 7.74 8.61 7.74 8.44 7.74C8.28 7.74 8.01 7.8 7.78 8.05C7.55 8.3 6.9 8.91 6.9 10.15C6.9 11.39 7.8 12.59 7.93 12.75C8.05 12.92 9.72 15.49 12.28 16.6C12.89 16.86 13.36 17.02 13.73 17.14C14.34 17.33 14.9 17.31 15.34 17.24C15.83 17.17 16.85 16.62 17.06 16.03C17.27 15.44 17.27 14.94 17.21 14.83C17.15 14.72 16.98 14.66 16.57 14.44Z" />
+                    </svg>
+                    <span>{language === 'ar' ? 'فتح المحادثة في واتساب' : 'Open WhatsApp Chat'}</span>
+                  </a>
+
+                  <a
+                    href={OFFICIAL_PHONE_TEL}
+                    className="w-full py-2 px-3 bg-slate-100 hover:bg-slate-200 text-slate-800 text-xs font-bold rounded-lg flex items-center justify-center gap-1.5 transition-colors"
+                  >
+                    <PhoneCall className="w-3.5 h-3.5 text-[#128B94]" />
+                    <span>{language === 'ar' ? `أو اتصل فوراً: ${OFFICIAL_PHONE}` : `Or Call Directly: ${OFFICIAL_PHONE}`}</span>
+                  </a>
+                </div>
+
+                <button
+                  onClick={() => {
+                    setSubmitted(false);
+                    setShowCallbackModal(false);
+                    setCallbackPhone('');
+                    setCallbackName('');
+                  }}
+                  className="text-[11px] text-slate-500 hover:text-slate-800 underline transition-colors cursor-pointer pt-1"
+                >
+                  {language === 'ar' ? 'إغلاق' : 'Close'}
+                </button>
               </div>
             ) : (
               <div>
@@ -110,8 +153,8 @@ export const CustomerSupportBar: React.FC<CustomerSupportBarProps> = ({ language
                 </h3>
                 <p className="text-xs text-slate-500 mb-4">
                   {language === 'ar'
-                    ? 'أدخل رقم هاتفك وسيقوم مستشار حكومي بالتواصل معك فوراً.'
-                    : 'Speak directly with our senior government transaction advisors.'}
+                    ? 'أدخل رقم هاتفك وسيقوم مستشار حكومي بالتواصل معك فوراً عبر واتساب والهاتف.'
+                    : 'Speak directly with our senior government transaction advisors via WhatsApp or phone.'}
                 </p>
 
                 <form onSubmit={handleSubmit} className="space-y-3">
@@ -138,9 +181,12 @@ export const CustomerSupportBar: React.FC<CustomerSupportBarProps> = ({ language
 
                   <button
                     type="submit"
-                    className="w-full py-2.5 text-xs font-bold text-white bg-[#128B94] hover:bg-[#01403F] rounded-md transition-colors cursor-pointer shadow-xs"
+                    className="w-full py-2.5 text-xs font-bold text-white bg-[#25D366] hover:bg-[#20bd5a] rounded-md transition-colors cursor-pointer shadow-xs flex items-center justify-center gap-1.5"
                   >
-                    {language === 'ar' ? 'إرسال الطلب الآن' : 'Call Me Back'}
+                    <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4 text-white" aria-hidden="true">
+                      <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.63C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.9C17.18 3.03 14.69 2 12.04 2ZM12.05 20.15C10.57 20.15 9.12 19.76 7.85 19.01L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 14.99 3.81 13.47 3.81 11.91C3.81 7.37 7.5 3.68 12.05 3.68C14.25 3.68 16.31 4.54 17.87 6.1C19.42 7.66 20.28 9.72 20.28 11.92C20.28 16.46 16.59 20.15 12.05 20.15ZM16.57 14.44C16.32 14.31 15.11 13.72 14.88 13.64C14.66 13.55 14.49 13.51 14.33 13.76C14.16 14.01 13.67 14.58 13.52 14.75C13.37 14.92 13.22 14.94 12.97 14.81C12.72 14.69 11.91 14.42 10.95 13.57C10.2 12.9 9.69 12.08 9.54 11.83C9.39 11.58 9.53 11.44 9.65 11.32C9.76 11.21 9.9 11.03 10.02 10.89C10.15 10.74 10.19 10.64 10.27 10.47C10.35 10.3 10.31 10.16 10.25 10.03C10.19 9.91 9.69 8.68 9.48 8.18C9.28 7.69 9.07 7.76 8.92 7.75C8.77 7.74 8.61 7.74 8.44 7.74C8.28 7.74 8.01 7.8 7.78 8.05C7.55 8.3 6.9 8.91 6.9 10.15C6.9 11.39 7.8 12.59 7.93 12.75C8.05 12.92 9.72 15.49 12.28 16.6C12.89 16.86 13.36 17.02 13.73 17.14C14.34 17.33 14.9 17.31 15.34 17.24C15.83 17.17 16.85 16.62 17.06 16.03C17.27 15.44 17.27 14.94 17.21 14.83C17.15 14.72 16.98 14.66 16.57 14.44Z" />
+                    </svg>
+                    <span>{language === 'ar' ? 'إرسال الطلب عبر واتساب' : 'Send Callback via WhatsApp'}</span>
                   </button>
                 </form>
               </div>

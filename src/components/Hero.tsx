@@ -1,14 +1,15 @@
 import React, { useState } from 'react';
-import { Search, ArrowRight, PhoneCall, Sparkles, FileCheck2, Building2, Award, Zap } from 'lucide-react';
+import { Search, ArrowRight, Phone, PhoneCall, Sparkles, FileCheck2, Building2, Award, Zap } from 'lucide-react';
 import { Language } from '../types';
 import { TRANSLATIONS } from '../data/translations';
 import { mainBannerBgImg } from '../data/centerOriginalPhotos';
+import { OFFICIAL_PHONE, OFFICIAL_PHONE_TEL, getWhatsAppUrl } from '../utils/whatsapp';
 
 interface HeroProps {
   language: Language;
   onSearchSubmit: (query: string) => void;
   onOpenBooking: () => void;
-  onOpenMobileBooking: () => void;
+  onOpenMobileBooking?: () => void;
 }
 
 export const Hero: React.FC<HeroProps> = ({
@@ -180,32 +181,39 @@ export const Hero: React.FC<HeroProps> = ({
               </div>
             </form>
 
-            {/* Balanced, Clean CTAs (Inspired by egsh.ae) */}
+            {/* Balanced CTAs with WhatsApp & Call Prominence */}
             <div className="mt-7 sm:mt-8 flex flex-wrap items-center gap-3 sm:gap-4">
+              {/* WhatsApp Instant Desk (Prominent Green) */}
+              <a
+                href={getWhatsAppUrl('Hello Karama Business Center & Emirates Secretarial Services, I would like information on Dubai government services')}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-5 py-3.5 text-sm font-bold text-white bg-[#25D366] hover:bg-[#20bd5a] rounded-xl transition-all shadow-md hover:shadow-lg cursor-pointer flex items-center gap-2 active:scale-[0.98]"
+              >
+                <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4 text-white" aria-hidden="true">
+                  <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.63C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.9C17.18 3.03 14.69 2 12.04 2ZM12.05 20.15C10.57 20.15 9.12 19.76 7.85 19.01L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 14.99 3.81 13.47 3.81 11.91C3.81 7.37 7.5 3.68 12.05 3.68C14.25 3.68 16.31 4.54 17.87 6.1C19.42 7.66 20.28 9.72 20.28 11.92C20.28 16.46 16.59 20.15 12.05 20.15ZM16.57 14.44C16.32 14.31 15.11 13.72 14.88 13.64C14.66 13.55 14.49 13.51 14.33 13.76C14.16 14.01 13.67 14.58 13.52 14.75C13.37 14.92 13.22 14.94 12.97 14.81C12.72 14.69 11.91 14.42 10.95 13.57C10.2 12.9 9.69 12.08 9.54 11.83C9.39 11.58 9.53 11.44 9.65 11.32C9.76 11.21 9.9 11.03 10.02 10.89C10.15 10.74 10.19 10.64 10.27 10.47C10.35 10.3 10.31 10.16 10.25 10.03C10.19 9.91 9.69 8.68 9.48 8.18C9.28 7.69 9.07 7.76 8.92 7.75C8.77 7.74 8.61 7.74 8.44 7.74C8.28 7.74 8.01 7.8 7.78 8.05C7.55 8.3 6.9 8.91 6.9 10.15C6.9 11.39 7.8 12.59 7.93 12.75C8.05 12.92 9.72 15.49 12.28 16.6C12.89 16.86 13.36 17.02 13.73 17.14C14.34 17.33 14.9 17.31 15.34 17.24C15.83 17.17 16.85 16.62 17.06 16.03C17.27 15.44 17.27 14.94 17.21 14.83C17.15 14.72 16.98 14.66 16.57 14.44Z" />
+                </svg>
+                <span>{t.heroCtaWhatsApp}</span>
+              </a>
+
+              {/* Call CTA */}
+              <a
+                href={OFFICIAL_PHONE_TEL}
+                className="px-4 py-3.5 text-sm font-bold text-slate-800 bg-white/95 hover:bg-white rounded-xl border border-slate-200/90 transition-all cursor-pointer flex items-center gap-2 active:scale-[0.98] shadow-2xs hover:shadow-sm"
+                title={`Call Us Directly: ${OFFICIAL_PHONE}`}
+              >
+                <Phone className="w-4 h-4 text-[#128B94]" />
+                <span>{language === 'ar' ? `اتصال: ${OFFICIAL_PHONE}` : `Call: ${OFFICIAL_PHONE}`}</span>
+              </a>
+
+              {/* Book Appointment CTA */}
               <button
                 onClick={onOpenBooking}
-                className="px-6 py-3.5 text-sm font-bold text-white bg-[#128B94] hover:bg-[#01403F] rounded-xl transition-all shadow-sm hover:shadow-md cursor-pointer flex items-center gap-2 active:scale-[0.98]"
+                className="px-5 py-3.5 text-sm font-bold text-white bg-[#128B94] hover:bg-[#01403F] rounded-xl transition-all shadow-sm hover:shadow-md cursor-pointer flex items-center gap-2 active:scale-[0.98]"
               >
                 <Sparkles className="w-4 h-4 text-white" />
                 <span>{t.heroCtaBook}</span>
               </button>
-
-              <button
-                onClick={onOpenMobileBooking}
-                className="px-5 py-3.5 text-sm font-semibold text-slate-800 bg-white/90 hover:bg-white rounded-xl border border-slate-200/90 transition-all cursor-pointer flex items-center gap-2 active:scale-[0.98] shadow-2xs hover:shadow-sm"
-              >
-                <span>{t.heroCtaDoorstep}</span>
-              </button>
-
-              <a
-                href="https://wa.me/97143426666?text=Hello%20Karama%20Business%20Center%20and%20Emirates%20Secretarial%20Services,%20I%20would%20like%20information%20on%20Dubai%20government%20services"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-4 py-3.5 text-sm font-semibold text-slate-700 hover:text-[#128B94] transition-colors flex items-center gap-2"
-              >
-                <PhoneCall className="w-4 h-4 text-[#128B94]" />
-                <span>{t.heroCtaWhatsApp}</span>
-              </a>
             </div>
           </div>
 

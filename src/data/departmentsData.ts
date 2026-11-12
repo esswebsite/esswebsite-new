@@ -12,7 +12,7 @@ export const DEPARTMENTS: Department[] = [
     accreditationEn: 'Authorized Amer Center (GDRFA Dubai #772)',
     accreditationAr: 'مركز آمر معتمد من إقامة دبي (#772)',
     iconName: 'Passport',
-    serviceCount: 15,
+    serviceCount: 16,
     color: 'emerald',
     logoUrl: DEPARTMENT_LOGOS['amer']?.src,
     officialGovUrl: 'https://gdrfad.gov.ae/en/services',
@@ -362,8 +362,49 @@ const RAW_SERVICES: ServiceItem[] = [
     isVipEligible: true
   },
 
-  // 3. Golden Visa (10-Year UAE Residency)
-  
+  // 3. Residency Visa Cancellation
+  {
+    id: 'amer-residency-visa-cancellation',
+    departmentId: 'amer',
+    titleEn: 'Residency Visa Cancellation (GDRFA)',
+    titleAr: 'إلغاء تأشيرة الإقامة (إقامة دبي)',
+    category: 'residency',
+    shortDescEn: 'Official cancellation of UAE residence visas for private sector employees, business partners, investors, and family dependents through GDRFA Dubai. Instant cancellation certificate and clearance.',
+    shortDescAr: 'إلغاء تأشيرة الإقامة الرسمية لموظفي القطاع الخاص والشركاء والمستثمرين وأفراد الأسرة عبر إقامة دبي، مع إصدار شهادة الإلغاء الفورية وفترة السماح القانونية.',
+    govFee: 0,
+    serviceFee: 0,
+    vipFastTrackFee: 0,
+    processingTimeEn: '2 - 24 Hours',
+    processingTimeAr: '2 - 24 ساعة',
+    authorityEn: 'Amer Center / GDRFA Dubai',
+    authorityAr: 'مركز آمر / إقامة دبي',
+    requiredDocumentsEn: [
+      'Original Emirates ID or clear copy of applicant',
+      'Clear copy of current UAE residence visa',
+      'Copy of sponsor Emirates ID or valid passport',
+      'Approved MoHRE work permit cancellation / labor card clearance (for private employees)',
+      'Partner/Investor share liquidation or trade license amendment (for partners)'
+    ],
+    requiredDocumentsAr: [
+      'الهوية الإماراتية الأصلية أو نسخة واضحة للمكفول',
+      'نسخة واضحة من تأشيرة الإقامة الحالية',
+      'نسخة بطاقة الهوية أو جواز سفر الكفيل',
+      'موافقة إلغاء تصريح وبطاقة العمل المعتمدة من وزارة الموارد البشرية (للموظفين)',
+      'إقرار التنازل أو تعديل الرخصة التجارية وإلغاء صفة الشريك (للشركاء والمستثمرين)'
+    ],
+    keyBenefitsEn: [
+      'Instant electronic GDRFA cancellation clearance certificate',
+      'Accurate computation of legal grace periods (30 to 180 days)',
+      'Seamless coordination for in-country status change or exit permit'
+    ],
+    keyBenefitsAr: [
+      'إصدار شهادة مغادرة وإلغاء إلكترونية فورية ومعتمدة من إقامة دبي',
+      'حساب دقيق لفترات السماح القانونية لتجنب غرامات البقاء غير القانوني',
+      'تنسيق متكامل لتعديل الوضع داخل الدولة أو استخراج تصريح المغادرة'
+    ],
+    isPopular: true,
+    isVipEligible: true
+  },
 
   // 4. Family Sponsorship Visa (Spouse & Children)
   {

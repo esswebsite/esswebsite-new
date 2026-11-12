@@ -43,3 +43,41 @@ export const OFFICIAL_SAME_AS: readonly string[] = [
   OFFICIAL_SOCIAL_LINKS.tiktok,
   OFFICIAL_CONTACT.website,
 ];
+
+/**
+ * Dedicated verified channels, Google Business Profile, and sameAs links
+ * strictly and exclusively for Amer Center Karama Dubai (License #772).
+ * Kept strictly isolated from other departments and parent ESS identity.
+ */
+export const AMER_OFFICIAL_SOCIAL_LINKS = {
+  youtube: 'https://www.youtube.com/channel/UCkZvVRnR4s2l4QVuWJKCNGQ',
+  facebook: 'https://www.facebook.com/amerkarama.ae/',
+  instagram: 'https://www.instagram.com/amerkarama.ae/',
+  linkedin: 'https://www.linkedin.com/company/amer-karama-center/',
+} as const;
+
+export const AMER_OFFICIAL_GBP = {
+  shareUrl: 'https://share.google/jsnhyqPxK3cT3Au1j',
+  titleEn: 'Amer Center Karama Dubai',
+  titleAr: 'مركز آمر الكرامة دبي',
+  addressEn: 'Ground Floor, Al Fajer Building, Opposite Central Karama Post Office, Al Karama, Dubai, United Arab Emirates',
+  addressAr: 'الطابق الأرضي، بناية الفجر، مقابل بريد الكرامة المركزي، الكرامة، دبي، الإمارات العربية المتحدة',
+  coordinates: {
+    latitude: 25.2453731,
+    longitude: 55.309525,
+  },
+  phonePrimary: '04-342-6666',
+  phonePrimaryIntl: '+97143426666',
+  openingHours: [
+    { days: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'], opens: '08:00', closes: '20:00' },
+    { days: ['Saturday'], opens: '08:00', closes: '17:00' },
+  ],
+} as const;
+
+export const AMER_SAME_AS: readonly string[] = [
+  AMER_OFFICIAL_GBP.shareUrl,
+  AMER_OFFICIAL_SOCIAL_LINKS.youtube,
+  AMER_OFFICIAL_SOCIAL_LINKS.facebook,
+  AMER_OFFICIAL_SOCIAL_LINKS.instagram,
+  AMER_OFFICIAL_SOCIAL_LINKS.linkedin,
+];

@@ -985,16 +985,16 @@ export const Header: React.FC<HeaderProps> = ({
             <SocialLinks variant="icons" />
           </div>
 
-          {/* Booking CTA Button (Strictly NO Phone Number) */}
-          <div className="mt-3 pt-2 flex flex-col gap-2.5">
+          {/* Mobile Drawer Action: Book Appointment */}
+          <div className="mt-3 pt-2">
             <button
               onClick={() => {
                 setIsMobileMenuOpen(false);
                 onOpenBooking();
               }}
-              className="w-full py-3 px-4 text-sm font-bold text-white bg-[#128B94] hover:bg-[#01403F] rounded-lg shadow-sm flex items-center justify-center gap-2 cursor-pointer"
+              className="w-full py-2.5 px-4 text-xs font-bold text-white bg-[#128B94] hover:bg-[#01403F] rounded-lg shadow-sm flex items-center justify-center gap-2 cursor-pointer"
             >
-              <Calendar className="w-4 h-4" />
+              <Calendar className="w-3.5 h-3.5" />
               <span>{t.bookAppointmentBtn}</span>
             </button>
           </div>
