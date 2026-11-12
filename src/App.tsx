@@ -97,7 +97,7 @@ export default function App() {
   // Sync document title, meta description, keywords, OpenGraph and Twitter tags on route navigation
   useEffect(() => {
     applyRouteSeo(window.location.pathname);
-    // Push pageview event to Google Tag Manager (GTM-WC8PTH7G)
+    // Push pageview event to Google Tag Manager (GTM-NBDJ2P99)
     try {
       const w = window as unknown as { dataLayer?: Array<Record<string, unknown>> };
       w.dataLayer = w.dataLayer || [];
