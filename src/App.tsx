@@ -27,6 +27,7 @@ import { SingleArticlePage } from './components/SingleArticlePage';
 import { AwardsPage } from './components/AwardsPage';
 import { ClientsPage } from './components/ClientsPage';
 import { EventsPage } from './components/EventsPage';
+import { InternalAuditPage } from './components/InternalAuditPage';
 import { SERVICES } from './data/departmentsData';
 import { applyRouteSeo } from './utils/routeSeo';
 import { resolveRoute, getDepartmentPath, getServicePath } from './utils/router';
@@ -478,6 +479,17 @@ export default function App() {
             onNavigateToDepartment={navigateToDepartment}
             onNavigateToService={navigateToService}
             onOpenBooking={handleOpenBooking}
+          />
+        )}
+
+        {pageView.type === 'internal' && (
+          <InternalAuditPage
+            language={language}
+            onNavigateToHome={navigateToHome}
+            onNavigatePage={handleNavigatePage}
+            onNavigateToDepartment={navigateToDepartment}
+            onNavigateToService={navigateToService}
+            onNavigateToArticle={navigateToArticle}
           />
         )}
       </main>

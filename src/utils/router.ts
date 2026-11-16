@@ -148,6 +148,9 @@ export function resolveRoute(
   if (primary === 'faq') {
     return { pageView: { type: 'faq' }, language: lang, canonicalPath: `${lang === 'ar' ? '/ar' : ''}/faq` };
   }
+  if (primary === 'internal') {
+    return { pageView: { type: 'internal' }, language: lang, canonicalPath: `${lang === 'ar' ? '/ar' : ''}/internal` };
+  }
   if (primary === 'blog' || primary === 'knowledge-hub') {
     const slug = segments[1];
     return {
@@ -296,6 +299,8 @@ export function buildPath(pageView: PageView, lang: Language): string {
       return `${prefix}/faq`;
     case 'blog':
       return pageView.postSlug ? `${prefix}/knowledge-hub/${pageView.postSlug}` : `${prefix}/knowledge-hub`;
+    case 'internal':
+      return `${prefix}/internal`;
     case 'not_found':
       return pageView.requestedPath || (prefix || '/');
     default:

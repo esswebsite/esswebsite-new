@@ -161,5 +161,6 @@ export type PageView =
   | { type: 'department'; deptId: string }
   | { type: 'service'; serviceId: string; deptId?: string }
   | { type: 'pricelist' }
+  | { type: 'internal' }
   | { type: 'not_found'; requestedPath?: string };
 

@@ -1255,6 +1255,18 @@ export function getSeoForRoute(route: string): RouteSeoData {
 
   const canonicalUrl = cleanRoute === '/' ? `${CANONICAL_BASE}/` : `${CANONICAL_BASE}${cleanRoute}`;
 
+  // 0. Internal hidden audit page (/internal)
+  if (cleanRoute === '/internal') {
+    const schema = getSchemaForRoute(cleanRoute, canonicalUrl);
+    return {
+      title: 'Internal Sitemap & SEO Audit | ESS Karama (Hidden)',
+      description: 'Internal hidden technical SEO, sitemap, meta tags, keywords, canonical URLs, JSON-LD schema, and social link audit for ess.ae.',
+      keywords: 'internal audit, sitemap, meta title, meta description, schema, canonical links',
+      canonicalUrl,
+      schema,
+    };
+  }
+
   // 1. Core pages match
   if (CORE_PAGES_META[cleanRoute]) {
     const meta = CORE_PAGES_META[cleanRoute];
@@ -1397,6 +1409,11 @@ export function applyRouteSeo(route: string): RouteSeoData {
     document.head.appendChild(canonTag);
   }
   canonTag.setAttribute('href', seo.canonicalUrl);
+
+  // Update Robots (strictly noindex, nofollow for hidden /internal page)
+  const cleanPath = route.split('?')[0].split('#')[0].replace(/\/+$/, '') || '/';
+  const isHiddenInternal = cleanPath === '/internal' || cleanPath === '/ar/internal';
+  setMetaTag('meta[name="robots"]', 'name', 'robots', isHiddenInternal ? 'noindex, nofollow' : 'index, follow');
 
   // Update OpenGraph
   setMetaTag('meta[property="og:title"]', 'property', 'og:title', seo.title);
