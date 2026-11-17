@@ -225,10 +225,10 @@ export const InternalAuditPage: React.FC<InternalAuditPageProps> = ({
         arUrl: alts.arUrl,
         defaultUrl: alts.defaultUrl,
         departmentId: 'parent-ess',
-        departmentName: 'Parent ESS / Karama Business Center',
-        departmentCode: 'ESS-KBC',
+        departmentName: 'Parent: Karama Medical and Fitness Center',
+        departmentCode: 'KMFC-KBC',
         departmentPath: '/departments',
-        operatorName: 'Karama Business Center - Emirates Secretarial Services (ESS)',
+        operatorName: 'Karama Medical and Fitness Center (KMFC / KBC / ESS)',
         operatorUrl: CANONICAL_BASE,
         serviceId: 'N/A (Core Hub Page)',
         serviceName: core.name,
@@ -676,7 +676,7 @@ export const InternalAuditPage: React.FC<InternalAuditPageProps> = ({
               <div className="flex items-center gap-2">
                 <Building2 className="w-5 h-5 text-[#128B94]" />
                 <h2 className="text-base font-extrabold text-slate-900">
-                  Parent Identity: ESS / Karama Business Center / KMFC
+                  Parent Identity: Karama Medical and Fitness Center (KMFC / KBC)
                 </h2>
               </div>
               <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-teal-50 text-teal-800 border border-teal-200">

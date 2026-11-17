@@ -89,13 +89,15 @@ export const AMER_CENTER_ENTITY_SCHEMA = {
 export const BASE_ORGANIZATION_SCHEMA = {
   '@type': 'GovernmentBuilding',
   '@id': 'https://ess.ae/#organization',
-  name: 'Karama Business Center - ESS',
+  name: 'Karama Medical and Fitness Center',
   alternateName: [
-    'Emirates Secretarial Services Al Karama',
-    'Karama Business Center',
-    'ESS',
-    'Amer Center Karama',
+    'Karama Medical Center',
+    'Karama Medical Fitness Express Service Center',
     'KMFC',
+    'Karama Business Center',
+    'Emirates Secretarial Services Al Karama',
+    'ESS',
+    'KBC',
   ],
   url: 'https://ess.ae',
   telephone: '+971-4-342-6666',
@@ -197,411 +199,469 @@ export const GOV_OPERATORS: Record<string, { name: string; url: string }> = {
     url: 'https://www.mohre.gov.ae',
   },
   'vip-mobile': {
-    name: 'Karama Business Center VIP Concierge',
+    name: 'Karama Medical and Fitness Center VIP Concierge',
     url: 'https://ess.ae',
   },
 };
 
-// Specific metadata for core pages (50-60 chars title, 120-160 chars desc)
+// Specific metadata for core pages (55-60 chars title, 120-160 chars desc, ZERO Amer keywords)
 export const CORE_PAGES_META: Record<string, { title: string; desc: string; keywords: string }> = {
   '/': {
-    title: 'Amer Center Karama Dubai | UAE Visa & Golden Visa ESS',
-    desc: 'Authorized Amer Center Karama (#772) in Dubai. Fast UAE residency, Golden Visa, Tasheel work permits, Emirates ID & DHA Salem medical.',
-    keywords: 'Amer Center Karama, amer center near me, uae visa, golden visa dubai, tasheel dubai, pro services dubai, emirates id renewal, dha salem medical',
+    title: 'Karama Medical and Fitness Center | Dubai Visa & PRO Hub',
+    desc: 'Official Karama Medical and Fitness Center in Dubai. Express DHA Salem visa medicals, UAE residency, Golden Visa, Tasheel & DET PRO services.',
+    keywords: 'Karama Medical and Fitness Center, Karama Medical Center Dubai, dha salem medical, uae visa dubai, golden visa dubai, tasheel dubai, pro services dubai, emirates id renewal',
   },
   '/about': {
-    title: 'About ESS Karama | Authorized Dubai PRO & Amer Center',
-    desc: 'Over 20 years of authorized Dubai government typing & PRO services at Karama Business Center. Amer Center #772, Tasheel & Salem medical.',
-    keywords: 'About ESS Dubai, Karama Business Center, Amer Center Karama, Tasheel Dubai, Dubai PRO center, authorized government typing Dubai',
+    title: 'About Karama Medical and Fitness Center | Dubai PRO Hub',
+    desc: 'Over 20 years of authorized Dubai DHA medical fitness and government PRO services at Karama Medical and Fitness Center. Fast, certified processing.',
+    keywords: 'About Karama Medical and Fitness Center, Karama Medical Center, Karama Business Center, Tasheel Dubai, Dubai PRO center, authorized government typing Dubai',
   },
   '/departments': {
-    title: 'Government Centers Dubai | Amer, Tasheel & Salem ESS',
-    desc: 'Access 14 official government departments under one roof at Karama Business Center: Amer GDRFA, Tasheel MOHRE, DET, ICP ID & DHA Salem.',
-    keywords: 'Government departments Dubai, Amer Center Karama, DET licensing Dubai, Tasheel MOHRE Dubai, ICP Emirates ID typing, DHA Salem medical',
+    title: '14 Dubai Service Centers | Karama Medical & Fitness Hub',
+    desc: 'Access 14 official departments under one roof at Karama Medical and Fitness Center: DHA Salem medical, GDRFA visa, Tasheel, DET, ICP & notary.',
+    keywords: 'Government departments Dubai, Karama Medical and Fitness Center, DET licensing Dubai, Tasheel MOHRE Dubai, ICP Emirates ID typing, DHA Salem medical',
   },
   '/knowledge-hub': {
-    title: 'Dubai Visa & Immigration Guides 2026 | ESS Amer Hub',
-    desc: 'Authoritative UAE visa guides, Golden Visa rules, Emirates ID procedures, DET trade license renewal, and labor regulations by Dubai PROs.',
-    keywords: 'UAE visa guide, Dubai residence renewal guide, Golden Visa eligibility rules, Emirates ID renewal steps, Dubai corporate tax guide',
+    title: 'UAE Visa & Medical Guides | Karama Medical & Fitness Hub',
+    desc: 'Authoritative UAE visa guides, DHA Salem medical tips, Golden Visa rules, Emirates ID steps & DET business setup by Karama Medical and Fitness Center.',
+    keywords: 'UAE visa guide, Dubai residence renewal guide, Golden Visa eligibility rules, Emirates ID renewal steps, Karama Medical and Fitness Center',
   },
   '/faq': {
-    title: 'Dubai Visa & Amer Center FAQ | Frequently Asked ESS',
-    desc: 'Find answers to common questions about UAE residence visas, Golden Visa eligibility, DET trade licenses, Tasheel, and Salem medical tests.',
-    keywords: 'Dubai visa FAQ, Amer center FAQ, Golden Visa questions Dubai, Salem medical fitness test FAQ, trade license renewal FAQ',
+    title: 'Dubai Visa & Medical FAQ | Karama Medical Fitness Center',
+    desc: 'Find answers on DHA Salem medical fitness tests, UAE residence visas, Golden Visa eligibility, DET trade licenses & Tasheel at Karama Medical Center.',
+    keywords: 'Dubai visa FAQ, Salem medical fitness test FAQ, Golden Visa questions Dubai, trade license renewal FAQ, Karama Medical and Fitness Center',
   },
   '/contact': {
-    title: 'Contact Amer Center Karama | Dubai Location & Phone',
-    desc: 'Visit Emirates Secretarial Services & Amer Center next to Karama Post Office Dubai. Call +971 4 342 6666 for express VIP PRO assistance.',
-    keywords: 'Contact ESS Dubai, Karama Business Center location, Amer center phone number, DHA Salem Karama contact, government services Karama',
+    title: 'Contact Karama Medical and Fitness Center | Location Map',
+    desc: 'Visit Karama Medical and Fitness Center next to Karama Post Office Dubai. Call +971 4 342 6666 for DHA Salem medicals & express VIP PRO support.',
+    keywords: 'Contact Karama Medical and Fitness Center, Karama Medical Center location, DHA Salem Karama contact, Karama Business Center phone, government services Karama',
   },
   '/team': {
-    title: 'Certified PRO Team & Immigration Officers | ESS Dubai',
-    desc: 'Meet our team of licensed PROs, immigration consultants, and legal specialists at Emirates Secretarial Services Karama Business Center.',
-    keywords: 'ESS team Dubai, certified PRO Dubai, government liaison officers, immigration consultants Karama, Karama Business Center team',
+    title: 'Our PRO & Medical Team | Karama Medical & Fitness Center',
+    desc: 'Meet our licensed PRO officers, DHA medical fitness staff, and legal specialists at Karama Medical and Fitness Center in Al Karama, Dubai.',
+    keywords: 'Karama Medical and Fitness Center team, certified PRO Dubai, government liaison officers, DHA medical staff Karama, Karama Medical Center team',
   },
   '/ceo': {
-    title: 'CEO Message & Vision | Emirates Secretarial Services',
-    desc: 'Leadership message from Emirates Secretarial Services & Karama Business Center on delivering premier, zero-delay government services in Dubai.',
-    keywords: 'CEO Emirates Secretarial Services, Karama Business Center leadership, Dubai government services vision, ESS corporate governance',
+    title: 'CEO Vision & Message | Karama Medical and Fitness Center',
+    desc: 'Leadership message from Karama Medical and Fitness Center on delivering fast, transparent DHA medical fitness and Dubai government services.',
+    keywords: 'CEO Karama Medical and Fitness Center, Karama Medical Center leadership, Dubai government services vision, corporate governance Dubai',
   },
   '/awards': {
-    title: 'Government Awards & Accreditations | Amer Center ESS',
-    desc: 'Recognized excellence: Official GDRFA Amer ratings, DHA Salem accreditations, and Dubai government awards earned by Karama Business Center.',
-    keywords: 'GDRFA awards, Amer center accreditation, DHA approved center Dubai, ESS certifications, Karama business center awards',
+    title: 'Awards & Honors | Karama Medical and Fitness Center UAE',
+    desc: 'Recognized excellence: Official DHA Salem accreditations, GDRFA excellence honors & Dubai awards earned by Karama Medical and Fitness Center.',
+    keywords: 'DHA approved center Dubai, GDRFA awards, Karama Medical and Fitness Center awards, government accreditation Dubai, KMFC certifications',
   },
   '/clients': {
-    title: 'Corporate PRO Clients & Enterprise Partners | ESS KBC',
-    desc: 'Trusted corporate PRO partner for multinational firms, hotel groups, and enterprise business setup across Dubai and the United Arab Emirates.',
-    keywords: 'Corporate PRO Dubai, enterprise immigration management, group visa processing Dubai, corporate secretarial services UAE',
+    title: 'Corporate PRO Partners | Karama Medical & Fitness Center',
+    desc: 'Trusted medical fitness and corporate PRO partner for multinational firms, hospitality groups, and enterprises at Karama Medical and Fitness Center.',
+    keywords: 'Corporate PRO Dubai, enterprise immigration management, group visa medical Dubai, corporate secretarial UAE, Karama Medical and Fitness Center',
   },
   '/events': {
-    title: 'Community Events & Delegations | Amer Center Karama',
-    desc: 'Explore community outreach, government delegation visits, and customer appreciation milestones at Karama Business Center & Amer Center ESS.',
-    keywords: 'ESS events Dubai, government delegations Karama, community initiatives Dubai, business center milestones',
+    title: 'Community Events & Visits | Karama Medical & Fitness Hub',
+    desc: 'Explore community health drives, government delegation visits, and service milestones hosted at Karama Medical and Fitness Center in Dubai.',
+    keywords: 'Karama Medical and Fitness Center events, government delegations Karama, community health initiatives Dubai, business center milestones',
   },
   '/gallery': {
-    title: 'Center Gallery & VIP Majlis Lounge | Amer Karama ESS',
-    desc: 'View photos of our 14-counter government hall, luxury VIP Majlis lounge, DHA Salem medical clinic, and doorstep mobile service van in Dubai.',
-    keywords: 'Karama business center photo gallery, Amer center Karama photos, VIP Majlis lounge Dubai, mobile government van UAE',
+    title: 'Facility Gallery & VIP Majlis | Karama Medical & Fitness',
+    desc: 'View photos of our DHA Salem medical fitness clinic, 14-counter government hall, and private VIP Majlis lounge at Karama Medical and Fitness Center.',
+    keywords: 'Karama Medical and Fitness Center gallery, Karama Medical Center photos, VIP Majlis lounge Dubai, DHA Salem clinic Al Karama',
   },
 };
 
-// Specific metadata for 14 authorized departments (50-60 chars title, 120-160 chars desc)
+// Specific metadata for 14 authorized departments (55-60 chars title, 120-160 chars desc)
+// NOTE: Amer keywords strictly used ONLY on 'amer' department.
 export const DEPARTMENTS_META: Record<string, { title: string; desc: string; keywords: string }> = {
   amer: {
     title: 'Amer Center Karama Dubai | UAE Visa & Immigration Services',
-    desc: 'Looking for an Amer Center in Karama, Dubai? Get assistance with UAE residence visas, renewals, cancellations, family visas, visit visas and immigration services.',
+    desc: 'Looking for an Amer Center in Karama, Dubai? Get help with UAE residence visas, renewals, cancellations, family visas, visit visas and immigration services.',
     keywords: 'Amer Center, Amer Center Karama, Amer Center Dubai, Amer Centre, Amer Services, Amer Center Near Me, Amer Visa Services, Amer Immigration Services, Amer Typing Center, Amer Center Bur Dubai',
   },
   'golden-visa': {
-    title: 'Golden Visa Dubai UAE | 10-Year Residency Center ESS',
-    desc: 'Apply for 10-year UAE Golden Visa in Dubai for property investors & executives. Fast VIP approvals, nomination vetting & Salem medical.',
-    keywords: 'Golden Visa Dubai, golden visa uae, 10 year visa UAE, Golden Visa Karama, property investor Golden Visa, executive Golden Visa Dubai',
+    title: 'Golden Visa Dubai UAE | Karama Medical & Fitness Center',
+    desc: 'Apply for 10-year UAE Golden Visa in Dubai for investors & executives at Karama Medical and Fitness Center. Fast VIP approvals & Salem medical.',
+    keywords: 'Golden Visa Dubai, golden visa uae, 10 year visa UAE, Golden Visa Karama, property investor Golden Visa, Karama Medical and Fitness Center',
   },
   ded: {
-    title: 'DET Business Setup Dubai | Trade License Center KBC',
-    desc: 'Authorized DET center in Karama Dubai. New commercial trade licenses, Instant license, e-Trader, renewals, and Ejari registration.',
-    keywords: 'DET Dubai, DED Dubai license renewal, instant license Dubai, e-trader license, trade name reservation, business setup Karama',
+    title: 'DET Business Setup Dubai | Karama Medical & Fitness Hub',
+    desc: 'Authorized DET center at Karama Medical and Fitness Center in Dubai. Commercial trade licenses, Instant license, e-Trader, renewals & Ejari.',
+    keywords: 'DET Dubai, DED Dubai license renewal, instant license Dubai, e-trader license, trade name reservation, Karama Medical and Fitness Center',
   },
   tasheel: {
-    title: 'Tasheel Center Karama Dubai | MOHRE Work Permits KBC',
-    desc: 'Authorized Tasheel Center (#4108) in Karama. Electronic work permits, MOHRE labor contracts, quota verification & company establishment.',
-    keywords: 'Tasheel Karama, tasheel dubai, Tasheel center Dubai, MOHRE work permit, electronic work permit renewal, labor contract Dubai',
+    title: 'Tasheel Work Permits Dubai | Karama Medical and Fitness',
+    desc: 'Authorized Tasheel Center (#4108) at Karama Medical and Fitness Center. Electronic work permits, MOHRE labor contracts & quota verification.',
+    keywords: 'Tasheel Karama, tasheel dubai, Tasheel center Dubai, MOHRE work permit, electronic work permit renewal, Karama Medical and Fitness Center',
   },
   icp: {
-    title: 'ICP Emirates ID Center Karama | New & Renewal Typing',
-    desc: 'Authorized ICP Emirates ID typing in Karama Dubai. Urgent biometric booking, new applications, replacement, and renewal processing.',
-    keywords: 'ICP Dubai, emirates id renewal, emirates id status, new Emirates ID, Emirates ID urgent biometrics, ICP smart services',
+    title: 'ICP Emirates ID Typing | Karama Medical & Fitness Center',
+    desc: 'Authorized ICP Emirates ID typing at Karama Medical and Fitness Center Dubai. Urgent biometric booking, new applications, renewal & replacement.',
+    keywords: 'ICP Dubai, emirates id renewal, emirates id status, new Emirates ID, Emirates ID urgent biometrics, Karama Medical and Fitness Center',
   },
   municipality: {
-    title: 'Dubai Municipality Ejari Services | Karama Center ESS',
-    desc: 'Dubai Municipality & DLD Ejari center in Karama. Official Ejari tenancy registration, cancellation, Foodwatch & Montaji product approvals.',
-    keywords: 'Ejari registration Karama, ejari services, DLD Ejari cancellation, Dubai Municipality permits, Montaji registration, Foodwatch Dubai',
+    title: 'Dubai Municipality Ejari | Karama Medical & Fitness Hub',
+    desc: 'Dubai Municipality & DLD Ejari desk at Karama Medical and Fitness Center. Official Ejari tenancy registration, cancellation & Montaji approvals.',
+    keywords: 'Ejari registration Karama, ejari services, DLD Ejari cancellation, Dubai Municipality permits, Montaji registration, Karama Medical and Fitness Center',
   },
   ohc: {
-    title: 'OHC Occupational Health Card Dubai | Food & Salon KBC',
-    desc: 'Authorized Occupational Health Card (OHC) typing in Dubai. Mandatory medical screening for food handlers, salon staff, and drivers.',
-    keywords: 'OHC card Dubai, occupational health card Karama, food handlers card Dubai, salon health card, DHA occupational health screening',
+    title: 'OHC Health Card Dubai | Karama Medical & Fitness Center',
+    desc: 'Authorized Occupational Health Card (OHC) testing at Karama Medical and Fitness Center Dubai. Fast screening for food handlers, salons & drivers.',
+    keywords: 'OHC card Dubai, occupational health card Karama, food handlers card Dubai, salon health card, Karama Medical and Fitness Center',
   },
   attestation: {
-    title: 'Atlas Attestation Dubai | MOFA & Embassy Legalization',
-    desc: 'Official Atlas Attestation in Karama. Fast UAE MOFA document attestation, embassy legalization, degree equivalency & apostille services.',
-    keywords: 'Atlas Attestation Dubai, MOFA attestation Dubai, certificate attestation Karama, embassy legalization Dubai, apostille UAE',
+    title: 'MOFA Document Attestation | Karama Medical & Fitness Hub',
+    desc: 'Official Atlas & MOFA attestation at Karama Medical and Fitness Center Dubai. Fast embassy legalization, degree equivalency & apostille services.',
+    keywords: 'Atlas Attestation Dubai, MOFA attestation Dubai, certificate attestation Karama, embassy legalization Dubai, Karama Medical and Fitness Center',
   },
   notary: {
-    title: 'Dubai Courts Notary Public | Power of Attorney Karama',
-    desc: 'Certified Dubai Courts & Private Notary in Karama. General & Special Power of Attorney (POA), corporate MOA signing, and legal petitions.',
-    keywords: 'Dubai notary public, private notary Karama, Power of Attorney Dubai, POA typing, MOA notary signing, Dubai courts civil suit',
+    title: 'Dubai Courts Notary & POA | Karama Medical & Fitness Hub',
+    desc: 'Certified Dubai Courts & Private Notary at Karama Medical and Fitness Center. Power of Attorney (POA), corporate MOA signing & legal petitions.',
+    keywords: 'Dubai notary public, private notary Karama, Power of Attorney Dubai, POA typing, MOA notary signing, Karama Medical and Fitness Center',
   },
   typing: {
-    title: 'Legal Translation Dubai | MOJ Certified Typing Center',
-    desc: 'Ministry of Justice (MOJ) certified legal translation into 30+ languages, government NOC petition drafting, and corporate board resolutions.',
-    keywords: 'Legal translation Dubai, MOJ certified translation Karama, Arabic translation Dubai, government NOC typing, embassy visa application',
+    title: 'MOJ Legal Translation | Karama Medical & Fitness Center',
+    desc: 'MOJ certified legal translation in 30+ languages, NOC petition drafting & corporate resolutions at Karama Medical and Fitness Center in Dubai.',
+    keywords: 'Legal translation Dubai, MOJ certified translation Karama, Arabic translation Dubai, government NOC typing, Karama Medical and Fitness Center',
   },
   salem: {
-    title: 'Salem Medical Fitness Center Karama | 2Hr Visa Medical',
-    desc: 'Authorized DHA Salem Medical Fitness Center (KMFC) in Karama. Express 2-hour VIP, urgent 6-hour & 24-hour UAE residency visa screening.',
-    keywords: 'DHA Salem Karama, medical for dubai visa, Karama medical fitness center, KMFC Dubai, visa medical test Karama, express medical fitness',
+    title: 'DHA Salem Medical Test | Karama Medical & Fitness Center',
+    desc: 'Authorized DHA Salem clinic at Karama Medical and Fitness Center (KMFC). Express 2-hour VIP, urgent 6-hour & 24-hour UAE visa medical results.',
+    keywords: 'Karama Medical and Fitness Center, DHA Salem Karama, medical for dubai visa, KMFC Dubai, visa medical test Karama, express medical fitness',
   },
   rta: {
-    title: 'RTA Driving License & Mulkiya Renewal | Karama Center',
-    desc: 'Official RTA counter in Karama Dubai. UAE driving license renewal, vehicle Mulkiya registration, International Driving Permits & fines.',
-    keywords: 'RTA Karama, driving license renewal Dubai, vehicle Mulkiya renewal, international driving permit IDP, traffic fine inquiry Dubai',
+    title: 'RTA Driving & Mulkiya Desk | Karama Medical and Fitness',
+    desc: 'Official RTA services at Karama Medical and Fitness Center Dubai. Driving license renewal, vehicle Mulkiya registration & International Permits.',
+    keywords: 'RTA Karama, driving license renewal Dubai, vehicle Mulkiya renewal, international driving permit IDP, Karama Medical and Fitness Center',
   },
   tawjeeh: {
-    title: 'Tawjeeh Center Karama Dubai | MOHRE Worker Awareness',
-    desc: 'Authorized Tawjeeh Center in Karama. Mandatory worker awareness classes in 16 languages, labor contracts orientation & ID handover.',
-    keywords: 'tawjeeh center, Tawjeeh Karama, Tawjeeh center Dubai, worker awareness class MOHRE, UAE labor law orientation',
+    title: 'Tawjeeh Worker Awareness | Karama Medical & Fitness Hub',
+    desc: 'Authorized Tawjeeh desk at Karama Medical and Fitness Center Dubai. Mandatory worker awareness classes in 16 languages & MOHRE contract handover.',
+    keywords: 'tawjeeh center, Tawjeeh Karama, Tawjeeh center Dubai, worker awareness class MOHRE, Karama Medical and Fitness Center',
   },
   tadbeer: {
-    title: 'Tadbeer Center Dubai | Housemaid & Maid Visa Karama',
-    desc: 'Licensed Tadbeer center in Karama Dubai. Full domestic worker sponsorship, housemaid visa processing, nanny permits & maid contract renewal.',
-    keywords: 'Tadbeer Karama, housemaid visa Dubai, nanny visa sponsorship, domestic worker visa UAE, Tadbeer maid contract renewal',
+    title: 'Tadbeer Maid Visa Dubai | Karama Medical & Fitness Center',
+    desc: 'Licensed Tadbeer desk at Karama Medical and Fitness Center Dubai. Full domestic worker sponsorship, housemaid visas, nanny permits & medicals.',
+    keywords: 'Tadbeer Karama, housemaid visa Dubai, nanny visa sponsorship, domestic worker visa UAE, Karama Medical and Fitness Center',
   },
   'vip-mobile': {
-    title: 'VIP Mobile Government Van Dubai | Doorstep PRO Service',
-    desc: 'Luxury doorstep mobile government van in Dubai. On-demand Amer, Tasheel, Emirates ID biometrics & Salem blood collection at your door.',
-    keywords: 'VIP mobile government van Dubai, doorstep visa service Dubai, VIP Majlis government service, executive corporate PRO concierge',
+    title: 'VIP Mobile Govt Concierge | Karama Medical & Fitness Hub',
+    desc: 'Luxury VIP mobile government concierge from Karama Medical and Fitness Center Dubai. Doorstep residency PRO, biometrics & Salem blood tests.',
+    keywords: 'VIP mobile government concierge Dubai, doorstep visa medical Dubai, VIP Majlis government service, Karama Medical and Fitness Center',
   },
 };
 
-// Curated 20 Knowledge Hub guides (50-60 chars title, 120-160 chars desc)
+// Curated 20 Knowledge Hub guides (55-60 chars title, 120-160 chars desc, ZERO Amer keywords)
 export const ARTICLES_META: Record<string, { title: string; desc: string; keywords: string }> = {
   'emirates-id-renewal-guide': {
-    title: 'Emirates ID Renewal Guide 2026 | ICP Karama Dubai ESS',
-    desc: 'Official guide on Emirates ID renewal in Dubai. Step-by-step biometric booking, required documents, ICP government fees, and fast delivery.',
-    keywords: 'emirates id renewal, emirates id status, ICP smart services, Emirates ID biometrics Dubai, renew emirates id online',
+    title: 'Emirates ID Renewal Guide 2026 | Karama Medical Fitness',
+    desc: 'Official guide on Emirates ID renewal at Karama Medical and Fitness Center. Step-by-step biometric booking, required documents & fast ICP filing.',
+    keywords: 'emirates id renewal, emirates id status, ICP smart services, Emirates ID biometrics Dubai, Karama Medical and Fitness Center',
   },
   'uae-residence-visa-renewal': {
-    title: 'UAE Residence Visa Renewal Guide | Amer Center Dubai',
-    desc: 'Complete guide on UAE residency visa renewal in Dubai. GDRFA document requirements, 2-year costs, medical fitness test, and Emirates ID steps.',
-    keywords: 'uae residence visa renewal, dubai residency renewal, amer center near me, residence visa renewal documents, GDRFA renewal',
+    title: 'UAE Residence Visa Renewal Guide | Karama Medical Center',
+    desc: 'Complete guide on UAE residency visa renewal in Dubai. GDRFA document requirements, 2-year steps, Salem medical fitness & Emirates ID renewal.',
+    keywords: 'uae residence visa renewal, dubai residency renewal, Karama Medical and Fitness Center, residence visa renewal documents, GDRFA renewal',
   },
   'uae-visa-status-change': {
-    title: 'UAE Visa Status Change Guide | In-Country Amer Dubai',
-    desc: 'Learn how to change your UAE visa status inside the country without exit. Official Amer Center Karama process, fees, and GDRFA approval tips.',
-    keywords: 'uae visa status change, inside country status change, amer center dubai, status change without exit, visa transfer dubai',
+    title: 'UAE Visa Status Change Guide | Karama Medical & Fitness',
+    desc: 'Learn how to change your UAE visa status inside the country without exit at Karama Medical and Fitness Center. Official GDRFA status change tips.',
+    keywords: 'uae visa status change, inside country status change, Karama Medical and Fitness Center, status change without exit, visa transfer dubai',
   },
   'uae-overstay-fines-guide': {
-    title: 'UAE Overstay Fines Guide 2026 | Fine Reduction Dubai',
-    desc: 'Check and reduce UAE overstay visa fines in Dubai. Step-by-step GDRFA waiver application, daily penalty calculation, and outpass clearance.',
-    keywords: 'overstay fine in uae, reduce visa fine dubai, check overstay fines, outpass uae, gdrfa fine reduction',
+    title: 'UAE Overstay Fines Guide 2026 | Karama Medical & Fitness',
+    desc: 'Check and reduce UAE overstay visa fines at Karama Medical and Fitness Center. Step-by-step GDRFA fine waiver petitions & outpass clearance.',
+    keywords: 'overstay fine in uae, reduce visa fine dubai, check overstay fines, outpass uae, Karama Medical and Fitness Center',
   },
   'uae-golden-visa-eligibility': {
-    title: 'UAE Golden Visa Eligibility Guide 2026 | Dubai ESS',
-    desc: 'Complete 10-year UAE Golden Visa eligibility guide for real estate investors, executives, and doctors. Requirements, costs, and VIP processing.',
-    keywords: 'golden visa dubai, golden visa uae, 10 year visa uae, property investor golden visa, executive golden visa dubai',
+    title: 'UAE Golden Visa Guide 2026 | Karama Medical and Fitness',
+    desc: 'Complete 10-year UAE Golden Visa eligibility guide for real estate investors, executives & doctors at Karama Medical and Fitness Center Dubai.',
+    keywords: 'golden visa dubai, golden visa uae, 10 year visa uae, property investor golden visa, Karama Medical and Fitness Center',
   },
   'dubai-trade-licence-guide': {
-    title: 'Dubai Trade License Guide 2026 | DET Business Setup',
-    desc: 'How to choose the right Dubai trade license: commercial, professional, and industrial. 100% foreign ownership rules and DET Karama fees.',
-    keywords: 'dubai trade license, trade license dubai with visa, DET business setup, mainland commercial license, LLC formation dubai',
+    title: 'Dubai Trade License Guide 2026 | Karama Medical Fitness',
+    desc: 'How to choose the right Dubai trade license: commercial, professional & industrial. 100% foreign ownership rules via Karama Medical and Fitness Center.',
+    keywords: 'dubai trade license, trade license dubai with visa, DET business setup, mainland commercial license, Karama Medical and Fitness Center',
   },
   'dubai-instant-licence': {
-    title: 'Dubai Instant License Guide | 5-Minute Setup DET ESS',
-    desc: 'Issue your Dubai trade license instantly without lease agreement for year one. DET eligibility criteria, activity list, and cost breakdown.',
-    keywords: 'dubai instant licence, instant trade license dubai, DET instant license, start business dubai, trade license without office',
+    title: 'Dubai Instant License Guide | Karama Medical and Fitness',
+    desc: 'Issue your Dubai trade license instantly without a lease agreement for year one at Karama Medical and Fitness Center. Eligibility & DET steps.',
+    keywords: 'dubai instant licence, instant trade license dubai, DET instant license, start business dubai, Karama Medical and Fitness Center',
   },
   'dubai-trade-licence-renewal': {
-    title: 'Dubai Trade License Renewal Guide | Ejari & DET KBC',
-    desc: 'Step-by-step trade license renewal in Dubai. Required Ejari certificate, partner passport copies, DET penalty avoidance, and fees.',
-    keywords: 'dubai trade license renewal, renew trade license dubai, ejari trade license renewal, DET license renewal fee, avoid trade license penalties',
+    title: 'Dubai License Renewal & Ejari | Karama Medical & Fitness',
+    desc: 'Step-by-step trade license renewal at Karama Medical and Fitness Center Dubai. Required Ejari certificate, partner passports & penalty prevention.',
+    keywords: 'dubai trade license renewal, renew trade license dubai, ejari trade license renewal, DET license renewal, Karama Medical and Fitness Center',
   },
   'uae-work-permit-guide': {
-    title: 'UAE Work Permit Guide 2026 | MOHRE Tasheel Dubai ESS',
-    desc: 'Comprehensive guide to UAE electronic work permits. Quota applications, MOHRE offer letters, labor contracts, and Tasheel Karama fees.',
-    keywords: 'tasheel dubai, uae work permit, electronic work permit mohre, labor contract dubai, tasheel center dubai',
+    title: 'UAE Work Permit Guide 2026 | Karama Medical and Fitness',
+    desc: 'Comprehensive guide to UAE electronic work permits at Karama Medical and Fitness Center. Quota approvals, MOHRE offer letters & Tasheel contracts.',
+    keywords: 'tasheel dubai, uae work permit, electronic work permit mohre, labor contract dubai, Karama Medical and Fitness Center',
   },
   'uae-employment-contract-changes': {
-    title: 'UAE Labor Contract Changes & Cancellation | Tasheel',
-    desc: 'How to modify job titles, amend salary in MOHRE contracts, and process work permit cancellations smoothly at Tasheel Karama in Dubai.',
-    keywords: 'uae employment contract changes, mohre contract amendment, work permit cancellation dubai, tasheel contract typing',
+    title: 'UAE Labor Contract Changes | Karama Medical and Fitness',
+    desc: 'How to modify job titles, amend salary in MOHRE contracts, and process work permit cancellations smoothly at Karama Medical and Fitness Center.',
+    keywords: 'uae employment contract changes, mohre contract amendment, work permit cancellation dubai, Karama Medical and Fitness Center',
   },
   'uae-wage-protection-system': {
-    title: 'UAE WPS Wage Protection System Guide | Employer PRO',
-    desc: 'Complete guide on UAE Wage Protection System (WPS) compliance for companies. Avoid MOHRE blockages, salary transfer rules, and bank setup.',
-    keywords: 'wps uae, wage protection system compliance, mohre wps salary transfer, avoid company ban wps, corporate pro services dubai',
+    title: 'UAE WPS Payroll Compliance | Karama Medical and Fitness',
+    desc: 'Complete guide on UAE Wage Protection System (WPS) compliance for companies at Karama Medical and Fitness Center. Avoid MOHRE blocks & delays.',
+    keywords: 'wps uae, wage protection system compliance, mohre wps salary transfer, corporate pro services dubai, Karama Medical and Fitness Center',
   },
   'dubai-ejari-registration-guide': {
-    title: 'Dubai Ejari Registration Guide 2026 | DLD Center ESS',
-    desc: 'Official guide for tenancy contract Ejari registration in Dubai. Required documents for tenants and landlords, DLD fees, and fast approvals.',
-    keywords: 'ejari services, ejari registration dubai, tenancy contract registration, dld ejari karama, renew ejari online',
+    title: 'Dubai Ejari Registration 2026 | Karama Medical & Fitness',
+    desc: 'Official guide for tenancy contract Ejari registration at Karama Medical and Fitness Center Dubai. Required tenant & landlord documents explained.',
+    keywords: 'ejari services, ejari registration dubai, tenancy contract registration, dld ejari karama, Karama Medical and Fitness Center',
   },
   'ejari-digital-services': {
-    title: 'Digital Ejari & Tenancy Verification Guide | Dubai',
-    desc: 'Explore digital Ejari renewal, cancellation, and title deed verification online and at Karama Business Center. Fast-track DLD compliance.',
-    keywords: 'digital ejari, ejari cancellation dubai, title deed verification, dld cube, ejari services near me',
+    title: 'Digital Ejari & Tenancy Guide | Karama Medical & Fitness',
+    desc: 'Explore digital Ejari renewal, cancellation, and title deed verification online and at Karama Medical and Fitness Center for fast DLD compliance.',
+    keywords: 'digital ejari, ejari cancellation dubai, title deed verification, dld cube, Karama Medical and Fitness Center',
   },
   'uae-residency-medical-fitness': {
-    title: 'UAE Visa Medical Fitness Guide | DHA Salem Karama ESS',
-    desc: 'Everything you need to know about DHA Salem medical fitness tests for Dubai residency. Blood tests, chest X-rays, VIP 2-hour packages & fees.',
-    keywords: 'medical for dubai visa, dha salem, visa medical test karama, kmfc dubai, 2 hour express medical test',
+    title: 'UAE Visa Medical Fitness Guide | Karama Medical Fitness',
+    desc: 'Everything about DHA Salem medical fitness tests at Karama Medical and Fitness Center (KMFC). Blood tests, chest X-rays & VIP 2-hour results.',
+    keywords: 'Karama Medical and Fitness Center, medical for dubai visa, dha salem, visa medical test karama, 2 hour express medical test',
   },
   'dubai-occupational-health-card': {
-    title: 'Dubai Occupational Health Card Guide | OHC DHA ESS',
-    desc: 'Mandatory Occupational Health Card (OHC) requirements in Dubai for food handlers, restaurant staff, salons, and commercial drivers.',
-    keywords: 'ohc card dubai, occupational health card karama, food handlers medical test, salon staff health card, dha ohc test',
+    title: 'Dubai OHC Health Card Guide | Karama Medical and Fitness',
+    desc: 'Mandatory Occupational Health Card (OHC) requirements at Karama Medical and Fitness Center Dubai for food handlers, restaurant staff & drivers.',
+    keywords: 'ohc card dubai, occupational health card karama, food handlers medical test, salon staff health card, Karama Medical and Fitness Center',
   },
   'uae-document-attestation-guide': {
-    title: 'UAE Document Attestation Guide | MOFA & Embassy ESS',
-    desc: 'Complete step-by-step guide to attesting birth, marriage, and educational degrees for UAE residency. MOFA authentication & embassy legalization.',
-    keywords: 'mofa attestation dubai, atlas attestation, degree attestation uae, marriage certificate attestation, embassy legalization',
+    title: 'UAE Document Attestation Guide | Karama Medical Fitness',
+    desc: 'Complete step-by-step guide to attesting birth, marriage & degree certificates at Karama Medical and Fitness Center. MOFA & embassy legalization.',
+    keywords: 'mofa attestation dubai, atlas attestation, degree attestation uae, marriage certificate attestation, Karama Medical and Fitness Center',
   },
   'mofa-digital-attestation': {
-    title: 'MOFA Digital Attestation vs Courier Guide | Dubai ESS',
-    desc: 'Understand digital MOFA e-attestation versus physical courier-based legalization in Dubai. Fees, turnaround times, and apostille details.',
-    keywords: 'digital attestation mofa, mofa online verification, apostille dubai, atlas attestation karama, certificate verification',
+    title: 'MOFA Digital Attestation Guide | Karama Medical Fitness',
+    desc: 'Understand digital MOFA e-attestation versus courier legalization at Karama Medical and Fitness Center Dubai. Turnaround & apostille details.',
+    keywords: 'digital attestation mofa, mofa online verification, apostille dubai, atlas attestation karama, Karama Medical and Fitness Center',
   },
   'uae-legal-translation-guide': {
-    title: 'UAE MOJ Legal Translation Guide | Sworn Typing Dubai',
-    desc: 'When is Ministry of Justice (MOJ) certified translation required in Dubai? Court submissions, embassies, immigration, and 30+ languages.',
-    keywords: 'legal translation dubai, sworn translator dubai, moj certified translation, arabic translation karama, court document translation',
+    title: 'UAE MOJ Legal Translation Guide | Karama Medical Center',
+    desc: 'When is Ministry of Justice (MOJ) certified translation required in Dubai? Court filings, embassies & 30+ languages at Karama Medical Center.',
+    keywords: 'legal translation dubai, sworn translator dubai, moj certified translation, arabic translation karama, Karama Medical and Fitness Center',
   },
   'uae-corporate-tax-compliance': {
-    title: 'UAE Corporate Tax Compliance Guide | Small Business',
-    desc: 'Essential UAE Corporate Tax checks for SMEs and freezone companies. FTA registration, 9% threshold rules, bookkeeping, and penalty avoidance.',
-    keywords: 'uae corporate tax guide, fta tax registration, corporate tax compliance, small business tax dubai, corporate pro services',
+    title: 'UAE Corporate Tax Guide 2026 | Karama Medical & Fitness',
+    desc: 'Essential UAE Corporate Tax checks for SMEs and freezone firms at Karama Medical and Fitness Center. FTA registration & 9% threshold compliance.',
+    keywords: 'uae corporate tax guide, fta tax registration, corporate tax compliance, small business tax dubai, Karama Medical and Fitness Center',
   },
   'dubai-sme-business-support': {
-    title: 'Dubai SME Business Setup Support Guide | DET Karama',
-    desc: 'Learn about Dubai SME incentives, licensing fee exemptions, government procurement preferences, and startup support at Karama Business Center.',
-    keywords: 'dubai sme business support, DET startup incentives, entrepreneur business setup, trade license exemption, business center dubai',
+    title: 'Dubai SME Business Support | Karama Medical and Fitness',
+    desc: 'Learn about Dubai SME incentives, licensing exemptions, government procurement benefits & startup support at Karama Medical and Fitness Center.',
+    keywords: 'dubai sme business support, DET startup incentives, entrepreneur business setup, trade license support, Karama Medical and Fitness Center',
   },
 };
+
+// Amer suffixes strictly isolated to 'amer' department. All others brand Karama Medical and Fitness Center.
+const KARAMA_MEDICAL_SUFFIXES = [
+  ' | Karama Medical and Fitness Center',
+  ' | Karama Medical & Fitness Center',
+  ' | Karama Medical Fitness Center',
+  ' | Karama Medical & Fitness Hub',
+  ' | Karama Medical Fitness Dubai',
+  ' | Karama Medical & Fitness',
+  ' | Karama Medical Fitness',
+  ' | Karama Medical Center',
+  ' | Karama Medical Hub',
+  ' | Karama Fitness',
+  ' | KMFC Dubai',
+];
 
 const DEPT_SUFFIXES: Record<string, string[]> = {
   amer: [
-    ' | Amer Center Karama Dubai ESS',
+    ' | Amer Center Karama Dubai UAE',
     ' | Amer Center Karama Dubai',
-    ' | Amer Center Karama ESS',
-    ' | Amer Center Dubai ESS',
+    ' | Amer Center Al Karama',
+    ' | Amer Center Dubai UAE',
     ' | Amer Center Dubai',
-    ' | Amer Karama ESS',
-    ' | Amer Dubai ESS',
+    ' | Amer Karama Dubai',
+    ' | Amer Dubai UAE',
   ],
-  'golden-visa': [
-    ' | Golden Visa Center Karama Dubai',
-    ' | Golden Visa Dubai Center ESS',
-    ' | Golden Visa Dubai Karama',
-    ' | Golden Visa Dubai ESS',
-    ' | Golden Visa Dubai',
-    ' | Golden Visa ESS',
-  ],
-  ded: [
-    ' | DET Business Center Karama Dubai',
-    ' | DET Center Karama Dubai ESS',
-    ' | DET Center Karama Dubai',
-    ' | DET Center Dubai ESS',
-    ' | DET Dubai Center',
-    ' | DET Dubai ESS',
-  ],
-  tasheel: [
-    ' | Tasheel Center Karama Dubai ESS',
-    ' | Tasheel Center Karama Dubai',
-    ' | Tasheel Center Karama ESS',
-    ' | Tasheel Center Dubai ESS',
-    ' | Tasheel Dubai Center',
-    ' | Tasheel Dubai ESS',
-  ],
-  icp: [
-    ' | ICP Center Karama Dubai ESS',
-    ' | ICP Emirates ID Karama Dubai',
-    ' | ICP Emirates ID Karama ESS',
-    ' | ICP Emirates ID Dubai ESS',
-    ' | ICP Emirates ID Dubai',
-    ' | ICP Dubai ESS',
-  ],
-  municipality: [
-    ' | Dubai Municipality Karama ESS',
-    ' | Dubai Municipality Center ESS',
-    ' | DM Ejari Center Karama Dubai',
-    ' | DM Ejari Karama Dubai',
-    ' | DM Ejari Dubai ESS',
-    ' | DM Karama ESS',
-  ],
-  ohc: [
-    ' | OHC Health Center Karama Dubai',
-    ' | OHC Center Karama Dubai ESS',
-    ' | OHC Center Karama Dubai',
-    ' | OHC Center Dubai ESS',
-    ' | OHC Dubai ESS',
-  ],
-  attestation: [
-    ' | Atlas Attestation Karama Dubai',
-    ' | Atlas Attestation Dubai ESS',
-    ' | Atlas Attestation Karama',
-    ' | Atlas Attestation Dubai',
-    ' | Atlas Attest ESS',
-  ],
-  notary: [
-    ' | Notary Public Karama Dubai ESS',
-    ' | Notary Public Karama Dubai',
-    ' | Notary Public Dubai ESS',
-    ' | Notary Public Dubai',
-    ' | Notary Dubai ESS',
-  ],
-  typing: [
-    ' | Legal Translation Karama Dubai',
-    ' | Legal Translation Dubai ESS',
-    ' | Legal Translation Karama',
-    ' | Legal Translation Dubai',
-    ' | Translation Dubai ESS',
-  ],
-  salem: [
-    ' | DHA Salem Medical Karama Dubai',
-    ' | DHA Salem Medical Karama ESS',
-    ' | DHA Salem Karama Dubai ESS',
-    ' | DHA Salem Karama Dubai',
-    ' | DHA Salem Dubai ESS',
-    ' | DHA Salem Dubai',
-  ],
-  rta: [
-    ' | RTA Services Karama Dubai ESS',
-    ' | RTA Center Karama Dubai ESS',
-    ' | RTA Center Karama Dubai',
-    ' | RTA Center Dubai ESS',
-    ' | RTA Dubai ESS',
-  ],
-  tawjeeh: [
-    ' | Tawjeeh Center Karama Dubai ESS',
-    ' | Tawjeeh Center Karama Dubai',
-    ' | Tawjeeh Center Karama ESS',
-    ' | Tawjeeh Center Dubai ESS',
-    ' | Tawjeeh Dubai ESS',
-  ],
-  tadbeer: [
-    ' | Tadbeer Center Karama Dubai ESS',
-    ' | Tadbeer Center Karama Dubai',
-    ' | Tadbeer Center Karama ESS',
-    ' | Tadbeer Center Dubai ESS',
-    ' | Tadbeer Dubai ESS',
-  ],
-  'vip-mobile': [
-    ' | VIP Mobile Service Dubai ESS',
-    ' | VIP Mobile Service Karama',
-    ' | VIP Mobile Dubai ESS',
-    ' | VIP Dubai ESS',
-  ],
+  'golden-visa': KARAMA_MEDICAL_SUFFIXES,
+  ded: KARAMA_MEDICAL_SUFFIXES,
+  tasheel: KARAMA_MEDICAL_SUFFIXES,
+  icp: KARAMA_MEDICAL_SUFFIXES,
+  municipality: KARAMA_MEDICAL_SUFFIXES,
+  ohc: KARAMA_MEDICAL_SUFFIXES,
+  attestation: KARAMA_MEDICAL_SUFFIXES,
+  notary: KARAMA_MEDICAL_SUFFIXES,
+  typing: KARAMA_MEDICAL_SUFFIXES,
+  salem: KARAMA_MEDICAL_SUFFIXES,
+  rta: KARAMA_MEDICAL_SUFFIXES,
+  tawjeeh: KARAMA_MEDICAL_SUFFIXES,
+  tadbeer: KARAMA_MEDICAL_SUFFIXES,
+  'vip-mobile': KARAMA_MEDICAL_SUFFIXES,
 };
 
-export function buildServiceTitle(service: ServiceItem): string {
-  const title = service.titleEn;
-  const dept = service.departmentId;
-  const suffixes = DEPT_SUFFIXES[dept] || [
-    ' | Karama Business Center Dubai',
-    ' | Karama Business Center ESS',
-    ' | ESS Karama Dubai',
-    ' | ESS Dubai Center',
-    ' | ESS Dubai',
-  ];
+const DANGLING_END_WORDS = new Set([
+  '&',
+  '-',
+  '–',
+  '/',
+  ',',
+  '(',
+  'and',
+  'or',
+  'for',
+  'of',
+  'in',
+  'with',
+  'on',
+  'to',
+  'the',
+  'a',
+]);
 
-  for (const suf of suffixes) {
-    const cand = `${title}${suf}`.trim();
-    if (cand.length >= 50 && cand.length <= 60) {
-      return cand;
+function cleanTrimWords(raw: string): string {
+  const parts = raw.trim().split(/\s+/);
+  while (parts.length > 1) {
+    const rawLast = parts[parts.length - 1];
+    const cleanLast = rawLast.toLowerCase().replace(/[,:;.\-]+$/, '');
+    if (
+      DANGLING_END_WORDS.has(cleanLast) ||
+      rawLast.endsWith('(') ||
+      rawLast.endsWith('&') ||
+      rawLast.endsWith(',') ||
+      rawLast.endsWith('/') ||
+      rawLast.endsWith('-')
+    ) {
+      parts.pop();
+      continue;
+    }
+    break;
+  }
+  let res = parts.join(' ').replace(/[,:;\-\/&(\s]+$/, '').trim();
+  const openIdx = res.lastIndexOf('(');
+  const closeIdx = res.lastIndexOf(')');
+  if (openIdx > closeIdx) {
+    res = res.slice(0, openIdx).replace(/[,:;\-\/&(\s]+$/, '').trim();
+  }
+  return res;
+}
+
+function generateTitleVariants(title: string): string[] {
+  const variants: string[] = [];
+  const seen = new Set<string>();
+  const add = (v: string) => {
+    const cleaned = v.replace(/\s+/g, ' ').trim();
+    if (cleaned && !seen.has(cleaned)) {
+      seen.add(cleaned);
+      variants.push(cleaned);
+    }
+  };
+
+  add(title);
+  const noParens = title.replace(/\s*\([^)]*\)/g, '').replace(/\s+/g, ' ').trim();
+  add(noParens);
+
+  if (title.includes(':')) {
+    add(title.split(':')[0].trim());
+  }
+  if (noParens.includes(',')) {
+    add(noParens.split(',')[0].trim());
+  }
+
+  // Word trims on noParens first (cleaner), then full title
+  for (const base of [noParens, title]) {
+    const words = base.split(' ');
+    for (let len = words.length - 1; len >= 2; len--) {
+      add(cleanTrimWords(words.slice(0, len).join(' ')));
     }
   }
 
-  const words = title.split(' ');
-  while (words.length > 1) {
-    words.pop();
-    const shortTitle = words.join(' ');
-    for (const suf of suffixes) {
-      const cand = `${shortTitle}${suf}`.trim();
-      if (cand.length >= 50 && cand.length <= 60) {
-        return cand;
+  // Padded variants for short service titles so we always reach 55-60 chars
+  add(`${title} Dubai`);
+  add(`${title} in Dubai`);
+  add(`${noParens} Dubai`);
+  add(`${noParens} in Dubai`);
+  add(`Dubai ${noParens}`);
+
+  return variants;
+}
+
+const SERVICE_TITLE_OVERRIDES: Record<string, string> = {
+  'golden-visa-entrepreneur': 'Golden Visa for Entrepreneurs | Karama Medical & Fitness',
+  'golden-visa-family': 'Golden Visa for Family | Karama Medical and Fitness Center',
+  'det-commercial-license-new': 'Commercial Trade License LLC | Karama Medical & Fitness',
+  'det-etrader-license': 'DED E-Trader License | Karama Medical and Fitness Center',
+  'det-trade-name-reservation': 'Trade Name Reservation Dubai | Karama Medical & Fitness',
+  'det-license-amendment-partner-activity': 'DET License Amendment | Karama Medical and Fitness Center',
+  'det-commercial-permits-mulin': "DET Commercial Permits Mu'lin | Karama Medical & Fitness",
+  'det-license-cancellation-liquidation': 'Company License Cancellation | Karama Medical & Fitness',
+  'tasheel-electronic-work-permit-new': 'Electronic Work Permit | Karama Medical and Fitness Center',
+  'tasheel-work-permit-renewal': 'Work Permit Renewal (2 Years) | Karama Medical & Fitness',
+  'tasheel-job-offer-unified-contract': 'MoHRE Labor Contract | Karama Medical and Fitness Center',
+  'tasheel-esignature-card-issuance': 'MoHRE E-Signature Smart Card | Karama Medical & Fitness',
+  'tasheel-mission-work-permit': 'Mission Work Permit | Karama Medical and Fitness Center',
+  'tasheel-part-time-work-permit': 'Part-Time Work Permit | Karama Medical and Fitness Center',
+  'icp-emirates-id-new': 'New Emirates ID Typing | Karama Medical and Fitness Center',
+  'icp-emirates-id-renewal': 'Emirates ID Renewal | Karama Medical and Fitness Center',
+  'icp-urgent-biometric-appointment': 'Urgent Biometric Appointment | Karama Medical & Fitness',
+  'icp-zajel-courier-delivery': 'Emirates ID Courier | Karama Medical and Fitness Center',
+  'dm-ejari-cancellation': 'Ejari Cancellation Hub | Karama Medical and Fitness Center',
+  'dm-product-registration-montaji': 'Montaji Product Registration | Karama Medical & Fitness',
+  'dm-signage-advertising-permits': 'DM Signage Permits Hub | Karama Medical and Fitness Center',
+  'ohc-food-handlers-card': 'Food Handlers OHC Card | Karama Medical and Fitness Center',
+  'ohc-salon-beauty-spa-card': 'Salon & Spa OHC Card | Karama Medical and Fitness Center',
+  'ohc-construction-rta-drivers-card': 'Drivers & Workers OHC | Karama Medical and Fitness Center',
+  'ohc-healthcare-dha-doctor-license-card': 'Medical Staff OHC Card | Karama Medical and Fitness Center',
+  'atlas-mofa-attestation': 'UAE MOFA Attestation | Karama Medical and Fitness Center',
+  'atlas-embassy-consulate-legalization': 'Embassy Legalization | Karama Medical and Fitness Center',
+  'atlas-apostille-global-certification': 'Hague Apostille Hub | Karama Medical and Fitness Center',
+  'atlas-degree-education-equivalency': 'Degree Attestation Hub | Karama Medical and Fitness Center',
+  'atlas-marriage-birth-personal-attestation': 'Marriage & Birth Attestation | Karama Medical & Fitness',
+  'atlas-police-clearance-good-conduct': 'Dubai Police Clearance | Karama Medical and Fitness Center',
+  'notary-power-of-attorney-poa': 'Power of Attorney POA | Karama Medical and Fitness Center',
+  'notary-corporate-moa-addendum': 'Corporate MOA Notary | Karama Medical and Fitness Center',
+  'typing-moj-certified-legal-translation': 'MOJ Legal Translation | Karama Medical and Fitness Center',
+  'typing-government-noc-letters-petitions': 'NOC & Mercy Appeals | Karama Medical and Fitness Center',
+  'salem-standard-medical-fitness-24hr': '24-Hour Visa Medical | Karama Medical and Fitness Center',
+  'salem-urgent-medical-fitness-6hr': '6-Hour Urgent Visa Medical | Karama Medical and Fitness',
+  'salem-vip-medical-fitness-2hr': '2-Hour VIP Visa Medical | Karama Medical and Fitness Center',
+  'salem-car-blood-collection-service': 'Drive-Through Medical | Karama Medical and Fitness Center',
+  'salem-home-office-screening': 'Mobile Home & Office Medical | Karama Medical & Fitness',
+  'salem-blood-type-pregnancy-tests': 'Blood Group & Pregnancy Test | Karama Medical & Fitness',
+  'rta-driving-license-renewal': 'Driving License Renewal | Karama Medical and Fitness Center',
+  'rta-vehicle-mulkiya-renewal': 'Vehicle Mulkiya Renewal | Karama Medical and Fitness Center',
+  'tawjeeh-worker-awareness-classes': 'MoHRE Tawjeeh Classes | Karama Medical and Fitness Center',
+  'tawjeeh-eid-passport-delivery': 'Zajel Priority Courier | Karama Medical and Fitness Center',
+  'tawjeeh-labour-law-legal-advice': 'UAE Labour Law Advisory | Karama Medical and Fitness Center',
+  'tadbeer-center-sponsorship-package': 'Tadbeer Center Package | Karama Medical and Fitness Center',
+  'vip-mobile-government-van': 'Mobile VIP Concierge | Karama Medical and Fitness Center',
+  'vip-majlis-executive-lounge': 'VIP Majlis Lounge Hub | Karama Medical and Fitness Center',
+  'vip-corporate-boardroom-concierge': 'Corporate VIP Service | Karama Medical and Fitness Center',
+};
+
+export function buildServiceTitle(service: ServiceItem): string {
+  if (SERVICE_TITLE_OVERRIDES[service.id]) {
+    return SERVICE_TITLE_OVERRIDES[service.id];
+  }
+  const title = service.titleEn;
+  const dept = service.departmentId;
+  const suffixes = DEPT_SUFFIXES[dept] || KARAMA_MEDICAL_SUFFIXES;
+  const variants = generateTitleVariants(title);
+
+  // Target bands: prioritize 55-60 chars first, then 54-60, then 52-60, then 50-60
+  const bands: [number, number][] = [
+    [55, 60],
+    [54, 60],
+    [52, 60],
+    [50, 60],
+  ];
+
+  // For each band, try full/clean variants first (indices 0..3) before word-trimmed variants
+  for (const [minLen, maxLen] of bands) {
+    for (const v of variants) {
+      for (const suf of suffixes) {
+        const cand = `${v}${suf}`.trim();
+        if (cand.length >= minLen && cand.length <= maxLen) {
+          return cand;
+        }
       }
     }
   }
 
-  for (const suf of suffixes) {
-    const cand = `${title} Dubai${suf}`.trim();
-    if (cand.length >= 50 && cand.length <= 60) {
-      return cand;
-    }
-  }
-
-  return `${title} | Dubai Government ESS`.slice(0, 60);
+  return `${variants[1] || title} | Karama Medical Fitness`.slice(0, 60).trim();
 }
 
 export function buildServiceDesc(service: ServiceItem): string {
@@ -609,17 +669,24 @@ export function buildServiceDesc(service: ServiceItem): string {
   const dept = service.departmentId;
   const title = service.titleEn;
 
+  // Strictly prevent Amer keywords from leaking into any non-Amer service description
+  if (dept !== 'amer') {
+    desc = desc
+      .replace(/\bAmer Center\b/gi, 'Karama Medical Center')
+      .replace(/\bAmer\b/gi, 'GDRFA');
+  }
+
   if (desc.length < 120) {
     if (dept === 'amer') {
       desc = `Official Amer Center Karama processing for ${title}. Fast UAE residency visa, entry permits, and family sponsorship at authorized desk.`;
     } else if (dept === 'golden-visa') {
-      desc = `Official 10-year UAE Golden Visa application for ${title} in Dubai. Fast-track pre-approval, nomination vetting & VIP Majlis support.`;
+      desc = `Official 10-year UAE Golden Visa service for ${title} at Karama Medical and Fitness Center. Fast VIP pre-approval & Salem medical.`;
     } else if (dept === 'tasheel') {
-      desc = `Authorized Tasheel Center Karama processing for ${title}. Electronic work permits, MOHRE labor contracts, and quota verification in Dubai.`;
+      desc = `Authorized Tasheel (#4108) processing for ${title} at Karama Medical and Fitness Center Dubai. Electronic work permits & MOHRE contracts.`;
     } else if (dept === 'salem') {
-      desc = `DHA Salem medical fitness testing for ${title} at Karama Medical Center (KMFC). VIP 2-hour, urgent 6-hour & 24-hour visa medical results.`;
+      desc = `DHA Salem medical fitness testing for ${title} at Karama Medical and Fitness Center (KMFC). VIP 2-hour, urgent 6-hour & 24-hour results.`;
     } else {
-      desc = `Authorized Karama Business Center processing for ${title} in Dubai. Fast-track government typing, document verification, and VIP support.`;
+      desc = `Authorized processing for ${title} at Karama Medical and Fitness Center in Dubai. Fast-track typing, document audit & VIP support.`;
     }
   }
 
@@ -628,26 +695,39 @@ export function buildServiceDesc(service: ServiceItem): string {
   }
 
   if (desc.length > 160) {
-    const cut = desc.slice(0, 159).replace(/\s+\S*$/, '');
+    const cut = desc.slice(0, 158).replace(/\s+\S*$/, '').replace(/[,:;\-\/&(\s]+$/, '');
     const cleanCut = cut.endsWith('.') ? cut : `${cut}.`;
     if (cleanCut.length >= 120 && cleanCut.length <= 160) {
       return cleanCut;
     }
-    return `${cleanCut.slice(0, 157)}...`;
+    const baseShort = cleanCut.slice(0, 118).replace(/\s+\S*$/, '');
+    const fallbackTail =
+      dept === 'amer'
+        ? ' Fast official Amer Center processing in Karama Dubai.'
+        : ' Fast service at Karama Medical and Fitness Center.';
+    const combined = `${baseShort.replace(/\.+$/, '')}.${fallbackTail}`;
+    return combined.length <= 160 ? combined : combined.slice(0, 159).replace(/\s+\S*$/, '') + '.';
   } else {
-    const pads = [
-      ' Fast official processing at Karama Center.',
-      ' Fast authorized processing in Dubai.',
-      ' Official service at Karama Center Dubai.',
-      ' Fast-track processing in Dubai UAE.',
-    ];
+    const pads =
+      dept === 'amer'
+        ? [
+            ' Fast official processing at Amer Center Karama.',
+            ' Authorized GDRFA service in Karama Dubai.',
+            ' Fast processing in Karama Dubai.',
+          ]
+        : [
+            ' Fast service at Karama Medical and Fitness Center.',
+            ' Processed at Karama Medical and Fitness Center.',
+            ' Fast official processing at Karama Medical.',
+            ' Fast authorized processing in Karama Dubai.',
+          ];
     for (const p of pads) {
       const cand = desc.replace(/\.+$/, '') + p;
       if (cand.length >= 120 && cand.length <= 160) {
         return cand;
       }
     }
-    return `${desc} Fast official processing in Dubai.`.slice(0, 160);
+    return `${desc.replace(/\.+$/, '')}. Fast processing at Karama Medical and Fitness Center.`.slice(0, 160);
   }
 }
 
@@ -655,24 +735,24 @@ export function buildServiceKeywords(service: ServiceItem): string {
   const dept = service.departmentId;
   const title = service.titleEn;
   const baseKws: Record<string, string> = {
-    amer: 'amer center, amer center near me, uae visa, residency visa dubai, family visa dubai, GDRFA dubai, amer license 772',
-    'golden-visa': 'golden visa dubai, golden visa uae, 10 year visa uae, property investor golden visa, executive golden visa dubai',
-    ded: 'pro services dubai, DET dubai, trade license renewal dubai, business setup dubai, commercial license dubai',
-    tasheel: 'tasheel dubai, uae work permit, mohre labor contract, tasheel center dubai, electronic work permit',
-    icp: 'emirates id renewal, emirates id status, ICP smart services, emirates id biometric dubai, renew emirates id',
-    municipality: 'ejari services, ejari registration dubai, tenancy contract registration, dubai municipality permits, DLD ejari',
-    ohc: 'ohc card dubai, occupational health card karama, food handlers medical, salon health card, dha occupational health',
-    attestation: 'mofa attestation dubai, atlas attestation, degree attestation dubai, embassy legalization, apostille uae',
-    notary: 'dubai notary public, power of attorney dubai, private notary karama, POA typing, MOA notary signing',
-    typing: 'legal translation dubai, sworn translator dubai, MOJ certified translation, arabic translation dubai',
-    salem: 'dha salem, medical for dubai visa, visa medical test karama, kmfc dubai, 2 hour express medical test',
-    rta: 'driving license renewal dubai, vehicle mulkiya renewal, international driving permit, rta karama',
-    tawjeeh: 'tawjeeh center, worker awareness class mohre, uae labor law orientation, tawjeeh karama',
-    tadbeer: 'tadbeer karama, housemaid visa dubai, nanny visa sponsorship, domestic worker visa uae',
-    'vip-mobile': 'vip mobile government van dubai, doorstep visa service dubai, VIP majlis government service',
+    amer: 'Amer Center, Amer Center Karama, Amer Center Dubai, Amer Center Near Me, Amer Visa Services, Amer Immigration Services, Amer Typing Center, uae visa, residency visa dubai, GDRFA dubai',
+    'golden-visa': 'Karama Medical and Fitness Center, golden visa dubai, golden visa uae, 10 year visa uae, property investor golden visa, executive golden visa dubai',
+    ded: 'Karama Medical and Fitness Center, pro services dubai, DET dubai, trade license renewal dubai, business setup dubai, commercial license dubai',
+    tasheel: 'Karama Medical and Fitness Center, tasheel dubai, uae work permit, mohre labor contract, tasheel center dubai, electronic work permit',
+    icp: 'Karama Medical and Fitness Center, emirates id renewal, emirates id status, ICP smart services, emirates id biometric dubai, renew emirates id',
+    municipality: 'Karama Medical and Fitness Center, ejari services, ejari registration dubai, tenancy contract registration, dubai municipality permits, DLD ejari',
+    ohc: 'Karama Medical and Fitness Center, ohc card dubai, occupational health card karama, food handlers medical, salon health card, dha occupational health',
+    attestation: 'Karama Medical and Fitness Center, mofa attestation dubai, atlas attestation, degree attestation dubai, embassy legalization, apostille uae',
+    notary: 'Karama Medical and Fitness Center, dubai notary public, power of attorney dubai, private notary karama, POA typing, MOA notary signing',
+    typing: 'Karama Medical and Fitness Center, legal translation dubai, sworn translator dubai, MOJ certified translation, arabic translation dubai',
+    salem: 'Karama Medical and Fitness Center, dha salem, medical for dubai visa, visa medical test karama, kmfc dubai, 2 hour express medical test',
+    rta: 'Karama Medical and Fitness Center, driving license renewal dubai, vehicle mulkiya renewal, international driving permit, rta karama',
+    tawjeeh: 'Karama Medical and Fitness Center, tawjeeh center, worker awareness class mohre, uae labor law orientation, tawjeeh karama',
+    tadbeer: 'Karama Medical and Fitness Center, tadbeer karama, housemaid visa dubai, nanny visa sponsorship, domestic worker visa uae',
+    'vip-mobile': 'Karama Medical and Fitness Center, vip mobile government concierge dubai, doorstep visa medical dubai, VIP majlis service',
   };
 
-  const specificKws = baseKws[dept] || 'government services dubai, karama business center, ESS dubai';
+  const specificKws = baseKws[dept] || 'Karama Medical and Fitness Center, government services dubai, Karama Medical Center';
   return `${title}, ${title} Dubai, ${specificKws}`;
 }
 
@@ -699,7 +779,7 @@ export function getSchemaForRoute(
           '@type': 'WebSite',
           '@id': 'https://ess.ae/#website',
           url: 'https://ess.ae',
-          name: 'Karama Business Center - Emirates Secretarial Services',
+          name: 'Karama Medical and Fitness Center',
           publisher: {
             '@id': 'https://ess.ae/#organization',
           },
@@ -1048,7 +1128,7 @@ export function getSchemaForRoute(
           mainEntity: {
             '@type': 'GovernmentBuilding',
             '@id': 'https://ess.ae/#organization',
-            name: 'Karama Business Center - Emirates Secretarial Services (ESS)',
+            name: 'Karama Medical and Fitness Center',
             contactPoint: [
               {
                 '@type': 'ContactPoint',
@@ -1259,7 +1339,7 @@ export function getSeoForRoute(route: string): RouteSeoData {
   if (cleanRoute === '/internal') {
     const schema = getSchemaForRoute(cleanRoute, canonicalUrl);
     return {
-      title: 'Internal Sitemap & SEO Audit | ESS Karama (Hidden)',
+      title: 'Internal Sitemap & SEO Audit | Karama Medical & Fitness',
       description: 'Internal hidden technical SEO, sitemap, meta tags, keywords, canonical URLs, JSON-LD schema, and social link audit for ess.ae.',
       keywords: 'internal audit, sitemap, meta title, meta description, schema, canonical links',
       canonicalUrl,
@@ -1363,12 +1443,12 @@ export function getSeoForRoute(route: string): RouteSeoData {
     }
   }
 
-  // General Fallback
+  // General Fallback (ZERO Amer keywords; main brand: Karama Medical and Fitness Center)
   const fallbackSchema = getSchemaForRoute(cleanRoute, canonicalUrl);
   return {
-    title: 'Amer Center Karama Dubai | Government Services ESS KBC',
-    description: 'Authorized private center for Amer (#772), Tasheel (#4108), DET, and DHA Salem medical fitness under one roof in Karama Dubai.',
-    keywords: 'Amer Center Karama, amer center near me, uae visa, golden visa dubai, tasheel dubai, pro services dubai',
+    title: 'Karama Medical and Fitness Center | Dubai Visa & PRO Hub',
+    description: 'Authorized Karama Medical and Fitness Center in Dubai for DHA Salem medical fitness, UAE residency, Tasheel (#4108) & DET services.',
+    keywords: 'Karama Medical and Fitness Center, Karama Medical Center, dha salem, uae visa, golden visa dubai, tasheel dubai, pro services dubai',
     canonicalUrl,
     schema: fallbackSchema,
   };
@@ -1418,6 +1498,7 @@ export function applyRouteSeo(route: string): RouteSeoData {
   // Update OpenGraph
   setMetaTag('meta[property="og:title"]', 'property', 'og:title', seo.title);
   setMetaTag('meta[property="og:description"]', 'property', 'og:description', seo.description);
+  setMetaTag('meta[property="og:site_name"]', 'property', 'og:site_name', 'Karama Medical and Fitness Center');
   setMetaTag('meta[property="og:url"]', 'property', 'og:url', seo.canonicalUrl);
 
   // Update Twitter Cards

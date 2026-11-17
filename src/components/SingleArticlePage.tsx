@@ -3,6 +3,7 @@ import { Language, ServiceItem } from '../types';
 import { BLOG_POSTS, BlogPost, TableOfContentItem } from '../data/blogData';
 import { SERVICES, DEPARTMENTS } from '../data/departmentsData';
 import { ArticleSidebar } from './ArticleSidebar';
+import { getSeoForRoute } from '../utils/routeSeo';
 import {
   ArrowLeft,
   ArrowRight,
@@ -56,7 +57,10 @@ export const SingleArticlePage: React.FC<SingleArticlePageProps> = ({
 
     const originalTitle = document.title;
     const articleTitle = isAr ? post.titleAr : post.titleEn;
-    document.title = `${articleTitle} | Karama Business Center Knowledge Hub`;
+    const routeSeo = getSeoForRoute(window.location.pathname);
+    document.title = isAr
+      ? `${post.titleAr} | مركز الكرامة للفحص الطبي واللياقة`
+      : routeSeo.title;
 
     // Inject JSON-LD Schema
     const scriptId = 'article-jsonld-schema';
@@ -79,7 +83,7 @@ export const SingleArticlePage: React.FC<SingleArticlePageProps> = ({
           isPartOf: {
             '@type': 'WebSite',
             '@id': 'https://ess.ae/#website',
-            name: 'Emirates Secretarial Services & Karama Business Center',
+            name: 'Karama Medical and Fitness Center',
             url: 'https://ess.ae',
           },
           headline: post.titleEn,
@@ -95,7 +99,7 @@ export const SingleArticlePage: React.FC<SingleArticlePageProps> = ({
           },
           publisher: {
             '@type': 'Organization',
-            name: 'Emirates Secretarial Services LLC & Karama Business Center',
+            name: 'Karama Medical and Fitness Center',
             url: 'https://ess.ae',
             logo: {
               '@type': 'ImageObject',

@@ -23,15 +23,16 @@ export function getLocalBusinessSchema() {
   return {
     '@type': 'LocalBusiness',
     '@id': `${CANONICAL_BASE}/#organization`,
-    name: 'Karama Business Center',
+    name: 'Karama Medical and Fitness Center',
     alternateName: [
+      'Karama Medical Center',
+      'Karama Medical Fitness Express service Center - KMFC',
+      'KMFC',
+      'Karama Business Center',
       'KBC',
       'Karama Business Center Dubai',
       'Emirates Secretarial Services',
       'ESS',
-      'Karama Medical Fitness Express service Center - KMFC',
-      'Karama Medical Center',
-      'KMFC',
     ],
     url: CANONICAL_BASE,
     telephone: '+97143426666',
@@ -207,7 +208,7 @@ export function updateDocumentHead(meta: SeoMetadata, jsonLdObject?: object) {
   setMetaProperty('og:description', meta.description);
   setMetaProperty('og:url', meta.canonicalUrl);
   setMetaProperty('og:type', meta.ogType || 'website');
-  setMetaProperty('og:site_name', 'Karama Business Center & Emirates Secretarial Services');
+  setMetaProperty('og:site_name', 'Karama Medical and Fitness Center');
 
   // Twitter Tags
   setMetaName('twitter:title', meta.title);

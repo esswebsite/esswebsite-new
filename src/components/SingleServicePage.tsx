@@ -33,6 +33,7 @@ import { OFFICIAL_MAPS, OFFICIAL_SAME_AS } from '../data/socialAndMapLinks';
 import { getOpeningHoursForDept } from '../data/centerTimings';
 import { getDepartmentPath, getServicePath, CANONICAL_BASE } from '../utils/router';
 import { OFFICIAL_PHONE, OFFICIAL_PHONE_TEL, getWhatsAppUrl } from '../utils/whatsapp';
+import { getSeoForRoute } from '../utils/routeSeo';
 
 interface SingleServicePageProps {
   serviceId: string;
@@ -78,13 +79,18 @@ export const SingleServicePage: React.FC<SingleServicePageProps> = ({
 
   // Dynamic SEO & Structured Data Injection
   useEffect(() => {
+    const isAmer = currentDept.id === 'amer';
+    const routeSeo = getSeoForRoute(window.location.pathname);
+
     const pageTitle = isAr
-      ? `${currentService.titleAr} في دبي | مركز الكرامة للأعمال (KBC) | مركز الكرامة الطبي`
-      : `${currentService.titleEn} in Dubai | Karama Business Center (KBC) | Karama Medical Center`;
+      ? `${currentService.titleAr} | ${isAmer ? 'مركز آمر الكرامة دبي' : 'مركز الكرامة للفحص الطبي واللياقة'}`
+      : routeSeo.title;
 
     const metaDesc = isAr
-      ? `معاملة ${currentService.titleAr} في دبي عبر مركز الكرامة للأعمال (KBC) بترخيص آمر #772 وإدارة ESS، بجوار مركز الكرامة للياقة الطبية السريعة (KMFC). تدقيق استباقي للمستندات وإنجاز خلال ${currentService.processingTimeAr}.`
-      : `Apply for ${currentService.titleEn} in Dubai through Karama Business Center (KBC) under Emirates Secretarial Services (ESS) Amer License #772. Co-located with Karama Medical Fitness Express Service Center (KMFC / Karama Medical Center). Turnaround: ${currentService.processingTimeEn}.`;
+      ? (isAmer
+          ? `معاملة ${currentService.titleAr} في دبي عبر مركز آمر الكرامة بترخيص #772 وإشراف إقامة دبي. تدقيق استباقي للمستندات وإنجاز خلال ${currentService.processingTimeAr}.`
+          : `إنجاز ${currentService.titleAr} في دبي عبر مركز الكرامة للفحص الطبي واللياقة (KMFC) ومركز الكرامة للأعمال. تدقيق فوري وإنجاز خلال ${currentService.processingTimeAr}.`)
+      : routeSeo.description;
 
     document.title = pageTitle;
 
@@ -97,17 +103,8 @@ export const SingleServicePage: React.FC<SingleServicePageProps> = ({
     }
     metaDescriptionTag.setAttribute('content', metaDesc);
 
-    // Meta Keywords
-    const allKeywords = [
-      ...(serviceDetails.targetKeywords?.shortTail || []),
-      ...(serviceDetails.targetKeywords?.longTail || []),
-      currentService.titleEn,
-      currentDept.nameEn,
-      'Karama Business Center',
-      'KBC Dubai',
-      'Emirates Secretarial Services',
-      'ESS Dubai',
-    ].join(', ');
+    // Meta Keywords (strictly Amer-isolated via routeSeo)
+    const allKeywords = routeSeo.keywords;
     let metaKeywordsTag = document.querySelector('meta[name="keywords"]');
     if (!metaKeywordsTag) {
       metaKeywordsTag = document.createElement('meta');
@@ -140,15 +137,16 @@ export const SingleServicePage: React.FC<SingleServicePageProps> = ({
         {
           '@type': ['LocalBusiness', 'ProfessionalService'],
           '@id': `${CANONICAL_BASE}/#organization`,
-          name: 'Karama Business Center',
+          name: 'Karama Medical and Fitness Center',
           alternateName: [
+            'Karama Medical Center',
+            'Karama Medical Fitness Express service Center - KMFC',
+            'KMFC',
+            'Karama Business Center',
             'KBC',
             'Karama Business Center Dubai',
             'Emirates Secretarial Services',
             'ESS',
-            'Karama Medical Fitness Express service Center - KMFC',
-            'Karama Medical Center',
-            'KMFC',
           ],
           url: 'https://ess.ae',
           hasMap: OFFICIAL_MAPS.shareUrl,
@@ -313,9 +311,13 @@ export const SingleServicePage: React.FC<SingleServicePageProps> = ({
               </h1>
 
               <p className="mt-3 text-sm sm:text-base text-teal-100 font-medium">
-                {isAr
-                  ? 'خدمات آمر الحكومية الرسمية بإدارة الإمارات لخدمات رجال الأعمال (ESS) في مركز الكرامة للأعمال · متكامل مع مركز الكرامة الطبي (KMFC)'
-                  : 'Official Amer & Government Processing by ESS at Karama Business Center · Integrated with Karama Medical Center (KMFC)'}
+                {currentDept.id === 'amer'
+                  ? (isAr
+                      ? 'خدمات آمر الحكومية الرسمية بترخيص #772 · متكامل مع مركز الكرامة للفحص الطبي واللياقة (KMFC)'
+                      : 'Official Amer Center (#772) Immigration Services · Integrated with Karama Medical and Fitness Center')
+                  : (isAr
+                      ? 'خدمات معتمدة في مركز الكرامة للفحص الطبي واللياقة (KMFC) ومركز الكرامة للأعمال'
+                      : 'Authorized Processing at Karama Medical and Fitness Center · Karama Business Center')}
               </p>
 
               <p className="mt-4 text-base sm:text-lg text-teal-50 leading-relaxed font-normal">
@@ -591,7 +593,7 @@ export const SingleServicePage: React.FC<SingleServicePageProps> = ({
                       </p>
                     </div>
                     <span className="text-[10px] font-mono bg-teal-500/20 text-teal-300 border border-teal-400/40 px-2 py-0.5 rounded">
-                      Amer #772
+                      {currentDept.id === 'amer' ? 'Amer #772' : currentDept.code}
                     </span>
                   </div>
                 </div>
@@ -605,13 +607,17 @@ export const SingleServicePage: React.FC<SingleServicePageProps> = ({
               </div>
               <h2 className="text-2xl sm:text-3xl font-extrabold text-[#1E2528] tracking-tight leading-snug">
                 {isAr
-                  ? 'لماذا يختار آلاف المتعاملين مركز الكرامة للأعمال؟'
-                  : 'Everything Under One Roof at Karama Business Center'}
+                  ? 'لماذا يختار آلاف المتعاملين مركز الكرامة الطبي للأعمال؟'
+                  : 'Everything Under One Roof at Karama Medical and Fitness Center'}
               </h2>
               <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                {isAr
-                  ? 'يجمع مركزنا في الكرامة بين الترخيص الرسمي لمركز آمر (#772) بإدارة الإمارات لخدمات رجال الأعمال (ESS)، واحتضان مركز الكرامة الطبي (KMFC) ومحطات البصمة الاتحادية. هذا التواجد المشترك يتيح لك إنجاز كافة معاملات الإقامة والفحص الطبي في زيارة واحدة دون أي تنقل.'
-                  : 'Our campus in Al Karama unites authorized Amer Center License #772 under Emirates Secretarial Services (ESS), the co-located Karama Medical Fitness Express Service Center (KMFC / Karama Medical Center), and ICP biometric stations. You complete your preliminary legal audit, blood screening, and biometrics in a single coordinated visit.'}
+                {currentDept.id === 'amer'
+                  ? (isAr
+                      ? 'يجمع مقرنا في الكرامة بين الترخيص الرسمي لمركز آمر (#772) ومركز الكرامة للفحص الطبي واللياقة (KMFC) ومحطات البصمة الاتحادية لإنجاز كافة معاملات الإقامة والفحص الطبي في زيارة واحدة.'
+                      : 'Our campus in Al Karama unites authorized Amer Center License #772 with the co-located Karama Medical and Fitness Center (KMFC) and ICP biometric stations in a single coordinated visit.')
+                  : (isAr
+                      ? 'يجمع مركز الكرامة للفحص الطبي واللياقة (KMFC) في الكرامة بين الفحوصات الطبية المعتمدة من صحة دبي (سالم) والخدمات الحكومية المعتمدة في دبي في زيارة واحدة سريعة ومنظمة.'
+                      : 'Karama Medical and Fitness Center (KMFC) in Al Karama integrates accredited DHA Salem medical screening with authorized Dubai government desks and biometric stations in one coordinated visit.')}
               </p>
 
               <div className="space-y-2.5 pt-2">

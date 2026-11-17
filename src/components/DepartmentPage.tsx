@@ -33,7 +33,7 @@ import {
   AMER_OFFICIAL_SOCIAL_LINKS,
   AMER_SAME_AS
 } from '../data/socialAndMapLinks';
-import { AMER_CENTER_ENTITY_SCHEMA } from '../utils/routeSeo';
+import { AMER_CENTER_ENTITY_SCHEMA, getSeoForRoute } from '../utils/routeSeo';
 import { GoogleReviewsSection } from './GoogleReviewsSection';
 import { getDepartmentPath, CANONICAL_BASE } from '../utils/router';
 import { OFFICIAL_PHONE, OFFICIAL_PHONE_TEL, getWhatsAppUrl } from '../utils/whatsapp';
@@ -79,22 +79,20 @@ export const DepartmentPage: React.FC<DepartmentPageProps> = ({
 
   // Dynamic SEO & Structured Data Injection
   useEffect(() => {
-    const isAmer = currentDept.id === 'amer';
-    const pageTitle = isAmer
-      ? (language === 'ar'
-          ? 'مركز آمر الكرامة دبي | خدمات الإقامة والتأشيرات والجوازات'
-          : 'Amer Center Karama Dubai | UAE Visa & Immigration Services')
-      : (language === 'ar'
-          ? `${currentDept.nameAr} - الخدمات الحكومية المعتمدة | الإمارات لخدمات رجال الأعمال (ESS)`
-          : `${currentDept.nameEn} Services Dubai | Authorized Government Center | ESS`);
+    const isAmerDept = currentDept.id === 'amer';
+    const routeSeo = getSeoForRoute(window.location.pathname);
 
-    const metaDesc = isAmer
-      ? (language === 'ar'
+    const pageTitle = language === 'ar'
+      ? (isAmerDept
+          ? 'مركز آمر الكرامة دبي | خدمات الإقامة والتأشيرات والجوازات'
+          : `${currentDept.nameAr} | مركز الكرامة للفحص الطبي واللياقة`)
+      : routeSeo.title;
+
+    const metaDesc = language === 'ar'
+      ? (isAmerDept
           ? 'تبحث عن مركز آمر في الكرامة، دبي؟ احصل على خدمات إصدار وتجديد وإلغاء تأشيرات الإقامة، كفالة الأسرة، أذونات الدخول وتعديل الوضع المعتمدة من إقامة دبي.'
-          : 'Looking for an Amer Center in Karama, Dubai? Get assistance with UAE residence visas, renewals, cancellations, family visas, visit visas and immigration services.')
-      : (language === 'ar'
-          ? `دليل خدمات ${currentDept.nameAr} في دبي. إنجاز فوري للإقامات، الرخص، العقود والمعاملات الحكومية الرسمية مع كفالة تامة وتتبع مباشر.`
-          : `Official ${currentDept.nameEn} government processing in Dubai. Fast-track residency, corporate setup, and labor clearances with certified typing and zero rejection audit.`);
+          : `دليل خدمات ${currentDept.nameAr} في مركز الكرامة للفحص الطبي واللياقة بدبي. إنجاز فوري ومعتمد للمعاملات الحكومية والطبية دون تأخير.`)
+      : routeSeo.description;
 
     document.title = pageTitle;
 
@@ -120,13 +118,13 @@ export const DepartmentPage: React.FC<DepartmentPageProps> = ({
       canonicalTag.setAttribute('rel', 'canonical');
       document.head.appendChild(canonicalTag);
     }
-    const canonicalDepartmentUrl = isAmer
+    const canonicalDepartmentUrl = isAmerDept
       ? `${CANONICAL_BASE}/amer-center-karama/`
       : `${CANONICAL_BASE}${getDepartmentPath(currentDept.id, language)}`;
     canonicalTag.setAttribute('href', canonicalDepartmentUrl);
 
     // Structured Data JSON-LD
-    const jsonLdData = isAmer
+    const jsonLdData = isAmerDept
       ? {
           '@context': 'https://schema.org',
           '@graph': [
@@ -192,7 +190,7 @@ export const DepartmentPage: React.FC<DepartmentPageProps> = ({
               serviceType: 'Public Administration & Businessmen Services',
               provider: {
                 '@type': 'LocalBusiness',
-                name: 'Emirates Secretarial Services & Karama Business Center',
+                name: 'Karama Medical and Fitness Center',
                 telephone: '+97143426666',
                 hasMap: OFFICIAL_MAPS.shareUrl,
                 sameAs: [...OFFICIAL_SAME_AS],
